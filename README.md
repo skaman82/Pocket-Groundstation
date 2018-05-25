@@ -14,5 +14,5 @@ An attempt to create a mini ground station that will accept any Fatshark module.
 • Bonus (help required): DRV-control via OLED (Eachine Pro DVR)</br>
 • Bonus (help required): OSD overlay in the videofeed for GS battery status – probably with minimosd micro</br></br>
 
-Many problems to solve! If you want to join the project contribute, you are very welcome to do so!</br>
-I will need any help I can get to solve the things involving coding (marked as BONUS
+Many problems to solve! If you want to join the project or contribute, you are very welcome to do so!</br>
+I will need any help I can get to solve the things involving coding (marked as BONUS)
