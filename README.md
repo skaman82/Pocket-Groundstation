@@ -10,9 +10,9 @@ Ideas so far:</br>
 • Powerswitch</br>
 • Switch to toggle between DVR output (to adjust settings or review footage) or direct module output</br>
 
-• Bonus: low-voltage alarm and cell autodetection (adjustable via OLED, so it can work with lipo or li-ion batteries)</br>
-• Bonus: DRV-control via OLED (Eachine Pro DVR)</br>
-• Bonus: OSD overlay in the videofeed for GS battery status – probably with minimosd micro</br></br>
+• Bonus (help required): low-voltage alarm and cell autodetection (adjustable via OLED, so it can work with lipo or li-ion batteries)</br>
+• Bonus (help required): DRV-control via OLED (Eachine Pro DVR)</br>
+• Bonus (help required): OSD overlay in the videofeed for GS battery status – probably with minimosd micro</br></br>
 
 Many problems to solve! If you want to join the project contribute, you are very welcome to do so!</br>
 I will need any help I can get to solve the things involving coding (marked as BONUS
