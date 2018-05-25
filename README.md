@@ -1,6 +1,8 @@
 # Pocket-Groundstation
 An attempt to create a mini ground station that will accept any Fatshark module.
 
+<img src="http://k-h-h.de/labs/github/3D.png"/>
+
 Ideas so far:</br>
 • takes 2S to 4S voltage</br>
 • 3,5mm AV output</br>
