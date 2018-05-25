@@ -3,7 +3,7 @@ An attempt to create a mini ground station that will accept any Fatshark module.
 
 <img src="http://k-h-h.de/labs/github/3D.png"/>
 
-Ideas so far:</br>
+<b>Ideas so far:</b></br>
 • takes 2S to 4S voltage</br>
 • 3,5mm AV output</br>
 • RJ45 output for power+AV (only one wire to goggles) - constant 8V output on any power source (to stay compatible with fan-mod)</br>
