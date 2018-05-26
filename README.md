@@ -8,7 +8,7 @@ An attempt to create a mini ground station that will accept any Fatshark module.
 • 3,5mm AV output</br>
 • RJ45 output for power+AV (only one wire to goggles) - constant 8V output on any power source (to stay compatible with fan-mod)</br>
 • Powerswitch</br>
-• Build-in DVR
+• Build-in DVR</br>
 • Switch to toggle between DVR output (to adjust settings or review footage) or direct module output</br>
 
 • Bonus (help required): low-voltage alarm and cell autodetection (adjustable via OLED, so it can work with lipo or li-ion batteries)</br>
