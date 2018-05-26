@@ -15,4 +15,21 @@ An attempt to create a mini ground station that will accept any Fatshark module.
 • Bonus (help required): OSD overlay in the videofeed for GS battery status – probably with minimosd micro</br></br>
 
 Many problems to solve! If you want to join the project or contribute, you are very welcome to do so!</br>
-I will need any help I can get to solve the things involving coding (marked as BONUS)
+I will need any help I can get to solve the things involving coding (marked as BONUS)</br></br>
+
+<b>Parts (work in progress):</b></br>
+• 3D-Printed Parts 
+• Arduino Pro Mini
+• 5V Buzzer
+• 3-35V to 1.2-30V Step up/down (adjustable)
+• DC 5.5x2.5 PCB socket
+• 3.5mm PCB socket
+• RJ45 PCB socket
+• I2C OLED Display 1.3"
+• Power switch
+• 2-way slide PCB switch
+• Diode (type)
+• Resistors (xx Ohm)
+• Capacitator (xx uF 25V)
+• Tactile buttons (3x)
+• Multi-purpose PCB board
