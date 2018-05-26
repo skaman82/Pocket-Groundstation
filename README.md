@@ -34,3 +34,4 @@ I will need any help I can get to solve the things involving coding (marked as B
 • Tactile buttons (3x)</br>
 • Multi-purpose PCB board</br>
 • minimosd micro
+• 5V 2A BEC
