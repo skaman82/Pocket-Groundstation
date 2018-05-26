@@ -32,4 +32,5 @@ I will need any help I can get to solve the things involving coding (marked as B
 • Resistors (xx Ohm)</br>
 • Capacitator (xx uF 25V)</br>
 • Tactile buttons (3x)</br>
-• Multi-purpose PCB board
+• Multi-purpose PCB board</br>
+• minimosd micro
