@@ -8,6 +8,7 @@ An attempt to create a mini ground station that will accept any Fatshark module.
 • 3,5mm AV output</br>
 • RJ45 output for power+AV (only one wire to goggles) - constant 8V output on any power source (to stay compatible with fan-mod)</br>
 • Powerswitch</br>
+• Build-in DVR
 • Switch to toggle between DVR output (to adjust settings or review footage) or direct module output</br>
 
 • Bonus (help required): low-voltage alarm and cell autodetection (adjustable via OLED, so it can work with lipo or li-ion batteries)</br>
@@ -19,6 +20,7 @@ I will need any help I can get to solve the things involving coding (marked as B
 
 <b>Parts (work in progress):</b></br>
 • 3D-Printed Parts </br>
+• Eachine PRO DVR </br>
 • Arduino Pro Mini</br>
 • 5V Buzzer</br>
 • 3-35V to 1.2-30V Step up/down (adjustable)</br>
@@ -33,5 +35,5 @@ I will need any help I can get to solve the things involving coding (marked as B
 • Capacitator (xx uF 25V)</br>
 • Tactile buttons (3x)</br>
 • Multi-purpose PCB board</br>
-• minimosd micro
-• 5V 2A BEC
+• minimosd micro</br>
+• 5V 2A BEC</br>
