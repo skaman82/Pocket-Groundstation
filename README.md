@@ -18,18 +18,18 @@ Many problems to solve! If you want to join the project or contribute, you are v
 I will need any help I can get to solve the things involving coding (marked as BONUS)</br></br>
 
 <b>Parts (work in progress):</b></br>
-• 3D-Printed Parts 
-• Arduino Pro Mini
-• 5V Buzzer
-• 3-35V to 1.2-30V Step up/down (adjustable)
-• DC 5.5x2.5 PCB socket
-• 3.5mm PCB socket
-• RJ45 PCB socket
-• I2C OLED Display 1.3"
-• Power switch
-• 2-way slide PCB switch
-• Diode (type)
-• Resistors (xx Ohm)
-• Capacitator (xx uF 25V)
-• Tactile buttons (3x)
+• 3D-Printed Parts </br>
+• Arduino Pro Mini</br>
+• 5V Buzzer</br>
+• 3-35V to 1.2-30V Step up/down (adjustable)</br>
+• DC 5.5x2.5 PCB socket</br>
+• 3.5mm PCB socket</br>
+• RJ45 PCB socket</br>
+• I2C OLED Display 1.3"</br>
+• Power switch</br>
+• 2-way slide PCB switch</br>
+• Diode (type)</br>
+• Resistors (xx Ohm)</br>
+• Capacitator (xx uF 25V)</br>
+• Tactile buttons (3x)</br>
 • Multi-purpose PCB board
