@@ -10,8 +10,6 @@ U8GLIB_SH1106_128X64 u8g(U8G_I2C_OPT_DEV_0 | U8G_I2C_OPT_FAST);	// Dev 0, Fast I
 
 #define BUTTON1_PIN              2  // Button 1
 #define BUTTON2_PIN              3  // Button 2
-#define BUTTON3_PIN              4  // Button 3
-
 #define DELAY                    20  // Delay per loop in ms
 
 boolean button_was_pressed; // previous state
@@ -44,9 +42,6 @@ void setup()  {
   pinMode(BUTTON2_PIN, INPUT);
   digitalWrite(BUTTON2_PIN, HIGH); // pull-up
   
-  pinMode(BUTTON3_PIN, INPUT);
-  digitalWrite(BUTTON3_PIN, HIGH); // pull-up
-
   
   Serial.begin(9600);
   button_was_pressed = false;
@@ -84,16 +79,6 @@ boolean handle_button2()
 {
   boolean event;
   int button_now_pressed = !digitalRead(BUTTON2_PIN); // pin low -> pressed
-
-  event = button_now_pressed && !button_was_pressed;
-  button_was_pressed = button_now_pressed;
-  return event;
-}
-
-boolean handle_button3()
-{
-  boolean event;
-  int button_now_pressed = !digitalRead(BUTTON3_PIN); // pin low -> pressed
 
   event = button_now_pressed && !button_was_pressed;
   button_was_pressed = button_now_pressed;
@@ -166,12 +151,10 @@ void loop()  {
    // handle button
   boolean raising_edge1 = handle_button1();
   boolean raising_edge2 = handle_button2();
-  boolean raising_edge3 = handle_button3();
 
   // do other things
   Serial.print(raising_edge1 ? "1" : ".");
   Serial.print(raising_edge2 ? "2" : ".");
-  Serial.print(raising_edge3 ? "3" : ".");
 
   // add newline sometimes
   static int counter = 0;
