@@ -7,11 +7,15 @@ LASEREINHORNBACKFISCH
 #define R1 400  // Widerstand 1
 #define R2 100  // Widerstand 2
 
+#define Voltagedetect 3.5 // Min. Voltage for Detection
+
 #define note 262  // C4
 
 #define BUTTON1_PIN              2  // Button 1
 #define BUTTON2_PIN              3  // Button 2
 #define BUTTON3_PIN              4  // Button 3
+
+#define beeppin 9 // Beeper Pin
 
 #define DELAY                    20  // Delay per loop in ms
  
@@ -25,6 +29,8 @@ U8GLIB_SH1106_128X64 u8g(U8G_I2C_OPT_DEV_0 | U8G_I2C_OPT_FAST);  // Dev 0, Fast 
 boolean button_was_pressed = false;; // previous state
 
 float voltage;
+
+int lipo;
 
 
 
@@ -42,8 +48,11 @@ const uint8_t rook_bitmap[] PROGMEM =
 
 };
 
-
-
+void pause()
+{
+  beep_criticalt(20);
+  while (1);
+}
 
 void setup()  
 {
@@ -72,8 +81,32 @@ void setup()
     u8g.setHiColorByRGB(255, 255, 255);
   }
 
-
-  beep(10);
+  delay(100);
+  voltagetest();
+  if (voltage > (Voltagedetect * 5.0))
+  {
+    lipo = 5;
+    beep_x(lipo);
+  }
+  else if (voltage > (Voltagedetect * 4.0))
+  {
+    lipo = 4;
+    beep_x(lipo);
+  }
+  else if (voltage > (Voltagedetect * 3.0))
+  {
+    lipo = 3;
+    beep_x(lipo);
+  }
+  else if (voltage > (Voltagedetect * 2.0))
+  {
+    lipo = 2;
+    beep_x(lipo);
+  }
+  else
+  {
+    pause();
+  }
 }
 
 boolean handle_button1()
@@ -186,10 +219,16 @@ void loop()
   Serial.print(raising_edge3 ? "3" : ".");
 
   // add newline sometimes
+
+  /*
+   *  Find ich komisch
+   *
   static int counter = 0;
   if ((++counter & 0x3f) == 0)
     Serial.println();
     delay(100);
+
+  */
     
   u8g.firstPage();
   do {
@@ -199,33 +238,42 @@ void loop()
   delay(DELAY);
 }
 
+// Beep-Stuff
+
 void beep(unsigned char delayms) 
 {
-  tone(9, note, 100);  // 100ms beep (C4 Tone)
+  tone(beeppin, note, 100);  // 100ms beep (C4 Tone)
 }
 
 void beep_long(unsigned char delayms) 
 {
-  tone(9, note, 2000); // 2000ms beep (C4 Tone)
+  tone(beeppin, note, 2000); // 2000ms beep (C4 Tone)
 }
 
 void beep_warning(unsigned char delayms) 
 {
-  tone(9, note, 200);  // 200ms beep (C4 Tone)
+  tone(beeppin, note, 200);  // 200ms beep (C4 Tone)
   delay(400);
-  tone(9, note, 200);  // 200ms beep (C4 Tone)
+  tone(beeppin, note, 200);  // 200ms beep (C4 Tone)
 }
 
 void beep_criticalt(unsigned char delayms) 
 {
-  tone(9, note, 400);  // 400ms beep (C4 Tone)
+  tone(beeppin, note, 400);  // 400ms beep (C4 Tone)
   delay(800);
-  tone(9, note, 400);  // 400ms beep (C4 Tone)
+  tone(beeppin, note, 400);  // 400ms beep (C4 Tone)
   delay(800);
-  tone(9, note, 400);  // 400ms beep (C4 Tone)
+  tone(beeppin, note, 400);  // 400ms beep (C4 Tone)
 }
 
-
+void beep_x(byte b)
+{
+  for (int i = 1; i <= b; i++)
+  {
+    tone(beeppin, note, 200);
+    delay(400);
+  }
+}
 
 
 
