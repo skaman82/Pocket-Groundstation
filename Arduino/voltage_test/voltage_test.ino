@@ -171,67 +171,67 @@ void voltagetest()
 
   if (voltage > 4.9) 
   { // case if voltage is above 4.9v
-    u8g.drawBox(114, 5, 2, 2);
-    u8g.drawBox(117, 5, 2, 2);
-    u8g.drawBox(120, 5, 2, 2);
-    u8g.drawFrame(112, 5 - 2, 12, 6);
-    u8g.drawBox(124, 5, 1, 2);
+    u8g.drawBox(2, 5, 2, 2);
+    u8g.drawBox(5, 5, 2, 2);
+    u8g.drawBox(8, 5, 2, 2);
+    u8g.drawFrame(0, 5 - 2, 12, 6);
+    u8g.drawBox(12, 5, 1, 2);
   }
 
   else if (voltage < 3.9 && voltage > 3.4) 
   { // case if voltage is below 3.4
     Serial.print("Battery half");
-    u8g.drawBox(114, 5, 2, 2);
-    u8g.drawBox(117, 5, 2, 2);
-    u8g.drawFrame(112, 5 - 2, 12, 6);
-    u8g.drawBox(124, 5, 1, 2);
+    u8g.drawBox(2, 5, 2, 2);
+    u8g.drawBox(5, 5, 2, 2);
+    u8g.drawFrame(0, 5 - 2, 12, 6);
+    u8g.drawBox(12, 5, 1, 2);
   }
 
   else if (voltage < 3.4) 
   { // case if voltage is below 3.4
     beep_criticalt(225);
     Serial.print("Battery critical");
-    u8g.drawFrame(112, 5 - 2, 12, 6);
-    u8g.drawBox(124, 5, 1, 2);
+    u8g.drawBox(2, 5, 2, 2);
+    u8g.drawFrame(0, 5 - 2, 12, 6);
+    u8g.drawBox(12, 5, 1, 2);
 
   }
 
   else 
   {
-    u8g.drawBox(114, 5, 2, 2);
-    u8g.drawBox(117, 5, 2, 2);
-    u8g.drawBox(120, 5, 2, 2);
-    u8g.drawFrame(112, 5 - 2, 12, 6);
-    u8g.drawBox(124, 5, 1, 2);
+   u8g.drawBox(2, 5, 2, 2);
+    u8g.drawBox(5, 5, 2, 2);
+    u8g.drawBox(8, 5, 2, 2);
+    u8g.drawFrame(0, 5 - 2, 12, 6);
+    u8g.drawBox(12, 5, 1, 2);
   }
 
   // graphic commands to redraw the complete screen should be placed here
   u8g.setFont(u8g_font_5x7);
-  u8g.setPrintPos(0, 9);
-  u8g.print("Battery Status");
+  u8g.setPrintPos(34, 9);
+  u8g.print("BATTERY");
   u8g.setFont(u8g_font_5x7);
-  u8g.setPrintPos(99, 9);
+  u8g.setPrintPos(18, 9);
   u8g.print(lipo);
   u8g.setFont(u8g_font_5x7);
-  u8g.setPrintPos(105, 9);
+  u8g.setPrintPos(24, 9);
   u8g.print("S");
   u8g.setFont(u8g_font_profont22);
-  u8g.setPrintPos(0, 30);
+  u8g.setPrintPos(0, 32);
   u8g.print(voltage);
-  u8g.setPrintPos(62, 30);
+  u8g.setPrintPos(62, 32);
   u8g.print("v");
 
-  u8g.drawBitmapP( 85, 2, 1, 8, DVRstatus8_bitmap);
+  u8g.drawBitmapP( 98, 2, 1, 8, DVRstatus8_bitmap);
 
   u8g.drawFrame(1, 46 - 2, 124, 18);
   u8g.setFont(u8g_font_5x7);
   u8g.setPrintPos(30, 55);
   u8g.print("Press for Menu");
 
-  u8g.setPrintPos(85, 23);
-  u8g.print("OSD:");
-  u8g.setPrintPos(110, 23);
-  u8g.print("ACT");
+  u8g.setPrintPos(111, 9);
+  u8g.print("OSD");
+
   delay(10);
 }
 
