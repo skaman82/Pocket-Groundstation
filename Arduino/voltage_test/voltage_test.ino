@@ -108,7 +108,7 @@ void voltagetest() {
 
 
   if (voltage > 4.9) { // case if voltage is above 4.9v
-    Serial.print("Battery charging");
+    Serial.print("Battery full");
     u8g.drawBox(114, 5, 2, 2);
     u8g.drawBox(117, 5, 2, 2);
     u8g.drawBox(120, 5, 2, 2);
