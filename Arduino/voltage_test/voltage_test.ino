@@ -1,26 +1,35 @@
 
 /*
 Notes:
+LASEREINHORNBACKFISCH
  */
-#include "U8glib.h"
 
-U8GLIB_SH1106_128X64 u8g(U8G_I2C_OPT_DEV_0 | U8G_I2C_OPT_FAST);	// Dev 0, Fast I2C / TWI
+#define R1 400  // Widerstand 1
+#define R2 100  // Widerstand 2
 
-
+#define note 262  // C4
 
 #define BUTTON1_PIN              2  // Button 1
 #define BUTTON2_PIN              3  // Button 2
 #define BUTTON3_PIN              4  // Button 3
 
 #define DELAY                    20  // Delay per loop in ms
+ 
+#include "U8glib.h"
 
-boolean button_was_pressed; // previous state
+U8GLIB_SH1106_128X64 u8g(U8G_I2C_OPT_DEV_0 | U8G_I2C_OPT_FAST);  // Dev 0, Fast I2C / TWI
+
+
+
+
+boolean button_was_pressed = false;; // previous state
 
 float voltage;
 
 
 
-const uint8_t rook_bitmap[] PROGMEM = {
+const uint8_t rook_bitmap[] PROGMEM = 
+{
   // size is 8 x 7
   0x0,
   0x00,
@@ -36,20 +45,17 @@ const uint8_t rook_bitmap[] PROGMEM = {
 
 
 
-void setup()  {
+void setup()  
+{
 
-  pinMode(BUTTON1_PIN, INPUT);
-  digitalWrite(BUTTON1_PIN, HIGH); // pull-up
+  pinMode(BUTTON1_PIN, INPUT_PULLUP);
   
-  pinMode(BUTTON2_PIN, INPUT);
-  digitalWrite(BUTTON2_PIN, HIGH); // pull-up
+  pinMode(BUTTON2_PIN, INPUT_PULLUP);
   
-  pinMode(BUTTON3_PIN, INPUT);
-  digitalWrite(BUTTON3_PIN, HIGH); // pull-up
+  pinMode(BUTTON3_PIN, INPUT_PULLUP);
 
   
   Serial.begin(9600);
-  button_was_pressed = false;
 
   
 
@@ -101,14 +107,16 @@ boolean handle_button3()
 }
 
 
-void voltagetest() {
+void voltagetest() 
+{
   int sensorValue = analogRead(A0);   // read the input on analog pin 0:
-  voltage = sensorValue * (5.0 / 1023.0);   // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+  voltage = sensorValue * (5.0 / 1023.0) * ((R1+R2)/R2);   // Convert the analog reading (which goes from 0 - 1023) to a voltage, considering the voltage divider:
  // Serial.println(voltage);   // print out the value you read:
 
 
-  if (voltage > 4.9) { // case if voltage is above 4.9v
-    Serial.print("Battery full");
+  if (voltage > 4.9) 
+  { // case if voltage is above 4.9v
+    Serial.print("Battery charging");
     u8g.drawBox(114, 5, 2, 2);
     u8g.drawBox(117, 5, 2, 2);
     u8g.drawBox(120, 5, 2, 2);
@@ -121,7 +129,8 @@ void voltagetest() {
 
   }
 
-  else if (voltage < 3.9 && voltage > 3.4) { // case if voltage is below 3.4
+  else if (voltage < 3.9 && voltage > 3.4) 
+  { // case if voltage is below 3.4
     Serial.print("Battery half");
     u8g.drawBox(114, 5, 2, 2);
     u8g.drawBox(117, 5, 2, 2);
@@ -129,7 +138,8 @@ void voltagetest() {
     u8g.drawBox(124, 5, 1, 2);
   }
 
-  else if (voltage < 3.4) { // case if voltage is below 3.4
+  else if (voltage < 3.4) 
+  { // case if voltage is below 3.4
     beep_criticalt(225);
     Serial.print("Battery critical");
     u8g.drawFrame(112, 5 - 2, 12, 6);
@@ -137,7 +147,8 @@ void voltagetest() {
 
   }
 
-  else {
+  else 
+  {
     u8g.drawBox(114, 5, 2, 2);
     u8g.drawBox(117, 5, 2, 2);
     u8g.drawBox(120, 5, 2, 2);
@@ -162,7 +173,8 @@ void voltagetest() {
 
 
 
-void loop()  {
+void loop()  
+{
    // handle button
   boolean raising_edge1 = handle_button1();
   boolean raising_edge2 = handle_button2();
@@ -184,44 +196,35 @@ void loop()  {
     voltagetest();
   }
   while (u8g.nextPage());
- 
+  delay(DELAY);
 }
 
-void beep(unsigned char delayms) {
-  digitalWrite(13, HIGH);
-  analogWrite(9, 255);      // Almost any value can be used except 0 and 255
-  delay(delayms);          // wait for a delayms ms
-  digitalWrite(13, LOW);
-  analogWrite(9, 0);       // 0 turns it off
-  delay(100);            // wait for a delayms ms
+void beep(unsigned char delayms) 
+{
+  tone(9, note, 100);  // 100ms beep (C4 Tone)
 }
 
-void beep_long(unsigned char delayms) {
-  digitalWrite(13, HIGH);
-  analogWrite(9, 255);      // Almost any value can be used except 0 and 255
-  delay(800);          // wait for a delayms ms
-  digitalWrite(13, LOW);
-  analogWrite(9, 0);       // 0 turns it off
-  delay(DELAY);            // wait for a delayms ms
+void beep_long(unsigned char delayms) 
+{
+  tone(9, note, 2000); // 2000ms beep (C4 Tone)
 }
 
-void beep_warning(unsigned char delayms) {
-  digitalWrite(13, HIGH);
-  analogWrite(9, 255);      // Almost any value can be used except 0 and 255
-  delay(800);          // wait for a delayms ms
-  digitalWrite(13, LOW);
-  analogWrite(9, 0);       // 0 turns it off
-  delay(200);            // wait for a delayms ms
+void beep_warning(unsigned char delayms) 
+{
+  tone(9, note, 200);  // 200ms beep (C4 Tone)
+  delay(400);
+  tone(9, note, 200);  // 200ms beep (C4 Tone)
 }
 
-void beep_criticalt(unsigned char delayms) {
-  digitalWrite(13, HIGH);
-  analogWrite(9, 255);      // Almost any value can be used except 0 and 255
-  delay(400);          // wait for a delayms ms
-  digitalWrite(13, LOW);
-  analogWrite(9, 0);       // 0 turns it off
-  delay(200);            // wait for a delayms ms
+void beep_criticalt(unsigned char delayms) 
+{
+  tone(9, note, 400);  // 400ms beep (C4 Tone)
+  delay(800);
+  tone(9, note, 400);  // 400ms beep (C4 Tone)
+  delay(800);
+  tone(9, note, 400);  // 400ms beep (C4 Tone)
 }
+
 
 
 
