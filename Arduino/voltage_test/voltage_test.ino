@@ -26,8 +26,6 @@ U8GLIB_SH1106_128X64 u8g(U8G_I2C_OPT_DEV_0 | U8G_I2C_OPT_FAST);  // Dev 0, Fast 
 
 
 
-boolean button_was_pressed = false;; // previous state
-
 float voltage;
 
 int lipo;
@@ -82,6 +80,7 @@ void setup()
   }
 
   delay(100);
+  
   voltagetest();
   if (voltage > (Voltagedetect * 5.0))
   {
@@ -109,35 +108,7 @@ void setup()
   }
 }
 
-boolean handle_button1()
-{
-  boolean event;
-  int button_now_pressed = !digitalRead(BUTTON1_PIN); // pin low -> pressed
 
-  event = button_now_pressed && !button_was_pressed;
-  button_was_pressed = button_now_pressed;
-  return event;
-}
-
-boolean handle_button2()
-{
-  boolean event;
-  int button_now_pressed = !digitalRead(BUTTON2_PIN); // pin low -> pressed
-
-  event = button_now_pressed && !button_was_pressed;
-  button_was_pressed = button_now_pressed;
-  return event;
-}
-
-boolean handle_button3()
-{
-  boolean event;
-  int button_now_pressed = !digitalRead(BUTTON3_PIN); // pin low -> pressed
-
-  event = button_now_pressed && !button_was_pressed;
-  button_was_pressed = button_now_pressed;
-  return event;
-}
 
 
 void voltagetest() 
@@ -149,7 +120,6 @@ void voltagetest()
 
   if (voltage > 4.9) 
   { // case if voltage is above 4.9v
-    Serial.print("Battery charging");
     u8g.drawBox(114, 5, 2, 2);
     u8g.drawBox(117, 5, 2, 2);
     u8g.drawBox(120, 5, 2, 2);
@@ -196,7 +166,10 @@ void voltagetest()
   u8g.print("Battery Status");
   u8g.setFont(u8g_font_5x7);
   u8g.setPrintPos(99, 9);
-  u8g.print("4S");
+  u8g.print(lipo);
+   u8g.setFont(u8g_font_5x7);
+  u8g.setPrintPos(105, 9);
+  u8g.print("S");
   u8g.setFont(u8g_font_8x13B);
   u8g.setPrintPos(0, 24);
   u8g.print(voltage), (" V");
@@ -206,17 +179,33 @@ void voltagetest()
 
 
 
-void loop()  
-{
-   // handle button
-  boolean raising_edge1 = handle_button1();
-  boolean raising_edge2 = handle_button2();
-  boolean raising_edge3 = handle_button3();
+void loop()  {
+ // handle buttons
+    
+    int buttonState1 = !digitalRead(BUTTON1_PIN); // pin low -> pressed
+    if (buttonState1 == 1)
+    {
+     beep(1);
+     Serial.print("Button1 pressed");
+    }
+    
+    
+    int buttonState2 = !digitalRead(BUTTON2_PIN); // pin low -> pressed
+    if (buttonState2 == 1)
+    {
+     beep(1);
+     Serial.print("Button2 pressed");
+    }
 
-  // do other things
-  Serial.print(raising_edge1 ? "1" : ".");
-  Serial.print(raising_edge2 ? "2" : ".");
-  Serial.print(raising_edge3 ? "3" : ".");
+    
+    int buttonState3 = !digitalRead(BUTTON3_PIN); // pin low -> pressed
+    if (buttonState3 == 1)
+    {
+     beep(1);
+     Serial.print("Button3 pressed");
+    }
+    
+ 
 
   // add newline sometimes
 
@@ -242,7 +231,7 @@ void loop()
 
 void beep(unsigned char delayms) 
 {
-  tone(beeppin, note, 100);  // 100ms beep (C4 Tone)
+  tone(beeppin, note, 10);  // 100ms beep (C4 Tone)
 }
 
 void beep_long(unsigned char delayms) 
