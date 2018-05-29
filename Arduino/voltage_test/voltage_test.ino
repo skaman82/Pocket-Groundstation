@@ -176,8 +176,15 @@ void voltagetest()
 
    float cellvoltage = voltage / lipo;
 
-    u8g.setPrintPos(80, 35);
+    u8g.drawFrame(96, 16 - 1, 29, 20);
+    u8g.drawBox(96, 16, 29, 6);
+    u8g.setPrintPos(101, 31);
     u8g.print(alarmvalue);
+    u8g.setColorIndex(0);
+    u8g.setPrintPos(101, 21);
+    u8g.setFont(u8g_font_micro);
+    u8g.print("ALARM");
+    u8g.setColorIndex(1);
    
 delay (10);
 
@@ -288,7 +295,7 @@ void loop()  {
   u8g.setPrintPos(52, 32);
   u8g.print("v");
 
-  u8g.drawBitmapP( 98, 2, 1, 8, DVRstatus8_bitmap);
+  u8g.drawBitmapP( 96, 2, 1, 8, DVRstatus8_bitmap);
 
   u8g.drawFrame(1, 46 - 2, 124, 18);
   u8g.setFont(u8g_font_5x7);
