@@ -31,10 +31,6 @@ float voltage;
 int lipo;
 
 
-#define u8g_icon_width 16
-#define u8g_icon_height 16
-
-
 const unsigned char settings16_bitmap[] PROGMEM = {
   // size is 16 x 16
   0x03,0xC0, // ......####......
@@ -129,7 +125,7 @@ void setup()
   else if ( u8g.getMode() == U8G_MODE_HICOLOR ) {
     u8g.setHiColorByRGB(255, 255, 255);
   }
-
+  clearOLED();
   delay(100);
   
   voltagetest();
@@ -161,25 +157,40 @@ void setup()
 
 
 
+void clearOLED(){
+    u8g.firstPage();  
+    do {
+    } while( u8g.nextPage() );
+}
+
 
 void voltagetest() 
 {
+
   int sensorValue = analogRead(A0);   // read the input on analog pin 0:
-  voltage = sensorValue * (5.0 / 1023.0) * ((R1+R2)/R2);   // Convert the analog reading (which goes from 0 - 1023) to a voltage, considering the voltage divider:
+   voltage = sensorValue * (5.0 / 1023.0) * ((R1+R2)/R2);   // Convert the analog reading (which goes from 0 - 1023) to a voltage, considering the voltage divider:
  // Serial.println(voltage);   // print out the value you read:
+   voltage = round(voltage * 10) / 10.0; //round the result
 
+   float cellvoltage = voltage / lipo;
+   
+   
+delay (10);
 
-  if (voltage > 4.9) 
-  { // case if voltage is above 4.9v
+  if (cellvoltage > 4.0) 
+  { // case if voltage is above 4.0v
     u8g.drawBox(2, 5, 2, 2);
     u8g.drawBox(5, 5, 2, 2);
     u8g.drawBox(8, 5, 2, 2);
     u8g.drawFrame(0, 5 - 2, 12, 6);
     u8g.drawBox(12, 5, 1, 2);
+    Serial.println(cellvoltage, 1);
+    Serial.print("Battery full");
   }
 
-  else if (voltage < 3.9 && voltage > 3.4) 
+  else if (cellvoltage < 3.9 && voltage > 3.4) 
   { // case if voltage is below 3.4
+    Serial.println(cellvoltage, 1);
     Serial.print("Battery half");
     u8g.drawBox(2, 5, 2, 2);
     u8g.drawBox(5, 5, 2, 2);
@@ -187,10 +198,11 @@ void voltagetest()
     u8g.drawBox(12, 5, 1, 2);
   }
 
-  else if (voltage < 3.4) 
+  else if (cellvoltage < 3.4) 
   { // case if voltage is below 3.4
     beep_criticalt(225);
     Serial.print("Battery critical");
+    Serial.println(cellvoltage, 1);
     u8g.drawBox(2, 5, 2, 2);
     u8g.drawFrame(0, 5 - 2, 12, 6);
     u8g.drawBox(12, 5, 1, 2);
@@ -199,40 +211,13 @@ void voltagetest()
 
   else 
   {
-   u8g.drawBox(2, 5, 2, 2);
-    u8g.drawBox(5, 5, 2, 2);
-    u8g.drawBox(8, 5, 2, 2);
+  
     u8g.drawFrame(0, 5 - 2, 12, 6);
     u8g.drawBox(12, 5, 1, 2);
   }
 
-  // graphic commands to redraw the complete screen should be placed here
-  u8g.setFont(u8g_font_5x7);
-  u8g.setPrintPos(34, 9);
-  u8g.print("BATTERY");
-  u8g.setFont(u8g_font_5x7);
-  u8g.setPrintPos(18, 9);
-  u8g.print(lipo);
-  u8g.setFont(u8g_font_5x7);
-  u8g.setPrintPos(24, 9);
-  u8g.print("S");
-  u8g.setFont(u8g_font_profont22);
-  u8g.setPrintPos(0, 32);
-  u8g.print(voltage);
-  u8g.setPrintPos(62, 32);
-  u8g.print("v");
+ 
 
-  u8g.drawBitmapP( 98, 2, 1, 8, DVRstatus8_bitmap);
-
-  u8g.drawFrame(1, 46 - 2, 124, 18);
-  u8g.setFont(u8g_font_5x7);
-  u8g.setPrintPos(30, 55);
-  u8g.print("Press for Menu");
-
-  u8g.setPrintPos(111, 9);
-  u8g.print("OSD");
-
-  delay(10);
 }
 
 
@@ -269,10 +254,38 @@ void loop()  {
   u8g.firstPage();
   do {
     voltagetest();
+
+     // graphic commands to redraw the complete screen should be placed here
+  u8g.setFont(u8g_font_5x7);
+  u8g.setPrintPos(34, 9);
+  u8g.print("BATTERY");
+  u8g.setFont(u8g_font_5x7);
+  u8g.setPrintPos(18, 9);
+  u8g.print(lipo);
+  u8g.setFont(u8g_font_5x7);
+  u8g.setPrintPos(24, 9);
+  u8g.print("S");
+  u8g.setFont(u8g_font_profont22);
+  u8g.setPrintPos(0, 32);
+  u8g.print(voltage, 1);
+  u8g.setPrintPos(52, 32);
+  u8g.print("v");
+
+  u8g.drawBitmapP( 98, 2, 1, 8, DVRstatus8_bitmap);
+
+  u8g.drawFrame(1, 46 - 2, 124, 18);
+  u8g.setFont(u8g_font_5x7);
+  u8g.setPrintPos(30, 55);
+  u8g.print("Press for Menu");
+
+  u8g.setPrintPos(111, 9);
+  u8g.print("OSD");
+  
   }
   while (u8g.nextPage());
   delay(DELAY);
 }
+
 
 // Beep-Stuff
 
