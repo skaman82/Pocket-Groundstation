@@ -30,6 +30,7 @@ float voltage;
 
 int lipo;
 
+float alarmvalue = 3.40;
 
 const unsigned char settings16_bitmap[] PROGMEM = {
   // size is 16 x 16
@@ -111,7 +112,6 @@ void setup()
   pinMode(BUTTON3_PIN, INPUT_PULLUP);
 
   Serial.begin(9600);
-  
 
   if ( u8g.getMode() == U8G_MODE_R3G3B2 ) {
     u8g.setColorIndex(255);     // white
@@ -127,7 +127,9 @@ void setup()
   }
   clearOLED();
   delay(100);
-  
+
+
+
   voltagetest();
   if (voltage > (Voltagedetect * 5.0))
   {
@@ -173,7 +175,9 @@ void voltagetest()
    voltage = round(voltage * 10) / 10.0; //round the result
 
    float cellvoltage = voltage / lipo;
-   int alarmvalue = 3.4;
+
+    u8g.setPrintPos(80, 35);
+    u8g.print(alarmvalue);
    
 delay (10);
 
@@ -243,6 +247,10 @@ void loop()  {
     {
      beep(1);
      Serial.print("Button2 pressed");
+       if (alarmvalue > 2.70) { 
+          alarmvalue -= 0.10;
+       }
+       else { }
     }
 
     
@@ -251,6 +259,11 @@ void loop()  {
     {
      beep(1);
      Serial.print("Button3 pressed");
+     if (alarmvalue < 3.50) {
+      alarmvalue += 0.10;
+      }
+      else { }
+
     }
     
 
@@ -315,8 +328,7 @@ void beep_criticalt(unsigned char delayms)
   tone(beeppin, note, 400);  // 400ms beep (C4 Tone)
   delay(800);
   tone(beeppin, note, 400);  // 400ms beep (C4 Tone)
-  delay(800);
-  tone(beeppin, note, 400);  // 400ms beep (C4 Tone)
+  delay(200);
 }
 
 void beep_x(byte b)
