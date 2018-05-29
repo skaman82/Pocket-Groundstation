@@ -173,7 +173,7 @@ void voltagetest()
    voltage = round(voltage * 10) / 10.0; //round the result
 
    float cellvoltage = voltage / lipo;
-   
+   int alarmvalue = 3.4;
    
 delay (10);
 
@@ -200,23 +200,27 @@ delay (10);
 
   else if (cellvoltage < 3.4) 
   { // case if voltage is below 3.4
-    beep_criticalt(225);
-    Serial.print("Battery critical");
+    Serial.print("Battery low");
     Serial.println(cellvoltage, 1);
     u8g.drawBox(2, 5, 2, 2);
     u8g.drawFrame(0, 5 - 2, 12, 6);
     u8g.drawBox(12, 5, 1, 2);
-
   }
-
+  
   else 
   {
-  
     u8g.drawFrame(0, 5 - 2, 12, 6);
     u8g.drawBox(12, 5, 1, 2);
   }
 
- 
+ if (cellvoltage < (alarmvalue)) 
+  { // case if voltage is under the set alarm value
+    beep_criticalt(225);
+    Serial.print("Battery alarm!");
+  }
+  else 
+  {
+    }
 
 }
 
@@ -291,7 +295,7 @@ void loop()  {
 
 void beep(unsigned char delayms) 
 {
-  tone(beeppin, note, 10);  // 100ms beep (C4 Tone)
+  tone(beeppin, note, 10);  // 10ms beep (C4 Tone)
 }
 
 void beep_long(unsigned char delayms) 
