@@ -1,0 +1,34 @@
+#######################################
+# Syntax Coloring Map max7456
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Max7456	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+init	KEYWORD2
+activateOSD	KEYWORD2
+byteArray2CARACT	KEYWORD2
+CARACT2ByteArray	KEYWORD2
+getCARACFromProgMem	KEYWORD2
+getCharacter	KEYWORD2
+print	KEYWORD2
+printCharacterToSerial	KEYWORD2
+printMax7456Char	KEYWORD2
+printMax7456Chars	KEYWORD2
+sendCharacter	KEYWORD2
+clearScreen	KEYWORD2
+setBlinkParams	KEYWORD2
+setDisplayOffsets	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+charact	LITERAL1
