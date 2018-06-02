@@ -1,7 +1,6 @@
 
 #include <SPI.h>
 #include <max7456.h>
-#include <max7456Registers.h>
 
 #define redLed 3
 #define greenLed 4
@@ -15,7 +14,7 @@ void setup()
   SPI.begin();
 
 
-  osd.init(10);
+  osd.init(9);
   osd.setDisplayOffsets(30,18);
   osd.setBlinkParams(_8fields, _BT_BT);
  
