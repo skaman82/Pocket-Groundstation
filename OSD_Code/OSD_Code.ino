@@ -48,21 +48,22 @@ void OSDreceive()
 {
   osddata = Serial.read();
   
-  /*
+  
   layoutEEP = (0x180000 & osddata) >> 19;
   blinkosd = (0x60000 & osddata) >> 17;
   DVRstatus = (0x10000 & osddata) >> 16;
   RSSIavail = (0x8000 & osddata) >> 15;
   RSSI = (0x7F00 & osddata) >> 8;
   VoltageByte = 0x7F & osddata;
-  */
   
+  /*
   layoutEEP = osddata >> 19;
   blinkosd = osddata >> 17;
   DVRstatus = osddata >> 16;
   RSSIavail = osddata >> 15;
   RSSI = osddata >> 8);
   VoltageByte = osddata);
+  */
   
 }
 
