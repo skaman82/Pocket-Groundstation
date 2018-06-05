@@ -11,9 +11,11 @@ An attempt to create a mini ground station that will accept any Fatshark module.
 • Build-in DVR</br>
 • Switch to toggle between DVR output (to adjust settings or review footage) or direct module output</br>
 
-• Bonus (help required): low-voltage alarm and cell autodetection (adjustable via OLED, so it can work with lipo or li-ion batteries)</br>
-• Bonus (help required): DRV-control via OLED (Eachine Pro DVR)</br>
-• Bonus (help required): OSD overlay in the videofeed for GS battery status – probably with minimosd micro</br></br>
+• Low-voltage alarm and cell autodetection (adjustable via OLED, so it can work with lipo or li-ion batteries)</br>
+• (in progress): DRV-control via OLED (Eachine Pro DVR)</br>
+• (in progress): OSD overlay in the videofeed for GS battery status – probably with minimosd micro</br>
+• (bonus): RSSI-information and DVR-Autostart (only with True-D module with 3.7D firmware)</br>
+</br>
 
 Many problems to solve! If you want to join the project or contribute, you are very welcome to do so!</br>
 I will need any help I can get to solve the things involving coding (marked as BONUS)</br></br>
