@@ -20,7 +20,7 @@ LASEREINHORNBACKFISCH
 
 #define beeppin 9 // Beeper Pin
 
-#define DELAY                    20  // Delay per loop in ms
+#define DELAY                    2  // Delay per loop in ms
  
 #include "U8glib.h"
 #include <EEPROM.h>
@@ -42,12 +42,16 @@ boolean DVRstatus = 0;
 boolean RSSIavail;
 byte RSSI;
 byte VoltageByte;
+byte refreshi = 0; 
 byte volti = 0; // Counter vor Voltage measure
 byte menusel = 0;
 byte pressedbut = 0;
+float cellvoltage;
+boolean osdON = 1;
 
 
-const unsigned char splash_bitmap[] PROGMEM = {
+const unsigned char splash_bitmap[] PROGMEM = 
+{
   // size is 128 x 64
 0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, // ################################################################################################################################
   0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, // ################################################################################################################################
@@ -117,7 +121,8 @@ const unsigned char splash_bitmap[] PROGMEM = {
 }
 ;
 
-const unsigned char settings16_bitmap[] PROGMEM = {
+const unsigned char settings16_bitmap[] PROGMEM = 
+{
   // size is 16 x 16
   0x03,0xC0, // ......####......
   0x03,0xC8, // ......####..#...
@@ -216,10 +221,10 @@ void setup()
   {
     alarmvalue = (alarmvalueEEP / 10.0);
   }
-  else {
-        alarmvalue = 3.40;
-
-    }
+  else 
+  {
+    alarmvalue = 3.40;
+  }
 
   Serial.begin(9600);
   OSDsoft.begin(9600);
@@ -281,7 +286,8 @@ void clearOLED(){
     } while( u8g.nextPage() );
 }
 
-void showlogo(){
+void showlogo()
+{
  u8g.firstPage();
   do {
 // splashscreen goes here
@@ -290,8 +296,6 @@ void showlogo(){
       while (u8g.nextPage());
       delay(1500);
       clearOLED();
-
-
 }
 
 
@@ -303,50 +307,14 @@ void voltagetest()
   // Serial.println(voltage);   // print out the value you read:
   voltage = round(voltage * 10) / 10.0; //round the result
 
-  float cellvoltage = voltage / lipo;
-
-  u8g.drawFrame(96, 16 - 1, 29, 20);
-  u8g.drawBox(96, 16, 29, 6);
-  u8g.setPrintPos(101, 31);
-  u8g.print(alarmvalue);
-  u8g.setColorIndex(0);
-  u8g.setPrintPos(101, 21);
-  u8g.setFont(u8g_font_micro);
-  u8g.print("ALARM");
-  u8g.setColorIndex(1);
+  cellvoltage = voltage / lipo;
   
   /*
   delay(10);
    Serial.println(cellvoltage, 1);
    */
 
-  if (cellvoltage > 4.0) // case if voltage is above 4.0v
-  { 
-    u8g.drawBox(2, 5, 2, 2);
-    u8g.drawBox(5, 5, 2, 2);
-    u8g.drawBox(8, 5, 2, 2);
-    u8g.drawFrame(0, 5 - 2, 12, 6);
-    u8g.drawBox(12, 5, 1, 2);
-  } 
-  else if (cellvoltage < 3.9 && voltage > 3.4) // case if voltage is below 3.4
-  {
-    u8g.drawBox(2, 5, 2, 2);
-    u8g.drawBox(5, 5, 2, 2);
-    u8g.drawFrame(0, 5 - 2, 12, 6);
-    u8g.drawBox(12, 5, 1, 2);
-  } 
-  else if (cellvoltage < 3.4) // case if voltage is below 3.4
-  { 
-    
-    u8g.drawBox(2, 5, 2, 2);
-    u8g.drawFrame(0, 5 - 2, 12, 6);
-    u8g.drawBox(12, 5, 1, 2);
-  } 
-  else 
-  {
-    u8g.drawFrame(0, 5 - 2, 12, 6);
-    u8g.drawBox(12, 5, 1, 2);
-  }
+  
 
   if (cellvoltage < (alarmvalue)) // case if voltage is under the set alarm value
   { 
@@ -362,6 +330,7 @@ byte buttoncheck()
   {
     while(digitalRead(BUTTON1_PIN) != 1)
     {
+      delay(5);
     }
     buttonz = 1;
   }
@@ -369,6 +338,7 @@ byte buttoncheck()
   {
     while(digitalRead(BUTTON2_PIN) != 1)
     {
+      delay(5);
     }
     buttonz = 2;
   }
@@ -376,9 +346,11 @@ byte buttoncheck()
   {
     while(digitalRead(BUTTON3_PIN) != 1)
     {
+      delay(5);
     }
     buttonz = 3;
   }
+  delay(10);
   pressedbut = buttonz;
   return buttonz;
 }
@@ -388,20 +360,109 @@ byte buttoncheck()
 
 void loop() 
 {
-  // handle buttons
-
-  int buttonState1 = !digitalRead(BUTTON1_PIN); // pin low -> pressed
-  if (buttonState1 == 1) 
+  
+  
+  
+  
+  refreshi++;
+  //clearOLED();
+  if(refreshi > 20)
   {
-    //beep(1);
+    volti++;
+    if(volti > 25)
+    {
+      voltagetest();
+      volti = 0;
+    }
+    u8g.firstPage();
+    do {
+      // graphic commands to redraw the complete screen should be placed here
+      u8g.setFont(u8g_font_5x7);
+      u8g.setPrintPos(34, 9);
+      u8g.print("BATTERY");
+      u8g.setFont(u8g_font_5x7);
+      u8g.setPrintPos(18, 9);
+      u8g.print(lipo);
+      u8g.setFont(u8g_font_5x7);
+      u8g.setPrintPos(24, 9);
+      u8g.print("S");
+      u8g.setFont(u8g_font_profont22);
+      u8g.setPrintPos(0, 32);
+      u8g.print(voltage, 1);
+      if (voltage > 10.0) {
+      u8g.setPrintPos(52, 32);
+      u8g.print("v");
+      }
+      else if (voltage < 10.0) {
+      u8g.setPrintPos(40, 32);
+      u8g.print("v");
+        }
+
+      u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
+
+      u8g.drawFrame(1, 46 - 2, 124, 18);
+      u8g.setFont(u8g_font_5x7);
+      u8g.setPrintPos(30, 55);
+      u8g.print("Press for Menu");
+
+      u8g.setPrintPos(111, 9);
+      u8g.print("OSD");
+      
+      u8g.drawFrame(96, 16 - 1, 29, 20);
+      u8g.drawBox(96, 16, 29, 6);
+      u8g.setPrintPos(101, 31);
+      u8g.print(alarmvalue);
+      u8g.setColorIndex(0);
+      u8g.setPrintPos(101, 21);
+      u8g.setFont(u8g_font_micro);
+      u8g.print("ALARM");
+      u8g.setColorIndex(1);
+      
+      if (cellvoltage > 4.0) // case if voltage is above 4.0v
+      { 
+        u8g.drawBox(2, 5, 2, 2);
+        u8g.drawBox(5, 5, 2, 2);
+        u8g.drawBox(8, 5, 2, 2);
+        u8g.drawFrame(0, 5 - 2, 12, 6);
+        u8g.drawBox(12, 5, 1, 2);
+      } 
+      else if (cellvoltage < 3.9 && voltage > 3.4) // case if voltage is below 3.4
+      {
+        u8g.drawBox(2, 5, 2, 2);
+        u8g.drawBox(5, 5, 2, 2);
+        u8g.drawFrame(0, 5 - 2, 12, 6);
+        u8g.drawBox(12, 5, 1, 2);
+      } 
+      else if (cellvoltage < 3.4) // case if voltage is below 3.4
+      { 
+        
+        u8g.drawBox(2, 5, 2, 2);
+        u8g.drawFrame(0, 5 - 2, 12, 6);
+        u8g.drawBox(12, 5, 1, 2);
+      } 
+      else 
+      {
+        u8g.drawFrame(0, 5 - 2, 12, 6);
+        u8g.drawBox(12, 5, 1, 2);
+      }
+
+    }
+    while (u8g.nextPage()
+    );
+    refreshi = 0;
+    OSDsend();
+    
+  }
+  
+  buttoncheck();
+  if (pressedbut == 1) 
+  {
     menu();
     Serial.print("Button1 pressed");
   }
-
-  int buttonState2 = !digitalRead(BUTTON2_PIN); // pin low -> pressed
-  if (buttonState2 == 1) 
+  
+  if (pressedbut == 2) 
   {
-    //beep(1);
     Serial.print("Button2 pressed");
     if (alarmvalue > 2.70) 
     {
@@ -410,65 +471,17 @@ void loop()
       EEPROM.write(alarmADDR, alarmvalueEEP);
     }
   }
-
-  int buttonState3 = !digitalRead(BUTTON3_PIN); // pin low -> pressed
-  if (buttonState3 == 1) 
+  
+  if (pressedbut == 3) 
   {
-    //beep(1);
     Serial.print("Button3 pressed");
-    if (alarmvalue < 3.50) 
+    if (alarmvalue < 3.90) 
     {
       alarmvalue += 0.10;
       alarmvalueEEP = alarmvalue * 10.0;
       EEPROM.write(alarmADDR, alarmvalueEEP);
     }
   }
-  
-  volti++;
-  //clearOLED();
-  if(volti == 20)
-  {
-    voltagetest();
-    OSDsend();
-    volti = 0;
-  }
-  
-  u8g.firstPage();
-  do {
-    // graphic commands to redraw the complete screen should be placed here
-    u8g.setFont(u8g_font_5x7);
-    u8g.setPrintPos(34, 9);
-    u8g.print("BATTERY");
-    u8g.setFont(u8g_font_5x7);
-    u8g.setPrintPos(18, 9);
-    u8g.print(lipo);
-    u8g.setFont(u8g_font_5x7);
-    u8g.setPrintPos(24, 9);
-    u8g.print("S");
-    u8g.setFont(u8g_font_profont22);
-    u8g.setPrintPos(0, 32);
-    u8g.print(voltage, 1);
-    if (voltage > 10.0) {
-    u8g.setPrintPos(52, 32);
-    u8g.print("v");
-    }
-    else if (voltage < 10.0) {
-    u8g.setPrintPos(40, 32);
-    u8g.print("v");
-      }
-
-    u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
-
-    u8g.drawFrame(1, 46 - 2, 124, 18);
-    u8g.setFont(u8g_font_5x7);
-    u8g.setPrintPos(30, 55);
-    u8g.print("Press for Menu");
-
-    u8g.setPrintPos(111, 9);
-    u8g.print("OSD");
-
-  }
-  while (u8g.nextPage());
   
   
   
@@ -524,7 +537,7 @@ void menu()
         u8g.setPrintPos(10, 56);
         u8g.print("EXIT");
       }
-      else
+      else if(menusel == 2)
       {
         u8g.drawFrame(1, 6 - 2, 124, 18);
         u8g.setFont(u8g_font_5x7);
@@ -556,6 +569,7 @@ void menu()
       // Press selected Menu Point
       if(menusel == 2)
       {
+        refreshi = 20;
         exit = 1;
       }
     }
