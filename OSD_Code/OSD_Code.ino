@@ -8,7 +8,7 @@
 int osdpage = 1;
 float alarmvalue;
 float cellvoltage;
-int32_t osddata;
+int32_t osddata = 0;
 byte layoutEEP = 1;
 byte blinkosd = 0;
 boolean DVRstatus = 0;
@@ -46,7 +46,16 @@ void setup()
 
 void OSDreceive()
 {
-  osddata = Serial.read();
+  delay(2);
+  byte b1 = Serial.read();
+  byte b2 = Serial.read();
+  byte b3 = Serial.read();
+  byte b4 = Serial.read();
+  
+  osddata = ((int32_t)b1 << 24);
+  osddata += ((int32_t)b2 << 16);
+  osddata += ((int32_t)b3 << 8);
+  osddata += b4;
   
   
   layoutEEP = (0x180000 & osddata) >> 19;
