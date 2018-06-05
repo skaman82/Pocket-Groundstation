@@ -234,9 +234,9 @@ void setup()
   else if ( u8g.getMode() == U8G_MODE_HICOLOR ) {
     u8g.setHiColorByRGB(255, 255, 255);
   }
-clearOLED();
 
   delay(100);
+     clearOLED();
     showlogo();
 
 
@@ -280,8 +280,9 @@ void clearOLED(){
 }
 
 void showlogo(){
-     u8g.drawBitmapP(50, 20, 1, 8, DVRstatus8_bitmap);
+    u8g.drawFrame(0, 5 - 2, 12, 6);
      delay(1000);
+
 }
 
 
@@ -405,8 +406,14 @@ void loop()
     u8g.setFont(u8g_font_profont22);
     u8g.setPrintPos(0, 32);
     u8g.print(voltage, 1);
+    if (voltage > 10.0) {
     u8g.setPrintPos(52, 32);
     u8g.print("v");
+    }
+    else if (voltage < 10.0) {
+    u8g.setPrintPos(40, 32);
+    u8g.print("v");
+      }
 
     u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
 
