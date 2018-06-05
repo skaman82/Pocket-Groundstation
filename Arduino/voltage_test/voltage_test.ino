@@ -478,6 +478,7 @@ void loop()
 
 void menu() 
 {
+  menusel = 0;
   byte exit = 0;
   while(exit == 0)
   {
