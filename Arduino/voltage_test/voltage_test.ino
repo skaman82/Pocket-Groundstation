@@ -36,13 +36,13 @@ float voltage;
 int lipo;
 float alarmvalue = 3.40;
 byte alarmvalueEEP;
-byte layoutEEP;
-byte dvrEEP;
+byte layoutEEP = 2;
+byte dvrEEP = 1;
 int32_t osddata;
 byte blinkosd = 0;
 boolean DVRstatus = 0;
 boolean RSSIavail;
-byte RSSI;
+byte RSSI = 69;
 byte VoltageByte;
 byte refreshi = 0; 
 byte volti = 0; // Counter vor Voltage measure
@@ -203,7 +203,25 @@ void OSDsend()
    osddata += (RSSIavail << 15);
    osddata += (RSSI << 8);
   osddata += VoltageByte;
-  OSDsoft.write(osddata);
+  //int32_t dat = 0x80C0E0F0;
+  
+  byte b1 = ((osddata >> 24) & 0xFF);
+  byte b2 = ((osddata >> 16) & 0xFF);
+  byte b3 = ((osddata >> 8) & 0xFF);
+  byte b4 = (osddata & 0xFF);
+  
+  OSDsoft.write(b1);
+  //delay(2)
+  OSDsoft.write(b2);
+  //delay(2)
+  OSDsoft.write(b3);
+  //delay(2)
+  OSDsoft.write(b4);
+  //delay(2)
+  //Serial.println(osddata);
+  
+  //OSDsoft.print(osddata);
+  
 
 }
 
@@ -307,6 +325,7 @@ void voltagetest()
   voltage = sensorValue * (5.0 / 1023.0) * ((R1 + R2) / R2); // Convert the analog reading (which goes from 0 - 1023) to a voltage, considering the voltage divider:
   // Serial.println(voltage);   // print out the value you read:
   voltage = round(voltage * 10) / 10.0; //round the result
+  VoltageByte = voltage*10;
 
   cellvoltage = voltage / lipo;
   
