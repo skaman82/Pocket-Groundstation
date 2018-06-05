@@ -197,12 +197,12 @@ void pause()
 
 void OSDsend()
 {
- osddata += (layoutEEP << 19);
- osddata += (blinkosd << 17);
- osddata += (DVRstatus << 16);
- osddata += (RSSIavail << 15);
- osddata += (RSSI << 8);
- osddata += VoltageByte;
+   osddata = (layoutEEP << 19);
+   osddata += (blinkosd << 17);
+   osddata += (DVRstatus << 16);
+   osddata += (RSSIavail << 15);
+   osddata += (RSSI << 8);
+  osddata += VoltageByte;
   OSDsoft.write(osddata);
 
 }
@@ -331,7 +331,7 @@ byte buttoncheck()
   {
     while(digitalRead(BUTTON1_PIN) != 1)
     {
-      delay(5);
+      delay(2);
     }
     buttonz = 1;
   }
@@ -339,7 +339,7 @@ byte buttoncheck()
   {
     while(digitalRead(BUTTON2_PIN) != 1)
     {
-      delay(5);
+      delay(2);
     }
     buttonz = 2;
   }
@@ -347,11 +347,11 @@ byte buttoncheck()
   {
     while(digitalRead(BUTTON3_PIN) != 1)
     {
-      delay(5);
+      delay(2);
     }
     buttonz = 3;
   }
-  delay(10);
+  //delay(10);
   pressedbut = buttonz;
   return buttonz;
 }
@@ -367,10 +367,10 @@ void loop()
   
   refreshi++;
   //clearOLED();
-  if(refreshi > 20)
+  if(refreshi > 10)
   {
     volti++;
-    if(volti > 25)
+    if(volti > 20)
     {
       voltagetest();
       OSDsend();
@@ -385,6 +385,7 @@ void loop()
       u8g.setFont(u8g_font_5x7);
       u8g.setPrintPos(18, 9);
       u8g.print(lipo);
+      //u8g.print(volti);
       u8g.setFont(u8g_font_5x7);
       u8g.setPrintPos(24, 9);
       u8g.print("S");
@@ -577,7 +578,7 @@ void menu()
       // Press selected Menu Point
       if(menusel == 2)
       {
-        refreshi = 20;
+        refreshi = 10;
         exit = 1;
       }
     }
