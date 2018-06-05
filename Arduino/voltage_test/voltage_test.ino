@@ -372,6 +372,7 @@ void loop()
     if(volti > 25)
     {
       voltagetest();
+      OSDsend();
       volti = 0;
     }
     u8g.firstPage();
@@ -457,7 +458,6 @@ void loop()
     while (u8g.nextPage()
     );
     refreshi = 0;
-    OSDsend();
     
   }
   
