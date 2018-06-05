@@ -393,12 +393,16 @@ void loop()
       u8g.setPrintPos(52, 32);
       u8g.print("v");
       }
-      else if (voltage < 10.0) {
-      u8g.setPrintPos(40, 32);
-      u8g.print("v");
-        }
-
-      u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
+      else if (voltage < 10.0) 
+      {
+        u8g.setPrintPos(40, 32);
+        u8g.print("v");
+      }
+      
+      if(osdON)
+      {
+        u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
+      }
 
       u8g.drawFrame(1, 46 - 2, 124, 18);
       u8g.setFont(u8g_font_5x7);
@@ -406,7 +410,10 @@ void loop()
       u8g.print("Press for Menu");
 
       u8g.setPrintPos(111, 9);
-      u8g.print("OSD");
+      if(osdON)
+      {
+        u8g.print("OSD");
+      }
       
       u8g.drawFrame(96, 16 - 1, 29, 20);
       u8g.drawBox(96, 16, 29, 6);
