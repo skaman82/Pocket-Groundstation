@@ -26,7 +26,7 @@ LASEREINHORNBACKFISCH
 #include <EEPROM.h>
 #include <SoftwareSerial.h>
 
-U8GLIB_SH1106_128X64 u8g(U8G_I2C_OPT_DEV_0 | U8G_I2C_OPT_FAST);  // Dev 0, Fast I2C / TWI
+U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_DEV_0 | U8G_I2C_OPT_FAST);  // Dev 0, Fast I2C / TWI
 
 SoftwareSerial OSDsoft(10, 11); // RX, TX
 
@@ -42,6 +42,9 @@ boolean DVRstatus = 0;
 boolean RSSIavail;
 byte RSSI;
 byte VoltageByte;
+byte volti = 0; // Counter vor Voltage measure
+byte menusel = 0;
+byte pressedbut = 0;
 
 
 const unsigned char splash_bitmap[] PROGMEM = {
@@ -194,14 +197,13 @@ void OSDsend()
  osddata += (RSSIavail << 15);
  osddata += (RSSI << 8);
  osddata += VoltageByte;
-  OSDsoft.print(osddata);
+  OSDsoft.write(osddata);
 
 }
 
 
 void setup()  
 {
-
   pinMode(BUTTON1_PIN, INPUT_PULLUP);
   pinMode(BUTTON2_PIN, INPUT_PULLUP);
   pinMode(BUTTON3_PIN, INPUT_PULLUP);
@@ -312,9 +314,11 @@ void voltagetest()
   u8g.setFont(u8g_font_micro);
   u8g.print("ALARM");
   u8g.setColorIndex(1);
-
+  
+  /*
   delay(10);
    Serial.println(cellvoltage, 1);
+   */
 
   if (cellvoltage > 4.0) // case if voltage is above 4.0v
   { 
@@ -351,6 +355,34 @@ void voltagetest()
 
 }
 
+byte buttoncheck()
+{
+  byte buttonz = 0;
+  if (digitalRead(BUTTON1_PIN) != 1)
+  {
+    while(digitalRead(BUTTON1_PIN) != 1)
+    {
+    }
+    buttonz = 1;
+  }
+  else if (digitalRead(BUTTON2_PIN) != 1)
+  {
+    while(digitalRead(BUTTON2_PIN) != 1)
+    {
+    }
+    buttonz = 2;
+  }
+  else if (digitalRead(BUTTON3_PIN) != 1)
+  {
+    while(digitalRead(BUTTON3_PIN) != 1)
+    {
+    }
+    buttonz = 3;
+  }
+  pressedbut = buttonz;
+  return buttonz;
+}
+
 
 
 
@@ -361,7 +393,7 @@ void loop()
   int buttonState1 = !digitalRead(BUTTON1_PIN); // pin low -> pressed
   if (buttonState1 == 1) 
   {
-    beep(1);
+    //beep(1);
     menu();
     Serial.print("Button1 pressed");
   }
@@ -369,7 +401,7 @@ void loop()
   int buttonState2 = !digitalRead(BUTTON2_PIN); // pin low -> pressed
   if (buttonState2 == 1) 
   {
-    beep(1);
+    //beep(1);
     Serial.print("Button2 pressed");
     if (alarmvalue > 2.70) 
     {
@@ -382,7 +414,7 @@ void loop()
   int buttonState3 = !digitalRead(BUTTON3_PIN); // pin low -> pressed
   if (buttonState3 == 1) 
   {
-    beep(1);
+    //beep(1);
     Serial.print("Button3 pressed");
     if (alarmvalue < 3.50) 
     {
@@ -391,11 +423,18 @@ void loop()
       EEPROM.write(alarmADDR, alarmvalueEEP);
     }
   }
-
+  
+  volti++;
+  //clearOLED();
+  if(volti == 20)
+  {
+    voltagetest();
+    OSDsend();
+    volti = 0;
+  }
+  
   u8g.firstPage();
   do {
-    voltagetest();
-
     // graphic commands to redraw the complete screen should be placed here
     u8g.setFont(u8g_font_5x7);
     u8g.setPrintPos(34, 9);
@@ -429,9 +468,7 @@ void loop()
     u8g.print("OSD");
 
   }
-  while (u8g.nextPage()
-  
-  );
+  while (u8g.nextPage());
   
   
   
@@ -439,34 +476,106 @@ void loop()
 
 }
 
-void menu() {
-     clearOLED();
-
-  u8g.firstPage();
-  do {
-    u8g.drawBox(1, 6 - 2, 124, 18);
-    u8g.setFont(u8g_font_5x7);
-    u8g.setPrintPos(10, 16);
-    u8g.setColorIndex(0);
-    u8g.print("DVR MODE");
-    u8g.setColorIndex(1);
-    
-    u8g.drawFrame(1, 26 - 2, 124, 18);
-    u8g.setFont(u8g_font_5x7);
-    u8g.setPrintPos(10, 36);
-    u8g.print("SETTINGS");
-    
-    u8g.drawFrame(1, 46 - 2, 124, 18);
-    u8g.setFont(u8g_font_5x7);
-    u8g.setPrintPos(10, 56);
-    u8g.print("EXIT");
+void menu() 
+{
+  byte exit = 0;
+  while(exit == 0)
+  {
+    clearOLED();
+    u8g.firstPage();
+    do
+    {
+      if(menusel == 0)
+      {
+        u8g.drawBox(1, 6 - 2, 124, 18);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(10, 16);
+        u8g.setColorIndex(0);
+        u8g.print("DVR MODE");
+        u8g.setColorIndex(1);
+        
+        u8g.drawFrame(1, 26 - 2, 124, 18);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(10, 36);
+        u8g.print("SETTINGS");
+        
+        u8g.drawFrame(1, 46 - 2, 124, 18);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(10, 56);
+        u8g.print("EXIT");
+      }
+      else if(menusel == 1)
+      {
+        u8g.drawFrame(1, 6 - 2, 124, 18);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(10, 16);
+        u8g.print("DVR MODE");
+        
+        u8g.drawBox(1, 26 - 2, 124, 18);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(10, 36);
+        u8g.setColorIndex(0);
+        u8g.print("SETTINGS");
+        u8g.setColorIndex(1);
+        
+        u8g.drawFrame(1, 46 - 2, 124, 18);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(10, 56);
+        u8g.print("EXIT");
+      }
+      else
+      {
+        u8g.drawFrame(1, 6 - 2, 124, 18);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(10, 16);
+        u8g.print("DVR MODE");
+        
+        u8g.drawFrame(1, 26 - 2, 124, 18);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(10, 36);
+        u8g.print("SETTINGS");
+        
+        u8g.drawBox(1, 46 - 2, 124, 18);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(10, 56);
+        u8g.setColorIndex(0);
+        u8g.print("EXIT");
+        u8g.setColorIndex(1);
+      }
     }
-      while (u8g.nextPage()
+    while (u8g.nextPage());
+    
+    pressedbut = buttoncheck();
+    while(pressedbut == 0)
+    {
+      buttoncheck();
+    }
+    if(pressedbut == 1)
+    {
+      // Press selected Menu Point
+      if(menusel == 2)
+      {
+        exit = 1;
+      }
+    }
+    else if(pressedbut == 2)
+    {
+      if(menusel > 0)
+      {
+        menusel--;
+      }
+    }
+    else if(pressedbut == 3)
+    {
+      if(menusel < 2)
+      {
+        menusel++;
+      }
+    }
+  }
   
-  );
-      delay(10000);
 
-    }
+}
     
 
 // Beep-Stuff
