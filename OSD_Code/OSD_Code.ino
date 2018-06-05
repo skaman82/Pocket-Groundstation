@@ -76,7 +76,7 @@ void loop()
     OSDreceive();
   }
   
-  Voltage = (VoltageByte / 10.0);
+ int Voltage = (VoltageByte / 10.0);
   
   if (osdpage == 1) // Layout1
   { 
@@ -84,12 +84,11 @@ void loop()
 
   // RSSI printout
   osd.printMax7456Char(0x94,24,8);
-  osd.print("100",25,8);
+  osd.print("99",25,8);
  
   // voltage printout
   osd.printMax7456Char(0x90,24,6);
-  osd.print("12.4",25,6);
-
+  osd.print(Voltage,1,6);
   // DVR printout
   osd.printMax7456Char(0x99,24,7);
   osd.print("REC",25,7);

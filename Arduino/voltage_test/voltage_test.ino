@@ -188,14 +188,16 @@ void pause()
 
 void OSDsend()
 {
-  osddata += (layoutEEP << 19);
-  osddata += (blinkosd << 17);
-  osddata += (DVRstatus << 16);
-  osddata += (RSSIavail << 15);
-  osddata += (RSSI << 8);
-  osddata += VoltageByte;
-  OSDsoft.write(osddata);
+ osddata += (layoutEEP << 19);
+ osddata += (blinkosd << 17);
+ osddata += (DVRstatus << 16);
+ osddata += (RSSIavail << 15);
+ osddata += (RSSI << 8);
+ osddata += VoltageByte;
+  OSDsoft.print(osddata);
+
 }
+
 
 void setup()  
 {
@@ -212,6 +214,10 @@ void setup()
   {
     alarmvalue = (alarmvalueEEP / 10.0);
   }
+  else {
+        alarmvalue = (3.40 / 10.0);
+
+    }
 
   Serial.begin(9600);
   OSDsoft.begin(9600);
@@ -228,9 +234,14 @@ void setup()
   else if ( u8g.getMode() == U8G_MODE_HICOLOR ) {
     u8g.setHiColorByRGB(255, 255, 255);
   }
-  clearOLED();
-  delay(100);
+clearOLED();
 
+  delay(100);
+    showlogo();
+
+
+
+ 
 
 
   voltagetest();
@@ -266,6 +277,11 @@ void clearOLED(){
     u8g.firstPage();  
     do {
     } while( u8g.nextPage() );
+}
+
+void showlogo(){
+     u8g.drawBitmapP(50, 20, 1, 8, DVRstatus8_bitmap);
+     delay(1000);
 }
 
 
