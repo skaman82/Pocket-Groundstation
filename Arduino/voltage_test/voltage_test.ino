@@ -215,7 +215,7 @@ void setup()
     alarmvalue = (alarmvalueEEP / 10.0);
   }
   else {
-        alarmvalue = (3.40 / 10.0);
+        alarmvalue = 3.40;
 
     }
 
@@ -235,9 +235,9 @@ void setup()
     u8g.setHiColorByRGB(255, 255, 255);
   }
 
+  clearOLED();
+  showlogo();
   delay(100);
-     clearOLED();
-    showlogo();
 
 
 
@@ -280,8 +280,15 @@ void clearOLED(){
 }
 
 void showlogo(){
-    u8g.drawFrame(0, 5 - 2, 12, 6);
-     delay(1000);
+ u8g.firstPage();
+  do {
+// splashscreen goes here
+    u8g.drawBitmapP(0, 0, 16, 64, splash_bitmap);
+    }
+      while (u8g.nextPage());
+      delay(1500);
+      clearOLED();
+
 
 }
 
@@ -307,6 +314,7 @@ void voltagetest()
   u8g.setColorIndex(1);
 
   delay(10);
+   Serial.println(cellvoltage, 1);
 
   if (cellvoltage > 4.0) // case if voltage is above 4.0v
   { 
@@ -315,13 +323,9 @@ void voltagetest()
     u8g.drawBox(8, 5, 2, 2);
     u8g.drawFrame(0, 5 - 2, 12, 6);
     u8g.drawBox(12, 5, 1, 2);
-    Serial.println(cellvoltage, 1);
-    Serial.print("Battery full");
   } 
   else if (cellvoltage < 3.9 && voltage > 3.4) // case if voltage is below 3.4
   {
-    Serial.println(cellvoltage, 1);
-    Serial.print("Battery half");
     u8g.drawBox(2, 5, 2, 2);
     u8g.drawBox(5, 5, 2, 2);
     u8g.drawFrame(0, 5 - 2, 12, 6);
@@ -329,8 +333,7 @@ void voltagetest()
   } 
   else if (cellvoltage < 3.4) // case if voltage is below 3.4
   { 
-    Serial.print("Battery low");
-    Serial.println(cellvoltage, 1);
+    
     u8g.drawBox(2, 5, 2, 2);
     u8g.drawFrame(0, 5 - 2, 12, 6);
     u8g.drawBox(12, 5, 1, 2);
@@ -343,8 +346,7 @@ void voltagetest()
 
   if (cellvoltage < (alarmvalue)) // case if voltage is under the set alarm value
   { 
-    beep_criticalt(225);
-    Serial.print("Battery alarm!");
+    beep_criticalt(1);
   } 
 
 }
@@ -360,6 +362,7 @@ void loop()
   if (buttonState1 == 1) 
   {
     beep(1);
+    menu();
     Serial.print("Button1 pressed");
   }
 
@@ -426,10 +429,45 @@ void loop()
     u8g.print("OSD");
 
   }
-  while (u8g.nextPage());
+  while (u8g.nextPage()
+  
+  );
+  
+  
+  
   delay(DELAY);
+
 }
 
+void menu() {
+     clearOLED();
+
+  u8g.firstPage();
+  do {
+    u8g.drawBox(1, 6 - 2, 124, 18);
+    u8g.setFont(u8g_font_5x7);
+    u8g.setPrintPos(10, 16);
+    u8g.setColorIndex(0);
+    u8g.print("DVR MODE");
+    u8g.setColorIndex(1);
+    
+    u8g.drawFrame(1, 26 - 2, 124, 18);
+    u8g.setFont(u8g_font_5x7);
+    u8g.setPrintPos(10, 36);
+    u8g.print("SETTINGS");
+    
+    u8g.drawFrame(1, 46 - 2, 124, 18);
+    u8g.setFont(u8g_font_5x7);
+    u8g.setPrintPos(10, 56);
+    u8g.print("EXIT");
+    }
+      while (u8g.nextPage()
+  
+  );
+      delay(10000);
+
+    }
+    
 
 // Beep-Stuff
 
@@ -454,8 +492,7 @@ void beep_criticalt(unsigned char delayms)
 {
   tone(beeppin, note, 400); // 400ms beep (C4 Tone)
   delay(800);
-  tone(beeppin, note, 400); // 400ms beep (C4 Tone)
-  delay(200);
+
 }
 
 void beep_x(byte b) 
