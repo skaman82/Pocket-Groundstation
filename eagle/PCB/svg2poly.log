@@ -1,0 +1,10 @@
+
+Object origin:
+0.000000 0.000000
+
+Eagle Command:
+set wire_bend 2;
+change layer 1;
+set width 0.000500;
+poly;
+
