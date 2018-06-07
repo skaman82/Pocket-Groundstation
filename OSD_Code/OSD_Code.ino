@@ -63,7 +63,7 @@ void OSDreceive()
   DVRstatus = (0x10000 & osddata) >> 16;
   RSSIavail = (0x8000 & osddata) >> 15;
   RSSI = (0x7F00 & osddata) >> 8;
-  VoltageByte = 0x7F & osddata;
+  VoltageByte = 0xFF & osddata;
   
   /*
   layoutEEP = osddata >> 19;
@@ -84,9 +84,14 @@ void loop()
   {
     OSDreceive();
   }
-  
- int Voltage = (VoltageByte / 10.0);
-  
+ double voltage = (VoltageByte / 10);
+ double layoutEEP;
+ double RSSI;
+ double DVRstatus;
+ double blinkosd;
+ double RSSIavail;
+ 
+ 
   if (osdpage == 1) // Layout1
   { 
   osd.clearScreen();
@@ -97,7 +102,24 @@ void loop()
  
   // voltage printout
   osd.printMax7456Char(0x90,24,6);
-  osd.print(Voltage,1,6);
+  osd.print("VOLTAGE",1,3);
+  osd.print(voltage, 9, 3, 2, 1); // test for voltage
+  
+  osd.print("OSD LAY",1,4);
+  osd.print(layoutEEP, 9, 4, 2, 1); // test for OSD layout
+
+  osd.print("RSSI",1,5);
+  osd.print(RSSI, 9, 5, 2, 1); // test for RSSI strenght
+
+  osd.print("DVR",1,6);
+  osd.print(DVRstatus, 9, 6, 2, 1); // test for DVR status
+
+  osd.print("BLINK",1,7);
+  osd.print(blinkosd, 9, 7, 2, 1); // test for alarm status
+
+  osd.print("RS-A",1,8);
+  osd.print(RSSIavail, 9, 8, 2, 1); // test if RSSI is available
+  
   // DVR printout
   osd.printMax7456Char(0x99,24,7);
   osd.print("REC",25,7);
