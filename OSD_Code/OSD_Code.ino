@@ -118,7 +118,7 @@ void loop()
   osd.print(blinkosd, 9, 7, 2, 1); // test for alarm status
 
   osd.print("RS-A",1,8);
-  osd.print(RSSIavail, 9, 8, 2, 1); // test for alarm status
+  osd.print(RSSIavail, 9, 8, 2, 1); // test if RSSI is available
   
   // DVR printout
   osd.printMax7456Char(0x99,24,7);
