@@ -3634,11 +3634,8 @@ CONN_03
 <class number="0" name="default" width="0.762" drill="0.508">
 <clearance class="0" value="0.508"/>
 </class>
-<class number="1" name="thin" width="0.3" drill="0.3">
-<clearance class="1" value="0.3"/>
-</class>
-<class number="2" name="medium" width="0.4" drill="0.4">
-<clearance class="2" value="0.4"/>
+<class number="1" name="test" width="0.1" drill="0.508">
+<clearance class="1" value="0.508"/>
 </class>
 </classes>
 <parts>
@@ -3659,7 +3656,7 @@ CONN_03
 <text x="104.14" y="142.24" size="1.778" layer="91" rot="R180">VO DVR</text>
 <text x="104.14" y="139.7" size="1.778" layer="91" rot="R180">GND</text>
 <text x="101.6" y="198.12" size="1.778" layer="91" rot="R90">SDA (A4) </text>
-<text x="99.06" y="198.12" size="1.778" layer="91" rot="R90">SCL (A5)</text>
+<text x="99.06" y="198.12" size="1.778" layer="91" rot="R90">SCL (A6)</text>
 <text x="96.52" y="198.12" size="1.778" layer="91" rot="R90">GND</text>
 <text x="93.98" y="198.12" size="1.778" layer="91" rot="R90">5V</text>
 <text x="60.96" y="218.44" size="1.778" layer="91" rot="R90">D2</text>
@@ -3681,7 +3678,7 @@ CONN_03
 <busses>
 </busses>
 <nets>
-<net name="VIDOUT" class="2">
+<net name="VIDOUT" class="0">
 <segment>
 <pinref part="IO3" gate="1" pin="4"/>
 <wire x1="114.3" y1="147.32" x2="157.48" y2="147.32" width="0.1524" layer="91"/>
@@ -3695,7 +3692,7 @@ CONN_03
 <segment>
 </segment>
 </net>
-<net name="N$3" class="2">
+<net name="N$3" class="0">
 <segment>
 <pinref part="IO3" gate="1" pin="3"/>
 <wire x1="114.3" y1="144.78" x2="142.24" y2="144.78" width="0.1524" layer="91"/>
@@ -3747,35 +3744,34 @@ CONN_03
 <wire x1="93.98" y1="185.42" x2="93.98" y2="175.26" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$6" class="1">
+<net name="N$6" class="0">
 <segment>
-<wire x1="208.28" y1="208.28" x2="208.28" y2="172.72" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="SCL"/>
+<wire x1="160.02" y1="195.58" x2="162.56" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="198.12" x2="208.28" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="198.12" x2="208.28" y2="172.72" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="172.72" x2="187.96" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="187.96" y1="152.4" x2="81.28" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="4"/>
 <wire x1="101.6" y1="185.42" x2="101.6" y2="182.88" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="182.88" x2="81.28" y2="182.88" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="182.88" x2="81.28" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="SDA"/>
-<wire x1="208.28" y1="208.28" x2="162.56" y2="208.28" width="0.1524" layer="91"/>
-<wire x1="162.56" y1="208.28" x2="162.56" y2="195.58" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$7" class="1">
+<net name="N$7" class="0">
 <segment>
-<wire x1="205.74" y1="175.26" x2="205.74" y2="198.12" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="SDA"/>
+<wire x1="162.56" y1="195.58" x2="205.74" y2="195.58" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="175.26" x2="205.74" y2="195.58" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="175.26" x2="185.42" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="185.42" y1="154.94" x2="86.36" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="3"/>
 <wire x1="99.06" y1="185.42" x2="99.06" y2="180.34" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="180.34" x2="86.36" y2="180.34" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="180.34" x2="86.36" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="205.74" y1="198.12" x2="160.02" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="SCL"/>
-<wire x1="160.02" y1="198.12" x2="160.02" y2="195.58" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$10" class="2">
+<net name="N$10" class="0">
 <segment>
 <pinref part="IO3" gate="1" pin="2"/>
 <wire x1="114.3" y1="142.24" x2="132.08" y2="142.24" width="0.1524" layer="91"/>
@@ -3785,7 +3781,7 @@ CONN_03
 <wire x1="139.7" y1="119.38" x2="142.24" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$2" class="1">
+<net name="N$2" class="0">
 <segment>
 <pinref part="S4" gate="G$1" pin="2"/>
 <pinref part="J3" gate="J$1" pin="1"/>
@@ -3793,7 +3789,7 @@ CONN_03
 <wire x1="58.42" y1="180.34" x2="58.42" y2="205.74" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$11" class="1">
+<net name="N$11" class="0">
 <segment>
 <pinref part="S3" gate="G$1" pin="2"/>
 <pinref part="J3" gate="J$1" pin="2"/>
@@ -3801,7 +3797,7 @@ CONN_03
 <wire x1="60.96" y1="177.8" x2="60.96" y2="205.74" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$12" class="1">
+<net name="N$12" class="0">
 <segment>
 <pinref part="S2" gate="G$1" pin="2"/>
 <pinref part="J3" gate="J$1" pin="3"/>

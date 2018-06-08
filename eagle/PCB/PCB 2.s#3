@@ -3635,10 +3635,7 @@ CONN_03
 <clearance class="0" value="0.508"/>
 </class>
 <class number="1" name="thin" width="0.3" drill="0.3">
-<clearance class="1" value="0.3"/>
-</class>
-<class number="2" name="medium" width="0.4" drill="0.4">
-<clearance class="2" value="0.4"/>
+<clearance class="1" value="0.508"/>
 </class>
 </classes>
 <parts>
@@ -3681,7 +3678,7 @@ CONN_03
 <busses>
 </busses>
 <nets>
-<net name="VIDOUT" class="2">
+<net name="VIDOUT" class="0">
 <segment>
 <pinref part="IO3" gate="1" pin="4"/>
 <wire x1="114.3" y1="147.32" x2="157.48" y2="147.32" width="0.1524" layer="91"/>
@@ -3695,7 +3692,7 @@ CONN_03
 <segment>
 </segment>
 </net>
-<net name="N$3" class="2">
+<net name="N$3" class="0">
 <segment>
 <pinref part="IO3" gate="1" pin="3"/>
 <wire x1="114.3" y1="144.78" x2="142.24" y2="144.78" width="0.1524" layer="91"/>
@@ -3703,7 +3700,7 @@ CONN_03
 <wire x1="142.24" y1="144.78" x2="144.78" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="N$1" class="1">
 <segment>
 <wire x1="99.06" y1="172.72" x2="99.06" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="170.18" x2="116.84" y2="170.18" width="0.1524" layer="91"/>
@@ -3775,7 +3772,7 @@ CONN_03
 <wire x1="160.02" y1="198.12" x2="160.02" y2="195.58" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$10" class="2">
+<net name="N$10" class="0">
 <segment>
 <pinref part="IO3" gate="1" pin="2"/>
 <wire x1="114.3" y1="142.24" x2="132.08" y2="142.24" width="0.1524" layer="91"/>
