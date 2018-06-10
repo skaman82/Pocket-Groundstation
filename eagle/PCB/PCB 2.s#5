@@ -3637,8 +3637,6 @@ CONN_03
 <class number="1" name="thin" width="0.3" drill="0.3">
 <clearance class="1" value="0.508"/>
 </class>
-<class number="2" name="medium" width="0.4" drill="0.4">
-</class>
 </classes>
 <parts>
 <part name="IO3" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA04-1" device="" package3d_urn="urn:adsk.eagle:package:8337/1"/>

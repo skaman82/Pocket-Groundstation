@@ -3656,7 +3656,7 @@ CONN_03
 <text x="104.14" y="142.24" size="1.778" layer="91" rot="R180">VO DVR</text>
 <text x="104.14" y="139.7" size="1.778" layer="91" rot="R180">GND</text>
 <text x="101.6" y="198.12" size="1.778" layer="91" rot="R90">SDA (A4) </text>
-<text x="99.06" y="198.12" size="1.778" layer="91" rot="R90">SCL (A6)</text>
+<text x="99.06" y="198.12" size="1.778" layer="91" rot="R90">SCL (A5)</text>
 <text x="96.52" y="198.12" size="1.778" layer="91" rot="R90">GND</text>
 <text x="93.98" y="198.12" size="1.778" layer="91" rot="R90">5V</text>
 <text x="60.96" y="218.44" size="1.778" layer="91" rot="R90">D2</text>

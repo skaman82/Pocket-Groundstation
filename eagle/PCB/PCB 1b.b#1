@@ -3,7 +3,7 @@
 <eagle version="9.0.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -206,13 +206,13 @@
 <text x="11.43" y="57.15" size="1.016" layer="26" rot="MR0">From switch</text>
 <text x="7.62" y="13.97" size="1.016" layer="26" rot="MR180">-8V</text>
 <text x="1.27" y="39.37" size="1.27" layer="26" rot="MR90">POCKET-GROUNDSTATION | PCB1 | REV1</text>
-<text x="43.18" y="24.13" size="0.889" layer="25" rot="R270">Vout</text>
-<text x="38.1" y="17.78" size="0.889" layer="25">V to DVR</text>
-<text x="43.18" y="25.4" size="0.889" layer="25" rot="R270">G</text>
-<text x="43.18" y="27.94" size="0.889" layer="25" rot="R270">5v</text>
-<text x="43.18" y="30.48" size="0.889" layer="25" rot="R270">D7</text>
-<text x="43.18" y="33.02" size="0.889" layer="25" rot="R270">D6</text>
-<text x="43.18" y="35.56" size="0.889" layer="25" rot="R270">D5</text>
+<text x="43.18" y="25.4" size="0.889" layer="25" rot="R270">Vout</text>
+<text x="38.1" y="22.86" size="0.889" layer="25" rot="R270">V to DVR</text>
+<text x="43.18" y="27.94" size="0.889" layer="25" rot="R270">G</text>
+<text x="43.18" y="30.48" size="0.889" layer="25" rot="R270">5v</text>
+<text x="43.18" y="33.02" size="0.889" layer="25" rot="R270">D7</text>
+<text x="43.18" y="35.56" size="0.889" layer="25" rot="R270">D6</text>
+<text x="43.18" y="38.1" size="0.889" layer="25" rot="R270">D5</text>
 <text x="38.1" y="3.81" size="0.889" layer="25" rot="R90">G</text>
 <text x="38.1" y="6.35" size="0.889" layer="25" rot="R180">Vdvr</text>
 <text x="38.1" y="8.89" size="0.889" layer="25" rot="R180">Vmain</text>
@@ -439,37 +439,6 @@ Source: GLX-S-88M.pdf</description>
 <pad name="IGND" x="2.54" y="-8.93" drill="0.8" diameter="1.524" shape="long" rot="R90"/>
 </package>
 </packages>
-</library>
-<library name="buzzer" urn="urn:adsk.eagle:library:113">
-<description>&lt;b&gt;Speakers and Buzzers&lt;/b&gt;&lt;p&gt;
-&lt;ul&gt;Distributors:
-&lt;li&gt;Buerklin
-&lt;li&gt;Spoerle
-&lt;li&gt;Schukat
-&lt;/ul&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="F/CM12P" urn="urn:adsk.eagle:footprint:5223/1" library_version="1">
-<description>&lt;b&gt;BUZZER&lt;/b&gt;</description>
-<wire x1="3.175" y1="3.048" x2="4.445" y2="3.048" width="0.254" layer="21"/>
-<wire x1="3.81" y1="3.683" x2="3.81" y2="2.413" width="0.254" layer="21"/>
-<circle x="0" y="0" radius="6.985" width="0.1524" layer="21"/>
-<circle x="0" y="0" radius="1.27" width="0.1524" layer="21"/>
-<circle x="3.81" y="3.048" radius="1.27" width="0.1524" layer="21"/>
-<pad name="-" x="-3.81" y="0" drill="1.016" diameter="2.54" shape="octagon"/>
-<pad name="+" x="3.81" y="0" drill="1.016" diameter="2.54" shape="octagon"/>
-<text x="2.54" y="6.985" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-4.445" y="-3.81" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
-</package>
-</packages>
-<packages3d>
-<package3d name="F/CM12P" urn="urn:adsk.eagle:package:5265/1" type="box" library_version="1">
-<description>BUZZER</description>
-<packageinstances>
-<packageinstance name="F/CM12P"/>
-</packageinstances>
-</package3d>
-</packages3d>
 </library>
 <library name="con-lumberg" urn="urn:adsk.eagle:library:163">
 <description>&lt;b&gt;Lumberg Connectors&lt;/b&gt;&lt;p&gt;
@@ -1948,6 +1917,76 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-1.651" y="-1.27" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 <circle x="-3.6" y="2.47" radius="0.1047" width="0.4064" layer="21"/>
 </package>
+<package name="1X01" urn="urn:adsk.eagle:footprint:37642/1" library_version="1">
+<description>&lt;h3&gt;Plated Through Hole&lt;/h3&gt;
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count:1&lt;/li&gt;
+&lt;li&gt;Pin pitch:0.1"&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;CONN_01&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="1.27" y1="0.635" x2="0.635" y2="1.27" width="0.2032" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="-0.635" y2="1.27" width="0.2032" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.2032" layer="21"/>
+<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="-0.635" y1="-1.27" x2="0.635" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="1.27" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="1.27" y2="0.635" width="0.2032" layer="21"/>
+<pad name="1" x="0" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-1.27" y="-1.524" size="0.6096" layer="27" font="vector" ratio="20" align="top-left">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+</package>
+<package name="AUDIO-JACK-KIT" urn="urn:adsk.eagle:footprint:37606/1" library_version="1">
+<description>&lt;h3&gt;3.5mm Stereo Audio Jack -Kit Version&lt;/h3&gt;
+Reduced openings in tStop, pins spread a tiny bit out to hold part on PCB during assembly
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count:5&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”https://www.sparkfun.com/datasheets/Prototyping/Audio-3.5mm.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;Audio_Jack&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="7.5" y1="6" x2="7.5" y2="-6" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="6" x2="-3.5" y2="4.5" width="0.2032" layer="51"/>
+<wire x1="-3.5" y1="-4.5" x2="-3.5" y2="-6" width="0.2032" layer="51"/>
+<wire x1="-4.5" y1="4.5" x2="-4.5" y2="3" width="0.2032" layer="51"/>
+<wire x1="-4.5" y1="-3" x2="-4.5" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="-4.5" y1="-4.5" x2="-3.5" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="-4.5" y1="4.5" x2="-3.5" y2="4.5" width="0.2032" layer="51"/>
+<wire x1="-6.5" y1="3" x2="-6.5" y2="-3" width="0.2032" layer="51"/>
+<wire x1="-6.5" y1="-3" x2="-4.5" y2="-3" width="0.2032" layer="51"/>
+<wire x1="-6.5" y1="3" x2="-4.5" y2="3" width="0.2032" layer="51"/>
+<wire x1="-3.5" y1="6" x2="3.5" y2="6" width="0.2032" layer="21"/>
+<wire x1="7.5" y1="6" x2="6.5" y2="6" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="6" x2="-3.5" y2="-6" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="-6" x2="3.5" y2="-6" width="0.2032" layer="21"/>
+<wire x1="7.5" y1="-6" x2="6.5" y2="-6" width="0.2032" layer="21"/>
+<pad name="SLEEVE" x="0" y="0" drill="1.3" diameter="2.1844" stop="no"/>
+<pad name="RSH" x="5" y="2.5" drill="1.3" diameter="2.1844" stop="no"/>
+<pad name="RING" x="5" y="5.1" drill="1.3" diameter="2.1844" stop="no"/>
+<pad name="TSH" x="5" y="-2.5" drill="1.3" diameter="2.1844" stop="no"/>
+<pad name="TIP" x="5" y="-5.1" drill="1.3" diameter="2.1844" stop="no"/>
+<hole x="0" y="5" drill="1.2"/>
+<hole x="-2.5" y="5" drill="1.2"/>
+<hole x="-2.5" y="-5" drill="1.2"/>
+<hole x="0" y="-5" drill="1.2"/>
+<hole x="5" y="0" drill="1.2"/>
+<circle x="0" y="0" radius="0.6604" width="0" layer="29"/>
+<circle x="5" y="5.1" radius="0.6604" width="0" layer="29"/>
+<circle x="5" y="2.5" radius="0.6604" width="0" layer="29"/>
+<circle x="5" y="-2.5" radius="0.6604" width="0" layer="29"/>
+<circle x="5" y="-5.1" radius="0.6604" width="0" layer="29"/>
+<circle x="0" y="0" radius="1.2192" width="0" layer="30"/>
+<circle x="5" y="5.1" radius="1.2192" width="0" layer="30"/>
+<circle x="5" y="-5.1" radius="1.2192" width="0" layer="30"/>
+<circle x="5" y="-2.5" radius="1.2192" width="0" layer="30"/>
+<circle x="5" y="2.5" radius="1.2192" width="0" layer="30"/>
+<text x="-1.27" y="2.032" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-1.27" y="-2.667" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="1X03" urn="urn:adsk.eagle:package:38063/1" type="box" library_version="1">
@@ -2002,6 +2041,180 @@ EM-406
 </description>
 <packageinstances>
 <packageinstance name="1X06-1MM"/>
+</packageinstances>
+</package3d>
+<package3d name="1X01" urn="urn:adsk.eagle:package:38028/1" type="box" library_version="1">
+<description>Plated Through Hole
+Specifications:
+Pin count:1
+Pin pitch:0.1"
+
+Example device(s):
+CONN_01
+</description>
+<packageinstances>
+<packageinstance name="1X01"/>
+</packageinstances>
+</package3d>
+<package3d name="AUDIO-JACK-KIT" urn="urn:adsk.eagle:package:38014/1" type="box" library_version="1">
+<description>3.5mm Stereo Audio Jack -Kit Version
+Reduced openings in tStop, pins spread a tiny bit out to hold part on PCB during assembly
+Specifications:
+Pin count:5
+
+Datasheet referenced for footprint
+Example device(s):
+Audio_Jack
+</description>
+<packageinstances>
+<packageinstance name="AUDIO-JACK-KIT"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
+<library name="con-molex" urn="urn:adsk.eagle:library:165">
+<description>&lt;b&gt;Molex Connectors&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="0446200002" library_version="2">
+<description>&lt;b&gt;RJ-45 INVERTED MODULAR JACK ASSEMBLY WITH RJ-11 KEEPOUT FEATURE&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="http://www.farnell.com/datasheets/73207.pdf"&gt; Data sheet &lt;/a&gt;&lt;p&gt;
+&lt;b&gt;MOLEX  0446200002  BUCHSE, RJ45, GESCHIRMT &lt;/b&gt;&lt;p&gt;
+Source: &lt;a href=http://de.farnell.com/molex/0446200002/buchse-rj45-geschirmt/dp/9251910?ost=9251910"&gt; Farnell &lt;/a&gt;&lt;br&gt;</description>
+<hole x="6.35" y="0" drill="3.2512"/>
+<hole x="-6.35" y="0" drill="3.2512"/>
+<pad name="1" x="3.556" y="2.54" drill="0.889" diameter="1.4224"/>
+<pad name="2" x="2.54" y="4.318" drill="0.889" diameter="1.4224"/>
+<pad name="3" x="1.524" y="2.54" drill="0.889" diameter="1.4224"/>
+<pad name="4" x="0.508" y="4.318" drill="0.889" diameter="1.4224"/>
+<pad name="5" x="-0.508" y="2.54" drill="0.889" diameter="1.4224"/>
+<pad name="6" x="-1.524" y="4.318" drill="0.889" diameter="1.4224"/>
+<pad name="7" x="-2.54" y="2.54" drill="0.889" diameter="1.4224"/>
+<pad name="8" x="-3.556" y="4.318" drill="0.889" diameter="1.4224"/>
+<wire x1="-7.775" y1="-4.975" x2="7.775" y2="-4.975" width="0.2032" layer="21"/>
+<wire x1="-7.775" y1="-4.975" x2="-7.775" y2="10.011" width="0.2032" layer="21"/>
+<wire x1="7.775" y1="-4.975" x2="7.775" y2="10.011" width="0.2032" layer="21"/>
+<wire x1="-7.775" y1="10.011" x2="7.775" y2="10.011" width="0.2032" layer="21"/>
+<text x="-7.62" y="10.795" size="1.27" layer="25">&gt;NAME</text>
+<text x="-6.35" y="7.62" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-7.874" y1="-4.064" x2="-8.128" y2="-3.556" width="0.2032" layer="21"/>
+<wire x1="-8.128" y1="-3.556" x2="-8.636" y2="1.27" width="0.2032" layer="21" curve="-53.130102"/>
+<wire x1="-8.636" y1="1.27" x2="-8.89" y2="1.778" width="0.2032" layer="21" curve="106.260205"/>
+<wire x1="7.874" y1="-4.064" x2="8.128" y2="-3.556" width="0.2032" layer="21"/>
+<wire x1="8.128" y1="-3.556" x2="8.636" y2="1.27" width="0.2032" layer="21" curve="53.130102"/>
+<wire x1="8.636" y1="1.27" x2="8.89" y2="1.778" width="0.2032" layer="21" curve="-106.260205"/>
+<pad name="S@1" x="-8.1026" y="3.429" drill="1.5748" diameter="2.286"/>
+<pad name="S@2" x="8.1026" y="3.429" drill="1.5748" diameter="2.286"/>
+</package>
+<package name="0446200001" library_version="2">
+<description>&lt;b&gt;RJ-45 INVERTED MODULAR JACK ASSEMBLY WITH RJ-11 KEEPOUT FEATURE&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="http://www.farnell.com/datasheets/73207.pdf"&gt; Data sheet &lt;/a&gt;</description>
+<hole x="6.35" y="0" drill="3.2512"/>
+<hole x="-6.35" y="0" drill="3.2512"/>
+<pad name="1" x="3.556" y="2.54" drill="0.889" diameter="1.4224"/>
+<pad name="2" x="2.54" y="4.318" drill="0.889" diameter="1.4224"/>
+<pad name="3" x="1.524" y="2.54" drill="0.889" diameter="1.4224"/>
+<pad name="4" x="0.508" y="4.318" drill="0.889" diameter="1.4224"/>
+<pad name="5" x="-0.508" y="2.54" drill="0.889" diameter="1.4224"/>
+<pad name="6" x="-1.524" y="4.318" drill="0.889" diameter="1.4224"/>
+<pad name="7" x="-2.54" y="2.54" drill="0.889" diameter="1.4224"/>
+<pad name="8" x="-3.556" y="4.318" drill="0.889" diameter="1.4224"/>
+<wire x1="-7.775" y1="-4.975" x2="7.775" y2="-4.975" width="0.2032" layer="21"/>
+<wire x1="-7.775" y1="-4.975" x2="-7.775" y2="10.011" width="0.2032" layer="21"/>
+<wire x1="7.775" y1="-4.975" x2="7.775" y2="10.011" width="0.2032" layer="21"/>
+<wire x1="-7.775" y1="10.011" x2="7.775" y2="10.011" width="0.2032" layer="21"/>
+<text x="-7.62" y="10.795" size="1.27" layer="25">&gt;NAME</text>
+<text x="-6.35" y="7.62" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+</library>
+<library name="holes" urn="urn:adsk.eagle:library:237">
+<description>&lt;b&gt;Mounting Holes and Pads&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="3,0" urn="urn:adsk.eagle:footprint:14240/1" library_version="1">
+<description>&lt;b&gt;MOUNTING HOLE&lt;/b&gt; 3.0 mm with drill center</description>
+<wire x1="-2.159" y1="0" x2="0" y2="-2.159" width="2.4892" layer="51" curve="90" cap="flat"/>
+<wire x1="0" y1="2.159" x2="2.159" y2="0" width="2.4892" layer="51" curve="-90" cap="flat"/>
+<circle x="0" y="0" radius="3.429" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="0.762" width="0.4572" layer="51"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="39"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="43"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="40"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="41"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="42"/>
+<circle x="0" y="0" radius="1.6" width="0.2032" layer="21"/>
+<text x="-1.27" y="-3.81" size="1.27" layer="48">3,0</text>
+<hole x="0" y="0" drill="3"/>
+</package>
+<package name="3,2" urn="urn:adsk.eagle:footprint:14246/1" library_version="1">
+<description>&lt;b&gt;MOUNTING HOLE&lt;/b&gt; 3.2 mm with drill center</description>
+<wire x1="-2.159" y1="0" x2="0" y2="-2.159" width="2.4892" layer="51" curve="90" cap="flat"/>
+<wire x1="0" y1="2.159" x2="2.159" y2="0" width="2.4892" layer="51" curve="-90" cap="flat"/>
+<circle x="0" y="0" radius="3.429" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="0.762" width="0.4572" layer="51"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="39"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="43"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="40"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="41"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="42"/>
+<circle x="0" y="0" radius="1.7" width="0.2032" layer="21"/>
+<hole x="0" y="0" drill="3.2"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="3,2" urn="urn:adsk.eagle:package:14275/1" type="box" library_version="1">
+<description>MOUNTING HOLE 3.2 mm with drill center</description>
+<packageinstances>
+<packageinstance name="3,2"/>
+</packageinstances>
+</package3d>
+<package3d name="3,0" urn="urn:adsk.eagle:package:14277/1" type="box" library_version="1">
+<description>MOUNTING HOLE 3.0 mm with drill center</description>
+<packageinstances>
+<packageinstance name="3,0"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
+<library name="SparkFun-Electromechanical" urn="urn:adsk.eagle:library:516">
+<description>&lt;h3&gt;SparkFun Electromechanical Parts&lt;/h3&gt;
+This library contains electromechanical devices, like motors, speakers,servos, and relays.
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="BUZZER-12MM" urn="urn:adsk.eagle:footprint:38535/1" library_version="1">
+<description>&lt;h3&gt;12mm Buzzer - PTH&lt;/h3&gt;
+&lt;p&gt;This is a small 12mm round speaker that operates around the audible 2kHz range. You can use these speakers to create simple music or user interfaces.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://cdn.sparkfun.com/datasheets/Components/General/cem-1203-42-.pdf"&gt;Datasheet&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;Devices Using&lt;/h4&gt;
+&lt;ul&gt;&lt;li&gt;BUZZER&lt;/li&gt;&lt;/ul&gt;</description>
+<circle x="0" y="0" radius="5.9" width="0.2032" layer="21"/>
+<circle x="0" y="0" radius="1.27" width="0.2032" layer="51"/>
+<pad name="-" x="-3.25" y="0" drill="0.9" diameter="1.778"/>
+<pad name="+" x="3.25" y="0" drill="0.9" diameter="1.778"/>
+<text x="0" y="6.096" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="5.588" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="BUZZER-12MM" urn="urn:adsk.eagle:package:38558/1" type="box" library_version="1">
+<description>12mm Buzzer - PTH
+This is a small 12mm round speaker that operates around the audible 2kHz range. You can use these speakers to create simple music or user interfaces.
+Datasheet
+Devices Using
+BUZZER</description>
+<packageinstances>
+<packageinstance name="BUZZER-12MM"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -2231,12 +2444,10 @@ design rules under a new name.</description>
 <attribute name="OC_NEWARK" value="unknown" x="13.97" y="5.08" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="VALUE" x="8.89" y="3.81" size="1.27" layer="28" rot="MR180"/>
 </element>
-<element name="BUZZ" library="buzzer" library_urn="urn:adsk.eagle:library:113" package="F/CM12P" package3d_urn="urn:adsk.eagle:package:5265/1" value="F/CM12P" x="38.1" y="67.31" smashed="yes" rot="R270">
-<attribute name="MF" value="" x="38.1" y="67.31" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MPN" value="" x="38.1" y="67.31" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="32.385" y="68.58" size="1.27" layer="25" ratio="10" rot="R270"/>
-<attribute name="OC_FARNELL" value="unknown" x="38.1" y="67.31" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="38.1" y="67.31" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="BUZZ" library="SparkFun-Electromechanical" library_urn="urn:adsk.eagle:library:516" package="BUZZER-12MM" package3d_urn="urn:adsk.eagle:package:38558/1" value="BUZZER-PTH" x="38.1" y="67.31" smashed="yes" rot="R270">
+<attribute name="NAME" x="34.925" y="69.85" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="PROD_ID" value="COMP-08253" x="38.1" y="67.31" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="SF_SKU" value="COM-07950" x="38.1" y="67.31" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SPICEPREFIX" value="X" x="38.1" y="67.31" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="34.29" y="71.755" size="1.27" layer="27" ratio="10" rot="R270"/>
 </element>
@@ -2273,21 +2484,21 @@ design rules under a new name.</description>
 </element>
 <element name="8V" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="2,54/1,1" package3d_urn="urn:adsk.eagle:package:30836/1" value="" x="8.89" y="16.51"/>
 <element name="GND" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="2,54/1,1" package3d_urn="urn:adsk.eagle:package:30836/1" value="" x="8.89" y="21.59"/>
-<element name="DVR/MODULE-IO" library="con-lstb" library_urn="urn:adsk.eagle:library:162" package="MA07-1" package3d_urn="urn:adsk.eagle:package:8341/1" value="" x="40.64" y="27.94" smashed="yes" rot="R90">
-<attribute name="MF" value="" x="40.64" y="27.94" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MPN" value="" x="40.64" y="27.94" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="37.719" y="20.32" size="1.27" layer="25" ratio="10" rot="R90"/>
-<attribute name="OC_FARNELL" value="unknown" x="40.64" y="27.94" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="40.64" y="27.94" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="43.561" y="25.4" size="1.27" layer="27" ratio="10" rot="R90"/>
+<element name="DVR/MODULE-IO" library="con-lstb" library_urn="urn:adsk.eagle:library:162" package="MA07-1" package3d_urn="urn:adsk.eagle:package:8341/1" value="" x="40.64" y="30.48" smashed="yes" rot="R90">
+<attribute name="MF" value="" x="40.64" y="30.48" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="" x="40.64" y="30.48" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="37.719" y="22.86" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="OC_FARNELL" value="unknown" x="40.64" y="30.48" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="40.64" y="30.48" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="43.561" y="27.94" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
-<element name="V-IO" library="con-lstb" library_urn="urn:adsk.eagle:library:162" package="MA04-1" package3d_urn="urn:adsk.eagle:package:8337/1" value="" x="40.64" y="7.62" smashed="yes" rot="R90">
-<attribute name="MF" value="" x="40.64" y="7.62" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MPN" value="" x="40.64" y="7.62" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="38.989" y="2.54" size="1.27" layer="25" ratio="10" rot="R180"/>
-<attribute name="OC_FARNELL" value="unknown" x="40.64" y="7.62" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="40.64" y="7.62" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="38.989" y="8.255" size="1.27" layer="27" ratio="10" rot="R90"/>
+<element name="V-IO" library="con-lstb" library_urn="urn:adsk.eagle:library:162" package="MA04-1" package3d_urn="urn:adsk.eagle:package:8337/1" value="" x="40.64" y="15.24" smashed="yes" rot="R90">
+<attribute name="MF" value="" x="40.64" y="15.24" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="" x="40.64" y="15.24" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="38.989" y="10.16" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="OC_FARNELL" value="unknown" x="40.64" y="15.24" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="40.64" y="15.24" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="38.989" y="15.875" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="U$1" library="Arduino-clone" package="ABK-PRO-MINI" value="ABK-PRO-MINI" x="26.67" y="49.53" rot="R270"/>
 <element name="BT-BRIDGE" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X03" package3d_urn="urn:adsk.eagle:package:38063/1" value="" x="25.4" y="72.39"/>
@@ -2308,6 +2519,23 @@ design rules under a new name.</description>
 <attribute name="SF_ID" value="GPS-00579" x="3.81" y="31.75" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="2.54" y="33.401" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
 </element>
+<element name="SER" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X01" package3d_urn="urn:adsk.eagle:package:38028/1" value="" x="34.29" y="21.59" rot="R90"/>
+<element name="AUD" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X01" package3d_urn="urn:adsk.eagle:package:38028/1" value="" x="34.29" y="25.4" rot="R90"/>
+<element name="X2" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="0446200002" value="0446200002" x="-36.83" y="24.13">
+<attribute name="MF" value="MOLEX" x="-36.83" y="24.13" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="0446200002" x="-36.83" y="24.13" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="9251910" x="-36.83" y="24.13" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J1" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="0446200001" value="0446200001" x="-36.83" y="5.08">
+<attribute name="MF" value="MOLEX" x="-36.83" y="5.08" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="-36.83" y="5.08" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="-36.83" y="5.08" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="AUDIO-JACK-KIT" package3d_urn="urn:adsk.eagle:package:38014/1" value="AUDIO_JACK_3.5MM_KIT" x="-19.05" y="7.62" rot="R90">
+<attribute name="PROD_ID" value="CONN-08774" x="-19.05" y="7.62" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="SF_ID" value="PRT-08032" x="-19.05" y="7.62" size="1.778" layer="27" rot="R90" display="off"/>
+</element>
+<element name="U$2" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="55.88" y="5.08"/>
 </elements>
 <signals>
 <signal name="GROUND">
@@ -2320,12 +2548,12 @@ design rules under a new name.</description>
 <contactref element="RJ45" pad="4"/>
 <contactref element="U$1" pad="GND"/>
 <contactref element="OLED" pad="3"/>
-<wire x1="29.21" y1="68.58" x2="38.1" y2="71.12" width="0" layer="19" extent="1-1"/>
+<wire x1="29.21" y1="68.58" x2="38.1" y2="70.56" width="0" layer="19" extent="1-1"/>
 <wire x1="30.48" y1="39.37" x2="29.21" y2="68.58" width="0" layer="19" extent="1-1"/>
 <wire x1="19.05" y1="34.33" x2="30.48" y2="39.37" width="0" layer="19" extent="1-1"/>
-<wire x1="40.64" y1="25.4" x2="30.48" y2="39.37" width="0" layer="19" extent="1-1"/>
-<wire x1="32.71" y1="7.8" x2="40.64" y2="25.4" width="0" layer="19" extent="1-1"/>
-<wire x1="40.64" y1="3.81" x2="32.71" y2="7.8" width="0" layer="19" extent="1-1"/>
+<wire x1="40.64" y1="27.94" x2="30.48" y2="39.37" width="0" layer="19" extent="1-1"/>
+<wire x1="40.64" y1="11.43" x2="40.64" y2="27.94" width="0" layer="19" extent="1-1"/>
+<wire x1="32.71" y1="7.8" x2="40.64" y2="11.43" width="0" layer="19" extent="1-1"/>
 <wire x1="13.46" y1="9.92" x2="32.71" y2="7.8" width="0" layer="19" extent="1-1"/>
 <wire x1="2.54" y1="17.78" x2="13.46" y2="9.92" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -2379,7 +2607,7 @@ design rules under a new name.</description>
 <contactref element="D1" pad="A"/>
 <wire x1="29.21" y1="58.42" x2="33.51" y2="58.42" width="0" layer="19" extent="1-1"/>
 <wire x1="21.59" y1="34.33" x2="29.21" y2="58.42" width="0" layer="19" extent="1-1"/>
-<wire x1="40.64" y1="27.94" x2="21.59" y2="34.33" width="0" layer="19" extent="1-1"/>
+<wire x1="40.64" y1="30.48" x2="21.59" y2="34.33" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND" class="1">
 <contactref element="MINIMOSD" pad="GND1"/>
@@ -2398,12 +2626,12 @@ design rules under a new name.</description>
 <signal name="RAWVIDEO_MODULE" class="2">
 <contactref element="MINIMOSD" pad="VIDIN"/>
 <contactref element="DVR/MODULE-IO" pad="1"/>
-<wire x1="19.05" y1="17.145" x2="40.64" y2="20.32" width="0" layer="19" extent="1-1"/>
+<wire x1="19.05" y1="17.145" x2="40.64" y2="22.86" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="OSDSIGNAL" class="2">
 <contactref element="MINIMOSD" pad="VIDOUT"/>
 <contactref element="V-IO" pad="4"/>
-<wire x1="24.13" y1="17.145" x2="40.64" y2="11.43" width="0" layer="19" extent="1-1"/>
+<wire x1="24.13" y1="17.145" x2="40.64" y2="19.05" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="HP5" class="1">
 <contactref element="U$1" pad="D2"/>
@@ -2418,18 +2646,18 @@ design rules under a new name.</description>
 <signal name="N$10" class="1">
 <contactref element="BUZZ" pad="+"/>
 <contactref element="U$1" pad="D9"/>
-<wire x1="5.08" y1="54.61" x2="38.1" y2="63.5" width="0" layer="19" extent="1-1"/>
+<wire x1="5.08" y1="54.61" x2="38.1" y2="64.06" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DVRVIDEO-IN" class="2">
 <contactref element="V-IO" pad="2"/>
 <contactref element="DVR/MODULE-IO" pad="2"/>
-<wire x1="40.64" y1="6.35" x2="40.64" y2="22.86" width="0" layer="19" extent="1-1"/>
+<wire x1="40.64" y1="13.97" x2="40.64" y2="25.4" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VSIGNAL-A-SW" class="2">
 <contactref element="3.5MM" pad="2"/>
 <contactref element="V-IO" pad="3"/>
 <contactref element="RJ45" pad="3"/>
-<wire x1="29.21" y1="9.8" x2="40.64" y2="8.89" width="0" layer="19" extent="1-1"/>
+<wire x1="29.21" y1="9.8" x2="40.64" y2="16.51" width="0" layer="19" extent="1-1"/>
 <wire x1="12.44" y1="7.38" x2="29.21" y2="9.8" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$17">
@@ -2448,7 +2676,7 @@ design rules under a new name.</description>
 <wire x1="8.89" y1="62.94" x2="15.24" y2="68.58" width="0" layer="19" extent="1-1"/>
 <wire x1="25.53" y1="49.53" x2="8.89" y2="62.94" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$6">
+<signal name="8VG">
 <contactref element="8V" pad="1"/>
 <contactref element="RJ45" pad="8"/>
 <contactref element="RJ45" pad="7"/>
@@ -2458,12 +2686,12 @@ design rules under a new name.</description>
 <signal name="D6" class="1">
 <contactref element="DVR/MODULE-IO" pad="6"/>
 <contactref element="U$1" pad="D6"/>
-<wire x1="12.7" y1="54.61" x2="40.64" y2="33.02" width="0" layer="19" extent="1-1"/>
+<wire x1="12.7" y1="54.61" x2="40.64" y2="35.56" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="D7" class="1">
 <contactref element="DVR/MODULE-IO" pad="5"/>
 <contactref element="U$1" pad="D7"/>
-<wire x1="10.16" y1="54.61" x2="40.64" y2="30.48" width="0" layer="19" extent="1-1"/>
+<wire x1="10.16" y1="54.61" x2="40.64" y2="33.02" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BAT1">
 <contactref element="MINIMOSD" pad="BAT1"/>
@@ -2471,7 +2699,7 @@ design rules under a new name.</description>
 <signal name="BGND">
 <contactref element="MINIMOSD" pad="BGND"/>
 </signal>
-<signal name="N$7">
+<signal name="8V">
 <contactref element="GND" pad="1"/>
 <contactref element="RJ45" pad="2"/>
 <wire x1="11.42" y1="9.92" x2="8.89" y2="21.59" width="0" layer="19" extent="1-1"/>
@@ -2486,7 +2714,7 @@ design rules under a new name.</description>
 <signal name="D5" class="1">
 <contactref element="DVR/MODULE-IO" pad="7"/>
 <contactref element="U$1" pad="D5"/>
-<wire x1="15.24" y1="54.61" x2="40.64" y2="35.56" width="0" layer="19" extent="1-1"/>
+<wire x1="15.24" y1="54.61" x2="40.64" y2="38.1" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1" class="1">
 <contactref element="U$1" pad="D3"/>
@@ -2534,6 +2762,15 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="GND2"/>
 <contactref element="ARD-SERVICE" pad="6"/>
 <wire x1="40.64" y1="49.45" x2="35.56" y2="53.34" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AUD" class="2">
+<contactref element="AUD" pad="1"/>
+<contactref element="3.5MM" pad="3"/>
+<contactref element="3.5MM" pad="4"/>
+<contactref element="RJ45" pad="5"/>
+<wire x1="32.51" y1="11.5" x2="34.29" y2="25.4" width="0" layer="19" extent="1-1"/>
+<wire x1="26.01" y1="11" x2="32.51" y2="11.5" width="0" layer="19" extent="1-1"/>
+<wire x1="14.48" y1="7.38" x2="26.01" y2="11" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>

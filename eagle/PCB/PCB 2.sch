@@ -3644,7 +3644,7 @@ CONN_03
 <parts>
 <part name="IO3" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA04-1" device="" package3d_urn="urn:adsk.eagle:package:8337/1"/>
 <part name="S1" library="switch" library_urn="urn:adsk.eagle:library:380" deviceset="TL32PO" device="" package3d_urn="urn:adsk.eagle:package:27745/1"/>
-<part name="U$1" library="diy-modules" deviceset="DISPLAY-OLED-128X64-I2C" device=""/>
+<part name="OLED" library="diy-modules" deviceset="DISPLAY-OLED-128X64-I2C" device=""/>
 <part name="S2" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="MOMENTARY-SWITCH-SPST" device="-PTH-6.0MM" package3d_urn="urn:adsk.eagle:package:40163/1"/>
 <part name="S3" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="MOMENTARY-SWITCH-SPST" device="-PTH-6.0MM" package3d_urn="urn:adsk.eagle:package:40163/1"/>
 <part name="S4" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="MOMENTARY-SWITCH-SPST" device="-PTH-6.0MM" package3d_urn="urn:adsk.eagle:package:40163/1"/>
@@ -3671,7 +3671,7 @@ CONN_03
 <attribute name="VALUE" x="105.41" y="132.08" size="1.778" layer="96"/>
 </instance>
 <instance part="S1" gate="BEF1" x="144.78" y="132.08" rot="R180"/>
-<instance part="U$1" gate="G$1" x="160.02" y="175.26"/>
+<instance part="OLED" gate="G$1" x="160.02" y="175.26"/>
 <instance part="S2" gate="G$1" x="63.5" y="170.18" rot="R90"/>
 <instance part="S3" gate="G$1" x="58.42" y="172.72" rot="R90"/>
 <instance part="S4" gate="G$1" x="53.34" y="175.26" rot="R90"/>
@@ -3710,7 +3710,7 @@ CONN_03
 <wire x1="116.84" y1="170.18" x2="124.46" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="170.18" x2="124.46" y2="198.12" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="198.12" x2="154.94" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="OLED" gate="G$1" pin="GND"/>
 <wire x1="154.94" y1="198.12" x2="154.94" y2="195.58" width="0.1524" layer="91"/>
 <pinref part="IO3" gate="1" pin="1"/>
 <wire x1="99.06" y1="172.72" x2="96.52" y2="172.72" width="0.1524" layer="91"/>
@@ -3736,7 +3736,7 @@ CONN_03
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="VCC"/>
+<pinref part="OLED" gate="G$1" pin="VCC"/>
 <wire x1="157.48" y1="195.58" x2="157.48" y2="200.66" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="200.66" x2="121.92" y2="200.66" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="200.66" x2="121.92" y2="172.72" width="0.1524" layer="91"/>
@@ -3756,7 +3756,7 @@ CONN_03
 <wire x1="101.6" y1="185.42" x2="101.6" y2="182.88" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="182.88" x2="81.28" y2="182.88" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="182.88" x2="81.28" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="SDA"/>
+<pinref part="OLED" gate="G$1" pin="SDA"/>
 <wire x1="208.28" y1="208.28" x2="162.56" y2="208.28" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="208.28" x2="162.56" y2="195.58" width="0.1524" layer="91"/>
 </segment>
@@ -3771,7 +3771,7 @@ CONN_03
 <wire x1="99.06" y1="180.34" x2="86.36" y2="180.34" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="180.34" x2="86.36" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="198.12" x2="160.02" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="SCL"/>
+<pinref part="OLED" gate="G$1" pin="SCL"/>
 <wire x1="160.02" y1="198.12" x2="160.02" y2="195.58" width="0.1524" layer="91"/>
 </segment>
 </net>

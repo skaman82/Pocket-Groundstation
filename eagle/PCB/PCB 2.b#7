@@ -3,7 +3,7 @@
 <eagle version="9.0.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -206,6 +206,7 @@
 <text x="38.1" y="6.35" size="0.889" layer="25" rot="R180">Vdvr</text>
 <text x="38.1" y="8.89" size="0.889" layer="25" rot="R180">Vmain</text>
 <text x="38.1" y="11.43" size="0.889" layer="25" rot="R180">Vosd</text>
+<circle x="3.81" y="3.81" radius="1.778" width="0.1524" layer="1"/>
 </plain>
 <libraries>
 <library name="con-lstb" urn="urn:adsk.eagle:library:162">
@@ -572,8 +573,11 @@ CONN_03
 <class number="0" name="default" width="0.762" drill="0.508">
 <clearance class="0" value="0.508"/>
 </class>
-<class number="1" name="test" width="0.1" drill="0.508">
-<clearance class="1" value="0.508"/>
+<class number="1" name="thin" width="0.3" drill="0.3">
+<clearance class="1" value="0.3"/>
+</class>
+<class number="2" name="medium" width="0.4" drill="0.4">
+<clearance class="2" value="0.4"/>
 </class>
 </classes>
 <designrules name="PCB Albert *">
@@ -784,12 +788,12 @@ design rules under a new name.</description>
 <element name="J3" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X03" package3d_urn="urn:adsk.eagle:package:38063/1" value="" x="25.4" y="72.39"/>
 </elements>
 <signals>
-<signal name="VIDOUT">
+<signal name="VIDOUT" class="2">
 <contactref element="IO3" pad="4"/>
 <contactref element="S1" pad="1"/>
 <wire x1="16.51" y1="10.16" x2="40.64" y2="11.43" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$3">
+<signal name="N$3" class="2">
 <contactref element="IO3" pad="3"/>
 <contactref element="S1" pad="2"/>
 <wire x1="13.97" y1="10.16" x2="40.64" y2="8.89" width="0" layer="19" extent="1-1"/>
@@ -812,32 +816,32 @@ design rules under a new name.</description>
 <contactref element="J1" pad="1"/>
 <wire x1="2.54" y1="15.24" x2="35.56" y2="54.61" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$6">
+<signal name="N$6" class="1">
 <contactref element="J1" pad="4"/>
 <contactref element="U$1" pad="4"/>
 <wire x1="2.54" y1="22.86" x2="35.56" y2="49.53" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$7">
+<signal name="N$7" class="1">
 <contactref element="J1" pad="3"/>
 <contactref element="U$1" pad="3"/>
 <wire x1="2.54" y1="20.32" x2="35.56" y2="52.07" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$10">
+<signal name="N$10" class="2">
 <contactref element="IO3" pad="2"/>
 <contactref element="S1" pad="3"/>
 <wire x1="11.43" y1="10.16" x2="40.64" y2="6.35" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$2">
+<signal name="N$2" class="1">
 <contactref element="S4" pad="3"/>
 <contactref element="J3" pad="1"/>
 <wire x1="9.4488" y1="20.5994" x2="25.4" y2="72.39" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$11">
+<signal name="N$11" class="1">
 <contactref element="S3" pad="3"/>
 <contactref element="J3" pad="2"/>
 <wire x1="19.6088" y1="20.5994" x2="27.94" y2="72.39" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$12">
+<signal name="N$12" class="1">
 <contactref element="S2" pad="3"/>
 <contactref element="J3" pad="3"/>
 <wire x1="29.7688" y1="20.5994" x2="30.48" y2="72.39" width="0" layer="19" extent="1-1"/>

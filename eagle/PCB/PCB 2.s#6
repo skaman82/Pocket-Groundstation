@@ -3634,8 +3634,10 @@ CONN_03
 <class number="0" name="default" width="0.762" drill="0.508">
 <clearance class="0" value="0.508"/>
 </class>
-<class number="1" name="test" width="0.1" drill="0.508">
+<class number="1" name="thin" width="0.3" drill="0.3">
 <clearance class="1" value="0.508"/>
+</class>
+<class number="2" name="medium" width="0.4" drill="0.4">
 </class>
 </classes>
 <parts>

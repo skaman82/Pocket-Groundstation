@@ -3703,7 +3703,7 @@ CONN_03
 <wire x1="142.24" y1="144.78" x2="144.78" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$1" class="1">
+<net name="N$1" class="0">
 <segment>
 <wire x1="99.06" y1="172.72" x2="99.06" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="170.18" x2="116.84" y2="170.18" width="0.1524" layer="91"/>
