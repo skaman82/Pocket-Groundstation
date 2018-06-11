@@ -160,6 +160,8 @@
 <wire x1="-6.35" y1="27.94" x2="-6.35" y2="0" width="0.1524" layer="20"/>
 <wire x1="-6.35" y1="0" x2="-41.91" y2="0" width="0.1524" layer="20"/>
 <wire x1="-41.91" y1="0" x2="-41.91" y2="27.94" width="0.1524" layer="20"/>
+<dimension x1="-41.91" y1="27.94" x2="-6.35" y2="29.21" x3="-24.13" y3="30.48" textsize="1.778" layer="1" dtype="horizontal"/>
+<dimension x1="-6.35" y1="27.94" x2="-6.35" y2="0" x3="-1.27" y3="13.97" textsize="1.778" layer="1" dtype="horizontal"/>
 </plain>
 <libraries>
 <library name="SparkFun-Connectors" urn="urn:adsk.eagle:library:513">

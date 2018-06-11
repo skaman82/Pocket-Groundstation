@@ -773,119 +773,6 @@ http://www.xganon.com</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="con-lumberg" urn="urn:adsk.eagle:library:163">
-<description>&lt;b&gt;Lumberg Connectors&lt;/b&gt;&lt;p&gt;
-include con-mfs.lbr - 2001.03.22&lt;br&gt;
-Jack connectors - 2005.11.23&lt;p&gt;
-http://www.lumberg.de&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="1503_10" urn="urn:adsk.eagle:footprint:8488/1" library_version="1">
-<description>&lt;b&gt;Jack connectors according to JISC 6560, 3.5 mm&lt;/b&gt;&lt;p&gt;
-Klinkeneinbaukupplung, 3,5 mm, 4-polig/stereo, abgewinkelte Ausführung&lt;br&gt;
-Source: http://www.lumberg.de/Produkte/PDFs/1503_10.pdf&lt;br&gt;
-+ '1503 10.pdf'</description>
-<wire x1="-4.15" y1="-0.1" x2="4.15" y2="-0.1" width="0.2032" layer="21"/>
-<wire x1="4.15" y1="-0.1" x2="4.15" y2="-10.1" width="0.2032" layer="21"/>
-<wire x1="4.15" y1="-10.1" x2="4.15" y2="-12.05" width="0.2032" layer="51"/>
-<wire x1="4.15" y1="-12.05" x2="4.15" y2="-12.9" width="0.2032" layer="21"/>
-<wire x1="4.15" y1="-12.9" x2="1.25" y2="-12.9" width="0.2032" layer="21"/>
-<wire x1="1.25" y1="-12.9" x2="-1.3" y2="-12.9" width="0.2032" layer="51"/>
-<wire x1="-1.3" y1="-12.9" x2="-4.15" y2="-12.9" width="0.2032" layer="21"/>
-<wire x1="-4.15" y1="-12.9" x2="-4.15" y2="-12.45" width="0.2032" layer="21"/>
-<wire x1="-4.15" y1="-12.45" x2="-4.15" y2="-10.55" width="0.2032" layer="51"/>
-<wire x1="-4.15" y1="-10.55" x2="-4.15" y2="-9.05" width="0.2032" layer="21"/>
-<wire x1="-4.15" y1="-9.05" x2="-4.15" y2="-6.7" width="0.2032" layer="51"/>
-<wire x1="-4.15" y1="-6.7" x2="-4.15" y2="-0.1" width="0.2032" layer="21"/>
-<wire x1="-2.9" y1="0" x2="-2.9" y2="2.4" width="0.2032" layer="21"/>
-<wire x1="-2.9" y1="2.4" x2="2.9" y2="2.4" width="0.2032" layer="21"/>
-<wire x1="2.9" y1="2.4" x2="2.9" y2="0" width="0.2032" layer="21"/>
-<pad name="1" x="-3.5" y="-7.8" drill="1.3" diameter="1.9" rot="R180"/>
-<pad name="2" x="0" y="-9.8" drill="1.3" diameter="1.9" rot="R180"/>
-<pad name="3" x="-3.3" y="-11.5" drill="1.3" diameter="1.9" rot="R180"/>
-<pad name="4" x="3.2" y="-11" drill="1.3" diameter="1.9" rot="R180"/>
-<pad name="5" x="0" y="-12.5" drill="1.3" diameter="1.9" rot="R180"/>
-<text x="-5.04" y="-11" size="1.27" layer="25" rot="R90">&gt;NAME</text>
-<text x="7.25" y="-11" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<hole x="-2.5" y="-3" drill="1.1"/>
-<hole x="2.5" y="-3" drill="1.1"/>
-</package>
-</packages>
-<packages3d>
-<package3d name="1503_10" urn="urn:adsk.eagle:package:8556/1" type="box" library_version="1">
-<description>Jack connectors according to JISC 6560, 3.5 mm
-Klinkeneinbaukupplung, 3,5 mm, 4-polig/stereo, abgewinkelte Ausführung
-Source: http://www.lumberg.de/Produkte/PDFs/1503_10.pdf
-+ '1503 10.pdf'</description>
-<packageinstances>
-<packageinstance name="1503_10"/>
-</packageinstances>
-</package3d>
-</packages3d>
-<symbols>
-<symbol name="1503_10" urn="urn:adsk.eagle:symbol:8487/1" library_version="1">
-<wire x1="-5.08" y1="5.08" x2="-2.54" y2="5.08" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="5.08" x2="1.27" y2="1.27" width="0.1524" layer="94"/>
-<wire x1="-5.08" y1="-5.08" x2="-3.81" y2="-5.08" width="0.1524" layer="94"/>
-<wire x1="-3.81" y1="-5.08" x2="-2.54" y2="-3.81" width="0.1524" layer="94"/>
-<wire x1="-5.08" y1="2.54" x2="-2.54" y2="2.54" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="2.54" x2="0" y2="0" width="0.1524" layer="94"/>
-<wire x1="-5.08" y1="0" x2="-2.54" y2="0" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="0" x2="-1.27" y2="-1.27" width="0.1524" layer="94"/>
-<wire x1="-1.27" y1="-1.27" x2="-0.762" y2="-0.762" width="0.1524" layer="94"/>
-<wire x1="-5.08" y1="-7.62" x2="-3.81" y2="-7.62" width="0.1524" layer="94"/>
-<wire x1="-4.826" y1="-7.62" x2="-3.81" y2="-7.62" width="0.1524" layer="94"/>
-<wire x1="-3.81" y1="-7.62" x2="0" y2="-3.81" width="0.1524" layer="94"/>
-<wire x1="0" y1="-0.762" x2="0" y2="-1.27" width="0.1016" layer="94"/>
-<wire x1="0" y1="-1.778" x2="0" y2="-2.286" width="0.1016" layer="94"/>
-<wire x1="0" y1="-2.794" x2="0" y2="-3.302" width="0.1016" layer="94"/>
-<wire x1="0" y1="0" x2="0.508" y2="0.508" width="0.1524" layer="94"/>
-<wire x1="1.27" y1="1.27" x2="1.778" y2="1.778" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="-3.81" x2="-2.032" y2="-4.318" width="0.1524" layer="94"/>
-<wire x1="0" y1="-3.81" x2="0.508" y2="-4.318" width="0.1524" layer="94"/>
-<text x="-5.08" y="6.35" size="1.778" layer="95">&gt;NAME</text>
-<text x="-5.08" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="2.54" y1="-6.35" x2="4.318" y2="1.524" layer="94"/>
-<pin name="5" x="-7.62" y="-7.62" visible="pad" length="short" direction="pas"/>
-<pin name="1" x="-7.62" y="5.08" visible="pad" length="short" direction="pas"/>
-<pin name="2" x="-7.62" y="2.54" visible="pad" length="short" direction="pas"/>
-<pin name="4" x="-7.62" y="-5.08" visible="pad" length="short" direction="pas"/>
-<pin name="3" x="-7.62" y="0" visible="pad" length="short" direction="pas"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="1503_10" urn="urn:adsk.eagle:component:8610/1" prefix="X" library_version="1">
-<description>&lt;b&gt;Jack connectors according to JISC 6560, 3.5 mm&lt;/b&gt;&lt;p&gt;
-Klinkeneinbaukupplung, 3,5 mm, 4-polig/stereo, abgewinkelte Ausführung&lt;br&gt;
-Source: http://www.lumberg.de/Produkte/PDFs/1503_10.pdf</description>
-<gates>
-<gate name="G$1" symbol="1503_10" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="1503_10">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-<connect gate="G$1" pin="5" pad="5"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:8556/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="OC_FARNELL" value="1308868" constant="no"/>
-<attribute name="OC_NEWARK" value="unknown" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="con-lstb" urn="urn:adsk.eagle:library:162">
 <description>&lt;b&gt;Pin Headers&lt;/b&gt;&lt;p&gt;
 Naming:&lt;p&gt;
@@ -7542,122 +7429,37 @@ Fits 4-40 Screws.
 <text x="-1.397" y="3.302" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
 <text x="-1.524" y="-3.937" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
-<package name="AUDIO-JACK" urn="urn:adsk.eagle:footprint:37604/1" library_version="1">
-<description>&lt;h3&gt;3.5mm Stereo Audio Jack&lt;/h3&gt;
+<package name="AUDIO_JACK_3.5MM_TRRS_SMD_RA" urn="urn:adsk.eagle:footprint:37933/1" library_version="1">
+<description>&lt;h3&gt;TRRS 3.5MM Right Angle Stereo Jack - SMT&lt;/h3&gt;
 &lt;p&gt;Specifications:
-&lt;ul&gt;&lt;li&gt;Pin count:5&lt;/li&gt;
+&lt;ul&gt;&lt;li&gt;Pin count: 4&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=”https://www.sparkfun.com/datasheets/Prototyping/Audio-3.5mm.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”http://cdn.sparkfun.com/datasheets/Prototyping/20153.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Example device(s):
-&lt;ul&gt;&lt;li&gt;Audio_Jack&lt;/li&gt;
+&lt;ul&gt;&lt;li&gt;AUDIO_JACK_TRRS&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;</description>
-<wire x1="7.5" y1="6" x2="7.5" y2="-6" width="0.2032" layer="21"/>
-<wire x1="-3.5" y1="6" x2="-3.5" y2="4.5" width="0.2032" layer="51"/>
-<wire x1="-3.5" y1="-4.5" x2="-3.5" y2="-6" width="0.2032" layer="51"/>
-<wire x1="-4.5" y1="4.5" x2="-4.5" y2="3" width="0.2032" layer="51"/>
-<wire x1="-4.5" y1="-3" x2="-4.5" y2="-4.5" width="0.2032" layer="51"/>
-<wire x1="-4.5" y1="-4.5" x2="-3.5" y2="-4.5" width="0.2032" layer="51"/>
-<wire x1="-4.5" y1="4.5" x2="-3.5" y2="4.5" width="0.2032" layer="51"/>
-<wire x1="-6.5" y1="3" x2="-6.5" y2="-3" width="0.2032" layer="51"/>
-<wire x1="-6.5" y1="-3" x2="-4.5" y2="-3" width="0.2032" layer="51"/>
-<wire x1="-6.5" y1="3" x2="-4.5" y2="3" width="0.2032" layer="51"/>
-<wire x1="-3.5" y1="6" x2="3.5" y2="6" width="0.2032" layer="21"/>
-<wire x1="7.5" y1="6" x2="6.5" y2="6" width="0.2032" layer="21"/>
-<wire x1="-3.5" y1="6" x2="-3.5" y2="-6" width="0.2032" layer="21"/>
-<wire x1="-3.5" y1="-6" x2="3.5" y2="-6" width="0.2032" layer="21"/>
-<wire x1="7.5" y1="-6" x2="6.5" y2="-6" width="0.2032" layer="21"/>
-<pad name="SLEEVE" x="0" y="0" drill="1.3" diameter="2.1844"/>
-<pad name="RSH" x="5" y="2.5" drill="1.3" diameter="2.1844"/>
-<pad name="RING" x="5" y="5" drill="1.3" diameter="2.1844"/>
-<pad name="TSH" x="5" y="-2.5" drill="1.3" diameter="2.1844"/>
-<pad name="TIP" x="5" y="-5" drill="1.3" diameter="2.1844"/>
-<hole x="0" y="5" drill="1.2"/>
-<hole x="-2.5" y="5" drill="1.2"/>
-<hole x="-2.5" y="-5" drill="1.2"/>
-<hole x="0" y="-5" drill="1.2"/>
-<hole x="5" y="0" drill="1.2"/>
-<text x="-1.27" y="2.032" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
-<text x="-1.27" y="-2.667" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
-</package>
-<package name="AUDIO-JACK-3.5MM-SMD" urn="urn:adsk.eagle:footprint:37605/1" library_version="1">
-<description>&lt;h3&gt;3.5mm Stereo Audio Jack - Surface Mount&lt;/h3&gt;
-2.5mm Height. 
-&lt;p&gt;Specifications:
-&lt;ul&gt;&lt;li&gt;Pin count:5&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=”http://www.4uconnector.com/online/object/4udrawing/19269.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Example device(s):
-&lt;ul&gt;&lt;li&gt;Audio_Jack&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;</description>
-<wire x1="3.9" y1="-3" x2="10.2" y2="-3" width="0.254" layer="21"/>
-<wire x1="14.5" y1="-0.635" x2="14.5" y2="-3" width="0.254" layer="21"/>
-<wire x1="14.5" y1="-3" x2="13.2" y2="-3" width="0.254" layer="21"/>
-<wire x1="14.5" y1="2.2098" x2="14.5" y2="3" width="0.254" layer="21"/>
-<wire x1="14.5" y1="3" x2="5.7" y2="3" width="0.254" layer="21"/>
-<wire x1="0.5" y1="3" x2="0" y2="3" width="0.254" layer="51"/>
-<wire x1="0" y1="3" x2="0" y2="-2.5" width="0.254" layer="51"/>
-<wire x1="0" y1="-2.5" x2="0" y2="-3" width="0.254" layer="51"/>
-<wire x1="0" y1="-3" x2="1" y2="-3" width="0.254" layer="51"/>
-<wire x1="-0.1524" y1="2.5" x2="-2.5" y2="2.5" width="0.254" layer="51"/>
-<wire x1="-2.5" y1="2.5" x2="-2.5" y2="-2.5" width="0.254" layer="51"/>
-<wire x1="-2.5" y1="-2.5" x2="0" y2="-2.5" width="0.254" layer="51"/>
-<smd name="SLEEVE" x="2.4" y="-3.45" dx="2" dy="2.5" layer="1"/>
-<smd name="TIP" x="11.7" y="-3.45" dx="2" dy="2.5" layer="1"/>
-<smd name="RING" x="4.3" y="3.45" dx="2" dy="2.5" layer="1"/>
-<smd name="TSH" x="15.75" y="0.75" dx="2" dy="2.5" layer="1" rot="R90"/>
-<smd name="RSH" x="1.5" y="3.45" dx="1.2" dy="2.5" layer="1" rot="R180"/>
-<hole x="3.5" y="0" drill="2"/>
-<hole x="10.5" y="0" drill="2"/>
-<text x="5.715" y="0.762" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
-<text x="5.715" y="-1.397" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
-</package>
-<package name="AUDIO-JACK-KIT" urn="urn:adsk.eagle:footprint:37606/1" library_version="1">
-<description>&lt;h3&gt;3.5mm Stereo Audio Jack -Kit Version&lt;/h3&gt;
-Reduced openings in tStop, pins spread a tiny bit out to hold part on PCB during assembly
-&lt;p&gt;Specifications:
-&lt;ul&gt;&lt;li&gt;Pin count:5&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=”https://www.sparkfun.com/datasheets/Prototyping/Audio-3.5mm.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Example device(s):
-&lt;ul&gt;&lt;li&gt;Audio_Jack&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;</description>
-<wire x1="7.5" y1="6" x2="7.5" y2="-6" width="0.2032" layer="21"/>
-<wire x1="-3.5" y1="6" x2="-3.5" y2="4.5" width="0.2032" layer="51"/>
-<wire x1="-3.5" y1="-4.5" x2="-3.5" y2="-6" width="0.2032" layer="51"/>
-<wire x1="-4.5" y1="4.5" x2="-4.5" y2="3" width="0.2032" layer="51"/>
-<wire x1="-4.5" y1="-3" x2="-4.5" y2="-4.5" width="0.2032" layer="51"/>
-<wire x1="-4.5" y1="-4.5" x2="-3.5" y2="-4.5" width="0.2032" layer="51"/>
-<wire x1="-4.5" y1="4.5" x2="-3.5" y2="4.5" width="0.2032" layer="51"/>
-<wire x1="-6.5" y1="3" x2="-6.5" y2="-3" width="0.2032" layer="51"/>
-<wire x1="-6.5" y1="-3" x2="-4.5" y2="-3" width="0.2032" layer="51"/>
-<wire x1="-6.5" y1="3" x2="-4.5" y2="3" width="0.2032" layer="51"/>
-<wire x1="-3.5" y1="6" x2="3.5" y2="6" width="0.2032" layer="21"/>
-<wire x1="7.5" y1="6" x2="6.5" y2="6" width="0.2032" layer="21"/>
-<wire x1="-3.5" y1="6" x2="-3.5" y2="-6" width="0.2032" layer="21"/>
-<wire x1="-3.5" y1="-6" x2="3.5" y2="-6" width="0.2032" layer="21"/>
-<wire x1="7.5" y1="-6" x2="6.5" y2="-6" width="0.2032" layer="21"/>
-<pad name="SLEEVE" x="0" y="0" drill="1.3" diameter="2.1844" stop="no"/>
-<pad name="RSH" x="5" y="2.5" drill="1.3" diameter="2.1844" stop="no"/>
-<pad name="RING" x="5" y="5.1" drill="1.3" diameter="2.1844" stop="no"/>
-<pad name="TSH" x="5" y="-2.5" drill="1.3" diameter="2.1844" stop="no"/>
-<pad name="TIP" x="5" y="-5.1" drill="1.3" diameter="2.1844" stop="no"/>
-<hole x="0" y="5" drill="1.2"/>
-<hole x="-2.5" y="5" drill="1.2"/>
-<hole x="-2.5" y="-5" drill="1.2"/>
-<hole x="0" y="-5" drill="1.2"/>
-<hole x="5" y="0" drill="1.2"/>
-<circle x="0" y="0" radius="0.6604" width="0" layer="29"/>
-<circle x="5" y="5.1" radius="0.6604" width="0" layer="29"/>
-<circle x="5" y="2.5" radius="0.6604" width="0" layer="29"/>
-<circle x="5" y="-2.5" radius="0.6604" width="0" layer="29"/>
-<circle x="5" y="-5.1" radius="0.6604" width="0" layer="29"/>
-<circle x="0" y="0" radius="1.2192" width="0" layer="30"/>
-<circle x="5" y="5.1" radius="1.2192" width="0" layer="30"/>
-<circle x="5" y="-5.1" radius="1.2192" width="0" layer="30"/>
-<circle x="5" y="-2.5" radius="1.2192" width="0" layer="30"/>
-<circle x="5" y="2.5" radius="1.2192" width="0" layer="30"/>
-<text x="-1.27" y="2.032" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
-<text x="-1.27" y="-2.667" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+<wire x1="0.5" y1="-3.3" x2="10.5" y2="-3.3" width="0.254" layer="21"/>
+<wire x1="12.2" y1="3.3" x2="12.2" y2="-3.3" width="0.254" layer="21"/>
+<wire x1="12.2" y1="3.3" x2="11" y2="3.3" width="0.254" layer="21"/>
+<wire x1="0.5" y1="3.3" x2="0" y2="3.3" width="0.254" layer="51"/>
+<wire x1="0" y1="3.3" x2="0" y2="2.8" width="0.254" layer="51"/>
+<wire x1="0" y1="2.8" x2="0" y2="-2.8" width="0.254" layer="51"/>
+<wire x1="0" y1="-2.8" x2="0" y2="-3.3" width="0.254" layer="51"/>
+<wire x1="0" y1="-3.3" x2="0.5" y2="-3.3" width="0.254" layer="51"/>
+<wire x1="0" y1="2.8" x2="-2" y2="2.8" width="0.254" layer="51"/>
+<wire x1="-2" y1="2.8" x2="-2" y2="-2.8" width="0.254" layer="51"/>
+<wire x1="-2" y1="-2.8" x2="0" y2="-2.8" width="0.254" layer="51"/>
+<wire x1="7" y1="3.3" x2="9.4" y2="3.3" width="0.254" layer="21"/>
+<wire x1="4" y1="3.3" x2="5.4" y2="3.3" width="0.254" layer="21"/>
+<wire x1="0.5" y1="3.3" x2="2.4" y2="3.3" width="0.254" layer="21"/>
+<smd name="TIP" x="10.2" y="3.25" dx="1.2" dy="2.5" layer="1"/>
+<smd name="EARTH" x="11.3" y="-3.25" dx="1.2" dy="2.5" layer="1"/>
+<smd name="RING1" x="6.2" y="3.25" dx="1.2" dy="2.5" layer="1"/>
+<smd name="RING2" x="3.2" y="3.25" dx="1.2" dy="2.5" layer="1" rot="R180"/>
+<hole x="1.6" y="0" drill="1.2"/>
+<hole x="8.6" y="0" drill="1.2"/>
+<text x="3.175" y="0.127" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="3.175" y="-1.397" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
 </packages>
 <packages3d>
@@ -8689,45 +8491,17 @@ CONN_01
 <packageinstance name="SMTSO-256-ET-0.165DIA"/>
 </packageinstances>
 </package3d>
-<package3d name="AUDIO-JACK" urn="urn:adsk.eagle:package:37997/1" type="box" library_version="1">
-<description>3.5mm Stereo Audio Jack
+<package3d name="AUDIO_JACK_3.5MM_TRRS_SMD_RA" urn="urn:adsk.eagle:package:38268/1" type="box" library_version="1">
+<description>TRRS 3.5MM Right Angle Stereo Jack - SMT
 Specifications:
-Pin count:5
+Pin count: 4
 
 Datasheet referenced for footprint
 Example device(s):
-Audio_Jack
+AUDIO_JACK_TRRS
 </description>
 <packageinstances>
-<packageinstance name="AUDIO-JACK"/>
-</packageinstances>
-</package3d>
-<package3d name="AUDIO-JACK-3.5MM-SMD" urn="urn:adsk.eagle:package:38015/1" type="box" library_version="1">
-<description>3.5mm Stereo Audio Jack - Surface Mount
-2.5mm Height. 
-Specifications:
-Pin count:5
-
-Datasheet referenced for footprint
-Example device(s):
-Audio_Jack
-</description>
-<packageinstances>
-<packageinstance name="AUDIO-JACK-3.5MM-SMD"/>
-</packageinstances>
-</package3d>
-<package3d name="AUDIO-JACK-KIT" urn="urn:adsk.eagle:package:38014/1" type="box" library_version="1">
-<description>3.5mm Stereo Audio Jack -Kit Version
-Reduced openings in tStop, pins spread a tiny bit out to hold part on PCB during assembly
-Specifications:
-Pin count:5
-
-Datasheet referenced for footprint
-Example device(s):
-Audio_Jack
-</description>
-<packageinstances>
-<packageinstance name="AUDIO-JACK-KIT"/>
+<packageinstance name="AUDIO_JACK_3.5MM_TRRS_SMD_RA"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -8804,26 +8578,26 @@ Six pin connection for the EM406 GPS module.</description>
 <text x="-2.54" y="3.048" size="1.778" layer="95" font="vector">&gt;NAME</text>
 <pin name="1" x="7.62" y="0" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 </symbol>
-<symbol name="AUDIO-JACK2" urn="urn:adsk.eagle:symbol:37603/1" library_version="1">
+<symbol name="AUDIO-JACK3-TRRS" urn="urn:adsk.eagle:symbol:37932/1" library_version="1">
 <description>&lt;h3&gt; Audio Jack &lt;/h3&gt;
-&lt;p&gt;  Basic Audio Jack with bypass switches&lt;/p&gt;</description>
-<wire x1="-1.27" y1="-5.08" x2="0" y2="-3.81" width="0.1524" layer="94"/>
-<wire x1="0" y1="-3.81" x2="1.27" y2="-5.08" width="0.1524" layer="94"/>
-<wire x1="1.27" y1="-5.08" x2="2.54" y2="-5.08" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="-1.27" y2="2.54" width="0.1524" layer="94"/>
-<wire x1="-1.27" y1="2.54" x2="-2.54" y2="1.27" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="1.27" x2="-3.81" y2="2.54" width="0.1524" layer="94"/>
+&lt;p&gt;   Audio Jack with TRRS&lt;/p&gt;</description>
+<wire x1="-3.81" y1="-5.08" x2="-2.54" y2="-3.81" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-3.81" x2="-1.27" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="-5.08" x2="2.54" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="2.54" x2="-1.27" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="-2.54" y2="2.54" width="0.1524" layer="94"/>
 <wire x1="2.54" y1="5.08" x2="-5.08" y2="5.08" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
-<wire x1="0" y1="-2.54" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="-2.54" x2="0" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="0" y1="-1.27" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
 <text x="-5.08" y="5.588" size="1.778" layer="95" font="vector">&gt;NAME</text>
 <text x="-5.08" y="-7.62" size="1.778" layer="96" font="vector">&gt;VALUE</text>
 <rectangle x1="-6.35" y1="-5.08" x2="-5.08" y2="5.08" layer="94"/>
-<pin name="RING" x="5.08" y="2.54" visible="off" length="short" rot="R180"/>
-<pin name="TIP" x="5.08" y="-5.08" visible="off" length="short" rot="R180"/>
-<pin name="SLEEVE" x="5.08" y="5.08" visible="off" length="short" rot="R180"/>
-<pin name="RSH" x="5.08" y="0" visible="off" length="short" rot="R180"/>
-<pin name="TSH" x="5.08" y="-2.54" visible="off" length="short" rot="R180"/>
+<pin name="RING1" x="5.08" y="2.54" visible="off" length="short" rot="R180"/>
+<pin name="RING2" x="5.08" y="-5.08" visible="off" length="short" rot="R180"/>
+<pin name="EARTH" x="5.08" y="5.08" visible="off" length="short" rot="R180"/>
+<pin name="TIP" x="5.08" y="-2.54" visible="off" length="short" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -10069,68 +9843,34 @@ Also note, the SNAP packages are for using a snappable style connector. We sell 
 </device>
 </devices>
 </deviceset>
-<deviceset name="AUDIO_JACK_3.5MM" urn="urn:adsk.eagle:component:38311/1" prefix="J" library_version="1">
-<description>&lt;h3&gt;Audio Jack&lt;/h3&gt;
-&lt;p&gt; 3.5mm variants of PTH and SMT stereo audio jack with bypass switches.&lt;/p&gt;
-&lt;p&gt;SparkFun Products:
-&lt;ul&gt;&lt;li&gt;&lt;a href=”[https://www.sparkfun.com/products/11177]”&gt;SparkFun SparkPunk Sound Kit &lt;/a&gt; - PTH&lt;/li&gt;
-&lt;li&gt;&lt;a href=”https://www.sparkfun.com/products/13720”&gt;MP3 Trigger&lt;/a&gt; -3.5mm SMD&lt;/li&gt;
-&lt;li&gt;&lt;a href=”https://www.sparkfun.com/products/11888”&gt;SparkFun PicoBoard&lt;/a&gt;- 2.5mm SMD&lt;/li&gt;
+<deviceset name="AUDIO_JACK_TRRS" urn="urn:adsk.eagle:component:38375/1" prefix="J" library_version="1">
+<description>&lt;h3&gt;Audio Jack - 3.5mm TRRS (SMD)&lt;/h3&gt;
+&lt;p&gt;This is a 3.5mm TRRS SMD audio jack. 
+&lt;br&gt;TRRS connectors are the audio-style connectors that you see on some phones, MP3 players and development boards. 
+&lt;br&gt;TRRS stands for “tip, ring, ring, sleeve,” which reflects that this  has three conductors and a ground. &lt;/p&gt;
+&lt;p&gt;&lt;b&gt;SparkFun Products:&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=”https://www.sparkfun.com/products/12639”&gt;Audio Jack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/12968"&gt;mbed Starter Kit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=”https://www.sparkfun.com/products/11570&gt;SparkFun TRRS 3.5mm Jack Breakout&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;</description>
 <gates>
-<gate name="G$1" symbol="AUDIO-JACK2" x="0" y="0"/>
+<gate name="G$1" symbol="AUDIO-JACK3-TRRS" x="0" y="0"/>
 </gates>
 <devices>
-<device name="_PTH" package="AUDIO-JACK">
+<device name="SMD_RA" package="AUDIO_JACK_3.5MM_TRRS_SMD_RA">
 <connects>
-<connect gate="G$1" pin="RING" pad="RING"/>
-<connect gate="G$1" pin="RSH" pad="RSH"/>
-<connect gate="G$1" pin="SLEEVE" pad="SLEEVE"/>
+<connect gate="G$1" pin="EARTH" pad="EARTH"/>
+<connect gate="G$1" pin="RING1" pad="RING1"/>
+<connect gate="G$1" pin="RING2" pad="RING2"/>
 <connect gate="G$1" pin="TIP" pad="TIP"/>
-<connect gate="G$1" pin="TSH" pad="TSH"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:37997/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38268/1"/>
 </package3dinstances>
 <technologies>
 <technology name="">
-<attribute name="PROD_ID" value="CONN-08774" constant="no"/>
-<attribute name="SF_ID" value="PRT-08032" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="_SMD" package="AUDIO-JACK-3.5MM-SMD">
-<connects>
-<connect gate="G$1" pin="RING" pad="RING"/>
-<connect gate="G$1" pin="RSH" pad="RSH"/>
-<connect gate="G$1" pin="SLEEVE" pad="SLEEVE"/>
-<connect gate="G$1" pin="TIP" pad="TIP"/>
-<connect gate="G$1" pin="TSH" pad="TSH"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:38015/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="CONN-10353"/>
-</technology>
-</technologies>
-</device>
-<device name="_KIT" package="AUDIO-JACK-KIT">
-<connects>
-<connect gate="G$1" pin="RING" pad="RING"/>
-<connect gate="G$1" pin="RSH" pad="RSH"/>
-<connect gate="G$1" pin="SLEEVE" pad="SLEEVE"/>
-<connect gate="G$1" pin="TIP" pad="TIP"/>
-<connect gate="G$1" pin="TSH" pad="TSH"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:38014/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="CONN-08774" constant="no"/>
-<attribute name="SF_ID" value="PRT-08032" constant="no"/>
+<attribute name="PROD_ID" value="CONN-10676" constant="no"/>
+<attribute name="SF_ID" value="PRT-12639" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -10885,12 +10625,11 @@ BUZZER</description>
 <part name="BUZZ" library="SparkFun-Electromechanical" library_urn="urn:adsk.eagle:library:516" deviceset="BUZZER" device="-PTH" package3d_urn="urn:adsk.eagle:package:38558/1">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="DC-JACK" library="con-jack" library_urn="urn:adsk.eagle:library:154" deviceset="DCJ0202" device="" package3d_urn="urn:adsk.eagle:package:7491/1"/>
+<part name="DC-005" library="con-jack" library_urn="urn:adsk.eagle:library:154" deviceset="DCJ0202" device="" package3d_urn="urn:adsk.eagle:package:7491/1"/>
 <part name="V-IN" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
 <part name="G" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
 <part name="VCC-O" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
 <part name="MINIMOSD" library="FPVTools" deviceset="MICROMINIMOSDPWR" device=""/>
-<part name="3.5MM" library="con-lumberg" library_urn="urn:adsk.eagle:library:163" deviceset="1503_10" device="" package3d_urn="urn:adsk.eagle:package:8556/1"/>
 <part name="-IN" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="SMD2" device="" package3d_urn="urn:adsk.eagle:package:30839/1"/>
 <part name="-OUT" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="SMD2" device="" package3d_urn="urn:adsk.eagle:package:30839/1"/>
 <part name="+5V" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="SMD2" device="" package3d_urn="urn:adsk.eagle:package:30839/1"/>
@@ -10910,9 +10649,9 @@ BUZZER</description>
 <part name="OSD-SERVICE" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="EM406" device="" package3d_urn="urn:adsk.eagle:package:38023/1"/>
 <part name="SER" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_01" device="" package3d_urn="urn:adsk.eagle:package:38028/1"/>
 <part name="AUD" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_01" device="" package3d_urn="urn:adsk.eagle:package:38028/1"/>
-<part name="X2" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="0446200002" device=""/>
-<part name="J1" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="0446200001" device="" value="0446200001"/>
-<part name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="AUDIO_JACK_3.5MM" device="_KIT" package3d_urn="urn:adsk.eagle:package:38014/1"/>
+<part name="RJ45_MOLEX_0446200002" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="0446200002" device=""/>
+<part name="MOLEX_0446200001" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="0446200001" device="" value="0446200001"/>
+<part name="PJ-320D" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="AUDIO_JACK_TRRS" device="SMD_RA" package3d_urn="urn:adsk.eagle:package:38268/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -10945,12 +10684,11 @@ BUZZER</description>
 <instance part="BUZZ" gate="G$1" x="238.76" y="93.98" smashed="yes">
 <attribute name="VALUE" x="233.68" y="83.82" size="1.778" layer="96"/>
 </instance>
-<instance part="DC-JACK" gate="G$1" x="337.82" y="96.52" rot="R180"/>
+<instance part="DC-005" gate="G$1" x="337.82" y="96.52" rot="R180"/>
 <instance part="V-IN" gate="1" x="330.2" y="137.16"/>
 <instance part="G" gate="1" x="330.2" y="142.24"/>
 <instance part="VCC-O" gate="1" x="330.2" y="152.4"/>
 <instance part="MINIMOSD" gate="G$1" x="256.54" y="137.16"/>
-<instance part="3.5MM" gate="G$1" x="81.28" y="78.74" rot="R180"/>
 <instance part="-IN" gate="1" x="302.26" y="99.06" rot="R90"/>
 <instance part="-OUT" gate="1" x="302.26" y="83.82" rot="R270"/>
 <instance part="+5V" gate="1" x="292.1" y="83.82" rot="R270"/>
@@ -10974,64 +10712,13 @@ BUZZER</description>
 <instance part="OSD-SERVICE" gate="G$1" x="289.56" y="226.06" rot="R90"/>
 <instance part="SER" gate="G$1" x="226.06" y="175.26" rot="R90"/>
 <instance part="AUD" gate="G$1" x="104.14" y="50.8" rot="R90"/>
-<instance part="X2" gate="P" x="157.48" y="276.86"/>
-<instance part="J1" gate="P" x="88.9" y="248.92"/>
-<instance part="J2" gate="G$1" x="127" y="231.14"/>
+<instance part="RJ45_MOLEX_0446200002" gate="P" x="157.48" y="276.86"/>
+<instance part="MOLEX_0446200001" gate="P" x="96.52" y="246.38"/>
+<instance part="PJ-320D" gate="G$1" x="78.74" y="35.56"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="GROUND" class="0">
-<segment>
-<wire x1="99.06" y1="165.1" x2="99.06" y2="187.96" width="0.1524" layer="91"/>
-<pinref part="MINIMOSD" gate="G$1" pin="IGND"/>
-<wire x1="261.62" y1="116.84" x2="261.62" y2="111.76" width="0.1524" layer="91"/>
-<label x="261.62" y="111.76" size="1.778" layer="95" xref="yes"/>
-<pinref part="-OUT" gate="1" pin="P"/>
-<wire x1="302.26" y1="81.28" x2="302.26" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="302.26" y1="78.74" x2="302.26" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="302.26" y1="68.58" x2="302.26" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="302.26" y1="60.96" x2="157.48" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="60.96" x2="157.48" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="63.5" x2="157.48" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="302.26" y1="78.74" x2="284.48" y2="96.52" width="0.1524" layer="91"/>
-<junction x="302.26" y="78.74"/>
-<wire x1="284.48" y1="96.52" x2="284.48" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="284.48" y1="104.14" x2="276.86" y2="111.76" width="0.1524" layer="91"/>
-<wire x1="276.86" y1="111.76" x2="261.62" y2="111.76" width="0.1524" layer="91"/>
-<junction x="157.48" y="63.5"/>
-<wire x1="109.22" y1="134.62" x2="109.22" y2="111.76" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="111.76" x2="109.22" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="73.66" x2="109.22" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="63.5" x2="144.78" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="3.5MM" gate="G$1" pin="1"/>
-<wire x1="144.78" y1="63.5" x2="157.48" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="73.66" x2="109.22" y2="73.66" width="0.1524" layer="91"/>
-<junction x="109.22" y="73.66"/>
-<wire x1="109.22" y1="134.62" x2="116.84" y2="134.62" width="0.1524" layer="91"/>
-<pinref part="V-IO" gate="1" pin="1"/>
-<wire x1="116.84" y1="134.62" x2="116.84" y2="139.7" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="139.7" x2="114.3" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="DVR/MODULE-IO" gate="1" pin="3"/>
-<wire x1="144.78" y1="91.44" x2="127" y2="109.22" width="0.1524" layer="91"/>
-<wire x1="144.78" y1="63.5" x2="144.78" y2="91.44" width="0.1524" layer="91"/>
-<junction x="144.78" y="63.5"/>
-<pinref part="BUZZ" gate="G$1" pin="2"/>
-<wire x1="241.3" y1="91.44" x2="259.08" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="259.08" y1="68.58" x2="302.26" y2="68.58" width="0.1524" layer="91"/>
-<junction x="302.26" y="68.58"/>
-<wire x1="99.06" y1="165.1" x2="152.4" y2="139.7" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="139.7" x2="261.62" y2="111.76" width="0.1524" layer="91"/>
-<junction x="261.62" y="111.76"/>
-<pinref part="RJ45" gate="G$1" pin="4"/>
-<wire x1="88.9" y1="104.14" x2="101.6" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="104.14" x2="109.22" y2="111.76" width="0.1524" layer="91"/>
-<junction x="109.22" y="111.76"/>
-<pinref part="U$1" gate="G$1" pin="GND"/>
-<wire x1="157.48" y1="91.44" x2="162.56" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="OLED" gate="G$1" pin="3"/>
-</segment>
-</net>
 <net name="N$2" class="0">
 <segment>
 <wire x1="101.6" y1="165.1" x2="101.6" y2="187.96" width="0.1524" layer="91"/>
@@ -11042,7 +10729,7 @@ BUZZER</description>
 <pinref part="OLED" gate="G$1" pin="4"/>
 </segment>
 </net>
-<net name="SCL" class="0">
+<net name="SCL" class="1">
 <segment>
 <wire x1="96.52" y1="160.02" x2="160.02" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="160.02" x2="96.52" y2="187.96" width="0.1524" layer="91"/>
@@ -11067,16 +10754,13 @@ BUZZER</description>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="DC-JACK" gate="G$1" pin="3"/>
-<wire x1="330.2" y1="99.06" x2="327.66" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="V-IN" gate="1" pin="P"/>
 <wire x1="327.66" y1="99.06" x2="325.12" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="325.12" y1="99.06" x2="325.12" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="325.12" y1="137.16" x2="332.74" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="DC-JACK" gate="G$1" pin="2"/>
-<wire x1="330.2" y1="96.52" x2="327.66" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="327.66" y1="96.52" x2="327.66" y2="99.06" width="0.1524" layer="91"/>
-<junction x="327.66" y="99.06"/>
+<pinref part="DC-005" gate="G$1" pin="1"/>
+<wire x1="327.66" y1="99.06" x2="327.66" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="327.66" y1="93.98" x2="330.2" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GPSTX" class="1">
@@ -11139,26 +10823,94 @@ BUZZER</description>
 <junction x="167.64" y="63.5"/>
 </segment>
 </net>
-<net name="GND" class="1">
+<net name="GND" class="0">
 <segment>
-<pinref part="MINIMOSD" gate="G$1" pin="GND1"/>
-<wire x1="279.4" y1="129.54" x2="287.02" y2="129.54" width="0.1524" layer="91"/>
-<wire x1="287.02" y1="129.54" x2="287.02" y2="127" width="0.1524" layer="91"/>
-<pinref part="MINIMOSD" gate="G$1" pin="GND2"/>
-<wire x1="287.02" y1="127" x2="287.02" y2="124.46" width="0.1524" layer="91"/>
-<wire x1="279.4" y1="124.46" x2="287.02" y2="124.46" width="0.1524" layer="91"/>
-<wire x1="287.02" y1="127" x2="289.56" y2="127" width="0.1524" layer="91"/>
-<junction x="287.02" y="127"/>
-<label x="289.56" y="127" size="1.778" layer="95" xref="yes"/>
-<wire x1="287.02" y1="127" x2="292.1" y2="127" width="0.1524" layer="91"/>
-<wire x1="292.1" y1="127" x2="292.1" y2="116.84" width="0.1524" layer="91"/>
-<wire x1="292.1" y1="116.84" x2="342.9" y2="116.84" width="0.1524" layer="91"/>
-<wire x1="342.9" y1="116.84" x2="342.9" y2="215.9" width="0.1524" layer="91"/>
-<pinref part="OSD-SERVICE" gate="G$1" pin="GND2"/>
+<pinref part="-IN" gate="1" pin="P"/>
+<wire x1="302.26" y1="101.6" x2="302.26" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="G" gate="1" pin="P"/>
+<wire x1="322.58" y1="137.16" x2="322.58" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="322.58" y1="142.24" x2="332.74" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="302.26" y1="116.84" x2="322.58" y2="137.16" width="0.1524" layer="91"/>
+<label x="320.04" y="91.44" size="1.778" layer="95" rot="R90"/>
+<wire x1="99.06" y1="165.1" x2="99.06" y2="187.96" width="0.1524" layer="91"/>
+<pinref part="MINIMOSD" gate="G$1" pin="IGND"/>
+<wire x1="261.62" y1="116.84" x2="261.62" y2="111.76" width="0.1524" layer="91"/>
+<label x="261.62" y="111.76" size="1.778" layer="95" xref="yes"/>
+<pinref part="-OUT" gate="1" pin="P"/>
+<wire x1="302.26" y1="81.28" x2="302.26" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="302.26" y1="78.74" x2="302.26" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="302.26" y1="68.58" x2="302.26" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="302.26" y1="60.96" x2="157.48" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="60.96" x2="157.48" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="63.5" x2="157.48" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="302.26" y1="78.74" x2="284.48" y2="96.52" width="0.1524" layer="91"/>
+<junction x="302.26" y="78.74"/>
+<wire x1="284.48" y1="96.52" x2="284.48" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="104.14" x2="276.86" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="276.86" y1="111.76" x2="261.62" y2="111.76" width="0.1524" layer="91"/>
+<junction x="157.48" y="63.5"/>
+<wire x1="144.78" y1="63.5" x2="157.48" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="DVR/MODULE-IO" gate="1" pin="3"/>
+<wire x1="144.78" y1="91.44" x2="127" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="63.5" x2="144.78" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="BUZZ" gate="G$1" pin="2"/>
+<wire x1="144.78" y1="83.82" x2="144.78" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="241.3" y1="91.44" x2="259.08" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="259.08" y1="68.58" x2="302.26" y2="68.58" width="0.1524" layer="91"/>
+<junction x="302.26" y="68.58"/>
+<wire x1="99.06" y1="165.1" x2="152.4" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="139.7" x2="261.62" y2="111.76" width="0.1524" layer="91"/>
+<junction x="261.62" y="111.76"/>
+<pinref part="U$1" gate="G$1" pin="GND"/>
+<wire x1="157.48" y1="91.44" x2="162.56" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="OLED" gate="G$1" pin="3"/>
+<wire x1="302.26" y1="101.6" x2="302.26" y2="78.74" width="0.1524" layer="91"/>
+<junction x="302.26" y="101.6"/>
+<wire x1="332.74" y1="142.24" x2="342.9" y2="142.24" width="0.1524" layer="91"/>
+<junction x="332.74" y="142.24"/>
+<wire x1="342.9" y1="142.24" x2="342.9" y2="248.92" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="248.92" x2="119.38" y2="248.92" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="248.92" x2="119.38" y2="215.9" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="215.9" x2="68.58" y2="215.9" width="0.1524" layer="91"/>
+<pinref part="GND" gate="1" pin="P"/>
+<wire x1="68.58" y1="215.9" x2="68.58" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="V-IO" gate="1" pin="1"/>
+<wire x1="114.3" y1="139.7" x2="114.3" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="134.62" x2="129.54" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="134.62" x2="129.54" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="83.82" x2="144.78" y2="83.82" width="0.1524" layer="91"/>
+<junction x="144.78" y="83.82"/>
+<wire x1="322.58" y1="137.16" x2="322.58" y2="96.52" width="0.1524" layer="91"/>
+<junction x="322.58" y="137.16"/>
+<pinref part="DC-005" gate="G$1" pin="2"/>
+<wire x1="322.58" y1="96.52" x2="325.12" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="DC-005" gate="G$1" pin="3"/>
+<wire x1="325.12" y1="96.52" x2="330.2" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="330.2" y1="96.52" x2="330.2" y2="99.06" width="0.1524" layer="91"/>
+<junction x="330.2" y="96.52"/>
+<pinref part="R2" gate="G$1" pin="1"/>
+<wire x1="317.5" y1="71.12" x2="317.5" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="317.5" y1="68.58" x2="325.12" y2="68.58" width="0.1524" layer="91"/>
+<label x="320.04" y="73.66" size="1.778" layer="95" rot="R90"/>
+<wire x1="325.12" y1="96.52" x2="325.12" y2="68.58" width="0.1524" layer="91"/>
+<junction x="325.12" y="96.52"/>
+<pinref part="MINIMOSD" gate="G$1" pin="VOG"/>
+<wire x1="254" y1="157.48" x2="254" y2="215.9" width="0.1524" layer="91"/>
+<wire x1="254" y1="215.9" x2="124.46" y2="215.9" width="0.1524" layer="91"/>
+<junction x="119.38" y="215.9"/>
 <pinref part="OSD-SERVICE" gate="G$1" pin="1PPS"/>
+<wire x1="124.46" y1="215.9" x2="119.38" y2="215.9" width="0.1524" layer="91"/>
+<wire x1="294.64" y1="215.9" x2="309.88" y2="215.9" width="0.1524" layer="91"/>
+<wire x1="309.88" y1="215.9" x2="309.88" y2="241.3" width="0.1524" layer="91"/>
+<wire x1="309.88" y1="241.3" x2="124.46" y2="241.3" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="241.3" x2="124.46" y2="215.9" width="0.1524" layer="91"/>
+<junction x="124.46" y="215.9"/>
+<pinref part="OSD-SERVICE" gate="G$1" pin="GND2"/>
 <wire x1="292.1" y1="215.9" x2="294.64" y2="215.9" width="0.1524" layer="91"/>
-<wire x1="292.1" y1="215.9" x2="342.9" y2="215.9" width="0.1524" layer="91"/>
-<junction x="292.1" y="215.9"/>
+<junction x="294.64" y="215.9"/>
+<wire x1="129.54" y1="83.82" x2="129.54" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="PJ-320D" gate="G$1" pin="RING2"/>
+<wire x1="83.82" y1="30.48" x2="129.54" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5VFTDI" class="1">
@@ -11230,21 +10982,6 @@ BUZZER</description>
 <wire x1="134.62" y1="114.3" x2="127" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="VSIGNAL-A-SW" class="2">
-<segment>
-<pinref part="3.5MM" gate="G$1" pin="2"/>
-<wire x1="99.06" y1="129.54" x2="99.06" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="101.6" x2="99.06" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="76.2" x2="88.9" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="V-IO" gate="1" pin="3"/>
-<wire x1="114.3" y1="144.78" x2="119.38" y2="144.78" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="144.78" x2="119.38" y2="129.54" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="129.54" x2="99.06" y2="129.54" width="0.1524" layer="91"/>
-<pinref part="RJ45" gate="G$1" pin="3"/>
-<wire x1="88.9" y1="101.6" x2="99.06" y2="101.6" width="0.1524" layer="91"/>
-<junction x="99.06" y="101.6"/>
-</segment>
-</net>
 <net name="N$17" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
@@ -11255,39 +10992,6 @@ BUZZER</description>
 <pinref part="VCC-O" gate="1" pin="P"/>
 <wire x1="317.5" y1="152.4" x2="332.74" y2="152.4" width="0.1524" layer="91"/>
 <junction x="317.5" y="127"/>
-</segment>
-</net>
-<net name="N$11" class="0">
-<segment>
-<pinref part="-IN" gate="1" pin="P"/>
-<wire x1="302.26" y1="101.6" x2="302.26" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="DC-JACK" gate="G$1" pin="1"/>
-<wire x1="330.2" y1="93.98" x2="327.66" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="327.66" y1="93.98" x2="322.58" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="322.58" y1="93.98" x2="322.58" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="G" gate="1" pin="P"/>
-<wire x1="322.58" y1="137.16" x2="322.58" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="322.58" y1="142.24" x2="332.74" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="302.26" y1="116.84" x2="322.58" y2="137.16" width="0.1524" layer="91"/>
-<junction x="322.58" y="137.16"/>
-<wire x1="327.66" y1="68.58" x2="327.66" y2="93.98" width="0.1524" layer="91"/>
-<junction x="327.66" y="93.98"/>
-<label x="320.04" y="91.44" size="1.778" layer="95" rot="R90"/>
-<label x="320.04" y="73.66" size="1.778" layer="95" rot="R90"/>
-<pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="317.5" y1="71.12" x2="317.5" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="317.5" y1="68.58" x2="327.66" y2="68.58" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="8VG" class="0">
-<segment>
-<pinref part="8V" gate="1" pin="P"/>
-<wire x1="76.2" y1="162.56" x2="88.9" y2="162.56" width="0.1524" layer="91"/>
-<pinref part="RJ45" gate="G$1" pin="8"/>
-<wire x1="88.9" y1="114.3" x2="88.9" y2="162.56" width="0.1524" layer="91"/>
-<pinref part="RJ45" gate="G$1" pin="7"/>
-<wire x1="88.9" y1="114.3" x2="88.9" y2="111.76" width="0.1524" layer="91"/>
-<junction x="88.9" y="114.3"/>
 </segment>
 </net>
 <net name="D6" class="1">
@@ -11310,16 +11014,6 @@ BUZZER</description>
 <wire x1="218.44" y1="38.1" x2="218.44" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="D7"/>
 <wire x1="218.44" y1="111.76" x2="200.66" y2="111.76" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="8V" class="0">
-<segment>
-<pinref part="GND" gate="1" pin="P"/>
-<wire x1="68.58" y1="162.56" x2="68.58" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="134.62" x2="91.44" y2="134.62" width="0.1524" layer="91"/>
-<pinref part="RJ45" gate="G$1" pin="2"/>
-<wire x1="88.9" y1="99.06" x2="91.44" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="134.62" x2="91.44" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V1" class="0">
@@ -11427,21 +11121,28 @@ BUZZER</description>
 <wire x1="187.96" y1="73.66" x2="187.96" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="AUD" class="2">
+<net name="N$3" class="0">
 <segment>
 <pinref part="AUD" gate="G$1" pin="1"/>
-<wire x1="104.14" y1="58.42" x2="101.6" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="58.42" x2="101.6" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="3.5MM" gate="G$1" pin="3"/>
-<wire x1="101.6" y1="78.74" x2="96.52" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="3.5MM" gate="G$1" pin="4"/>
-<wire x1="96.52" y1="78.74" x2="88.9" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="83.82" x2="88.9" y2="78.74" width="0.1524" layer="91"/>
-<junction x="88.9" y="78.74"/>
-<pinref part="RJ45" gate="G$1" pin="5"/>
-<wire x1="88.9" y1="106.68" x2="96.52" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="106.68" x2="96.52" y2="78.74" width="0.1524" layer="91"/>
-<junction x="96.52" y="78.74"/>
+<wire x1="104.14" y1="58.42" x2="104.14" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="68.58" x2="99.06" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="PJ-320D" gate="G$1" pin="RING1"/>
+<wire x1="99.06" y1="68.58" x2="99.06" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="38.1" x2="83.82" y2="38.1" width="0.1524" layer="91"/>
+<pinref part="PJ-320D" gate="G$1" pin="TIP"/>
+<wire x1="83.82" y1="38.1" x2="83.82" y2="33.02" width="0.1524" layer="91"/>
+<junction x="83.82" y="38.1"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="V-IO" gate="1" pin="3"/>
+<wire x1="114.3" y1="144.78" x2="119.38" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="144.78" x2="119.38" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="124.46" x2="91.44" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="124.46" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="PJ-320D" gate="G$1" pin="EARTH"/>
+<wire x1="83.82" y1="40.64" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

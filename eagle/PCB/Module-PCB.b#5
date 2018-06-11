@@ -162,7 +162,7 @@
 <wire x1="-41.91" y1="0" x2="-41.91" y2="27.94" width="0.1524" layer="20"/>
 <dimension x1="-41.91" y1="27.94" x2="-6.35" y2="29.21" x3="-24.13" y3="30.48" textsize="1.778" layer="1" dtype="horizontal"/>
 <dimension x1="-6.35" y1="27.94" x2="-6.35" y2="0" x3="-1.27" y3="13.97" textsize="1.778" layer="1" dtype="horizontal"/>
-<text x="-38.227" y="1.397" size="1.778" layer="25" rot="R90">Pocket Groundsstation</text>
+<text x="-38.227" y="1.397" size="1.651" layer="25" rot="R90">Pocket Groundsstation</text>
 </plain>
 <libraries>
 <library name="SparkFun-Connectors" urn="urn:adsk.eagle:library:513">
@@ -497,32 +497,32 @@ design rules under a new name.</description>
 </autorouter>
 <elements>
 <element name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X09" package3d_urn="urn:adsk.eagle:package:38153/1" value="" x="-30.48" y="24.13" rot="MR270"/>
-<element name="C1" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="24.13" rot="R270">
-<attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="24.13" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="C1" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="24.13" rot="R90">
+<attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="24.13" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="C2" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="21.59" rot="R270">
 <attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="21.59" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="C3" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="19.05" rot="R270">
-<attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="19.05" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="C3" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="19.05" rot="R90">
+<attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="19.05" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="V" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="16.51" rot="R270">
 <attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="16.51" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="A2" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="13.97" rot="R270">
-<attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="13.97" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="A2" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="13.97" rot="R90">
+<attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="13.97" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="A1" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="11.43" rot="R270">
 <attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="11.43" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="G" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="8.89" rot="R270">
-<attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="8.89" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="G" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="8.89" rot="R90">
+<attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="8.89" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="NC" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="6.35" rot="R270">
 <attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="6.35" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="5V" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="3.81" rot="R270">
-<attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="3.81" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="5V" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="-10.16" y="3.81" rot="R90">
+<attribute name="TP_SIGNAL_NAME" value="" x="-10.16" y="3.81" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 </elements>
 <signals>
