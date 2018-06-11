@@ -1748,7 +1748,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="V" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
 <part name="A2" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
 <part name="A1" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
-<part name="G" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
+<part name="GND" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
 <part name="NC" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
 <part name="5V" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
 </parts>
@@ -1764,7 +1764,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="V" gate="G$1" x="591.82" y="-180.34" rot="R180"/>
 <instance part="A2" gate="G$1" x="596.9" y="-180.34" rot="R180"/>
 <instance part="A1" gate="G$1" x="601.98" y="-180.34" rot="R180"/>
-<instance part="G" gate="G$1" x="607.06" y="-180.34" rot="R180"/>
+<instance part="GND" gate="G$1" x="607.06" y="-180.34" rot="R180"/>
 <instance part="NC" gate="G$1" x="612.14" y="-180.34" rot="R180"/>
 <instance part="5V" gate="G$1" x="617.22" y="-180.34" rot="R180"/>
 </instances>
@@ -1822,12 +1822,12 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="601.98" y1="-170.18" x2="601.98" y2="-177.8" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$7" class="0">
+<net name="GND" class="0">
 <segment>
 <pinref part="MODULE-IO" gate="G$1" pin="7"/>
 <wire x1="594.36" y1="-129.54" x2="594.36" y2="-167.64" width="0.1524" layer="91"/>
 <wire x1="594.36" y1="-167.64" x2="607.06" y2="-167.64" width="0.1524" layer="91"/>
-<pinref part="G" gate="G$1" pin="TP"/>
+<pinref part="GND" gate="G$1" pin="TP"/>
 <wire x1="607.06" y1="-167.64" x2="607.06" y2="-177.8" width="0.1524" layer="91"/>
 </segment>
 </net>
