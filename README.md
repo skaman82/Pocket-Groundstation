@@ -18,7 +18,7 @@ An attempt to create a mini ground station that will accept any Fatshark module.
 </br>
 
 Many problems to solve! If you want to join the project or contribute, you are very welcome to do so!</br>
-I will need any help I can get to solve the things involving coding (marked as BONUS)</br></br>
+I will need any help I can get to solve the things involving coding.</br></br>
 
 <b>Parts (work in progress):</b></br>
 • 3D-Printed Parts </br>
