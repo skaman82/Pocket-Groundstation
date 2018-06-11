@@ -27,7 +27,7 @@ I will need any help I can get to solve the things involving coding (marked as B
 • 5V Buzzer</br>
 • 3-35V to 1.2-30V Step up/down (https://de.aliexpress.com/item/DC-DC-Auto-Boost-Buck-Step-Up-Step-Down-Converter-Module-Solar-Voltage-LM2577-Module/32829391285.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
 • DC 5.5x2.5 PCB socket (https://de.aliexpress.com/item/10pcs-DC-005-Black-DC-Power-Jack-Socket-Connector-DC005-5-5-2-1mm-2-1/32361314769.html)</br>
-• 3.5mm PCB socket (Sparkfun TRRS jack)</br>
+• 3.5mm PCB socket (PJ-320D)</br>
 • RJ45 PCB socket (RJ45_MOLEX_0446200002/RJ45_MOLEX_0446200001)</br>
 • I2C OLED Display 1.3" (https://de.aliexpress.com/item/1-3-Inch-1-3-White-OLED-LCD-4PIN-Display-Module-IIC-I2C-Interface-128x64-for/32837066822.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
 • 2-way slide PCB switch (https://de.aliexpress.com/item/10PCS-ON-OFF-Micro-Slide-Switch-Interruptor-1P2T-3Pin-Toggle-Switch-Handle-L-3mm/32804510003.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
