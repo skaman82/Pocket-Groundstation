@@ -32,7 +32,8 @@ I will need any help I can get to solve the things involving coding (marked as B
 • I2C OLED Display 1.3" (https://de.aliexpress.com/item/1-3-Inch-1-3-White-OLED-LCD-4PIN-Display-Module-IIC-I2C-Interface-128x64-for/32837066822.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
 • 2-way slide PCB switch (https://de.aliexpress.com/item/10PCS-ON-OFF-Micro-Slide-Switch-Interruptor-1P2T-3Pin-Toggle-Switch-Handle-L-3mm/32804510003.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
 • Diode (SMD S1A)</br>
-• Resistors 1206 (4.7K /18K)</br>
+• Resistors 1206 (4.7K / 18K / 220 Ohm)</br>
+• Red 3mm LED</br>
 • Tactile buttons (3x) (https://de.aliexpress.com/item/100-st-cke-6-6-7mm-Licht-touch-schalter-DIP4-ON-OFF-Tactile-Push-button-micro/32846526815.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
 • minimosd micro (https://de.aliexpress.com/item/Dragon-model-MICRO-MINIMOSD-Minim-OSD-Mini-OSD-W-KV-TEAM-MOD-For-CC3D-Naze-32/32733995033.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
 • 5V 2A BEC (Diatone)</br>
