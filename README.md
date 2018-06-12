@@ -4,6 +4,8 @@ An attempt to create a mini ground station that will accept any Fatshark module.
 
 <img src="http://k-h-h.de/labs/github/GS_concept.jpg"/>
 
+<img src="http://k-h-h.de/labs/github/rig.jpg"/>
+
 <b>Ideas so far:</b></br>
 • takes 2S to 4S voltage</br>
 • 3,5mm AV output</br>
