@@ -4742,7 +4742,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="3.81" y="16.51" size="0.0254" layer="27" rot="R270"/>
 </element>
 <element name="VCC-O" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="2,54/1,1" package3d_urn="urn:adsk.eagle:package:30836/1" value="" x="15.24" y="2.54" smashed="yes">
-<attribute name="NAME" x="13.716" y="0" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="NAME" x="13.716" y="1.27" size="1.27" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="15.24" y="3.54" size="0.0254" layer="27"/>
 </element>
 <element name="BUZZ" library="SparkFun-Electromechanical" library_urn="urn:adsk.eagle:library:516" package="BUZZER-12MM" package3d_urn="urn:adsk.eagle:package:38558/1" value="BUZZER-PTH" x="38.1" y="7.62" smashed="yes" rot="R90">
@@ -4804,7 +4804,7 @@ design rules under a new name.</description>
 </element>
 <element name="SER" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X01" package3d_urn="urn:adsk.eagle:package:38028/1" value="" x="10.16" y="53.34" rot="MR90"/>
 <element name="AUD" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X01" package3d_urn="urn:adsk.eagle:package:38028/1" value="" x="10.16" y="49.53" rot="MR90"/>
-<element name="MOLEX_0446200001" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="0446200001" value="0446200001" x="15.0876" y="71.9836" smashed="yes" rot="R180">
+<element name="M_0446200001" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="0446200001" value="0446200001" x="15.0876" y="71.9836" smashed="yes" rot="R180">
 <attribute name="MF" value="MOLEX" x="15.0876" y="71.9836" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="15.0876" y="71.9836" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="9.0424" y="63.2714" size="1.27" layer="25"/>
@@ -4895,8 +4895,8 @@ design rules under a new name.</description>
 <contactref element="PJ-320D" pad="RING2"/>
 <contactref element="IN-" pad="TP"/>
 <contactref element="-OUT" pad="TP"/>
-<contactref element="MOLEX_0446200001" pad="4"/>
-<contactref element="MOLEX_0446200001" pad="2"/>
+<contactref element="M_0446200001" pad="4"/>
+<contactref element="M_0446200001" pad="2"/>
 <wire x1="33.73" y1="71.73" x2="39.37" y2="66.04" width="0" layer="19" extent="1-1"/>
 <wire x1="41.91" y1="57.15" x2="39.37" y2="66.04" width="0" layer="19" extent="1-1"/>
 <wire x1="27.94" y1="57.785" x2="41.91" y2="57.15" width="0" layer="19" extent="1-1"/>
@@ -5035,7 +5035,7 @@ design rules under a new name.</description>
 <contactref element="AUD" pad="1"/>
 <contactref element="PJ-320D" pad="RING1"/>
 <contactref element="PJ-320D" pad="TIP"/>
-<contactref element="MOLEX_0446200001" pad="5"/>
+<contactref element="M_0446200001" pad="5"/>
 <wire x1="33.73" y1="64.73" x2="33.73" y2="68.73" width="0" layer="19" extent="1-1"/>
 <wire x1="15.5956" y1="69.4436" x2="33.73" y2="68.73" width="0" layer="19" extent="1-1"/>
 <wire x1="10.16" y1="49.53" x2="15.5956" y2="69.4436" width="0" layer="19" extent="1-1"/>
@@ -5043,7 +5043,7 @@ design rules under a new name.</description>
 <signal name="VMAIN" class="2">
 <contactref element="V-IO" pad="3"/>
 <contactref element="PJ-320D" pad="EARTH"/>
-<contactref element="MOLEX_0446200001" pad="3"/>
+<contactref element="M_0446200001" pad="3"/>
 <wire x1="13.5636" y1="69.4436" x2="27.23" y2="63.63" width="0" layer="19" extent="1-1"/>
 <wire x1="3.81" y1="58.42" x2="13.5636" y2="69.4436" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -5053,8 +5053,8 @@ design rules under a new name.</description>
 <wire x1="22.86" y1="2.54" x2="31.75" y2="35.56" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="8V">
-<contactref element="MOLEX_0446200001" pad="7"/>
-<contactref element="MOLEX_0446200001" pad="8"/>
+<contactref element="M_0446200001" pad="7"/>
+<contactref element="M_0446200001" pad="8"/>
 <contactref element="8V" pad="1"/>
 <wire x1="18.6436" y1="67.6656" x2="39.37" y2="69.85" width="0" layer="19" extent="1-1"/>
 <wire x1="17.6276" y1="69.4436" x2="18.6436" y2="67.6656" width="0" layer="19" extent="1-1"/>

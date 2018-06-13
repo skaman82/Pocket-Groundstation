@@ -3,7 +3,7 @@
 <eagle version="9.0.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -23,17 +23,17 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
@@ -47,9 +47,9 @@
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
@@ -59,7 +59,7 @@
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -168,9 +168,9 @@
 <text x="39.37" y="54.61" size="0.889" layer="25" rot="R180">SCL</text>
 <text x="39.37" y="57.15" size="0.889" layer="25" rot="R180">G</text>
 <text x="39.37" y="59.69" size="0.889" layer="25" rot="R180">5V</text>
-<text x="16.51" y="5.08" size="0.889" layer="25" rot="R180">D2</text>
-<text x="19.05" y="5.08" size="0.889" layer="25" rot="R180">D3</text>
-<text x="21.59" y="5.08" size="0.889" layer="25" rot="R180">D4</text>
+<text x="22.86" y="5.08" size="0.889" layer="25" rot="R180">D2</text>
+<text x="25.4" y="5.08" size="0.889" layer="25" rot="R180">D3</text>
+<text x="27.94" y="5.08" size="0.889" layer="25" rot="R180">D4</text>
 <text x="41.91" y="2.54" size="1.27" layer="26" rot="MR90">POCKET-GROUNDSTATION | PCB2 | REV1</text>
 <text x="6.35" y="63.5" size="0.889" layer="25">G</text>
 <text x="6.35" y="60.96" size="0.889" layer="25">Vdvr</text>
@@ -2665,7 +2665,7 @@
 <rectangle x1="16.2814" y1="44.069" x2="16.7894" y2="44.0944" layer="26" rot="R90"/>
 <rectangle x1="16.3449" y1="44.1071" x2="16.6751" y2="44.1325" layer="26" rot="R90"/>
 <rectangle x1="16.4211" y1="44.1325" x2="16.5481" y2="44.1579" layer="26" rot="R90"/>
-<text x="13.97" y="5.08" size="0.889" layer="25" rot="R180">D13 (LED)</text>
+<text x="20.32" y="5.08" size="0.889" layer="25" rot="R180">D13 (LED)</text>
 </plain>
 <libraries>
 <library name="con-lstb" urn="urn:adsk.eagle:library:162">
@@ -4388,45 +4388,45 @@ design rules under a new name.</description>
 <attribute name="OC_NEWARK" value="unknown" x="3.81" y="59.69" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="5.461" y="59.055" size="1.27" layer="27" ratio="10" rot="R270"/>
 </element>
-<element name="S1" library="switch" library_urn="urn:adsk.eagle:library:380" package="TL3XPO" package3d_urn="urn:adsk.eagle:package:27745/1" value="TL32PO" x="27.94" y="59.69"/>
-<element name="OLED" library="diy-modules" package="DISPLAY-OLED-128X64-I2C" value="DISPLAY-OLED-128X64-I2C" x="20.32" y="36.83" rot="R90"/>
-<element name="S2" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" package="TACTILE_SWITCH_PTH_6.0MM" package3d_urn="urn:adsk.eagle:package:40163/1" value="MOMENTARY-SWITCH-SPST-PTH-6.0MM" x="11.43" y="17.78" rot="R180">
-<attribute name="PROD_ID" value=" SWCH-08441" x="11.43" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="SF_SKU" value="COM-00097" x="11.43" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="S1" library="switch" library_urn="urn:adsk.eagle:library:380" package="TL3XPO" package3d_urn="urn:adsk.eagle:package:27745/1" value="TL32PO" x="15.24" y="59.69"/>
+<element name="OLED" library="diy-modules" package="DISPLAY-OLED-128X64-I2C" value="DISPLAY-OLED-128X64-I2C" x="24.13" y="38.1" rot="R270"/>
+<element name="S2" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" package="TACTILE_SWITCH_PTH_6.0MM" package3d_urn="urn:adsk.eagle:package:40163/1" value="MOMENTARY-SWITCH-SPST-PTH-6.0MM" x="12.7" y="17.78" rot="R180">
+<attribute name="PROD_ID" value=" SWCH-08441" x="12.7" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="SF_SKU" value="COM-00097" x="12.7" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="S3" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" package="TACTILE_SWITCH_PTH_6.0MM" package3d_urn="urn:adsk.eagle:package:40163/1" value="MOMENTARY-SWITCH-SPST-PTH-6.0MM" x="20.32" y="17.78" rot="R180">
-<attribute name="PROD_ID" value=" SWCH-08441" x="20.32" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="SF_SKU" value="COM-00097" x="20.32" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="S3" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" package="TACTILE_SWITCH_PTH_6.0MM" package3d_urn="urn:adsk.eagle:package:40163/1" value="MOMENTARY-SWITCH-SPST-PTH-6.0MM" x="21.59" y="17.78" rot="R180">
+<attribute name="PROD_ID" value=" SWCH-08441" x="21.59" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="SF_SKU" value="COM-00097" x="21.59" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="S4" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" package="TACTILE_SWITCH_PTH_6.0MM" package3d_urn="urn:adsk.eagle:package:40163/1" value="MOMENTARY-SWITCH-SPST-PTH-6.0MM" x="29.21" y="17.78" rot="R180">
-<attribute name="PROD_ID" value=" SWCH-08441" x="29.21" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="SF_SKU" value="COM-00097" x="29.21" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="S4" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" package="TACTILE_SWITCH_PTH_6.0MM" package3d_urn="urn:adsk.eagle:package:40163/1" value="MOMENTARY-SWITCH-SPST-PTH-6.0MM" x="30.48" y="17.78" rot="R180">
+<attribute name="PROD_ID" value=" SWCH-08441" x="30.48" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="SF_SKU" value="COM-00097" x="30.48" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="OLED-IO" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X04" package3d_urn="urn:adsk.eagle:package:38085/1" value="" x="41.91" y="59.69" rot="R270">
 <attribute name="PROD_ID" value="CONN-09696" x="41.91" y="59.69" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="BT-IO" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X04" package3d_urn="urn:adsk.eagle:package:38085/1" value="" x="20.32" y="2.54" rot="R180">
-<attribute name="PROD_ID" value="CONN-09696" x="20.32" y="2.54" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="BT-IO" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X04" package3d_urn="urn:adsk.eagle:package:38085/1" value="" x="27.94" y="2.54" rot="R180">
+<attribute name="PROD_ID" value="CONN-09696" x="27.94" y="2.54" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="U$2" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="41.402" y="3.81" rot="R180"/>
 <element name="U$3" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="3.81" y="3.81" rot="R180"/>
 <element name="U$4" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="41.402" y="71.12" rot="R180"/>
 <element name="U$5" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="3.81" y="71.12" rot="R180"/>
-<element name="D1" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" package="LED_3MM" package3d_urn="urn:adsk.eagle:package:39361/1" value="" x="13.97" y="59.69" rot="R180">
-<attribute name="PROD_ID" value="DIO-08794" x="13.97" y="59.69" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="D1" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" package="LED_3MM" package3d_urn="urn:adsk.eagle:package:39361/1" value="" x="30.48" y="59.69">
+<attribute name="PROD_ID" value="DIO-08794" x="30.48" y="59.69" size="1.778" layer="27" display="off"/>
 </element>
-<element name="R3-220" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R1206" package3d_urn="urn:adsk.eagle:package:26062/1" value="220" x="13.97" y="54.61"/>
+<element name="R3-220" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R1206" package3d_urn="urn:adsk.eagle:package:26062/1" value="220" x="25.4" y="58.42" rot="R90"/>
 </elements>
 <signals>
 <signal name="VIDOUT" class="2">
 <contactref element="IO3" pad="4"/>
 <contactref element="S1" pad="1"/>
-<wire x1="3.81" y1="55.88" x2="25.4" y2="59.69" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="55.88" x2="12.7" y2="59.69" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3" class="2">
 <contactref element="IO3" pad="3"/>
 <contactref element="S1" pad="2"/>
-<wire x1="3.81" y1="58.42" x2="27.94" y2="59.69" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="58.42" x2="15.24" y2="59.69" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND">
 <contactref element="OLED" pad="1"/>
@@ -4436,57 +4436,57 @@ design rules under a new name.</description>
 <contactref element="S3" pad="1"/>
 <contactref element="OLED-IO" pad="2"/>
 <contactref element="D1" pad="K"/>
-<wire x1="7.62" y1="33.02" x2="12.7" y2="59.69" width="0" layer="19" extent="1-1"/>
-<wire x1="14.6812" y1="15.5194" x2="7.62" y2="33.02" width="0" layer="19" extent="1-1"/>
-<wire x1="23.5712" y1="15.5194" x2="14.6812" y2="15.5194" width="0" layer="19" extent="1-1"/>
-<wire x1="32.4612" y1="15.5194" x2="23.5712" y2="15.5194" width="0" layer="19" extent="1-1"/>
-<wire x1="41.91" y1="57.15" x2="32.4612" y2="15.5194" width="0" layer="19" extent="1-1"/>
-<wire x1="3.81" y1="63.5" x2="14.6812" y2="15.5194" width="0" layer="19" extent="1-1"/>
+<wire x1="36.83" y1="41.91" x2="31.75" y2="59.69" width="0" layer="19" extent="1-1"/>
+<wire x1="15.9512" y1="15.5194" x2="36.83" y2="41.91" width="0" layer="19" extent="1-1"/>
+<wire x1="24.8412" y1="15.5194" x2="15.9512" y2="15.5194" width="0" layer="19" extent="1-1"/>
+<wire x1="33.7312" y1="15.5194" x2="24.8412" y2="15.5194" width="0" layer="19" extent="1-1"/>
+<wire x1="41.91" y1="57.15" x2="33.7312" y2="15.5194" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="63.5" x2="15.9512" y2="15.5194" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$4">
 <contactref element="OLED" pad="2"/>
 <contactref element="OLED-IO" pad="1"/>
-<wire x1="41.91" y1="59.69" x2="7.62" y2="35.56" width="0" layer="19" extent="1-1"/>
+<wire x1="41.91" y1="59.69" x2="36.83" y2="39.37" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$6" class="1">
 <contactref element="OLED-IO" pad="4"/>
 <contactref element="OLED" pad="4"/>
-<wire x1="41.91" y1="52.07" x2="7.62" y2="40.64" width="0" layer="19" extent="1-1"/>
+<wire x1="41.91" y1="52.07" x2="36.83" y2="34.29" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$7" class="1">
 <contactref element="OLED-IO" pad="3"/>
 <contactref element="OLED" pad="3"/>
-<wire x1="41.91" y1="54.61" x2="7.62" y2="38.1" width="0" layer="19" extent="1-1"/>
+<wire x1="41.91" y1="54.61" x2="36.83" y2="36.83" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$10" class="2">
 <contactref element="IO3" pad="2"/>
 <contactref element="S1" pad="3"/>
-<wire x1="3.81" y1="60.96" x2="30.48" y2="59.69" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="60.96" x2="17.78" y2="59.69" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$2" class="1">
 <contactref element="S4" pad="3"/>
 <contactref element="BT-IO" pad="1"/>
-<wire x1="32.4612" y1="20.0406" x2="20.32" y2="2.54" width="0" layer="19" extent="1-1"/>
+<wire x1="33.7312" y1="20.0406" x2="27.94" y2="2.54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$11" class="1">
 <contactref element="S3" pad="3"/>
 <contactref element="BT-IO" pad="2"/>
-<wire x1="23.5712" y1="20.0406" x2="17.78" y2="2.54" width="0" layer="19" extent="1-1"/>
+<wire x1="24.8412" y1="20.0406" x2="25.4" y2="2.54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$12" class="1">
 <contactref element="S2" pad="3"/>
 <contactref element="BT-IO" pad="3"/>
-<wire x1="14.6812" y1="20.0406" x2="15.24" y2="2.54" width="0" layer="19" extent="1-1"/>
+<wire x1="15.9512" y1="20.0406" x2="22.86" y2="2.54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="D1" pad="A"/>
 <contactref element="R3-220" pad="2"/>
-<wire x1="15.392" y1="54.61" x2="15.24" y2="59.69" width="0" layer="19" extent="1-1"/>
+<wire x1="25.4" y1="59.842" x2="29.21" y2="59.69" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="R3-220" pad="1"/>
 <contactref element="BT-IO" pad="4"/>
-<wire x1="12.548" y1="54.61" x2="12.7" y2="2.54" width="0" layer="19" extent="1-1"/>
+<wire x1="25.4" y1="56.998" x2="20.32" y2="2.54" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>

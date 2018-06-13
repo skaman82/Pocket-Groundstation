@@ -3,7 +3,7 @@
 <eagle version="9.0.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -171,7 +171,7 @@
 <text x="25.4" y="5.08" size="0.889" layer="25" rot="R180">D2</text>
 <text x="27.94" y="5.08" size="0.889" layer="25" rot="R180">D3</text>
 <text x="30.48" y="5.08" size="0.889" layer="25" rot="R180">D4</text>
-<text x="5.08" y="10.16" size="1.27" layer="26" rot="MR180">POCKET-GROUNDSTATION | PCB2 | REV1</text>
+<text x="3.81" y="50.8" size="1.27" layer="26" rot="MR270">POCKET-GROUNDSTATION | PCB2 | REV1</text>
 <text x="6.35" y="63.5" size="0.889" layer="25">G</text>
 <text x="6.35" y="60.96" size="0.889" layer="25">Vdvr</text>
 <text x="6.35" y="58.42" size="0.889" layer="25">Vmain</text>

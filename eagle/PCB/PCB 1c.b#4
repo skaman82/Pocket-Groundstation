@@ -2676,7 +2676,7 @@
 <rectangle x1="13.3985" y1="7.2263" x2="13.5255" y2="7.2517" layer="26" rot="R180"/>
 <text x="24.13" y="5.08" size="0.889" layer="25" rot="R180">D13</text>
 <text x="20.32" y="8.89" size="1.016" layer="21">DIATONE
-5V BEC</text>
+ 5V BEC</text>
 </plain>
 <libraries>
 <library name="wirepad" urn="urn:adsk.eagle:library:412">
