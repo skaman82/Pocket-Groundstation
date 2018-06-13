@@ -3,7 +3,7 @@
 <eagle version="9.0.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -198,9 +198,9 @@
 <text x="5.08" y="20.32" size="0.889" layer="25">SCL</text>
 <text x="5.08" y="17.78" size="0.889" layer="25">G</text>
 <text x="5.08" y="15.24" size="0.889" layer="25">5V</text>
-<text x="30.48" y="69.85" size="0.889" layer="25" rot="R270">D2</text>
-<text x="27.94" y="69.85" size="0.889" layer="25" rot="R270">D3</text>
-<text x="25.4" y="69.85" size="0.889" layer="25" rot="R270">D4</text>
+<text x="29.21" y="69.85" size="0.889" layer="25" rot="R270">D2</text>
+<text x="26.67" y="69.85" size="0.889" layer="25" rot="R270">D3</text>
+<text x="24.13" y="69.85" size="0.889" layer="25" rot="R270">D4</text>
 <text x="2.54" y="72.39" size="1.27" layer="26" rot="MR270">POCKET-GROUNDSTATION | PCB2 | REV1</text>
 <text x="38.1" y="11.43" size="0.889" layer="25" rot="R180">G</text>
 <text x="38.1" y="13.97" size="0.889" layer="25" rot="R180">Vdvr</text>
@@ -2695,6 +2695,7 @@
 <rectangle x1="27.6606" y1="30.8356" x2="28.1686" y2="30.861" layer="26" rot="R270"/>
 <rectangle x1="27.7749" y1="30.7975" x2="28.1051" y2="30.8229" layer="26" rot="R270"/>
 <rectangle x1="27.9019" y1="30.7721" x2="28.0289" y2="30.7975" layer="26" rot="R270"/>
+<text x="31.75" y="69.85" size="0.889" layer="25" rot="R270">LED</text>
 </plain>
 <libraries>
 <library name="con-lstb" urn="urn:adsk.eagle:library:162">
@@ -2984,44 +2985,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
 <text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
-<package name="1X03" urn="urn:adsk.eagle:footprint:37678/1" library_version="1">
-<description>&lt;h3&gt;Plated Through Hole - 3 Pin&lt;/h3&gt;
-&lt;p&gt;Specifications:
-&lt;ul&gt;&lt;li&gt;Pin count:3&lt;/li&gt;
-&lt;li&gt;Pin pitch:0.1"&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;Example device(s):
-&lt;ul&gt;&lt;li&gt;CONN_03&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;</description>
-<wire x1="3.81" y1="0.635" x2="4.445" y2="1.27" width="0.2032" layer="21"/>
-<wire x1="4.445" y1="1.27" x2="5.715" y2="1.27" width="0.2032" layer="21"/>
-<wire x1="5.715" y1="1.27" x2="6.35" y2="0.635" width="0.2032" layer="21"/>
-<wire x1="6.35" y1="-0.635" x2="5.715" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="5.715" y1="-1.27" x2="4.445" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="4.445" y1="-1.27" x2="3.81" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.2032" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.2032" layer="21"/>
-<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="1.27" y1="0.635" x2="1.905" y2="1.27" width="0.2032" layer="21"/>
-<wire x1="1.905" y1="1.27" x2="3.175" y2="1.27" width="0.2032" layer="21"/>
-<wire x1="3.175" y1="1.27" x2="3.81" y2="0.635" width="0.2032" layer="21"/>
-<wire x1="3.81" y1="-0.635" x2="3.175" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="3.175" y1="-1.27" x2="1.905" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="1.905" y1="-1.27" x2="1.27" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.2032" layer="21"/>
-<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="6.35" y1="0.635" x2="6.35" y2="-0.635" width="0.2032" layer="21"/>
-<pad name="1" x="0" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="2" x="2.54" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="3" x="5.08" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<rectangle x1="4.826" y1="-0.254" x2="5.334" y2="0.254" layer="51"/>
-<rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
-<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
-<text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
-<text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
-</package>
 </packages>
 <packages3d>
 <package3d name="1X04" urn="urn:adsk.eagle:package:38085/1" type="box" library_version="1">
@@ -3035,19 +2998,6 @@ CONN_04
 </description>
 <packageinstances>
 <packageinstance name="1X04"/>
-</packageinstances>
-</package3d>
-<package3d name="1X03" urn="urn:adsk.eagle:package:38063/1" type="box" library_version="1">
-<description>Plated Through Hole - 3 Pin
-Specifications:
-Pin count:3
-Pin pitch:0.1"
-
-Example device(s):
-CONN_03
-</description>
-<packageinstances>
-<packageinstance name="1X03"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -4485,7 +4435,9 @@ design rules under a new name.</description>
 <element name="OLED-IO" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X04" package3d_urn="urn:adsk.eagle:package:38085/1" value="" x="2.54" y="15.24" rot="R90">
 <attribute name="PROD_ID" value="CONN-09696" x="2.54" y="15.24" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="BT-IO" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X03" package3d_urn="urn:adsk.eagle:package:38063/1" value="" x="25.4" y="72.39"/>
+<element name="BT-IO" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X04" package3d_urn="urn:adsk.eagle:package:38085/1" value="" x="24.13" y="72.39">
+<attribute name="PROD_ID" value="CONN-09696" x="24.13" y="72.39" size="1.778" layer="27" display="off"/>
+</element>
 <element name="U$2" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="5.08" y="71.12"/>
 <element name="U$3" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="40.64" y="71.12"/>
 <element name="U$4" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="4.8768" y="3.6068"/>
@@ -4524,9 +4476,7 @@ design rules under a new name.</description>
 <signal name="N$4">
 <contactref element="OLED" pad="2"/>
 <contactref element="OLED-IO" pad="1"/>
-<contactref element="R1-150-OHM" pad="1"/>
 <wire x1="2.54" y1="15.24" x2="36.83" y2="39.37" width="0" layer="19" extent="1-1"/>
-<wire x1="27.94" y1="55.728" x2="2.54" y2="15.24" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$6" class="1">
 <contactref element="OLED-IO" pad="4"/>
@@ -4546,22 +4496,27 @@ design rules under a new name.</description>
 <signal name="N$2" class="1">
 <contactref element="S4" pad="3"/>
 <contactref element="BT-IO" pad="1"/>
-<wire x1="10.7188" y1="10.4394" x2="25.4" y2="72.39" width="0" layer="19" extent="1-1"/>
+<wire x1="10.7188" y1="10.4394" x2="24.13" y2="72.39" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$11" class="1">
 <contactref element="S3" pad="3"/>
 <contactref element="BT-IO" pad="2"/>
-<wire x1="19.6088" y1="10.4394" x2="27.94" y2="72.39" width="0" layer="19" extent="1-1"/>
+<wire x1="19.6088" y1="10.4394" x2="26.67" y2="72.39" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$12" class="1">
 <contactref element="S2" pad="3"/>
 <contactref element="BT-IO" pad="3"/>
-<wire x1="28.4988" y1="10.4394" x2="30.48" y2="72.39" width="0" layer="19" extent="1-1"/>
+<wire x1="28.4988" y1="10.4394" x2="29.21" y2="72.39" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="D1" pad="A"/>
 <contactref element="R1-150-OHM" pad="2"/>
 <wire x1="27.94" y1="58.572" x2="31.75" y2="62.23" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$5">
+<contactref element="R1-150-OHM" pad="1"/>
+<contactref element="BT-IO" pad="4"/>
+<wire x1="27.94" y1="55.728" x2="31.75" y2="72.39" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>

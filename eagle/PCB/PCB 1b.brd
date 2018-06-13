@@ -2727,24 +2727,12 @@
 <text x="-1.27" y="1.524" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="0" y="1" size="0.0254" layer="27">&gt;VALUE</text>
 </package>
-<package name="SMD1,27-2,54" urn="urn:adsk.eagle:footprint:30822/1" library_version="1">
-<description>&lt;b&gt;SMD PAD&lt;/b&gt;</description>
-<smd name="1" x="0" y="0" dx="1.27" dy="2.54" layer="1"/>
-<text x="0" y="0" size="0.0254" layer="27">&gt;VALUE</text>
-<text x="-0.8" y="-2.4" size="1.27" layer="25" rot="R90">&gt;NAME</text>
-</package>
 </packages>
 <packages3d>
 <package3d name="2,54/1,1" urn="urn:adsk.eagle:package:30836/1" type="box" library_version="1">
 <description>THROUGH-HOLE PAD</description>
 <packageinstances>
 <packageinstance name="2,54/1,1"/>
-</packageinstances>
-</package3d>
-<package3d name="SMD1,27-2,54" urn="urn:adsk.eagle:package:30839/1" type="box" library_version="1">
-<description>SMD PAD</description>
-<packageinstances>
-<packageinstance name="SMD1,27-2,54"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -4544,6 +4532,29 @@ BUZZER</description>
 </package3d>
 </packages3d>
 </library>
+<library name="testpad" urn="urn:adsk.eagle:library:385">
+<description>&lt;b&gt;Test Pins/Pads&lt;/b&gt;&lt;p&gt;
+Cream on SMD OFF.&lt;br&gt;
+new: Attribute TP_SIGNAL_NAME&lt;br&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="TP20SQ" urn="urn:adsk.eagle:footprint:27937/1" library_version="1">
+<description>&lt;b&gt;TEST PAD&lt;/b&gt;</description>
+<smd name="TP" x="0" y="0" dx="2" dy="2" layer="1" cream="no"/>
+<text x="-1" y="1.05" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.016" y="-1.143" size="0.0254" layer="27">&gt;VALUE</text>
+<text x="0" y="-2.54" size="1" layer="37">&gt;TP_SIGNAL_NAME</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="TP20SQ" urn="urn:adsk.eagle:package:27980/1" type="box" library_version="1">
+<description>TEST PAD</description>
+<packageinstances>
+<packageinstance name="TP20SQ"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -4748,7 +4759,7 @@ design rules under a new name.</description>
 <element name="DC-005" library="con-jack" library_urn="urn:adsk.eagle:library:154" package="DCJ0202" package3d_urn="urn:adsk.eagle:package:7491/1" value="DCJ0202" x="8.89" y="66.04" smashed="yes" rot="R180">
 <attribute name="MF" value="" x="8.89" y="66.04" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="8.89" y="66.04" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="12.7" y="67.31" size="1.27" layer="25" rot="R180"/>
+<attribute name="NAME" x="11.43" y="72.39" size="1.27" layer="25" rot="R180"/>
 <attribute name="OC_FARNELL" value="unknown" x="8.89" y="66.04" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="8.89" y="66.04" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="2.54" y="74.93" size="1.27" layer="27" rot="R270"/>
@@ -4769,22 +4780,6 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="34.29" y="71.755" size="1.27" layer="27" ratio="10" rot="R270"/>
 </element>
 <element name="MINIMOSD" library="FPVTools" package="MMOSDNVDVID" value="MICROMINIMOSDPWR" x="21.59" y="25.4" rot="R180"/>
-<element name="-IN" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="SMD1,27-2,54" package3d_urn="urn:adsk.eagle:package:30839/1" value="" x="15.24" y="68.58" smashed="yes" rot="R90">
-<attribute name="NAME" x="18.91" y="66.51" size="1.27" layer="25" rot="R180"/>
-<attribute name="VALUE" x="15.24" y="68.58" size="0.0254" layer="27" rot="R90"/>
-</element>
-<element name="-OUT" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="SMD1,27-2,54" package3d_urn="urn:adsk.eagle:package:30839/1" value="" x="29.21" y="68.58" smashed="yes" rot="R90">
-<attribute name="NAME" x="27.8" y="66.51" size="1.27" layer="25" rot="R180"/>
-<attribute name="VALUE" x="29.21" y="68.58" size="0.0254" layer="27" rot="R90"/>
-</element>
-<element name="+5V" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="SMD1,27-2,54" package3d_urn="urn:adsk.eagle:package:30839/1" value="" x="29.21" y="58.42" smashed="yes" rot="R90">
-<attribute name="NAME" x="27.8" y="61.43" size="1.27" layer="25" rot="R180"/>
-<attribute name="VALUE" x="29.21" y="58.42" size="0.0254" layer="27" rot="R90"/>
-</element>
-<element name="+IN" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="SMD1,27-2,54" package3d_urn="urn:adsk.eagle:package:30839/1" value="" x="15.24" y="58.42" smashed="yes" rot="R270">
-<attribute name="NAME" x="19.19" y="61.76" size="1.27" layer="25" rot="R180"/>
-<attribute name="VALUE" x="15.24" y="58.42" size="0.0254" layer="27" rot="R270"/>
-</element>
 <element name="R1-18K" library="rcl" library_urn="urn:adsk.eagle:library:334" package="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="18k Ohm" x="11.43" y="49.53" smashed="yes" rot="R180">
 <attribute name="NAME" x="13.97" y="46.99" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="R" x="11.43" y="49.53" size="1.778" layer="27" rot="R180" display="off"/>
@@ -4845,6 +4840,18 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="CONN-10676" x="30.48" y="0" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="SF_ID" value="PRT-12639" x="30.48" y="0" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
+<element name="IN-" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="15.24" y="68.58" rot="R180">
+<attribute name="TP_SIGNAL_NAME" value="" x="15.24" y="68.58" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="IN+" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="15.24" y="58.42">
+<attribute name="TP_SIGNAL_NAME" value="" x="15.24" y="58.42" size="1.778" layer="27" display="off"/>
+</element>
+<element name="+5V" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="29.21" y="58.42">
+<attribute name="TP_SIGNAL_NAME" value="" x="29.21" y="58.42" size="1.778" layer="27" display="off"/>
+</element>
+<element name="-OUT" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="29.21" y="68.58" rot="R180">
+<attribute name="TP_SIGNAL_NAME" value="" x="29.21" y="68.58" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="N$2">
@@ -4862,7 +4869,7 @@ design rules under a new name.</description>
 <contactref element="OLED" pad="1"/>
 <wire x1="2.54" y1="22.86" x2="21.59" y2="43.18" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$5">
+<signal name="+">
 <contactref element="V-IN" pad="1"/>
 <contactref element="DC-005" pad="1"/>
 <wire x1="8.89" y1="62.94" x2="16.51" y2="72.39" width="0" layer="19" extent="1-1"/>
@@ -4890,22 +4897,19 @@ design rules under a new name.</description>
 </signal>
 <signal name="+5V">
 <contactref element="MINIMOSD" pad="IVCC"/>
-<contactref element="+5V" pad="1"/>
 <contactref element="DVR/MODULE-IO" pad="4"/>
 <contactref element="D1" pad="A"/>
+<contactref element="+5V" pad="TP"/>
 <wire x1="29.21" y1="58.42" x2="33.51" y2="58.42" width="0" layer="19" extent="1-1"/>
 <wire x1="21.59" y1="34.33" x2="29.21" y2="58.42" width="0" layer="19" extent="1-1"/>
 <wire x1="40.64" y1="30.48" x2="21.59" y2="34.33" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND">
-<contactref element="-IN" pad="1"/>
 <contactref element="G" pad="1"/>
 <contactref element="MINIMOSD" pad="IGND"/>
-<contactref element="-OUT" pad="1"/>
 <contactref element="DVR/MODULE-IO" pad="3"/>
 <contactref element="BUZZ" pad="-"/>
 <contactref element="U$1" pad="GND"/>
-<wire x1="14.9225" y1="68.58" x2="15.24" y2="68.58" width="0.762" layer="1"/>
 <contactref element="OLED" pad="3"/>
 <contactref element="GND" pad="1"/>
 <contactref element="V-IO" pad="1"/>
@@ -4917,10 +4921,12 @@ design rules under a new name.</description>
 <contactref element="OSD-SERVICE" pad="5"/>
 <wire x1="5.08" y1="30.29" x2="5.08" y2="29.29" width="0.381" layer="1"/>
 <contactref element="PJ-320D" pad="RING2"/>
+<contactref element="IN-" pad="TP"/>
+<contactref element="-OUT" pad="TP"/>
 <wire x1="29.21" y1="68.58" x2="38.1" y2="70.56" width="0" layer="19" extent="1-1"/>
 <wire x1="20.32" y1="72.39" x2="29.21" y2="68.58" width="0" layer="19" extent="1-1"/>
 <wire x1="15.24" y1="68.58" x2="20.32" y2="72.39" width="0" layer="19" extent="1-1"/>
-<wire x1="8.89" y1="69.04" x2="14.9225" y2="68.58" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="69.04" x2="15.24" y2="68.58" width="0" layer="19" extent="1-1"/>
 <wire x1="4.09" y1="66.04" x2="8.89" y2="69.04" width="0" layer="19" extent="1-1"/>
 <wire x1="25.53" y1="49.53" x2="29.21" y2="68.58" width="0" layer="19" extent="1-1"/>
 <wire x1="30.48" y1="39.37" x2="25.53" y2="49.53" width="0" layer="19" extent="1-1"/>
@@ -4968,10 +4974,10 @@ design rules under a new name.</description>
 <contactref element="DVR/MODULE-IO" pad="2"/>
 <wire x1="40.64" y1="13.97" x2="40.64" y2="25.4" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$17">
+<signal name="VCC">
 <contactref element="R1-18K" pad="2"/>
-<contactref element="+IN" pad="1"/>
 <contactref element="VCC-O" pad="1"/>
+<contactref element="IN+" pad="TP"/>
 <wire x1="7.62" y1="59.69" x2="15.24" y2="58.42" width="0" layer="19" extent="1-1"/>
 <wire x1="10.03" y1="49.53" x2="15.24" y2="58.42" width="0" layer="19" extent="1-1"/>
 </signal>

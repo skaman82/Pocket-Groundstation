@@ -158,186 +158,6 @@
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
-<library name="con-kycon" urn="urn:adsk.eagle:library:157">
-<description>&lt;b&gt;Connector from KYCON, Inc&lt;/b&gt;&lt;p&gt;
-1810 Little Orchard Street,&lt;br&gt;
-San Jose,&lt;br&gt;
-CA 95125 (408)494-0330&lt;br&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/autor&gt;</description>
-<packages>
-<package name="GLX-S-88M" urn="urn:adsk.eagle:footprint:7673/1" library_version="1">
-<description>&lt;b&gt;Mod. Jack, Right Angle, 8 posiotion, 8 contatcs&lt;/b&gt; RJ45&lt;p&gt;
-Source: GLX-S-88M.pdf</description>
-<wire x1="-8.532" y1="4.52" x2="8.532" y2="4.52" width="0" layer="20"/>
-<wire x1="8.25" y1="6.525" x2="8.25" y2="-3.302" width="0.2032" layer="22"/>
-<wire x1="8.25" y1="-6.35" x2="8.25" y2="-7.875" width="0.2032" layer="22"/>
-<wire x1="8.25" y1="-7.875" x2="-8.25" y2="-7.875" width="0.2032" layer="22"/>
-<wire x1="-8.25" y1="-7.875" x2="-8.25" y2="-6.35" width="0.2032" layer="22"/>
-<wire x1="-8.25" y1="-3.302" x2="-8.25" y2="6.525" width="0.2032" layer="22"/>
-<wire x1="-8.25" y1="6.525" x2="8.25" y2="6.525" width="0.2032" layer="22"/>
-<wire x1="-8.25" y1="-6.351" x2="-8.25" y2="-3.381" width="0.2032" layer="51"/>
-<wire x1="8.25" y1="-3.381" x2="8.25" y2="-6.351" width="0.2032" layer="51"/>
-<pad name="1" x="-3.57" y="-2.3" drill="0.9" diameter="1.4224"/>
-<pad name="2" x="-2.55" y="-4.84" drill="0.9" diameter="1.4224"/>
-<pad name="3" x="-1.53" y="-2.3" drill="0.9" diameter="1.4224"/>
-<pad name="4" x="-0.51" y="-4.84" drill="0.9" diameter="1.4224"/>
-<pad name="5" x="0.51" y="-2.3" drill="0.9" diameter="1.4224"/>
-<pad name="6" x="1.53" y="-4.84" drill="0.9" diameter="1.4224"/>
-<pad name="7" x="2.55" y="-2.3" drill="0.9" diameter="1.4224"/>
-<pad name="8" x="3.57" y="-4.84" drill="0.9" diameter="1.4224"/>
-<pad name="S1" x="-8.125" y="-4.84" drill="1.6" diameter="2.1844"/>
-<pad name="S2" x="8.125" y="-4.84" drill="1.6" diameter="2.1844"/>
-<text x="-8.128" y="-9.652" size="1.27" layer="25">&gt;NAME</text>
-<text x="-5.08" y="1.27" size="1.27" layer="27">&gt;VALUE</text>
-<hole x="-7.44" y="0" drill="2.55"/>
-<hole x="7.44" y="0" drill="2.55"/>
-</package>
-</packages>
-<packages3d>
-<package3d name="GLX-S-88M" urn="urn:adsk.eagle:package:7680/1" type="box" library_version="1">
-<description>Mod. Jack, Right Angle, 8 posiotion, 8 contatcs RJ45
-Source: GLX-S-88M.pdf</description>
-<packageinstances>
-<packageinstance name="GLX-S-88M"/>
-</packageinstances>
-</package3d>
-</packages3d>
-<symbols>
-<symbol name="JACK8SH" urn="urn:adsk.eagle:symbol:7672/1" library_version="1">
-<wire x1="1.524" y1="10.668" x2="0" y2="10.668" width="0.254" layer="94"/>
-<wire x1="0" y1="10.668" x2="0" y2="9.652" width="0.254" layer="94"/>
-<wire x1="0" y1="9.652" x2="1.524" y2="9.652" width="0.254" layer="94"/>
-<wire x1="1.524" y1="8.128" x2="0" y2="8.128" width="0.254" layer="94"/>
-<wire x1="0" y1="8.128" x2="0" y2="7.112" width="0.254" layer="94"/>
-<wire x1="0" y1="7.112" x2="1.524" y2="7.112" width="0.254" layer="94"/>
-<wire x1="1.524" y1="5.588" x2="0" y2="5.588" width="0.254" layer="94"/>
-<wire x1="0" y1="5.588" x2="0" y2="4.572" width="0.254" layer="94"/>
-<wire x1="0" y1="4.572" x2="1.524" y2="4.572" width="0.254" layer="94"/>
-<wire x1="1.524" y1="3.048" x2="0" y2="3.048" width="0.254" layer="94"/>
-<wire x1="0" y1="3.048" x2="0" y2="2.032" width="0.254" layer="94"/>
-<wire x1="0" y1="2.032" x2="1.524" y2="2.032" width="0.254" layer="94"/>
-<wire x1="1.524" y1="0.508" x2="0" y2="0.508" width="0.254" layer="94"/>
-<wire x1="0" y1="0.508" x2="0" y2="-0.508" width="0.254" layer="94"/>
-<wire x1="0" y1="-0.508" x2="1.524" y2="-0.508" width="0.254" layer="94"/>
-<wire x1="1.524" y1="-2.032" x2="0" y2="-2.032" width="0.254" layer="94"/>
-<wire x1="0" y1="-2.032" x2="0" y2="-3.048" width="0.254" layer="94"/>
-<wire x1="0" y1="-3.048" x2="1.524" y2="-3.048" width="0.254" layer="94"/>
-<wire x1="1.524" y1="-4.572" x2="0" y2="-4.572" width="0.254" layer="94"/>
-<wire x1="0" y1="-4.572" x2="0" y2="-5.588" width="0.254" layer="94"/>
-<wire x1="0" y1="-5.588" x2="1.524" y2="-5.588" width="0.254" layer="94"/>
-<wire x1="1.524" y1="-7.112" x2="0" y2="-7.112" width="0.254" layer="94"/>
-<wire x1="0" y1="-7.112" x2="0" y2="-8.128" width="0.254" layer="94"/>
-<wire x1="0" y1="-8.128" x2="1.524" y2="-8.128" width="0.254" layer="94"/>
-<wire x1="-0.381" y1="-10.16" x2="0.254" y2="-10.16" width="0.127" layer="94"/>
-<wire x1="1.016" y1="-10.16" x2="1.524" y2="-10.16" width="0.127" layer="94"/>
-<wire x1="2.286" y1="-10.16" x2="2.794" y2="-10.16" width="0.127" layer="94"/>
-<wire x1="3.048" y1="-10.16" x2="3.302" y2="-10.16" width="0.127" layer="94"/>
-<wire x1="3.302" y1="-10.16" x2="3.302" y2="-9.652" width="0.127" layer="94"/>
-<wire x1="3.302" y1="9.906" x2="3.302" y2="10.414" width="0.127" layer="94"/>
-<wire x1="3.302" y1="10.922" x2="3.302" y2="11.43" width="0.127" layer="94"/>
-<wire x1="3.302" y1="11.43" x2="2.794" y2="11.43" width="0.127" layer="94"/>
-<wire x1="2.286" y1="11.43" x2="1.778" y2="11.43" width="0.127" layer="94"/>
-<wire x1="1.27" y1="11.43" x2="0.762" y2="11.43" width="0.127" layer="94"/>
-<wire x1="0.254" y1="11.43" x2="-0.381" y2="11.43" width="0.127" layer="94"/>
-<wire x1="-0.381" y1="11.43" x2="-0.381" y2="10.668" width="0.127" layer="94"/>
-<wire x1="-0.381" y1="9.652" x2="-0.381" y2="8.128" width="0.127" layer="94"/>
-<wire x1="-0.381" y1="7.112" x2="-0.381" y2="5.588" width="0.127" layer="94"/>
-<wire x1="-0.381" y1="4.572" x2="-0.381" y2="3.048" width="0.127" layer="94"/>
-<wire x1="-0.381" y1="2.032" x2="-0.381" y2="0.508" width="0.127" layer="94"/>
-<wire x1="-0.381" y1="-0.508" x2="-0.381" y2="-2.032" width="0.127" layer="94"/>
-<wire x1="-0.381" y1="-3.048" x2="-0.381" y2="-4.572" width="0.127" layer="94"/>
-<wire x1="-0.381" y1="-5.588" x2="-0.381" y2="-7.112" width="0.127" layer="94"/>
-<wire x1="-0.381" y1="-8.128" x2="-0.381" y2="-10.16" width="0.127" layer="94"/>
-<wire x1="4.826" y1="4.064" x2="4.826" y2="3.048" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="3.048" x2="4.826" y2="2.54" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="2.54" x2="4.826" y2="2.032" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="2.032" x2="4.826" y2="1.524" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="1.524" x2="4.826" y2="1.016" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="1.016" x2="4.826" y2="0.508" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="0.508" x2="4.826" y2="0" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="0" x2="4.826" y2="-0.508" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="-0.508" x2="4.826" y2="-1.524" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="-1.524" x2="7.366" y2="-1.524" width="0.1998" layer="94"/>
-<wire x1="7.366" y1="-1.524" x2="7.366" y2="-0.254" width="0.1998" layer="94"/>
-<wire x1="7.366" y1="-0.254" x2="8.89" y2="-0.254" width="0.1998" layer="94"/>
-<wire x1="8.89" y1="-0.254" x2="8.89" y2="2.794" width="0.1998" layer="94"/>
-<wire x1="8.89" y1="2.794" x2="7.366" y2="2.794" width="0.1998" layer="94"/>
-<wire x1="7.366" y1="2.794" x2="7.366" y2="4.064" width="0.1998" layer="94"/>
-<wire x1="7.366" y1="4.064" x2="4.826" y2="4.064" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="3.048" x2="5.588" y2="3.048" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="2.54" x2="5.588" y2="2.54" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="2.032" x2="5.588" y2="2.032" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="1.524" x2="5.588" y2="1.524" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="1.016" x2="5.588" y2="1.016" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="0.508" x2="5.588" y2="0.508" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="0" x2="5.588" y2="0" width="0.1998" layer="94"/>
-<wire x1="4.826" y1="-0.508" x2="5.588" y2="-0.508" width="0.1998" layer="94"/>
-<wire x1="3.302" y1="8.636" x2="3.302" y2="9.144" width="0.127" layer="94"/>
-<wire x1="3.302" y1="7.366" x2="3.302" y2="7.874" width="0.127" layer="94"/>
-<wire x1="3.302" y1="6.096" x2="3.302" y2="6.604" width="0.127" layer="94"/>
-<wire x1="3.302" y1="4.826" x2="3.302" y2="5.334" width="0.127" layer="94"/>
-<wire x1="3.302" y1="3.556" x2="3.302" y2="4.064" width="0.127" layer="94"/>
-<wire x1="3.302" y1="2.286" x2="3.302" y2="2.794" width="0.127" layer="94"/>
-<wire x1="3.302" y1="1.016" x2="3.302" y2="1.524" width="0.127" layer="94"/>
-<wire x1="3.302" y1="-0.254" x2="3.302" y2="0.254" width="0.127" layer="94"/>
-<wire x1="3.302" y1="-1.524" x2="3.302" y2="-1.016" width="0.127" layer="94"/>
-<wire x1="3.302" y1="-2.794" x2="3.302" y2="-2.286" width="0.127" layer="94"/>
-<wire x1="3.302" y1="-4.064" x2="3.302" y2="-3.556" width="0.127" layer="94"/>
-<wire x1="3.302" y1="-5.334" x2="3.302" y2="-4.826" width="0.127" layer="94"/>
-<wire x1="3.302" y1="-6.604" x2="3.302" y2="-6.096" width="0.127" layer="94"/>
-<wire x1="3.302" y1="-7.874" x2="3.302" y2="-7.366" width="0.127" layer="94"/>
-<wire x1="3.302" y1="-9.144" x2="3.302" y2="-8.636" width="0.127" layer="94"/>
-<text x="3.81" y="10.668" size="1.778" layer="95">&gt;NAME</text>
-<text x="3.81" y="-10.922" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="10.16" visible="pad" length="short" direction="pas" swaplevel="1"/>
-<pin name="2" x="-2.54" y="7.62" visible="pad" length="short" direction="pas" swaplevel="1"/>
-<pin name="3" x="-2.54" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1"/>
-<pin name="4" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" swaplevel="1"/>
-<pin name="5" x="-2.54" y="0" visible="pad" length="short" direction="pas" swaplevel="1"/>
-<pin name="6" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" swaplevel="1"/>
-<pin name="7" x="-2.54" y="-5.08" visible="pad" length="short" direction="pas" swaplevel="1"/>
-<pin name="8" x="-2.54" y="-7.62" visible="pad" length="short" direction="pas" swaplevel="1"/>
-<pin name="S2" x="2.54" y="-12.7" visible="off" length="short" direction="pas" swaplevel="2" rot="R90"/>
-<pin name="S1" x="0" y="-12.7" visible="off" length="short" direction="pas" swaplevel="2" rot="R90"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="GLX-S-88M" urn="urn:adsk.eagle:component:7684/1" prefix="X" library_version="1">
-<description>&lt;b&gt;Mod. Jack, Right Angle, 8 posiotion, 8 contatcs&lt;/b&gt; RJ45&lt;p&gt;
-Source: GLX-S-88M.pdf</description>
-<gates>
-<gate name="G$1" symbol="JACK8SH" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="GLX-S-88M">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-<connect gate="G$1" pin="5" pad="5"/>
-<connect gate="G$1" pin="6" pad="6"/>
-<connect gate="G$1" pin="7" pad="7"/>
-<connect gate="G$1" pin="8" pad="8"/>
-<connect gate="G$1" pin="S1" pad="S1"/>
-<connect gate="G$1" pin="S2" pad="S2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:7680/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="unknown" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="con-jack" urn="urn:adsk.eagle:library:154">
 <description>&lt;b&gt;Jacks&lt;/b&gt;&lt;p&gt;
 Power Connectors&lt;br&gt;
@@ -9308,7 +9128,6 @@ BUZZER</description>
 </class>
 </classes>
 <parts>
-<part name="RJ45" library="con-kycon" library_urn="urn:adsk.eagle:library:157" deviceset="GLX-S-88M" device="" package3d_urn="urn:adsk.eagle:package:7680/1"/>
 <part name="BUZZ" library="SparkFun-Electromechanical" library_urn="urn:adsk.eagle:library:516" deviceset="BUZZER" device="-PTH" package3d_urn="urn:adsk.eagle:package:38558/1">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
@@ -9321,8 +9140,8 @@ BUZZER</description>
 <part name="-OUT" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="SMD2" device="" package3d_urn="urn:adsk.eagle:package:30839/1"/>
 <part name="+5V" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="SMD2" device="" package3d_urn="urn:adsk.eagle:package:30839/1"/>
 <part name="+IN" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="SMD2" device="" package3d_urn="urn:adsk.eagle:package:30839/1"/>
-<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="18k Ohm"/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="4.7 kOhm"/>
+<part name="R1-18K" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="18k Ohm"/>
+<part name="R2-4.7K" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="4.7 kOhm"/>
 <part name="8V" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
 <part name="GND" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
 <part name="DVR/MODULE-IO" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA07-1" device="" package3d_urn="urn:adsk.eagle:package:8341/1"/>
@@ -9365,9 +9184,9 @@ BUZZER</description>
 </text>
 <text x="65.532" y="105.918" size="1.778" layer="91">5:AUD
 </text>
+<text x="210.82" y="195.58" size="1.778" layer="91" rot="R90">D13</text>
 </plain>
 <instances>
-<instance part="RJ45" gate="G$1" x="86.36" y="106.68" rot="R180"/>
 <instance part="BUZZ" gate="G$1" x="238.76" y="93.98" smashed="yes">
 <attribute name="VALUE" x="233.68" y="83.82" size="1.778" layer="96"/>
 </instance>
@@ -9380,8 +9199,8 @@ BUZZER</description>
 <instance part="-OUT" gate="1" x="302.26" y="83.82" rot="R270"/>
 <instance part="+5V" gate="1" x="292.1" y="83.82" rot="R270"/>
 <instance part="+IN" gate="1" x="292.1" y="99.06" rot="R90"/>
-<instance part="R1" gate="G$1" x="317.5" y="93.98" rot="R90"/>
-<instance part="R2" gate="G$1" x="317.5" y="76.2" rot="R90"/>
+<instance part="R1-18K" gate="G$1" x="317.5" y="93.98" rot="R90"/>
+<instance part="R2-4.7K" gate="G$1" x="317.5" y="76.2" rot="R90"/>
 <instance part="8V" gate="1" x="76.2" y="165.1" rot="R270"/>
 <instance part="GND" gate="1" x="68.58" y="165.1" rot="R270"/>
 <instance part="DVR/MODULE-IO" gate="1" x="119.38" y="111.76" smashed="yes">
@@ -9575,7 +9394,7 @@ BUZZER</description>
 <wire x1="325.12" y1="96.52" x2="330.2" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="330.2" y1="96.52" x2="330.2" y2="99.06" width="0.1524" layer="91"/>
 <junction x="330.2" y="96.52"/>
-<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="R2-4.7K" gate="G$1" pin="1"/>
 <wire x1="317.5" y1="71.12" x2="317.5" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="317.5" y1="68.58" x2="325.12" y2="68.58" width="0.1524" layer="91"/>
 <label x="320.04" y="73.66" size="1.778" layer="95" rot="R90"/>
@@ -9671,7 +9490,7 @@ BUZZER</description>
 </net>
 <net name="N$17" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="2"/>
+<pinref part="R1-18K" gate="G$1" pin="2"/>
 <wire x1="317.5" y1="99.06" x2="317.5" y2="127" width="0.1524" layer="91"/>
 <pinref part="+IN" gate="1" pin="P"/>
 <wire x1="292.1" y1="101.6" x2="317.5" y2="127" width="0.1524" layer="91"/>
@@ -9714,8 +9533,8 @@ BUZZER</description>
 <wire x1="226.06" y1="129.54" x2="226.06" y2="127" width="0.1524" layer="91"/>
 <wire x1="226.06" y1="127" x2="254" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="254" y1="91.44" x2="261.62" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<pinref part="R2" gate="G$1" pin="2"/>
+<pinref part="R1-18K" gate="G$1" pin="1"/>
+<pinref part="R2-4.7K" gate="G$1" pin="2"/>
 <wire x1="317.5" y1="88.9" x2="317.5" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="261.62" y1="88.9" x2="317.5" y2="88.9" width="0.1524" layer="91"/>
 <junction x="317.5" y="88.9"/>

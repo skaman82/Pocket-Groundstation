@@ -4438,9 +4438,9 @@ design rules under a new name.</description>
 <element name="BT-IO" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X04" package3d_urn="urn:adsk.eagle:package:38085/1" value="" x="24.13" y="72.39">
 <attribute name="PROD_ID" value="CONN-09696" x="24.13" y="72.39" size="1.778" layer="27" display="off"/>
 </element>
-<element name="U$2" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="5.08" y="71.12"/>
+<element name="U$2" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="4.318" y="71.12"/>
 <element name="U$3" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="40.64" y="71.12"/>
-<element name="U$4" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="4.8768" y="3.6068"/>
+<element name="U$4" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="4.318" y="3.81"/>
 <element name="U$5" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="" x="40.64" y="3.81"/>
 <element name="D1" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" package="LED_3MM" package3d_urn="urn:adsk.eagle:package:39361/1" value="" x="31.75" y="63.5">
 <attribute name="PROD_ID" value="DIO-08794" x="31.75" y="63.5" size="1.778" layer="27" display="off"/>

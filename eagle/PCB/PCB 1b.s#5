@@ -9321,8 +9321,8 @@ BUZZER</description>
 <part name="-OUT" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="SMD2" device="" package3d_urn="urn:adsk.eagle:package:30839/1"/>
 <part name="+5V" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="SMD2" device="" package3d_urn="urn:adsk.eagle:package:30839/1"/>
 <part name="+IN" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="SMD2" device="" package3d_urn="urn:adsk.eagle:package:30839/1"/>
-<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="18k Ohm"/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="4.7 kOhm"/>
+<part name="R1-18K" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="18k Ohm"/>
+<part name="R2-4.7K" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="4.7 kOhm"/>
 <part name="8V" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
 <part name="GND" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
 <part name="DVR/MODULE-IO" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA07-1" device="" package3d_urn="urn:adsk.eagle:package:8341/1"/>
@@ -9365,6 +9365,7 @@ BUZZER</description>
 </text>
 <text x="65.532" y="105.918" size="1.778" layer="91">5:AUD
 </text>
+<text x="210.82" y="195.58" size="1.778" layer="91" rot="R90">D13</text>
 </plain>
 <instances>
 <instance part="RJ45" gate="G$1" x="86.36" y="106.68" rot="R180"/>
@@ -9380,8 +9381,8 @@ BUZZER</description>
 <instance part="-OUT" gate="1" x="302.26" y="83.82" rot="R270"/>
 <instance part="+5V" gate="1" x="292.1" y="83.82" rot="R270"/>
 <instance part="+IN" gate="1" x="292.1" y="99.06" rot="R90"/>
-<instance part="R1" gate="G$1" x="317.5" y="93.98" rot="R90"/>
-<instance part="R2" gate="G$1" x="317.5" y="76.2" rot="R90"/>
+<instance part="R1-18K" gate="G$1" x="317.5" y="93.98" rot="R90"/>
+<instance part="R2-4.7K" gate="G$1" x="317.5" y="76.2" rot="R90"/>
 <instance part="8V" gate="1" x="76.2" y="165.1" rot="R270"/>
 <instance part="GND" gate="1" x="68.58" y="165.1" rot="R270"/>
 <instance part="DVR/MODULE-IO" gate="1" x="119.38" y="111.76" smashed="yes">
@@ -9575,7 +9576,7 @@ BUZZER</description>
 <wire x1="325.12" y1="96.52" x2="330.2" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="330.2" y1="96.52" x2="330.2" y2="99.06" width="0.1524" layer="91"/>
 <junction x="330.2" y="96.52"/>
-<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="R2-4.7K" gate="G$1" pin="1"/>
 <wire x1="317.5" y1="71.12" x2="317.5" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="317.5" y1="68.58" x2="325.12" y2="68.58" width="0.1524" layer="91"/>
 <label x="320.04" y="73.66" size="1.778" layer="95" rot="R90"/>
@@ -9671,7 +9672,7 @@ BUZZER</description>
 </net>
 <net name="N$17" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="2"/>
+<pinref part="R1-18K" gate="G$1" pin="2"/>
 <wire x1="317.5" y1="99.06" x2="317.5" y2="127" width="0.1524" layer="91"/>
 <pinref part="+IN" gate="1" pin="P"/>
 <wire x1="292.1" y1="101.6" x2="317.5" y2="127" width="0.1524" layer="91"/>
@@ -9714,8 +9715,8 @@ BUZZER</description>
 <wire x1="226.06" y1="129.54" x2="226.06" y2="127" width="0.1524" layer="91"/>
 <wire x1="226.06" y1="127" x2="254" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="254" y1="91.44" x2="261.62" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<pinref part="R2" gate="G$1" pin="2"/>
+<pinref part="R1-18K" gate="G$1" pin="1"/>
+<pinref part="R2-4.7K" gate="G$1" pin="2"/>
 <wire x1="317.5" y1="88.9" x2="317.5" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="261.62" y1="88.9" x2="317.5" y2="88.9" width="0.1524" layer="91"/>
 <junction x="317.5" y="88.9"/>
@@ -9832,12 +9833,14 @@ BUZZER</description>
 <wire x1="83.82" y1="40.64" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="D8" class="1">
+<net name="N$7" class="1">
 <segment>
-<pinref part="U$1" gate="G$1" pin="D8"/>
-<wire x1="200.66" y1="114.3" x2="210.82" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="D13"/>
+<wire x1="162.56" y1="109.22" x2="147.32" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="109.22" x2="147.32" y2="177.8" width="0.1524" layer="91"/>
 <pinref part="BT-BRIDGE" gate="G$1" pin="4"/>
-<wire x1="210.82" y1="185.42" x2="210.82" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="177.8" x2="210.82" y2="177.8" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="177.8" x2="210.82" y2="185.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
