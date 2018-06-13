@@ -3,7 +3,7 @@
 <eagle version="9.0.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -5059,9 +5059,6 @@ design rules under a new name.</description>
 <contactref element="ARD-SERVICE" pad="6"/>
 <wire x1="40.64" y1="49.45" x2="35.56" y2="53.34" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="GND2">
-<contactref element="MINIMOSD" pad="GND2"/>
-</signal>
 <signal name="AUDIO" class="2">
 <contactref element="AUD" pad="1"/>
 <contactref element="PJ-320D" pad="RING1"/>
@@ -5091,11 +5088,20 @@ design rules under a new name.</description>
 <wire x1="11.5824" y1="5.4864" x2="10.5664" y2="7.2644" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3" class="3">
-<contactref element="OSD-SERVICE" pad="1"/>
 <contactref element="OSD-SERVICE" pad="2"/>
-<wire x1="5.08" y1="35.56" x2="5.08" y2="34.56" width="0.1524" layer="1"/>
 <contactref element="MINIMOSD" pad="GND1"/>
-<wire x1="5.08" y1="34.56" x2="13.97" y2="29.21" width="0" layer="19" extent="1-1"/>
+<wire x1="5.08" y1="34.56" x2="7.62" y2="34.56" width="0.381" layer="1"/>
+<wire x1="7.62" y1="34.56" x2="10.16" y2="34.29" width="0.381" layer="1"/>
+<wire x1="10.16" y1="34.29" x2="11.43" y2="33.02" width="0.381" layer="1"/>
+<wire x1="11.43" y1="33.02" x2="11.43" y2="30.48" width="0.381" layer="1"/>
+<wire x1="11.43" y1="30.48" x2="12.7" y2="29.21" width="0.381" layer="1"/>
+<wire x1="12.7" y1="29.21" x2="13.97" y2="29.21" width="0.381" layer="1"/>
+</signal>
+<signal name="N$5">
+<contactref element="OSD-SERVICE" pad="1"/>
+<contactref element="MINIMOSD" pad="GND2"/>
+<wire x1="5.08" y1="35.56" x2="10.16" y2="35.56" width="0.381" layer="1"/>
+<wire x1="10.16" y1="35.56" x2="13.97" y2="31.75" width="0.381" layer="1"/>
 </signal>
 </signals>
 </board>

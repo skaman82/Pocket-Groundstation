@@ -4818,7 +4818,7 @@ design rules under a new name.</description>
 <element name="OLED" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X04" package3d_urn="urn:adsk.eagle:package:38085/1" value="" x="2.54" y="22.86" rot="R270">
 <attribute name="PROD_ID" value="CONN-09696" x="2.54" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="D1" library="diode" library_urn="urn:adsk.eagle:library:210" package="SMA-DO214AC" package3d_urn="urn:adsk.eagle:package:43452/2" value="GF1" x="35.56" y="58.42"/>
+<element name="D1" library="diode" library_urn="urn:adsk.eagle:library:210" package="SMA-DO214AC" package3d_urn="urn:adsk.eagle:package:43452/2" value="GF1" x="36.83" y="58.42"/>
 <element name="J3" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X02" package3d_urn="urn:adsk.eagle:package:38039/1" value="" x="8.89" y="27.94" rot="R270"/>
 <element name="ARD-SERVICE" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X06-1MM" package3d_urn="urn:adsk.eagle:package:38023/1" value="EM406" x="41.91" y="46.99" smashed="yes" rot="R90">
 <attribute name="NAME" x="43.307" y="52.451" size="0.6096" layer="25" font="vector" ratio="20" rot="R180"/>
@@ -4849,11 +4849,11 @@ design rules under a new name.</description>
 <element name="IN+" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="15.24" y="58.42">
 <attribute name="TP_SIGNAL_NAME" value="" x="15.24" y="58.42" size="1.778" layer="27" display="off"/>
 </element>
-<element name="+5V" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="29.21" y="58.42">
-<attribute name="TP_SIGNAL_NAME" value="" x="29.21" y="58.42" size="1.778" layer="27" display="off"/>
+<element name="+5V" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="30.48" y="58.42">
+<attribute name="TP_SIGNAL_NAME" value="" x="30.48" y="58.42" size="1.778" layer="27" display="off"/>
 </element>
-<element name="-OUT" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="29.21" y="68.58" rot="R180">
-<attribute name="TP_SIGNAL_NAME" value="" x="29.21" y="68.58" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="-OUT" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="30.48" y="68.58" rot="R180">
+<attribute name="TP_SIGNAL_NAME" value="" x="30.48" y="68.58" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 </elements>
 <signals>
@@ -4903,8 +4903,8 @@ design rules under a new name.</description>
 <contactref element="DVR/MODULE-IO" pad="4"/>
 <contactref element="D1" pad="A"/>
 <contactref element="+5V" pad="TP"/>
-<wire x1="29.21" y1="58.42" x2="33.51" y2="58.42" width="0" layer="19" extent="1-1"/>
-<wire x1="21.59" y1="34.33" x2="29.21" y2="58.42" width="0" layer="19" extent="1-1"/>
+<wire x1="30.48" y1="58.42" x2="34.78" y2="58.42" width="0" layer="19" extent="1-1"/>
+<wire x1="21.59" y1="34.33" x2="30.48" y2="58.42" width="0" layer="19" extent="1-1"/>
 <wire x1="40.64" y1="30.48" x2="21.59" y2="34.33" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND" class="3">
@@ -4925,12 +4925,12 @@ design rules under a new name.</description>
 <contactref element="-OUT" pad="TP"/>
 <contactref element="MOLEX_0446200001" pad="4"/>
 <contactref element="MOLEX_0446200001" pad="2"/>
-<wire x1="29.21" y1="68.58" x2="38.1" y2="70.56" width="0" layer="19" extent="1-1"/>
-<wire x1="20.32" y1="72.39" x2="29.21" y2="68.58" width="0" layer="19" extent="1-1"/>
+<wire x1="30.48" y1="68.58" x2="38.1" y2="70.56" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="72.39" x2="30.48" y2="68.58" width="0" layer="19" extent="1-1"/>
 <wire x1="15.24" y1="68.58" x2="20.32" y2="72.39" width="0" layer="19" extent="1-1"/>
 <wire x1="8.89" y1="69.04" x2="15.24" y2="68.58" width="0" layer="19" extent="1-1"/>
 <wire x1="4.09" y1="66.04" x2="8.89" y2="69.04" width="0" layer="19" extent="1-1"/>
-<wire x1="25.53" y1="49.53" x2="29.21" y2="68.58" width="0" layer="19" extent="1-1"/>
+<wire x1="25.53" y1="49.53" x2="30.48" y2="68.58" width="0" layer="19" extent="1-1"/>
 <wire x1="30.48" y1="39.37" x2="25.53" y2="49.53" width="0" layer="19" extent="1-1"/>
 <wire x1="19.05" y1="34.33" x2="30.48" y2="39.37" width="0" layer="19" extent="1-1"/>
 <wire x1="40.64" y1="27.94" x2="30.48" y2="39.37" width="0" layer="19" extent="1-1"/>
@@ -5020,7 +5020,7 @@ design rules under a new name.</description>
 <signal name="N$4">
 <contactref element="U$1" pad="RAW"/>
 <contactref element="D1" pad="K"/>
-<wire x1="33.02" y1="39.37" x2="37.61" y2="58.42" width="0" layer="19" extent="1-1"/>
+<wire x1="33.02" y1="39.37" x2="38.88" y2="58.42" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RX" class="1">
 <contactref element="MINIMOSD" pad="RX"/>
@@ -5090,17 +5090,18 @@ design rules under a new name.</description>
 <signal name="N$3" class="3">
 <contactref element="OSD-SERVICE" pad="2"/>
 <contactref element="MINIMOSD" pad="GND1"/>
-<wire x1="13.97" y1="29.21" x2="11.43" y2="29.21" width="0.1524" layer="1"/>
-<wire x1="11.43" y1="29.21" x2="10.16" y2="30.48" width="0.1524" layer="1"/>
-<wire x1="10.16" y1="30.48" x2="10.16" y2="33.02" width="0.1524" layer="1"/>
-<wire x1="10.16" y1="33.02" x2="8.62" y2="34.56" width="0.1524" layer="1"/>
-<wire x1="8.62" y1="34.56" x2="5.08" y2="34.56" width="0.1524" layer="1"/>
+<wire x1="5.08" y1="34.56" x2="7.62" y2="34.56" width="0.381" layer="1"/>
+<wire x1="11.43" y1="33.02" x2="11.43" y2="30.48" width="0.381" layer="1"/>
+<wire x1="11.43" y1="30.48" x2="12.7" y2="29.21" width="0.381" layer="1"/>
+<wire x1="12.7" y1="29.21" x2="13.97" y2="29.21" width="0.381" layer="1"/>
+<wire x1="7.62" y1="34.56" x2="9.89" y2="34.56" width="0.381" layer="1"/>
+<wire x1="9.89" y1="34.56" x2="11.43" y2="33.02" width="0.381" layer="1"/>
 </signal>
 <signal name="N$5">
 <contactref element="OSD-SERVICE" pad="1"/>
 <contactref element="MINIMOSD" pad="GND2"/>
-<wire x1="5.08" y1="35.56" x2="10.16" y2="35.56" width="0.1524" layer="1"/>
-<wire x1="10.16" y1="35.56" x2="13.97" y2="31.75" width="0.1524" layer="1"/>
+<wire x1="5.08" y1="35.56" x2="10.16" y2="35.56" width="0.381" layer="1"/>
+<wire x1="10.16" y1="35.56" x2="13.97" y2="31.75" width="0.381" layer="1"/>
 </signal>
 </signals>
 </board>
