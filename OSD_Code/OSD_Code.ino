@@ -16,6 +16,7 @@ boolean RSSIavail = 0;
 byte RSSI = 0;
 byte VoltageByte = 0;
 float Voltage;
+byte battery_health = 0;
 
 Max7456 osd;
 byte logo[]={0xC8,0xC9};
@@ -57,7 +58,7 @@ void OSDreceive()
   osddata += ((int32_t)b3 << 8);
   osddata += b4;
   
-  
+  battery_health = (0xE00000 & osddata) >> 21;
   layoutEEP = (0x180000 & osddata) >> 19;
   blinkosd = (0x60000 & osddata) >> 17;
   DVRstatus = (0x10000 & osddata) >> 16;
