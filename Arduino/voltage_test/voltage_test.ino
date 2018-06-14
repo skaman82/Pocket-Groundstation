@@ -422,7 +422,7 @@ void voltagetest()
 {
 
   int sensorValue = analogRead(A0); // read the input on analog pin 0:
-  voltage = sensorValue * (5.0 / 1023.0) * ((R1 + R2) / R2); // Convert the analog reading (which goes from 0 - 1023) to a voltage, considering the voltage divider:
+  voltage = sensorValue * (5.38 / 1023.0) * ((R1 + R2) / R2); // Convert the analog reading (which goes from 0 - 1023) to a voltage, considering the voltage divider:
   // Serial.println(voltage);   // print out the value you read:
   voltage = round(voltage * 10) / 10.0; //round the result
   VoltageByte = voltage*10;
