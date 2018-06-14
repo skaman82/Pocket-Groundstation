@@ -4,8 +4,8 @@ Notes:
 LASEREINHORNBACKFISCH
  */
 
-#define R1 400  // Resistor 1
-#define R2 100  // Resistor 2
+#define R1 18000  // Resistor 1
+#define R2 4680  // Resistor 2 (measured)
 #define alarmADDR 1 // EEPROM Adress
 #define layoutADDR 2 // OSD Layout Adress
 #define dvrADDR 3 // DVR Settings Adress
