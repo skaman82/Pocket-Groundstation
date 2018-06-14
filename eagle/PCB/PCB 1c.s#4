@@ -9983,7 +9983,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="DC-005" library="con-jack" library_urn="urn:adsk.eagle:library:154" deviceset="DCJ0202" device="" package3d_urn="urn:adsk.eagle:package:7491/1"/>
 <part name="V-IN" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
 <part name="G" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
-<part name="VCC-O" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
+<part name="V-O" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
 <part name="MINIMOSD" library="FPVTools" deviceset="MICROMINIMOSDPWR" device=""/>
 <part name="R1-18K" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="18k Ohm"/>
 <part name="R2-4.7K" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="4.7 kOhm"/>
@@ -10000,7 +10000,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="OSD-SERVICE" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="EM406" device="" package3d_urn="urn:adsk.eagle:package:38023/1"/>
 <part name="SER" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_01" device="" package3d_urn="urn:adsk.eagle:package:38028/1"/>
 <part name="AUD" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_01" device="" package3d_urn="urn:adsk.eagle:package:38028/1"/>
-<part name="MOLEX_0446200001" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="0446200001" device="" value="0446200001"/>
+<part name="M_0446200001" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="0446200001" device="" value="0446200001"/>
 <part name="PJ-320D" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="AUDIO_JACK_TRRS" device="SMD_RA" package3d_urn="urn:adsk.eagle:package:38268/1"/>
 <part name="IN-" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
 <part name="IN+" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
@@ -10037,7 +10037,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="DC-005" gate="G$1" x="337.82" y="96.52" rot="R180"/>
 <instance part="V-IN" gate="1" x="330.2" y="137.16"/>
 <instance part="G" gate="1" x="330.2" y="142.24"/>
-<instance part="VCC-O" gate="1" x="330.2" y="152.4"/>
+<instance part="V-O" gate="1" x="330.2" y="152.4"/>
 <instance part="MINIMOSD" gate="G$1" x="256.54" y="137.16"/>
 <instance part="R1-18K" gate="G$1" x="317.5" y="93.98" rot="R90"/>
 <instance part="R2-4.7K" gate="G$1" x="317.5" y="76.2" rot="R90"/>
@@ -10058,7 +10058,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="OSD-SERVICE" gate="G$1" x="289.56" y="226.06" rot="R90"/>
 <instance part="SER" gate="G$1" x="226.06" y="177.8" rot="R90"/>
 <instance part="AUD" gate="G$1" x="104.14" y="50.8" rot="R90"/>
-<instance part="MOLEX_0446200001" gate="P" x="76.2" y="73.66" rot="R180"/>
+<instance part="M_0446200001" gate="P" x="76.2" y="73.66" rot="R180"/>
 <instance part="PJ-320D" gate="G$1" x="78.74" y="35.56"/>
 <instance part="IN-" gate="G$1" x="302.26" y="99.06" rot="R180"/>
 <instance part="IN+" gate="G$1" x="292.1" y="99.06" rot="R180"/>
@@ -10255,12 +10255,12 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="129.54" y1="88.9" x2="121.92" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="88.9" x2="121.92" y2="71.12" width="0.1524" layer="91"/>
 <junction x="129.54" y="88.9"/>
-<pinref part="MOLEX_0446200001" gate="P" pin="4"/>
+<pinref part="M_0446200001" gate="P" pin="4"/>
 <wire x1="121.92" y1="71.12" x2="78.74" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="162.56" x2="68.58" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="116.84" x2="86.36" y2="116.84" width="0.1524" layer="91"/>
 <junction x="68.58" y="162.56"/>
-<pinref part="MOLEX_0446200001" gate="P" pin="2"/>
+<pinref part="M_0446200001" gate="P" pin="2"/>
 <wire x1="86.36" y1="116.84" x2="86.36" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="66.04" x2="78.74" y2="66.04" width="0.1524" layer="91"/>
 </segment>
@@ -10340,7 +10340,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="317.5" y1="99.06" x2="317.5" y2="127" width="0.1524" layer="91"/>
 <wire x1="292.1" y1="101.6" x2="317.5" y2="127" width="0.1524" layer="91"/>
 <wire x1="317.5" y1="127" x2="317.5" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="VCC-O" gate="1" pin="P"/>
+<pinref part="V-O" gate="1" pin="P"/>
 <wire x1="317.5" y1="152.4" x2="332.74" y2="152.4" width="0.1524" layer="91"/>
 <junction x="317.5" y="127"/>
 <pinref part="IN+" gate="G$1" pin="TP"/>
@@ -10483,7 +10483,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="83.82" y1="38.1" x2="83.82" y2="33.02" width="0.1524" layer="91"/>
 <junction x="83.82" y="38.1"/>
 <wire x1="104.14" y1="58.42" x2="99.06" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="MOLEX_0446200001" gate="P" pin="5"/>
+<pinref part="M_0446200001" gate="P" pin="5"/>
 <wire x1="78.74" y1="73.66" x2="99.06" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="73.66" x2="99.06" y2="58.42" width="0.1524" layer="91"/>
 <junction x="99.06" y="58.42"/>
@@ -10499,7 +10499,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="PJ-320D" gate="G$1" pin="EARTH"/>
 <wire x1="91.44" y1="68.58" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="40.64" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="MOLEX_0446200001" gate="P" pin="3"/>
+<pinref part="M_0446200001" gate="P" pin="3"/>
 <wire x1="91.44" y1="68.58" x2="78.74" y2="68.58" width="0.1524" layer="91"/>
 <junction x="91.44" y="68.58"/>
 </segment>
@@ -10516,8 +10516,8 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </net>
 <net name="8V" class="0">
 <segment>
-<pinref part="MOLEX_0446200001" gate="P" pin="7"/>
-<pinref part="MOLEX_0446200001" gate="P" pin="8"/>
+<pinref part="M_0446200001" gate="P" pin="7"/>
+<pinref part="M_0446200001" gate="P" pin="8"/>
 <wire x1="78.74" y1="78.74" x2="78.74" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="8V" gate="1" pin="P"/>
 <wire x1="76.2" y1="162.56" x2="76.2" y2="154.94" width="0.1524" layer="91"/>

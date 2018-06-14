@@ -4904,18 +4904,17 @@ design rules under a new name.</description>
 <contactref element="-OUT" pad="TP"/>
 <contactref element="M_0446200001" pad="4"/>
 <contactref element="M_0446200001" pad="2"/>
-<polygon width="0.1524" layer="1">
-<vertex x="0" y="76.2"/>
-<vertex x="0" y="-1.27"/>
+<polygon width="0.1524" layer="16">
+<vertex x="-1.27" y="76.2"/>
+<vertex x="-1.27" y="-1.27"/>
 <vertex x="45.72" y="-1.27"/>
 <vertex x="45.72" y="76.2"/>
 </polygon>
-<polygon width="0.1524" layer="16">
-<vertex x="-1.27" y="76.2"/>
-<vertex x="46.99" y="76.2"/>
-<vertex x="46.99" y="-1.27"/>
-<vertex x="-2.54" y="-1.27"/>
+<polygon width="0.1524" layer="1">
 <vertex x="-2.54" y="76.2"/>
+<vertex x="46.99" y="76.2"/>
+<vertex x="46.99" y="-2.54"/>
+<vertex x="-2.54" y="-2.54"/>
 </polygon>
 </signal>
 <signal name="+5VFTDI" class="1">
