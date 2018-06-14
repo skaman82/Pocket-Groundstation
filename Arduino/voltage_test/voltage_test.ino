@@ -393,7 +393,9 @@ void setup()
   }
   else
   {
-    pause();
+    //pause();
+    lipo = 1;
+    beep_x(lipo);
   }
 }
 
