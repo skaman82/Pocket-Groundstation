@@ -51,6 +51,7 @@ byte menusel = 0;
 byte pressedbut = 0;
 float cellvoltage;
 boolean osdON = 1;
+byte battery_health = 0;
 
 
 
@@ -64,7 +65,8 @@ void pause()
 
 void OSDsend()
 {
-   osddata = (layoutEEP << 19);
+   osddata = (battery_health << 21);
+   osddata += (layoutEEP << 19);
    osddata += (blinkosd << 17);
    osddata += (DVRstatus << 16);
    osddata += (RSSIavail << 15);
@@ -252,7 +254,7 @@ void loop()
   
   
   
-  
+  battery_health = map((int)((voltage/lipo)*10), (int)((alarmvalue/lipo)*10), 42, 0, 4);
   refreshi++;
   //clearOLED();
   if(refreshi > 10)
