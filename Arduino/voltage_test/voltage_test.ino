@@ -18,7 +18,9 @@ LASEREINHORNBACKFISCH
 #define BUTTON1_PIN              2  // Button 1
 #define BUTTON2_PIN              3  // Button 2
 #define BUTTON3_PIN              4  // Button 3
-
+#define DVR1_PIN                 5  // DVR Button 1
+#define DVR2_PIN                 6  // DVR Button 1
+#define DVR3_PIN                 7  // DVR Button 1
 #define beeppin 9 // Beeper Pin
 
 #define DELAY                    2  // Delay per loop in ms
@@ -101,6 +103,14 @@ void setup()
   pinMode(BUTTON1_PIN, INPUT_PULLUP);
   pinMode(BUTTON2_PIN, INPUT_PULLUP);
   pinMode(BUTTON3_PIN, INPUT_PULLUP);
+  
+  pinMode(DVR1_PIN, OUTPUT); //DVR Key1
+  pinMode(DVR2_PIN, OUTPUT); //DVR Key2
+  pinMode(DVR3_PIN, OUTPUT); //DVR Key3
+  
+  digitalWrite(DVR1_PIN, HIGH);
+  digitalWrite(DVR2_PIN, HIGH);
+  digitalWrite(DVR3_PIN, HIGH);
   
   alarmvalueEEP = EEPROM.read(alarmADDR);
   layoutEEP = EEPROM.read(layoutADDR);
@@ -277,10 +287,10 @@ void loop()
 
 
       
-Serial.print(" health:");
-Serial.print(battery_health);
-Serial.print(" state:");
-Serial.print(battery_state);
+// Serial.print(" health:");
+// Serial.print(battery_health);
+// Serial.print(" state:");
+// Serial.print(battery_state);
 
   refreshi++;
   //clearOLED();
@@ -492,6 +502,13 @@ void menu()
         exit = 1;
         submenu();
       }
+      if(menusel == 0)
+      {
+        refreshi = 10;
+        exit = 1;
+        dvrmenu();
+      }
+      
     }
     else if(pressedbut == 2)
     {
@@ -512,7 +529,174 @@ void menu()
 
 }
 
+void dvrmenu() 
+{
+  menusel = 0;
+  byte exit = 0;
+  while(exit == 0)
+  {
+    clearOLED();
+    u8g.firstPage();
+    do
+    {
+      if(menusel == 0) // first menu point
+      {
+        u8g.drawBox(1, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setColorIndex(0);
+        u8g.setPrintPos(12, 12);
+        u8g.print("B1");
+        u8g.setColorIndex(1);
 
+        u8g.drawFrame(40, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 12);
+        u8g.print("B2");
+
+        u8g.drawFrame(79, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 12);
+        u8g.print("B3");
+        
+        u8g.drawFrame(1, 45, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(32, 56);
+        u8g.print("EXIT DVR-MODE");
+
+      }
+      else if(menusel == 1)
+      {
+        u8g.drawFrame(1, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(12, 12);
+        u8g.print("B1");
+
+        u8g.drawBox(40, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 12);
+        u8g.setColorIndex(0);
+        u8g.print("B2");
+        u8g.setColorIndex(1);
+
+        u8g.drawFrame(79, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 12);
+        u8g.print("B3");
+        
+        u8g.drawFrame(1, 45, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(32, 56);
+        u8g.print("EXIT DVR-MODE");
+
+        
+        
+      }
+      else if(menusel == 2)
+      {
+        u8g.drawFrame(1, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(12, 12);
+        u8g.print("B1");
+
+        u8g.drawFrame(40, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 12);
+        u8g.print("B2");
+
+        u8g.drawBox(79, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 12);
+        u8g.setColorIndex(0);
+        u8g.print("B3");
+        u8g.setColorIndex(1);
+        
+        u8g.drawFrame(1, 45, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(32, 56);
+        u8g.print("EXIT DVR-MODE");
+
+        
+        
+        
+      }
+
+      else if(menusel == 3)
+      {
+        u8g.drawFrame(1, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(12, 12);
+        u8g.print("B1");
+
+        u8g.drawFrame(40, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 12);
+        u8g.print("B2");
+
+        u8g.drawFrame(79, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 12);
+        u8g.print("B3");
+        
+        u8g.drawBox(1, 45, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(32, 56);
+        u8g.setColorIndex(0);
+        u8g.print("EXIT DVR-MODE");
+        u8g.setColorIndex(1);
+        
+      }
+    }
+    while (u8g.nextPage());
+    
+    pressedbut = buttoncheck();
+    while(pressedbut == 0)
+    {
+      buttoncheck();
+    }
+    if(pressedbut == 1) // Press selected Menu Point
+    {
+      
+       if(menusel == 0)
+      {  
+       digitalWrite(DVR1_PIN, LOW);
+      }
+      if(menusel == 1)
+      {  
+       digitalWrite(DVR2_PIN, LOW);
+      }
+      if(menusel == 2)
+      {  
+       digitalWrite(DVR3_PIN, LOW);
+      }
+      if(menusel == 3)
+      {  
+       refreshi = 10;
+       exit = 1;
+      }
+    }
+    else if(pressedbut == 2)
+    {
+      if(menusel > 0)
+      {
+        menusel--;
+      }
+    }
+    else if(pressedbut == 3)
+    {
+      if(menusel < 3)
+      {
+        menusel++;
+      }
+    }
+  }
+  
+
+}
+
+
+
+
+  
 
 void submenu() 
 {
