@@ -171,7 +171,7 @@
 <text x="31.75" y="5.08" size="0.889" layer="25" rot="R180">D4</text>
 <text x="2.54" y="19.05" size="1.016" layer="26" rot="MR90">&lt; To switch</text>
 <text x="12.7" y="1.27" size="1.016" layer="26" rot="MR0">&lt; From switch</text>
-<text x="43.18" y="36.83" size="1.27" layer="26" rot="MR270">POCKET-GROUNDSTATION | PCB1 | REV1</text>
+<text x="43.18" y="48.26" size="1.27" layer="26" rot="MR270">POCKET-GROUNDSTATION | PCB1 | REV1</text>
 <text x="1.27" y="48.26" size="0.889" layer="26" rot="MR90">Vout</text>
 <text x="6.35" y="53.34" size="0.889" layer="26" rot="MR0">VIN/DVR</text>
 <text x="1.27" y="45.72" size="0.889" layer="26" rot="MR90">G</text>
@@ -4824,18 +4824,6 @@ design rules under a new name.</description>
 </element>
 </elements>
 <signals>
-<signal name="5V-OLED">
-<contactref element="U$1" pad="VCC"/>
-<contactref element="OLED" pad="4"/>
-<wire x1="20.0025" y1="36.5125" x2="19.05" y2="35.56" width="0.762" layer="16"/>
-<wire x1="20.0025" y1="36.83" x2="20.0025" y2="36.5125" width="0.762" layer="16"/>
-<wire x1="21.2725" y1="38.1" x2="20.0025" y2="36.83" width="0.762" layer="16"/>
-<wire x1="28.575" y1="38.1" x2="21.2725" y2="38.1" width="0.762" layer="16"/>
-<wire x1="33.655" y1="43.18" x2="28.575" y2="38.1" width="0.762" layer="16"/>
-<wire x1="33.655" y1="51.7525" x2="33.655" y2="43.18" width="0.762" layer="16"/>
-<wire x1="41.5925" y1="59.69" x2="33.655" y2="51.7525" width="0.762" layer="16"/>
-<wire x1="41.91" y1="59.69" x2="41.5925" y2="59.69" width="0.762" layer="16"/>
-</signal>
 <signal name="SCL" class="1">
 <contactref element="U$1" pad="A5"/>
 <contactref element="OLED" pad="2"/>
@@ -4948,6 +4936,7 @@ design rules under a new name.</description>
 <vertex x="46.99" y="-2.54"/>
 <vertex x="-2.54" y="-2.54"/>
 </polygon>
+<wire x1="13.6525" y1="8.255" x2="13.750196875" y2="8.255" width="0.762" layer="1"/>
 <wire x1="12.42" y1="8.89" x2="15.24" y2="16.51" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+5VFTDI" class="1">
@@ -5081,7 +5070,6 @@ design rules under a new name.</description>
 <wire x1="27.94" y1="2.54" x2="24.13" y2="6.35" width="0.4" layer="16"/>
 </signal>
 <signal name="BEC-5V">
-<contactref element="U$1" pad="RAW"/>
 <contactref element="D1" pad="K"/>
 <wire x1="39.6875" y1="15.875" x2="39.0525" y2="15.24" width="0.762" layer="1"/>
 <wire x1="40.005" y1="15.875" x2="39.6875" y2="15.875" width="0.762" layer="1"/>
@@ -5090,11 +5078,22 @@ design rules under a new name.</description>
 <wire x1="35.56" y1="26.9875" x2="42.2275" y2="20.32" width="0.762" layer="1"/>
 <wire x1="29.845" y1="26.9875" x2="35.56" y2="26.9875" width="0.762" layer="1"/>
 <wire x1="23.495" y1="33.3375" x2="29.845" y2="26.9875" width="0.762" layer="16"/>
-<wire x1="13.335" y1="33.3375" x2="23.495" y2="33.3375" width="0.762" layer="16"/>
-<wire x1="11.43" y1="35.2425" x2="13.335" y2="33.3375" width="0.762" layer="16"/>
-<wire x1="11.43" y1="35.56" x2="11.43" y2="35.2425" width="0.762" layer="16"/>
 <wire x1="39.0525" y1="15.24" x2="38.88" y2="15.24" width="0.762" layer="1"/>
 <via x="29.845" y="26.9875" extent="1-16" drill="0.508"/>
+<contactref element="U$1" pad="VCC"/>
+<contactref element="OLED" pad="4"/>
+<wire x1="20.0025" y1="36.5125" x2="19.05" y2="35.56" width="0.762" layer="16"/>
+<wire x1="20.0025" y1="36.83" x2="20.0025" y2="36.5125" width="0.762" layer="16"/>
+<wire x1="21.2725" y1="38.1" x2="20.0025" y2="36.83" width="0.762" layer="16"/>
+<wire x1="28.575" y1="38.1" x2="21.2725" y2="38.1" width="0.762" layer="16"/>
+<wire x1="33.655" y1="43.18" x2="28.575" y2="38.1" width="0.762" layer="16"/>
+<wire x1="33.655" y1="51.7525" x2="33.655" y2="43.18" width="0.762" layer="16"/>
+<wire x1="41.5925" y1="59.69" x2="33.655" y2="51.7525" width="0.762" layer="16"/>
+<wire x1="41.91" y1="59.69" x2="41.5925" y2="59.69" width="0.762" layer="16"/>
+<wire x1="20.955" y1="33.3375" x2="23.495" y2="33.3375" width="0.762" layer="16"/>
+<wire x1="19.3675" y1="34.925" x2="20.955" y2="33.3375" width="0.762" layer="16"/>
+<wire x1="19.05" y1="34.925" x2="19.3675" y2="34.925" width="0.762" layer="16"/>
+<wire x1="19.05" y1="34.925" x2="19.05" y2="35.56" width="0.762" layer="16"/>
 </signal>
 <signal name="RX" class="1">
 <contactref element="MINIMOSD" pad="RX"/>

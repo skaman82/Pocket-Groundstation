@@ -9762,16 +9762,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <busses>
 </busses>
 <nets>
-<net name="5V-OLED" class="0">
-<segment>
-<wire x1="101.6" y1="165.1" x2="101.6" y2="187.96" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="165.1" x2="144.78" y2="165.1" width="0.1524" layer="91"/>
-<wire x1="144.78" y1="165.1" x2="144.78" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="VCC"/>
-<wire x1="144.78" y1="96.52" x2="162.56" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="OLED" gate="G$1" pin="4"/>
-</segment>
-</net>
 <net name="SCL" class="1">
 <segment>
 <wire x1="96.52" y1="160.02" x2="160.02" y2="160.02" width="0.1524" layer="91"/>
@@ -10104,11 +10094,17 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </net>
 <net name="BEC-5V" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="RAW"/>
-<wire x1="160.02" y1="88.9" x2="162.56" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="63.5" x2="160.02" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="63.5" x2="160.02" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="D1" gate="D" pin="C"/>
 <wire x1="160.02" y1="63.5" x2="162.56" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="165.1" x2="101.6" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="165.1" x2="144.78" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="165.1" x2="144.78" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="VCC"/>
+<wire x1="144.78" y1="96.52" x2="160.02" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="OLED" gate="G$1" pin="4"/>
+<wire x1="160.02" y1="96.52" x2="162.56" y2="96.52" width="0.1524" layer="91"/>
+<junction x="160.02" y="96.52"/>
 </segment>
 </net>
 <net name="RX" class="1">
