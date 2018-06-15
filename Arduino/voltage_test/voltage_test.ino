@@ -254,7 +254,7 @@ void loop()
   int battery_state = 100 - (cellstate)*100 / (cellfull); //determine cell charge left in percent
 
   if (battery_state < 75 && battery_state > 100) {
-    byte battery_health = 4;
+    battery_health = 4;
     }
    else if (battery_state < 50 && battery_state > 75) {
      battery_health = 3;
