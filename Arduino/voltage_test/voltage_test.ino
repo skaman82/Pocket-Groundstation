@@ -10,7 +10,7 @@ LASEREINHORNBACKFISCH
 #define layoutADDR 2 // OSD Layout Adress
 #define dvrADDR 3 // DVR Settings Adress
 
-#define Voltagedetect 3.5 // Min. Voltage for Detection
+#define Voltagedetect 3.4 // Min. Voltage for Detection
 
 #define note 262  // C4
 
@@ -302,8 +302,8 @@ void loop()
 
       u8g.drawFrame(1, 46 - 2, 124, 18);
       u8g.setFont(u8g_font_5x7);
-      u8g.setPrintPos(30, 55);
-      u8g.print("Press for Menu");
+      u8g.setPrintPos(12, 56);
+      u8g.print("PRESS CENTER FOR MENU");
 
       u8g.setPrintPos(111, 9);
       if(osdON)
@@ -626,8 +626,9 @@ void submenu()
       // Press selected Menu Point
       if(menusel == 3)
       {
-        refreshi = 10;
-        exit = 1;
+        
+       refreshi = 10;
+       exit = 1;
       }
     }
     else if(pressedbut == 2)
