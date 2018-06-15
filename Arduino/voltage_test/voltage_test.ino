@@ -363,7 +363,7 @@ void loop()
     Serial.print("Button1 pressed");
   }
   
-  if (pressedbut == 2) 
+  if (pressedbut == 3) 
   {
     Serial.print("Button2 pressed");
     if (alarmvalue > 2.70) 
@@ -374,7 +374,7 @@ void loop()
     }
   }
   
-  if (pressedbut == 3) 
+  if (pressedbut == 2) 
   {
     Serial.print("Button3 pressed");
     if (alarmvalue < 3.90) 
