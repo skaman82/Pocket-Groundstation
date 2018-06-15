@@ -275,13 +275,16 @@ void loop()
       u8g.setFont(u8g_font_5x7);
       u8g.setPrintPos(18, 9);
       u8g.print(lipo);
-      //u8g.print(volti);
       u8g.setFont(u8g_font_5x7);
       u8g.setPrintPos(24, 9);
       u8g.print("S");
       u8g.setFont(u8g_font_profont22);
       u8g.setPrintPos(0, 32);
       u8g.print(voltage, 1);
+
+    Serial.print(battery_health, 1);
+    
+    
       if (voltage > 10.0) {
       u8g.setPrintPos(52, 32);
       u8g.print("v");
@@ -403,6 +406,11 @@ void menu()
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(45, 55);
         u8g.print("DVR MODE");
+
+        u8g.drawDisc(115, 23, 2);
+        u8g.drawCircle(115, 33, 2);
+        u8g.drawCircle(115, 43, 2);
+        
       }
       else if(menusel == 1)
       {
@@ -410,6 +418,10 @@ void menu()
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(44, 55);
         u8g.print("SETTINGS");
+
+        u8g.drawCircle(115, 23, 2);
+        u8g.drawDisc(115, 33, 2);
+        u8g.drawCircle(115, 43, 2);
       }
       else if(menusel == 2)
       {
@@ -417,6 +429,10 @@ void menu()
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(58, 55);
         u8g.print("EXIT");
+
+        u8g.drawCircle(115, 23, 2);
+        u8g.drawCircle(115, 33, 2);
+        u8g.drawDisc(115, 43, 2);
       }
     }
     while (u8g.nextPage());
@@ -470,62 +486,132 @@ void submenu()
     u8g.firstPage();
     do
     {
-      if(menusel == 0)
+      if(menusel == 0) // first menu point
       {
-        u8g.drawBox(1, 6 - 2, 124, 18);
+        u8g.drawBox(1, 1, 126, 16);
         u8g.setFont(u8g_font_5x7);
-        u8g.setPrintPos(10, 16);
         u8g.setColorIndex(0);
-        u8g.print("SETTING A");
+        u8g.setPrintPos(20, 12);
+        u8g.print("DVR AUTO-START");
+        u8g.setPrintPos(105, 12);
+        u8g.print("OFF");
         u8g.setColorIndex(1);
         
-        u8g.drawFrame(1, 26 - 2, 124, 18);
+        u8g.drawFrame(1, 16, 126, 16);
         u8g.setFont(u8g_font_5x7);
-        u8g.setPrintPos(10, 36);
-        u8g.print("SETTING B");
+        u8g.setPrintPos(20, 27);
+        u8g.print("OSD");
+        u8g.setPrintPos(105, 27);
+        u8g.print("OFF");
         
-        u8g.drawFrame(1, 46 - 2, 124, 18);
+        u8g.drawFrame(1, 31, 126, 16);
         u8g.setFont(u8g_font_5x7);
-        u8g.setPrintPos(10, 56);
-        u8g.print("SAVE & EXIT");
+        u8g.setPrintPos(20, 42);
+        u8g.print("RSSI");
+        u8g.setPrintPos(105, 42);
+        u8g.print("OFF");
+
+        u8g.drawFrame(1, 46, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(20, 57);
+        u8g.print("SAVE&EXIT");
       }
       else if(menusel == 1)
       {
-        u8g.drawFrame(1, 6 - 2, 124, 18);
+        u8g.drawFrame(1, 1, 126, 16);
         u8g.setFont(u8g_font_5x7);
-        u8g.setPrintPos(10, 16);
-        u8g.print("SETTING A");
+        u8g.setPrintPos(20, 12);
+        u8g.print("DVR AUTO-START");
+        u8g.setPrintPos(105, 12);
+        u8g.print("OFF");
         
-        u8g.drawBox(1, 26 - 2, 124, 18);
+        u8g.drawBox(1, 16, 126, 16);
         u8g.setFont(u8g_font_5x7);
-        u8g.setPrintPos(10, 36);
         u8g.setColorIndex(0);
-        u8g.print("SETTING B");
+        u8g.setPrintPos(20, 27);
+        u8g.print("OSD");
+        u8g.setPrintPos(105, 27);
+        u8g.print("OFF");
         u8g.setColorIndex(1);
+
         
-        u8g.drawFrame(1, 46 - 2, 124, 18);
+        u8g.drawFrame(1, 31, 126, 16);
         u8g.setFont(u8g_font_5x7);
-        u8g.setPrintPos(10, 56);
-        u8g.print("SAVE & EXIT");
+        u8g.setPrintPos(20, 42);
+        u8g.print("RSSI");
+        u8g.setPrintPos(105, 42);
+        u8g.print("OFF");
+
+        u8g.drawFrame(1, 46, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(20, 57);
+        u8g.print("SAVE&EXIT");
+        
       }
       else if(menusel == 2)
       {
-        u8g.drawFrame(1, 6 - 2, 124, 18);
+        u8g.drawFrame(1, 1, 126, 16);
         u8g.setFont(u8g_font_5x7);
-        u8g.setPrintPos(10, 16);
-        u8g.print("SETTING A");
+        u8g.setPrintPos(20, 12);
+        u8g.print("DVR AUTO-START");
+        u8g.setPrintPos(105, 12);
+        u8g.print("OFF");
         
-        u8g.drawFrame(1, 26 - 2, 124, 18);
+        u8g.drawFrame(1, 16, 126, 16);
         u8g.setFont(u8g_font_5x7);
-        u8g.setPrintPos(10, 36);
-        u8g.print("SETTING B");
+        u8g.setPrintPos(20, 27);
+        u8g.print("OSD");
+        u8g.setPrintPos(105, 27);
+        u8g.print("OFF");
         
-        u8g.drawBox(1, 46 - 2, 124, 18);
+        u8g.drawBox(1, 31, 126, 16);
         u8g.setFont(u8g_font_5x7);
-        u8g.setPrintPos(10, 56);
         u8g.setColorIndex(0);
-        u8g.print("SAVE & EXIT");
+        u8g.setPrintPos(20, 42);
+        u8g.print("RSSI");
+        u8g.setPrintPos(105, 42);
+        u8g.print("OFF");
         u8g.setColorIndex(1);
+
+        u8g.drawFrame(1, 46, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(20, 57);
+        u8g.print("SAVE&EXIT");
+        
+      }
+
+      else if(menusel == 3)
+      {
+        u8g.drawFrame(1, 1, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(20, 12);
+        u8g.print("DVR AUTO-START");
+        u8g.setPrintPos(105, 12);
+        u8g.print("OFF");
+        u8g.setColorIndex(1);
+        
+        u8g.drawFrame(1, 16, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(20, 27);
+        u8g.print("OSD");
+        u8g.setPrintPos(105, 27);
+        u8g.print("OFF");
+        
+        u8g.drawFrame(1, 31, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(20, 42);
+        u8g.print("RSSI");
+        u8g.setPrintPos(105, 42);
+        u8g.print("OFF");
+
+        u8g.drawBox(1, 46, 126, 16);         
+        u8g.setColorIndex(0);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(20, 57);
+        u8g.print("SAVE&EXIT");
+        u8g.setColorIndex(1);
+
+        
       }
     }
     while (u8g.nextPage());
@@ -538,7 +624,7 @@ void submenu()
     if(pressedbut == 1)
     {
       // Press selected Menu Point
-      if(menusel == 2)
+      if(menusel == 3)
       {
         refreshi = 10;
         exit = 1;
@@ -553,7 +639,7 @@ void submenu()
     }
     else if(pressedbut == 3)
     {
-      if(menusel < 2)
+      if(menusel < 3)
       {
         menusel++;
       }
