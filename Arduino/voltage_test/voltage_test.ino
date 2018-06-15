@@ -452,6 +452,8 @@ void menu()
       }
       if(menusel == 1)
       {
+        refreshi = 10;
+        exit = 1;
         submenu();
       }
     }
