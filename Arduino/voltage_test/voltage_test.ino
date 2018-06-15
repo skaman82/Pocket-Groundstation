@@ -10,7 +10,8 @@ LASEREINHORNBACKFISCH
 #define layoutADDR 2 // OSD Layout Adress
 #define dvrADDR 3 // DVR Settings Adress
 
-#define Voltagedetect 3.4 // Min. Voltage for Detection
+#define Voltagedetect 3.4 // Min. voltage for Detection
+#define max_cellvoltage 4.2 //Max. cell voltage
 
 #define note 262  // C4
 
@@ -199,12 +200,7 @@ void voltagetest()
   VoltageByte = voltage*10;
 
   cellvoltage = voltage / lipo;
-  
-  /*
-  delay(10);
-   Serial.println(cellvoltage, 1);
-   */
-
+ 
   
 
   if (cellvoltage < (alarmvalue)) // case if voltage is under the set alarm value
@@ -252,9 +248,40 @@ byte buttoncheck()
 void loop() 
 {
   
-  
-  
-  battery_health = map((int)((voltage/lipo)*10), (int)((alarmvalue/lipo)*10), 42, 0, 4);
+
+  float cellfull = (max_cellvoltage) - (alarmvalue); //determine 100% of travel scale
+  float cellstate = (max_cellvoltage) - (cellvoltage); //determine the actual cell delta value
+  int battery_state = 100 - (cellstate)*100 / (cellfull); //determine cell charge left in percent
+
+  if (battery_state < 75 && battery_state > 100) {
+    byte battery_health = 4;
+    }
+   else if (battery_state < 50 && battery_state > 75) {
+     battery_health = 3;
+    }
+   else if (battery_state < 25 && battery_state > 50) {
+     battery_health = 2;
+    }
+   else if (battery_state < 0 && battery_state > 25) {
+     battery_health = 1;
+    }
+   else if (battery_state > 5) {
+     battery_health = 0;
+    }
+    else {
+        battery_health = 0;
+       }
+
+
+
+
+
+      
+Serial.print(" health:");
+Serial.print(battery_health);
+Serial.print(" state:");
+Serial.print(battery_state);
+
   refreshi++;
   //clearOLED();
   if(refreshi > 10)
@@ -282,7 +309,6 @@ void loop()
       u8g.setPrintPos(0, 32);
       u8g.print(voltage, 1);
 
-    Serial.print(battery_health, 1);
     
     
       if (voltage > 10.0) {
@@ -329,7 +355,7 @@ void loop()
         u8g.drawFrame(0, 5 - 2, 12, 6);
         u8g.drawBox(12, 5, 1, 2);
       } 
-      else if (cellvoltage < 3.9 && voltage > 3.4) // case if voltage is below 3.4
+      else if (cellvoltage < 3.9 && cellvoltage > 3.4) // case if voltage is below 3.4
       {
         u8g.drawBox(2, 5, 2, 2);
         u8g.drawBox(5, 5, 2, 2);
