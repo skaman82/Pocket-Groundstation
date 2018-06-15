@@ -214,21 +214,20 @@ const uint8_t DVRstatus8_bitmap[] U8G_PROGMEM =
 ;
 
 
-
-const uint8_t DVR_bitmap[] U8G_PROGMEM = {
-    // size is 10  x 8
-    0x7C,0x7F, // .#####...#######
-    0xFE,0xFF, // #######.########
-    0xC7,0xFF, // ##...###########
-    0xD7,0xFF, // ##.#.###########
-    0xC7,0xFF, // ##...###########
-    0xD7,0xFF, // ##.#.###########
-    0xFE,0xFF, // #######.########
-    0x7C,0x7F  // .#####...#######
+const unsigned char DVR_bitmap[] PROGMEM = {
+    // size is 16  x 8
+  0x7C,0x40, // .#####...#......
+  0xFE,0xC0, // #######.##......
+  0xC7,0xC0, // ##...#####......
+  0xD7,0xC0, // ##.#.#####......
+  0xC7,0xC0, // ##...#####......
+  0xD7,0xC0, // ##.#.#####......
+  0xFE,0xC0, // #######.##......
+  0x7C,0x40  // .#####...#......
 };
 
 
-const uint8_t OSD_bitmap[] U8G_PROGMEM = {
+const unsigned char OSD_bitmap[] PROGMEM = {
     // size is 10  x 8
     0x7F,0x80, // .########.......
     0x80,0x40, // #........#......
@@ -241,7 +240,7 @@ const uint8_t OSD_bitmap[] U8G_PROGMEM = {
 };
 
 
-const uint8_t RSSI_bitmap[] U8G_PROGMEM = {
+const unsigned char RSSI_bitmap[] PROGMEM = {
     // size is 10  x 8
     0x60,0x00, // .##.............
     0x60,0x00, // .##.............
@@ -253,7 +252,7 @@ const uint8_t RSSI_bitmap[] U8G_PROGMEM = {
     0xFF,0xC0  // ##########......
 };
 
-const uint8_t EXIT_bitmap[] U8G_PROGMEM = {
+const uint8_t back_bitmap[] PROGMEM = {
     // size is 10  x 8
     0x00,0x00, // ................
     0x08,0x00, // ....#...........

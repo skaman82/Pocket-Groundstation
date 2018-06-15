@@ -497,6 +497,7 @@ void submenu()
         u8g.print("DVR AUTO-START");
         u8g.setPrintPos(105, 12);
         u8g.print("OFF");
+        u8g.drawBitmapP(5, 5, 2, 8, DVR_bitmap);
         u8g.setColorIndex(1);
         
         u8g.drawFrame(1, 16, 126, 16);
@@ -505,6 +506,8 @@ void submenu()
         u8g.print("OSD");
         u8g.setPrintPos(105, 27);
         u8g.print("OFF");
+        u8g.drawBitmapP(5, 20, 2, 8, OSD_bitmap);
+
         
         u8g.drawFrame(1, 31, 126, 16);
         u8g.setFont(u8g_font_5x7);
@@ -512,11 +515,15 @@ void submenu()
         u8g.print("RSSI");
         u8g.setPrintPos(105, 42);
         u8g.print("OFF");
+        u8g.drawBitmapP(5, 35, 2, 8, RSSI_bitmap);
+
 
         u8g.drawFrame(1, 46, 126, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(20, 57);
         u8g.print("SAVE&EXIT");
+        u8g.drawBitmapP(5, 49, 2, 8, back_bitmap);
+
       }
       else if(menusel == 1)
       {
@@ -526,6 +533,8 @@ void submenu()
         u8g.print("DVR AUTO-START");
         u8g.setPrintPos(105, 12);
         u8g.print("OFF");
+        u8g.drawBitmapP(5, 5, 2, 8, DVR_bitmap);
+
         
         u8g.drawBox(1, 16, 126, 16);
         u8g.setFont(u8g_font_5x7);
@@ -534,6 +543,7 @@ void submenu()
         u8g.print("OSD");
         u8g.setPrintPos(105, 27);
         u8g.print("OFF");
+        u8g.drawBitmapP(5, 20, 2, 8, OSD_bitmap);
         u8g.setColorIndex(1);
 
         
@@ -543,11 +553,13 @@ void submenu()
         u8g.print("RSSI");
         u8g.setPrintPos(105, 42);
         u8g.print("OFF");
+        u8g.drawBitmapP(5, 35, 2, 8, RSSI_bitmap);
 
         u8g.drawFrame(1, 46, 126, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(20, 57);
         u8g.print("SAVE&EXIT");
+        u8g.drawBitmapP(5, 49, 2, 8, back_bitmap);
         
       }
       else if(menusel == 2)
@@ -558,6 +570,8 @@ void submenu()
         u8g.print("DVR AUTO-START");
         u8g.setPrintPos(105, 12);
         u8g.print("OFF");
+        u8g.drawBitmapP(5, 5, 2, 8, DVR_bitmap);
+
         
         u8g.drawFrame(1, 16, 126, 16);
         u8g.setFont(u8g_font_5x7);
@@ -565,6 +579,7 @@ void submenu()
         u8g.print("OSD");
         u8g.setPrintPos(105, 27);
         u8g.print("OFF");
+        u8g.drawBitmapP(5, 20, 2, 8, OSD_bitmap);
         
         u8g.drawBox(1, 31, 126, 16);
         u8g.setFont(u8g_font_5x7);
@@ -573,12 +588,14 @@ void submenu()
         u8g.print("RSSI");
         u8g.setPrintPos(105, 42);
         u8g.print("OFF");
+        u8g.drawBitmapP(5, 35, 2, 8, RSSI_bitmap);
         u8g.setColorIndex(1);
 
         u8g.drawFrame(1, 46, 126, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(20, 57);
         u8g.print("SAVE&EXIT");
+        u8g.drawBitmapP(5, 49, 2, 8, back_bitmap);
         
       }
 
@@ -591,6 +608,8 @@ void submenu()
         u8g.setPrintPos(105, 12);
         u8g.print("OFF");
         u8g.setColorIndex(1);
+        u8g.drawBitmapP(5, 5, 2, 8, DVR_bitmap);
+
         
         u8g.drawFrame(1, 16, 126, 16);
         u8g.setFont(u8g_font_5x7);
@@ -598,6 +617,7 @@ void submenu()
         u8g.print("OSD");
         u8g.setPrintPos(105, 27);
         u8g.print("OFF");
+        u8g.drawBitmapP(5, 20, 2, 8, OSD_bitmap);
         
         u8g.drawFrame(1, 31, 126, 16);
         u8g.setFont(u8g_font_5x7);
@@ -605,12 +625,14 @@ void submenu()
         u8g.print("RSSI");
         u8g.setPrintPos(105, 42);
         u8g.print("OFF");
+        u8g.drawBitmapP(5, 35, 2, 8, RSSI_bitmap);
 
         u8g.drawBox(1, 46, 126, 16);         
         u8g.setColorIndex(0);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(20, 57);
         u8g.print("SAVE&EXIT");
+        u8g.drawBitmapP(5, 49, 2, 8, back_bitmap);
         u8g.setColorIndex(1);
 
         
