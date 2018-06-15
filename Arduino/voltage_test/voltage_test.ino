@@ -253,19 +253,19 @@ void loop()
   float cellstate = (max_cellvoltage) - (cellvoltage); //determine the actual cell delta value
   int battery_state = 100 - (cellstate)*100 / (cellfull); //determine cell charge left in percent
 
-  if (battery_state < 75 && battery_state > 100) {
+  if (battery_state > 75 && battery_state < 100) {
     battery_health = 4;
     }
-   else if (battery_state < 50 && battery_state > 75) {
+   else if (battery_state > 50 && battery_state < 75) {
      battery_health = 3;
     }
-   else if (battery_state < 25 && battery_state > 50) {
+   else if (battery_state > 25 && battery_state < 50) {
      battery_health = 2;
     }
-   else if (battery_state < 0 && battery_state > 25) {
+   else if (battery_state > 0 && battery_state < 25) {
      battery_health = 1;
     }
-   else if (battery_state > 5) {
+   else if (battery_state < 5) {
      battery_health = 0;
     }
     else {
@@ -297,13 +297,13 @@ Serial.print(battery_state);
     do {
       // graphic commands to redraw the complete screen should be placed here
       u8g.setFont(u8g_font_5x7);
-      u8g.setPrintPos(34, 9);
+      u8g.setPrintPos(33, 9);
       u8g.print("BATTERY");
       u8g.setFont(u8g_font_5x7);
-      u8g.setPrintPos(18, 9);
+      u8g.setPrintPos(17, 9);
       u8g.print(lipo);
       u8g.setFont(u8g_font_5x7);
-      u8g.setPrintPos(24, 9);
+      u8g.setPrintPos(23, 9);
       u8g.print("S");
       u8g.setFont(u8g_font_profont22);
       u8g.setPrintPos(0, 32);
@@ -331,9 +331,10 @@ Serial.print(battery_state);
       u8g.setPrintPos(12, 56);
       u8g.print("PRESS CENTER FOR MENU");
 
-      u8g.setPrintPos(111, 9);
+     
       if(osdON)
       {
+        u8g.setPrintPos(111, 9);
         u8g.print("OSD");
       }
       
@@ -347,32 +348,41 @@ Serial.print(battery_state);
       u8g.print("ALARM");
       u8g.setColorIndex(1);
       
-      if (cellvoltage > 4.0) // case if voltage is above 4.0v
+      if (battery_health == 4) // case if voltage is above 4.0v
       { 
-        u8g.drawBox(2, 5, 2, 2);
-        u8g.drawBox(5, 5, 2, 2);
-        u8g.drawBox(8, 5, 2, 2);
-        u8g.drawFrame(0, 5 - 2, 12, 6);
-        u8g.drawBox(12, 5, 1, 2);
+        u8g.drawBox(2, 5, 1, 2);
+        u8g.drawBox(4, 5, 1, 2);
+        u8g.drawBox(6, 5, 1, 2);
+        u8g.drawBox(8, 5, 1, 2);
+        u8g.drawFrame(0, 5 - 2, 11, 6);
+        u8g.drawBox(11, 5, 1, 2);
       } 
-      else if (cellvoltage < 3.9 && cellvoltage > 3.4) // case if voltage is below 3.4
+      else if (battery_health == 3) // case if voltage is below 3.4
       {
-        u8g.drawBox(2, 5, 2, 2);
-        u8g.drawBox(5, 5, 2, 2);
-        u8g.drawFrame(0, 5 - 2, 12, 6);
-        u8g.drawBox(12, 5, 1, 2);
+        u8g.drawBox(2, 5, 1, 2);
+        u8g.drawBox(4, 5, 1, 2);
+        u8g.drawBox(6, 5, 1, 2);
+        u8g.drawFrame(0, 5 - 2, 11, 6);
+        u8g.drawBox(11, 5, 1, 2);
       } 
-      else if (cellvoltage < 3.4) // case if voltage is below 3.4
+      else if (battery_health == 2) // case if voltage is below 3.4
+      { 
+        u8g.drawBox(2, 5, 1, 2);
+        u8g.drawBox(4, 5, 1, 2);
+        u8g.drawFrame(0, 5 - 2, 11, 6);
+        u8g.drawBox(11, 5, 1, 2);
+      } 
+      else if (battery_health == 1) // case if voltage is below 3.4
       { 
         
-        u8g.drawBox(2, 5, 2, 2);
-        u8g.drawFrame(0, 5 - 2, 12, 6);
-        u8g.drawBox(12, 5, 1, 2);
+        u8g.drawBox(2, 5, 1, 2);
+        u8g.drawFrame(0, 5 - 2, 11, 6);
+        u8g.drawBox(11, 5, 1, 2);
       } 
       else 
       {
-        u8g.drawFrame(0, 5 - 2, 12, 6);
-        u8g.drawBox(12, 5, 1, 2);
+        u8g.drawFrame(0, 5 - 2, 11, 6);
+        u8g.drawBox(11, 5, 1, 2);
       }
 
     }
