@@ -262,10 +262,10 @@ void loop()
    else if (battery_state > 25 && battery_state < 50) {
      battery_health = 2;
     }
-   else if (battery_state > 0 && battery_state < 25) {
+   else if (battery_state > 5 && battery_state < 25) {
      battery_health = 1;
     }
-   else if (battery_state < 5) {
+   else if (battery_state > 1) {
      battery_health = 0;
     }
     else {
@@ -348,7 +348,7 @@ Serial.print(battery_state);
       u8g.print("ALARM");
       u8g.setColorIndex(1);
       
-      if (battery_health == 4) // case if voltage is above 4.0v
+      if (battery_health == 4) // case if voltage is 75% +
       { 
         u8g.drawBox(2, 5, 1, 2);
         u8g.drawBox(4, 5, 1, 2);
@@ -357,7 +357,7 @@ Serial.print(battery_state);
         u8g.drawFrame(0, 5 - 2, 11, 6);
         u8g.drawBox(11, 5, 1, 2);
       } 
-      else if (battery_health == 3) // case if voltage is below 3.4
+      else if (battery_health == 3) // case if voltage is 50% +
       {
         u8g.drawBox(2, 5, 1, 2);
         u8g.drawBox(4, 5, 1, 2);
@@ -365,14 +365,14 @@ Serial.print(battery_state);
         u8g.drawFrame(0, 5 - 2, 11, 6);
         u8g.drawBox(11, 5, 1, 2);
       } 
-      else if (battery_health == 2) // case if voltage is below 3.4
+      else if (battery_health == 2) // case if voltage is 25% +
       { 
         u8g.drawBox(2, 5, 1, 2);
         u8g.drawBox(4, 5, 1, 2);
         u8g.drawFrame(0, 5 - 2, 11, 6);
         u8g.drawBox(11, 5, 1, 2);
       } 
-      else if (battery_health == 1) // case if voltage is below 3.4
+      else if (battery_health == 1) // case if voltage is 5% +
       { 
         
         u8g.drawBox(2, 5, 1, 2);
