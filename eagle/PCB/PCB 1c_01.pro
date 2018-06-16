@@ -1,25 +1,25 @@
 EAGLE AutoRouter Statistics:
 
-Job           : /Users/albertkravcov/development/Pocket-Groundstation/eagle/PCB/PCB 1c.brd
+Job           : /Users/albertkravcov/Documents/GitHub/Pocket-Groundstation/eagle/PCB/PCB 1c.brd
 
-Start at      : 16:36:33 (15.06.18)
-End at        : 16:36:39 (15.06.18)
-Elapsed time  : 00:00:02
+Start at      : 21:38:39 (16.06.18)
+End at        : 01:00:00 (01.01.70)
+Elapsed time  : 00:00:00
 
-Signals       :    39   RoutingGrid: 25 mil  Layers: 2
-Connections   :    60   predefined:  58 ( 11 Vias )
+Signals       :    40   RoutingGrid: 25 mil  Layers: 2
+Connections   :    61   predefined:  60 ( 11 Vias )
 
-Router memory :   64680
+Router memory :   0
 
-Passname          :     Route Optimize1 Optimize2 Optimize3 Optimize4
+Passname          :          
 
-Time per pass     :  00:00:00  00:00:01  00:00:00  00:00:00  00:00:01
-Number of Ripups  :         0         0         0         0         0
-max. Level        :         0         0         0         0         0
-max. Total        :         0         0         0         0         0
+Time per pass     :  00:00:00
+Number of Ripups  :         0
+max. Level        :         0
+max. Total        :         0
 
-Routed            :         2         2         2         2         2
-Vias              :         0         0         0         0         0
-Resolution        :   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %
+Routed            :         0
+Vias              :         0
+Resolution        :    98.4 %
 
 Final             : 

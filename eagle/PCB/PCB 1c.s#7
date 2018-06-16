@@ -9983,7 +9983,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="DC-005" library="con-jack" library_urn="urn:adsk.eagle:library:154" deviceset="DCJ0202" device="" package3d_urn="urn:adsk.eagle:package:7491/1"/>
 <part name="V-IN" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
 <part name="G" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
-<part name="VCC-O" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
+<part name="V-O" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
 <part name="MINIMOSD" library="FPVTools" deviceset="MICROMINIMOSDPWR" device=""/>
 <part name="R1-18K" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="18k Ohm"/>
 <part name="R2-4.7K" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="4.7 kOhm"/>
@@ -10037,7 +10037,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="DC-005" gate="G$1" x="337.82" y="96.52" rot="R180"/>
 <instance part="V-IN" gate="1" x="330.2" y="137.16"/>
 <instance part="G" gate="1" x="330.2" y="142.24"/>
-<instance part="VCC-O" gate="1" x="330.2" y="152.4"/>
+<instance part="V-O" gate="1" x="330.2" y="152.4"/>
 <instance part="MINIMOSD" gate="G$1" x="256.54" y="137.16"/>
 <instance part="R1-18K" gate="G$1" x="317.5" y="93.98" rot="R90"/>
 <instance part="R2-4.7K" gate="G$1" x="317.5" y="76.2" rot="R90"/>
@@ -10340,7 +10340,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="317.5" y1="99.06" x2="317.5" y2="127" width="0.1524" layer="91"/>
 <wire x1="292.1" y1="101.6" x2="317.5" y2="127" width="0.1524" layer="91"/>
 <wire x1="317.5" y1="127" x2="317.5" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="VCC-O" gate="1" pin="P"/>
+<pinref part="V-O" gate="1" pin="P"/>
 <wire x1="317.5" y1="152.4" x2="332.74" y2="152.4" width="0.1524" layer="91"/>
 <junction x="317.5" y="127"/>
 <pinref part="IN+" gate="G$1" pin="TP"/>
