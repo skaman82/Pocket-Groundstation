@@ -531,6 +531,8 @@ void menu()
 
 void dvrmenu() 
 {
+
+  
   menusel = 0;
   byte exit = 0;
   while(exit == 0)
@@ -659,14 +661,24 @@ void dvrmenu()
        if(menusel == 0)
       {  
        digitalWrite(DVR1_PIN, LOW);
+       delay(480);
+       digitalWrite(DVR1_PIN, HIGH);
+       delay(5);
+
       }
       if(menusel == 1)
       {  
        digitalWrite(DVR2_PIN, LOW);
+        delay(40);
+       digitalWrite(DVR2_PIN, HIGH);
+       delay(5);
       }
       if(menusel == 2)
       {  
        digitalWrite(DVR3_PIN, LOW);
+        delay(40);
+       digitalWrite(DVR3_PIN, HIGH);
+       delay(5);
       }
       if(menusel == 3)
       {  
