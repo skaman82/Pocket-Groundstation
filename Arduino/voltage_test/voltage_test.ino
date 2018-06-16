@@ -19,8 +19,10 @@ LASEREINHORNBACKFISCH
 #define BUTTON2_PIN              3  // Button 2
 #define BUTTON3_PIN              4  // Button 3
 #define DVR1_PIN                 5  // DVR Button 1
-#define DVR2_PIN                 6  // DVR Button 1
-#define DVR3_PIN                 7  // DVR Button 1
+#define DVR2_PIN                 6  // DVR Button 2
+#define DVR3_PIN                 7  // DVR Button 3
+#define DVR_SENS                A1 // DVR LED Sensor
+
 #define beeppin 9 // Beeper Pin
 
 #define DELAY                    2  // Delay per loop in ms
@@ -107,6 +109,8 @@ void setup()
   pinMode(DVR1_PIN, OUTPUT); //DVR Key1
   pinMode(DVR2_PIN, OUTPUT); //DVR Key2
   pinMode(DVR3_PIN, OUTPUT); //DVR Key3
+  pinMode(DVR_SENS, INPUT); //DVR LED Sensor
+
   
   digitalWrite(DVR1_PIN, HIGH);
   digitalWrite(DVR2_PIN, HIGH);
@@ -284,9 +288,7 @@ void loop()
 
 
 
-
-
-      
+              
 // Serial.print(" health:");
 // Serial.print(battery_health);
 // Serial.print(" state:");
@@ -304,6 +306,10 @@ void loop()
       volti = 0;
     }
     u8g.firstPage();
+
+   
+       
+
     do {
       // graphic commands to redraw the complete screen should be placed here
       u8g.setFont(u8g_font_5x7);
@@ -331,16 +337,29 @@ void loop()
         u8g.print("v");
       }
       
-      if(osdON)
-      {
-        u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
-      }
+   
+     
 
       u8g.drawFrame(1, 46 - 2, 124, 18);
       u8g.setFont(u8g_font_5x7);
       u8g.setPrintPos(12, 56);
       u8g.print("PRESS CENTER FOR MENU");
 
+
+        int dvr_sensor = analogRead(DVR_SENS); //read DVR LED Status
+        if (dvr_sensor < 300) //if DVR LED is blinking
+        {
+          u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
+          DVRstatus = 1;
+        }
+        else 
+        { 
+          DVRstatus = 0;
+        }
+
+        Serial.print(DVRstatus);
+
+        
      
       if(osdON)
       {
