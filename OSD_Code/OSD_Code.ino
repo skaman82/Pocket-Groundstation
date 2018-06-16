@@ -19,8 +19,10 @@ float Voltage;
 byte battery_health = 0;
 
 Max7456 osd;
-byte logo[]={0xC8,0xC9};
-
+byte logo1[]={0xC0,0xC1,0xC2,0xC3,0xC4,0xC5,0xC6,0xC7,0xC8,0xC9,0xCA,0xCB,0xCC };
+byte logo2[]={0xD0,0xD1,0xD2,0xD3,0xD4,0xD5,0xD6,0xD7,0xD8,0xD9,0xDA,0xDB,0xDC };
+byte logo3[]={0xE0,0xE1,0xE2,0xE3,0xE4,0xE5,0xE6,0xE7,0xE8,0xE9,0xEA,0xEB,0xEC };
+byte logo4[]={0xF0,0xF1,0xF2,0xF3,0xF4,0xF5,0xF6,0xF7,0xF8,0xF9,0xFA,0xFB,0xFC };
 void setup()
 {
   SPI.begin();
@@ -33,7 +35,7 @@ void setup()
  
   osd.activateOSD();
   
-  // mark max screen size to aust offset
+  // mark max screen size to adjust offset
   // osd.printMax7456Char(0x01,0,0);
   // osd.printMax7456Char(0x01,0,15);
   // osd.printMax7456Char(0x01,29,0);
@@ -43,6 +45,8 @@ void setup()
   pinMode(greenLed,OUTPUT);
   
   //base time = 160ms,time on = time off.
+
+  splash();
 }
 
 void OSDreceive()
@@ -76,10 +80,17 @@ void OSDreceive()
   */
   
 }
-
+void splash()
+{
+  osd.printMax7456Chars(logo1,12,9,5);
+  osd.printMax7456Chars(logo2,12,9,6);
+  osd.printMax7456Chars(logo3,12,9,7);
+  osd.printMax7456Chars(logo4,12,9,8);
+  delay(2000);
+  osd.clearScreen();
+  }
 
 void loop()
- 
 {
   if (Serial.available() > 0)
   {
@@ -92,11 +103,12 @@ void loop()
  double Osblinkosd = blinkosd;
  double OsRSSIavail = RSSIavail;
  
- 
+  
+  
+  
   if (osdpage == 1) // Layout1
   { 
-  osd.clearScreen();
-
+  
   // RSSI printout
   osd.printMax7456Char(0x94,24,8);
   osd.print("99",25,8);
@@ -127,8 +139,7 @@ void loop()
   
   }
   else {
-
-  osd.printMax7456Chars(logo,2,12,2);
+  
   osd.print("POCKET-GROUNDSTATION",5,9);
   osd.print("WAITING...",10,11, true);
   
