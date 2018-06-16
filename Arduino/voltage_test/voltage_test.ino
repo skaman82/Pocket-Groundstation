@@ -57,7 +57,7 @@ byte pressedbut = 0;
 float cellvoltage;
 boolean osdON = 1;
 byte battery_health = 0;
-
+int dvr_sensor;
 
 
 
@@ -110,7 +110,7 @@ void setup()
   pinMode(DVR2_PIN, OUTPUT); //DVR Key2
   pinMode(DVR3_PIN, OUTPUT); //DVR Key3
   pinMode(DVR_SENS, INPUT); //DVR LED Sensor
-
+  
   
   digitalWrite(DVR1_PIN, HIGH);
   digitalWrite(DVR2_PIN, HIGH);
@@ -131,6 +131,9 @@ void setup()
 
   Serial.begin(9600);
   OSDsoft.begin(9600);
+
+          
+
 
   if ( u8g.getMode() == U8G_MODE_R3G3B2 ) {
     u8g.setColorIndex(255);     // white
@@ -345,8 +348,7 @@ void loop()
       u8g.setPrintPos(12, 56);
       u8g.print("PRESS CENTER FOR MENU");
 
-
-        int dvr_sensor = analogRead(DVR_SENS); //read DVR LED Status
+        dvr_sensor = analogRead(DVR_SENS);
         if (dvr_sensor < 300) //if DVR LED is blinking
         {
           u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
@@ -559,7 +561,9 @@ void dvrmenu()
     clearOLED();
     u8g.firstPage();
     do
-    {
+    {   
+
+      
       if(menusel == 0) // first menu point
       {
         u8g.drawBox(1, 1, 30, 16);
@@ -584,6 +588,7 @@ void dvrmenu()
         u8g.setPrintPos(32, 56);
         u8g.print("EXIT DVR-MODE");
 
+        
       }
       else if(menusel == 1)
       {
