@@ -9,6 +9,7 @@ LASEREINHORNBACKFISCH
 #define alarmADDR 1 // EEPROM Adress
 #define layoutADDR 2 // OSD Layout Adress
 #define dvrADDR 3 // DVR Settings Adress
+#define rssiADDR 4 // DVR Settings Adress
 
 #define Voltagedetect 3.4 // Min. voltage for Detection
 #define max_cellvoltage 4.2 //Max. cell voltage
@@ -43,7 +44,8 @@ int lipo;
 float alarmvalue = 3.40;
 byte alarmvalueEEP;
 byte DVRstatus = 0;
-byte layoutEEP = 1;
+byte layoutEEP = 0;
+byte rssiEEP = 0;
 byte dvrEEP = 0;
 int32_t osddata;
 byte blinkosd = 0;
@@ -55,11 +57,9 @@ byte volti = 0; // Counter vor Voltage measure
 byte menusel = 0;
 byte pressedbut = 0;
 float cellvoltage;
-boolean osdON = 1;
+boolean osdON;
 byte battery_health = 0;
 int dvr_sensor;
-
-
 
 
 void pause()
@@ -119,6 +119,8 @@ void setup()
   alarmvalueEEP = EEPROM.read(alarmADDR);
   layoutEEP = EEPROM.read(layoutADDR);
   dvrEEP = EEPROM.read(dvrADDR);
+  rssiEEP = EEPROM.read(rssiADDR);
+
   
   if (alarmvalueEEP != 0)
   {
@@ -128,12 +130,8 @@ void setup()
   {
     alarmvalue = 3.40;
   }
- if (layoutEEP != 0)
-  {
-    layoutEEP = 1;
-  }
-  else 
-  { }
+ 
+ 
   
   Serial.begin(9600);
   OSDsoft.begin(9600);
@@ -234,6 +232,7 @@ void voltagetest()
 
 byte buttoncheck()
 {
+  
   byte buttonz = 0;
   if (digitalRead(BUTTON1_PIN) != 1)
   {
@@ -241,15 +240,19 @@ byte buttoncheck()
     {
       delay(2);
     }
-    buttonz = 1;
-  }
+    buttonz = 1;  
+  }  
+
+
   else if (digitalRead(BUTTON2_PIN) != 1)
   {
     while(digitalRead(BUTTON2_PIN) != 1)
     {
+      
       delay(2);
     }
     buttonz = 2;
+    
   }
   else if (digitalRead(BUTTON3_PIN) != 1)
   {
@@ -262,6 +265,11 @@ byte buttoncheck()
   //delay(10);
   pressedbut = buttonz;
   return buttonz;
+
+
+ 
+
+  
 }
 
 
@@ -295,7 +303,23 @@ void loop()
        }
 
 
+if (layoutEEP = 1)
+  { 
+    osdON = true;
+    }
+    else if (layoutEEP = 2)
+      { 
+        osdON = true;
+    }
+    else if (layoutEEP = 0)
+      { 
+        osdON = false;
+    }
+    else {
+       osdON = false;
+    }
 
+      
               
 Serial.print("health: ");
 Serial.print(battery_health);
@@ -315,6 +339,9 @@ Serial.print(DVRstatus);
 
 Serial.print(" VoltageByte: ");
 Serial.print(VoltageByte);
+
+Serial.print(" dvrEPP: ");
+Serial.print(dvrEEP);
 
 Serial.println();
 
@@ -371,7 +398,9 @@ Serial.println();
       u8g.setPrintPos(12, 56);
       u8g.print("PRESS CENTER FOR MENU");
 
-        dvr_sensor = analogRead(DVR_SENS);
+       
+        
+      dvr_sensor = analogRead(DVR_SENS);
         if (dvr_sensor < 300) //if DVR LED is blinking
         {
           u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
@@ -385,7 +414,7 @@ Serial.println();
 
         
      
-      if(osdON)
+      if(osdON = true)
       {
         u8g.setPrintPos(111, 9);
         u8g.print("OSD");
@@ -981,7 +1010,16 @@ void submenu()
         u8g.setPrintPos(20, 12);
         u8g.print("DVR AUTO-START");
         u8g.setPrintPos(105, 12);
+
+        if(dvrEEP == 0) 
+        {
         u8g.print("OFF");
+        }
+        else if(dvrEEP == 1) 
+        {
+        u8g.print("ON");
+        }
+
         u8g.drawBitmapP(5, 5, 2, 8, DVR_bitmap);
         u8g.setColorIndex(1);
         
@@ -990,7 +1028,20 @@ void submenu()
         u8g.setPrintPos(20, 27);
         u8g.print("OSD");
         u8g.setPrintPos(105, 27);
+
+        if(layoutEEP == 0) 
+        {
         u8g.print("OFF");
+        }
+        else if(layoutEEP == 1) 
+        {
+        u8g.print("ON");
+        }
+        else if(layoutEEP == 2) 
+        {
+        u8g.print("MIN");
+        }
+        
         u8g.drawBitmapP(5, 20, 2, 8, OSD_bitmap);
 
         
@@ -999,7 +1050,17 @@ void submenu()
         u8g.setPrintPos(20, 42);
         u8g.print("RSSI");
         u8g.setPrintPos(105, 42);
+
+
+         if(rssiEEP == 0) 
+        {
         u8g.print("OFF");
+        }
+        else if(rssiEEP == 1) 
+        {
+        u8g.print("ON");
+        }
+        
         u8g.drawBitmapP(5, 35, 2, 8, RSSI_bitmap);
 
 
@@ -1017,7 +1078,16 @@ void submenu()
         u8g.setPrintPos(20, 12);
         u8g.print("DVR AUTO-START");
         u8g.setPrintPos(105, 12);
+        
+        if(dvrEEP == 0) 
+        {
         u8g.print("OFF");
+        }
+        else if(dvrEEP == 1) 
+        {
+        u8g.print("ON");
+        }
+        
         u8g.drawBitmapP(5, 5, 2, 8, DVR_bitmap);
 
         
@@ -1027,7 +1097,20 @@ void submenu()
         u8g.setPrintPos(20, 27);
         u8g.print("OSD");
         u8g.setPrintPos(105, 27);
+
+        if(layoutEEP == 0) 
+        {
         u8g.print("OFF");
+        }
+        else if(layoutEEP == 1) 
+        {
+        u8g.print("ON");
+        }
+        else if(layoutEEP == 2) 
+        {
+        u8g.print("MIN");
+        }
+        
         u8g.drawBitmapP(5, 20, 2, 8, OSD_bitmap);
         u8g.setColorIndex(1);
 
@@ -1037,7 +1120,16 @@ void submenu()
         u8g.setPrintPos(20, 42);
         u8g.print("RSSI");
         u8g.setPrintPos(105, 42);
+
+         if(rssiEEP == 0) 
+        {
         u8g.print("OFF");
+        }
+        else if(rssiEEP == 1) 
+        {
+        u8g.print("ON");
+        }
+        
         u8g.drawBitmapP(5, 35, 2, 8, RSSI_bitmap);
 
         u8g.drawFrame(1, 46, 126, 16);
@@ -1054,7 +1146,16 @@ void submenu()
         u8g.setPrintPos(20, 12);
         u8g.print("DVR AUTO-START");
         u8g.setPrintPos(105, 12);
+        
+        if(dvrEEP == 0) 
+        {
         u8g.print("OFF");
+        }
+        else if(dvrEEP == 1) 
+        {
+        u8g.print("ON");
+        }
+        
         u8g.drawBitmapP(5, 5, 2, 8, DVR_bitmap);
 
         
@@ -1063,7 +1164,20 @@ void submenu()
         u8g.setPrintPos(20, 27);
         u8g.print("OSD");
         u8g.setPrintPos(105, 27);
+
+        if(layoutEEP == 0) 
+        {
         u8g.print("OFF");
+        }
+        else if(layoutEEP == 1) 
+        {
+        u8g.print("ON");
+        }
+        else if(layoutEEP == 2) 
+        {
+        u8g.print("MIN");
+        }
+        
         u8g.drawBitmapP(5, 20, 2, 8, OSD_bitmap);
         
         u8g.drawBox(1, 31, 126, 16);
@@ -1072,7 +1186,16 @@ void submenu()
         u8g.setPrintPos(20, 42);
         u8g.print("RSSI");
         u8g.setPrintPos(105, 42);
+
+         if(rssiEEP == 0) 
+        {
         u8g.print("OFF");
+        }
+        else if(rssiEEP == 1) 
+        {
+        u8g.print("ON");
+        }
+        
         u8g.drawBitmapP(5, 35, 2, 8, RSSI_bitmap);
         u8g.setColorIndex(1);
 
@@ -1091,7 +1214,17 @@ void submenu()
         u8g.setPrintPos(20, 12);
         u8g.print("DVR AUTO-START");
         u8g.setPrintPos(105, 12);
+     
+        if(dvrEEP == 0) 
+        {
         u8g.print("OFF");
+        }
+        else if(dvrEEP == 1) 
+        {
+        u8g.print("ON");
+        }
+
+        
         u8g.setColorIndex(1);
         u8g.drawBitmapP(5, 5, 2, 8, DVR_bitmap);
 
@@ -1101,7 +1234,20 @@ void submenu()
         u8g.setPrintPos(20, 27);
         u8g.print("OSD");
         u8g.setPrintPos(105, 27);
+
+        if(layoutEEP == 0) 
+        {
         u8g.print("OFF");
+        }
+        else if(layoutEEP == 1) 
+        {
+        u8g.print("ON");
+        }
+        else if(layoutEEP == 2) 
+        {
+        u8g.print("MIN");
+        }
+        
         u8g.drawBitmapP(5, 20, 2, 8, OSD_bitmap);
         
         u8g.drawFrame(1, 31, 126, 16);
@@ -1109,7 +1255,16 @@ void submenu()
         u8g.setPrintPos(20, 42);
         u8g.print("RSSI");
         u8g.setPrintPos(105, 42);
+        
+         if(rssiEEP == 0) 
+        {
         u8g.print("OFF");
+        }
+        else if(rssiEEP == 1) 
+        {
+        u8g.print("ON");
+        }
+        
         u8g.drawBitmapP(5, 35, 2, 8, RSSI_bitmap);
 
         u8g.drawBox(1, 46, 126, 16);         
@@ -1133,9 +1288,53 @@ void submenu()
     if(pressedbut == 1)
     {
       // Press selected Menu Point
+      
+      
+      if(menusel == 0)
+      {
+        
+       if(dvrEEP == 0)
+       { dvrEEP = 1; }
+        else if(dvrEEP == 1)
+       { dvrEEP = 0; }
+      
+       Serial.print(dvrEEP);
+
+      }
+      
+      if(menusel == 1)
+      {
+        
+       if(layoutEEP == 0)
+       { layoutEEP = 1; }
+        else if(layoutEEP == 1)
+       { layoutEEP = 2; }
+       else if(layoutEEP == 2)
+       { layoutEEP = 0; }
+
+       Serial.print(layoutEEP);
+
+      }
+      
+       if(menusel == 2)
+      {
+        
+       if(rssiEEP == 0)
+       { rssiEEP = 1; }
+        else if(rssiEEP == 1)
+       { rssiEEP = 0; }
+      
+       Serial.print(rssiEEP);
+
+      }
+      
+      
       if(menusel == 3)
       {
         
+       EEPROM.write(dvrADDR, dvrEEP);
+       EEPROM.write(layoutADDR, layoutEEP);
+       EEPROM.write(rssiADDR, rssiEEP);
        refreshi = 10;
        exit = 1;
       }
