@@ -42,11 +42,11 @@ float voltage;
 int lipo;
 float alarmvalue = 3.40;
 byte alarmvalueEEP;
-byte layoutEEP = 2;
-byte dvrEEP = 1;
+byte DVRstatus = 0;
+byte layoutEEP = 1;
+byte dvrEEP = 0;
 int32_t osddata;
 byte blinkosd = 0;
-boolean DVRstatus = 0;
 boolean RSSIavail;
 byte RSSI = 69;
 byte VoltageByte;
@@ -64,7 +64,7 @@ int dvr_sensor;
 
 void pause()
 {
-  beep_criticalt(20);
+  beep_critical(20);
   while (1);
 }
 
@@ -76,7 +76,7 @@ void OSDsend()
    osddata += (DVRstatus << 16);
    osddata += (RSSIavail << 15);
    osddata += (RSSI << 8);
-  osddata += VoltageByte;
+   osddata += VoltageByte;
   //int32_t dat = 0x80C0E0F0;
   
   byte b1 = ((osddata >> 24) & 0xFF);
@@ -128,12 +128,17 @@ void setup()
   {
     alarmvalue = 3.40;
   }
-
+ if (layoutEEP != 0)
+  {
+    layoutEEP = 1;
+  }
+  else 
+  { }
+  
   Serial.begin(9600);
   OSDsoft.begin(9600);
 
           
-
 
   if ( u8g.getMode() == U8G_MODE_R3G3B2 ) {
     u8g.setColorIndex(255);     // white
@@ -222,7 +227,7 @@ void voltagetest()
 
   if (cellvoltage < (alarmvalue)) // case if voltage is under the set alarm value
   { 
-    beep_criticalt(1);
+    beep_critical(1);
   } 
 
 }
@@ -264,7 +269,7 @@ byte buttoncheck()
 
 void loop() 
 {
-  
+
 
   float cellfull = (max_cellvoltage) - (alarmvalue); //determine 100% of travel scale
   float cellstate = (max_cellvoltage) - (cellvoltage); //determine the actual cell delta value
@@ -282,7 +287,7 @@ void loop()
    else if (battery_state > 5 && battery_state < 25) {
      battery_health = 1;
     }
-   else if (battery_state > 1) {
+   else if (battery_state > 0) {
      battery_health = 0;
     }
     else {
@@ -292,17 +297,35 @@ void loop()
 
 
               
-// Serial.print(" health:");
-// Serial.print(battery_health);
-// Serial.print(" state:");
-// Serial.print(battery_state);
+Serial.print("health: ");
+Serial.print(battery_health);
 
+Serial.print(" state: ");
+Serial.print(battery_state);
+
+Serial.print(" alarmvalueEEP: ");
+Serial.print(alarmvalueEEP);
+
+Serial.print(" layoutEEP: ");
+Serial.print(layoutEEP);
+
+
+Serial.print(" DVRstatus: ");
+Serial.print(DVRstatus);
+
+Serial.print(" VoltageByte: ");
+Serial.print(VoltageByte);
+
+Serial.println();
+
+
+    
   refreshi++;
   //clearOLED();
-  if(refreshi > 10)
+  if(refreshi > 5)
   {
     volti++;
-    if(volti > 20)
+    if(volti > 5)
     {
       voltagetest();
       OSDsend();
@@ -359,7 +382,6 @@ void loop()
           DVRstatus = 0;
         }
 
-        Serial.print(DVRstatus);
 
         
      
@@ -570,18 +592,34 @@ void dvrmenu()
         u8g.setFont(u8g_font_5x7);
         u8g.setColorIndex(0);
         u8g.setPrintPos(12, 12);
-        u8g.print("B1");
+        u8g.print("REC");
         u8g.setColorIndex(1);
 
         u8g.drawFrame(40, 1, 30, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(51, 12);
-        u8g.print("B2");
+        u8g.print("MENU");
 
         u8g.drawFrame(79, 1, 30, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(89, 12);
-        u8g.print("B3");
+        u8g.print("PLAY");
+
+        u8g.drawFrame(1, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(12, 30);
+        u8g.print("<");
+
+        u8g.drawFrame(40, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 30);
+        u8g.print("x");
+
+        u8g.drawFrame(79, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 30);
+        u8g.print(">");
+        
         
         u8g.drawFrame(1, 45, 126, 16);
         u8g.setFont(u8g_font_5x7);
@@ -595,19 +633,34 @@ void dvrmenu()
         u8g.drawFrame(1, 1, 30, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(12, 12);
-        u8g.print("B1");
+        u8g.print("REC");
 
         u8g.drawBox(40, 1, 30, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(51, 12);
         u8g.setColorIndex(0);
-        u8g.print("B2");
+        u8g.print("MENU");
         u8g.setColorIndex(1);
 
         u8g.drawFrame(79, 1, 30, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(89, 12);
-        u8g.print("B3");
+        u8g.print("PLAY");
+        
+        u8g.drawFrame(1, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(12, 30);
+        u8g.print("<");
+
+        u8g.drawFrame(40, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 30);
+        u8g.print("x");
+
+        u8g.drawFrame(79, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 30);
+        u8g.print(">");
         
         u8g.drawFrame(1, 45, 126, 16);
         u8g.setFont(u8g_font_5x7);
@@ -622,19 +675,34 @@ void dvrmenu()
         u8g.drawFrame(1, 1, 30, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(12, 12);
-        u8g.print("B1");
+        u8g.print("REC");
 
         u8g.drawFrame(40, 1, 30, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(51, 12);
-        u8g.print("B2");
+        u8g.print("MENU");
 
         u8g.drawBox(79, 1, 30, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(89, 12);
         u8g.setColorIndex(0);
-        u8g.print("B3");
+        u8g.print("PLAY");
         u8g.setColorIndex(1);
+        
+        u8g.drawFrame(1, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(12, 30);
+        u8g.print("<");
+
+        u8g.drawFrame(40, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 30);
+        u8g.print("x");
+
+        u8g.drawFrame(79, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 30);
+        u8g.print(">");
         
         u8g.drawFrame(1, 45, 126, 16);
         u8g.setFont(u8g_font_5x7);
@@ -651,18 +719,158 @@ void dvrmenu()
         u8g.drawFrame(1, 1, 30, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(12, 12);
-        u8g.print("B1");
+        u8g.print("REC");
 
         u8g.drawFrame(40, 1, 30, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(51, 12);
-        u8g.print("B2");
+        u8g.print("MENU");
 
         u8g.drawFrame(79, 1, 30, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(89, 12);
-        u8g.print("B3");
+        u8g.print("PLAY");
         
+        u8g.drawBox(1, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setColorIndex(0);
+        u8g.setPrintPos(12, 30);
+        u8g.print("<");
+        u8g.setColorIndex(1);
+
+        u8g.drawFrame(40, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 30);
+        u8g.print("x");
+
+        u8g.drawFrame(79, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 30);
+        u8g.print(">");
+        
+        u8g.drawFrame(1, 45, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(32, 56);
+        u8g.print("EXIT DVR-MODE");
+        u8g.setColorIndex(1);
+        
+      }
+       else if(menusel == 4)
+      {
+        u8g.drawFrame(1, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(12, 12);
+        u8g.print("REC");
+
+        u8g.drawFrame(40, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 12);
+        u8g.print("MENU");
+
+        u8g.drawFrame(79, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 12);
+        u8g.print("PLAY");
+        
+        u8g.drawFrame(1, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(12, 30);
+        u8g.print("<");
+
+        u8g.drawBox(40, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 30);
+        u8g.setColorIndex(0);
+        u8g.print("x");
+        u8g.setColorIndex(1);
+
+
+        u8g.drawFrame(79, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 30);
+        u8g.print(">");
+        
+        u8g.drawFrame(1, 45, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(32, 56);
+        u8g.print("EXIT DVR-MODE");
+        u8g.setColorIndex(1);
+        
+      }
+       else if(menusel == 5)
+      {
+        u8g.drawFrame(1, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(12, 12);
+        u8g.print("REC");
+
+        u8g.drawFrame(40, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 12);
+        u8g.print("MENU");
+
+        u8g.drawFrame(79, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 12);
+        u8g.print("PLAY");
+        
+        u8g.drawFrame(1, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(12, 30);
+        u8g.print("<");
+
+        u8g.drawFrame(40, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 30);
+        u8g.print("x");
+
+        u8g.drawBox(79, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setColorIndex(0);
+        u8g.setPrintPos(89, 30);
+        u8g.print(">");
+        u8g.setColorIndex(1);
+        
+        u8g.drawFrame(1, 45, 126, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(32, 56);
+        u8g.print("EXIT DVR-MODE");
+        u8g.setColorIndex(1);
+        
+      }
+
+       else if(menusel == 6)
+      {
+        u8g.drawFrame(1, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(12, 12);
+        u8g.print("REC");
+
+        u8g.drawFrame(40, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 12);
+        u8g.print("MENU");
+
+        u8g.drawFrame(79, 1, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 12);
+        u8g.print("PLAY");
+        
+        u8g.drawFrame(1, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(12, 30);
+        u8g.print("<");
+
+        u8g.drawFrame(40, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(51, 30);
+        u8g.print("x");
+
+        u8g.drawFrame(79, 20, 30, 16);
+        u8g.setFont(u8g_font_5x7);
+        u8g.setPrintPos(89, 30);
+        u8g.print(">");
+
         u8g.drawBox(1, 45, 126, 16);
         u8g.setFont(u8g_font_5x7);
         u8g.setPrintPos(32, 56);
@@ -693,18 +901,39 @@ void dvrmenu()
       if(menusel == 1)
       {  
        digitalWrite(DVR2_PIN, LOW);
-        delay(40);
+       delay(1500);
        digitalWrite(DVR2_PIN, HIGH);
        delay(5);
       }
       if(menusel == 2)
       {  
        digitalWrite(DVR3_PIN, LOW);
-        delay(40);
+       delay(1500);
        digitalWrite(DVR3_PIN, HIGH);
        delay(5);
       }
-      if(menusel == 3)
+       if(menusel == 3)
+      {  
+       digitalWrite(DVR1_PIN, LOW);
+       delay(480);
+       digitalWrite(DVR1_PIN, HIGH);
+       delay(5);
+      }
+       if(menusel == 4)
+      {  
+       digitalWrite(DVR2_PIN, LOW);
+       delay(480);
+       digitalWrite(DVR2_PIN, HIGH);
+       delay(5);
+      }
+       if(menusel == 5)
+      {  
+       digitalWrite(DVR3_PIN, LOW);
+       delay(480);
+       digitalWrite(DVR3_PIN, HIGH);
+       delay(5);
+      }
+      if(menusel == 6)
       {  
        refreshi = 10;
        exit = 1;
@@ -719,7 +948,7 @@ void dvrmenu()
     }
     else if(pressedbut == 3)
     {
-      if(menusel < 3)
+      if(menusel < 6)
       {
         menusel++;
       }
@@ -950,7 +1179,7 @@ void beep_warning(unsigned char delayms)
   tone(beeppin, note, 200); // 200ms beep (C4 Tone)
 }
 
-void beep_criticalt(unsigned char delayms) 
+void beep_critical(unsigned char delayms) 
 {
   tone(beeppin, note, 400); // 400ms beep (C4 Tone)
   delay(100);

@@ -5,12 +5,11 @@
 #define redLed 3
 #define greenLed 4
 
-int osdpage = 1;
 float alarmvalue;
 float cellvoltage;
 int32_t osddata = 0;
 byte layoutEEP = 1;
-byte blinkosd = 0;
+boolean blinkosd = 0;
 boolean DVRstatus = 0;
 boolean RSSIavail = 0;
 byte RSSI = 0;
@@ -18,11 +17,15 @@ byte VoltageByte = 0;
 float Voltage;
 byte battery_health = 0;
 
+int runXTimes = 1;
+
 Max7456 osd;
 byte logo1[]={0xC0,0xC1,0xC2,0xC3,0xC4,0xC5,0xC6,0xC7,0xC8,0xC9,0xCA,0xCB,0xCC };
 byte logo2[]={0xD0,0xD1,0xD2,0xD3,0xD4,0xD5,0xD6,0xD7,0xD8,0xD9,0xDA,0xDB,0xDC };
 byte logo3[]={0xE0,0xE1,0xE2,0xE3,0xE4,0xE5,0xE6,0xE7,0xE8,0xE9,0xEA,0xEB,0xEC };
 byte logo4[]={0xF0,0xF1,0xF2,0xF3,0xF4,0xF5,0xF6,0xF7,0xF8,0xF9,0xFA,0xFB,0xFC };
+
+
 void setup()
 {
   SPI.begin();
@@ -71,6 +74,7 @@ void OSDreceive()
   VoltageByte = 0xFF & osddata;
   
   /*
+  osddata = (battery_health << 21);
   layoutEEP = osddata >> 19;
   blinkosd = osddata >> 17;
   DVRstatus = osddata >> 16;
@@ -90,6 +94,17 @@ void splash()
   osd.clearScreen();
   }
 
+
+ void clearscreen()
+  {
+  if (runXTimes)
+  {
+    osd.clearScreen();
+     runXTimes--;
+    }
+  }
+
+  
 void loop()
 {
   if (Serial.available() > 0)
@@ -102,12 +117,14 @@ void loop()
  double OsDVRstatus = DVRstatus;
  double Osblinkosd = blinkosd;
  double OsRSSIavail = RSSIavail;
+ double OsHealth = battery_health;
  
   
   
   
-  if (osdpage == 1) // Layout1
+  if (OslayoutEEP == 0) // Layout1
   { 
+  clearscreen();
   
   // RSSI printout
   osd.printMax7456Char(0x94,24,8);
@@ -115,23 +132,27 @@ void loop()
  
   // voltage printout
   osd.printMax7456Char(0x90,24,6);
+  
   osd.print("VOLTAGE",1,3);
   osd.print(Osvoltage, 9, 3, 2, 1); // test for voltage
   
   osd.print("OSD LAY",1,4);
-  osd.print(OslayoutEEP, 9, 4, 2, 1); // test for OSD layout
+  osd.print(OslayoutEEP, 9, 4, 1, 0); // test for OSD layout
 
   osd.print("RSSI",1,5);
-  osd.print(OsRSSI, 9, 5, 2, 1); // test for RSSI strenght
+  osd.print(OsRSSI, 9, 5, 2, 0); // test for RSSI strenght
 
   osd.print("DVR",1,6);
-  osd.print(OsDVRstatus, 9, 6, 2, 1); // test for DVR status
+  osd.print(OsDVRstatus, 9, 6, 3, 0); // test for DVR status
 
   osd.print("BLINK",1,7);
-  osd.print(Osblinkosd, 9, 7, 2, 1); // test for alarm status
+  osd.print(Osblinkosd, 9, 7, 1, 0); // test for alarm status
 
   osd.print("RS-A",1,8);
-  osd.print(OsRSSIavail, 9, 8, 2, 1); // test if RSSI is available
+  osd.print(OsRSSIavail, 9, 8, 1, 0); // test if RSSI is available
+
+  osd.print("HEALTH",1,9);
+  osd.print(OsHealth, 9, 9, 3, 0); // test if battery-health is available
   
   // DVR printout
   osd.printMax7456Char(0x99,24,7);
