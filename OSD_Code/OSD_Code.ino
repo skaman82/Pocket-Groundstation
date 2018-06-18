@@ -100,7 +100,7 @@ void splash()
   {
     osd.clearScreen();
      runXTimes--;
-     runXTimes = 0;
+     
     }
   }
 
@@ -125,14 +125,30 @@ void loop()
   if (OslayoutEEP == 1) // Layout1
   { 
   clearscreen();
-  
-  // RSSI printout
-  osd.printMax7456Char(0x94,24,8);
-  osd.print("99",25,8);
- 
+
+  if (RSSIavail == 1) 
+    {
+    // RSSI printout
+    osd.printMax7456Char(0x94,24,8);
+    osd.print(OsRSSI,25,8, 2, 0);
+    }
+    else { 
+    osd.printMax7456Char(0x00,24,8);
+    osd.printMax7456Char(0x00,25,8);
+    osd.printMax7456Char(0x00,26,8);
+    }
+
   // voltage printout
   osd.printMax7456Char(0x90,24,6);
+  if (Osvoltage > 10) {
+  osd.print(Osvoltage, 25, 6, 2, 1); 
+  }
+  else if (Osvoltage < 10) {
+   osd.print(Osvoltage, 25, 6, 1, 1); 
+  }
   
+  
+
   osd.print("VOLTAGE",1,3);
   osd.print(Osvoltage, 9, 3, 2, 1); // test for voltage
   
@@ -159,14 +175,18 @@ void loop()
   osd.print("REC",25,7);
   
   }
-  if (OslayoutEEP == 2) {
+
+  
+  else if (OslayoutEEP == 2) {
   clearscreen();
   osd.print("POCKET-GROUNDSTATION",5,9);
   osd.print("WAITING...",10,11, true);
   
     }
 
- else  {}
+ else  
+  {
+  }
  
   delay(100);
 }
