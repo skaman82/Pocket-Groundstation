@@ -648,80 +648,68 @@ void dvrmenu()
         do
         {
 
+                u8g.setPrintPos(1, 6);
+                u8g.print("<PREV");
+                u8g.setPrintPos(6, 14);
+                u8g.print("REC");
 
+                u8g.setPrintPos(41, 6);
+                u8g.print("ENTER");
+                u8g.setPrintPos(43, 14);
+                u8g.print("MENU");
+                
+                u8g.setPrintPos(79, 6);
+                u8g.print("NEXT>");
+                u8g.setPrintPos(79, 14);
+                u8g.print("PLAY");
+                
+                  
+                
              if(menusel == 0) // first menu point
             {
 
                 u8g.drawBox(1, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
                 u8g.setColorIndex(0);
-                u8g.setPrintPos(12, 30);
-                u8g.print("<");
                 u8g.setColorIndex(1);
 
                 u8g.drawFrame(40, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 30);
-                u8g.print("x");
 
                 u8g.drawFrame(79, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 30);
-                u8g.print(">");
 
                 u8g.drawFrame(1, 45, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(32, 56);
                 u8g.print("EXIT DVR-MODE");
                 u8g.setColorIndex(1);
+
 
             }
             else if(menusel == 1)
             {
                 
-
                 u8g.drawFrame(1, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(12, 30);
-                u8g.print("<");
 
                 u8g.drawBox(40, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 30);
                 u8g.setColorIndex(0);
-                u8g.print("x");
                 u8g.setColorIndex(1);
 
                 u8g.drawFrame(79, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 30);
-                u8g.print(">");
 
                 u8g.drawFrame(1, 45, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(32, 56);
                 u8g.print("EXIT DVR-MODE");
                 u8g.setColorIndex(1);
-
             }
             else if(menusel == 2)
             {
 
                 u8g.drawFrame(1, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(12, 30);
-                u8g.print("<");
 
                 u8g.drawFrame(40, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 30);
-                u8g.print("x");
 
                 u8g.drawBox(79, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
                 u8g.setColorIndex(0);
-                u8g.setPrintPos(89, 30);
-                u8g.print(">");
                 u8g.setColorIndex(1);
 
                 u8g.drawFrame(1, 45, 126, 16);
@@ -735,19 +723,11 @@ void dvrmenu()
             {
 
                 u8g.drawFrame(1, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(12, 30);
-                u8g.print("<");
 
                 u8g.drawFrame(40, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 30);
-                u8g.print("x");
 
                 u8g.drawFrame(79, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 30);
-                u8g.print(">");
+
 
                 u8g.drawBox(1, 45, 126, 16);
                 u8g.setFont(u8g_font_5x7);
@@ -768,12 +748,11 @@ void dvrmenu()
         {
 
             if(menusel == 0)
-            {
+            {    
                 digitalWrite(DVR1_PIN, LOW);
                 delay(480);
                 digitalWrite(DVR1_PIN, HIGH);
-                delay(5);
-
+                delay(5); 
             }
             if(menusel == 1)
             {
@@ -797,21 +776,21 @@ void dvrmenu()
             }
         }
        
-        else if(pressedbut == 4) // longpress button1
+         else if(pressedbut == 4) // longpress button1
         {
-            if(menusel > 0) {
+            if(menusel == 0) {
              digitalWrite(DVR1_PIN, LOW);
              delay(1500);
              digitalWrite(DVR1_PIN, HIGH);
              delay(5);
             }
-            if(menusel > 1) {
+            if(menusel == 1) {
              digitalWrite(DVR2_PIN, LOW);
              delay(1500);
              digitalWrite(DVR2_PIN, HIGH);
              delay(5);
             }
-             if(menusel > 2) {
+             if(menusel == 2) {
              digitalWrite(DVR3_PIN, LOW);
              delay(1500);
              digitalWrite(DVR3_PIN, HIGH);
