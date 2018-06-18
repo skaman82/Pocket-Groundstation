@@ -8,7 +8,7 @@
 float alarmvalue;
 float cellvoltage;
 int32_t osddata = 0;
-int32_t layoutEEP = 1;
+int32_t layoutEEP = 0;
 int32_t blinkosd = 0;
 int32_t DVRstatus = 0;
 int32_t RSSIavail = 0;
@@ -100,6 +100,7 @@ void splash()
   {
     osd.clearScreen();
      runXTimes--;
+     runXTimes = 0;
     }
   }
 
@@ -121,7 +122,7 @@ void loop()
   
   
   
-  if (OslayoutEEP == 0) // Layout1
+  if (OslayoutEEP == 1) // Layout1
   { 
   clearscreen();
   
@@ -142,7 +143,7 @@ void loop()
   osd.print(OsRSSI, 9, 5, 2, 0); // test for RSSI strenght
 
   osd.print("DVR",1,6);
-  osd.print(OsDVRstatus, 9, 6, 3, 0); // test for DVR status
+  osd.print(OsDVRstatus, 9, 6, 1, 0); // test for DVR status
 
   osd.print("BLINK",1,7);
   osd.print(Osblinkosd, 9, 7, 1, 0); // test for alarm status
@@ -151,19 +152,21 @@ void loop()
   osd.print(OsRSSIavail, 9, 8, 1, 0); // test if RSSI is available
 
   osd.print("HEALTH",1,9);
-  osd.print(OsHealth, 9, 9, 3, 0); // test if battery-health is available
+  osd.print(OsHealth, 9, 9, 1, 0); // test if battery-health is available
   
   // DVR printout
   osd.printMax7456Char(0x99,24,7);
   osd.print("REC",25,7);
   
   }
-  else {
-  
+  if (OslayoutEEP == 2) {
+  clearscreen();
   osd.print("POCKET-GROUNDSTATION",5,9);
   osd.print("WAITING...",10,11, true);
   
     }
+
+ else  {}
  
   delay(100);
 }

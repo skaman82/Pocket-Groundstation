@@ -71,7 +71,8 @@ void OSDsend()
     //Serial.println(osddata);
 
     //OSDsoft.print(osddata);
-
+    
+    RSSIavail = rssiEEP;
 
 }
 
@@ -339,11 +340,11 @@ void loop()
         if(volti > 5)
         {
             voltagetest();
-            OSDsend();
             volti = 0;
         }
         u8g.firstPage();
 
+        OSDsend();
 
 
 
