@@ -280,7 +280,7 @@ void loop()
     else if (battery_state >= 5 && battery_state < 25) {
         battery_health = 1;
     }
-    else if (battery_state > 0) {
+    else if (battery_state >= 0) {
         battery_health = 0;
     }
     else {
@@ -649,150 +649,8 @@ void dvrmenu()
         {
 
 
-            if(menusel == 0) // first menu point
+             if(menusel == 0) // first menu point
             {
-                u8g.drawBox(1, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setColorIndex(0);
-                u8g.setPrintPos(12, 12);
-                u8g.print("REC");
-                u8g.setColorIndex(1);
-
-                u8g.drawFrame(40, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 12);
-                u8g.print("MENU");
-
-                u8g.drawFrame(79, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 12);
-                u8g.print("PLAY");
-
-                u8g.drawFrame(1, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(12, 30);
-                u8g.print("<");
-
-                u8g.drawFrame(40, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 30);
-                u8g.print("x");
-
-                u8g.drawFrame(79, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 30);
-                u8g.print(">");
-
-
-                u8g.drawFrame(1, 45, 126, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(32, 56);
-                u8g.print("EXIT DVR-MODE");
-
-
-            }
-            else if(menusel == 1)
-            {
-                u8g.drawFrame(1, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(12, 12);
-                u8g.print("REC");
-
-                u8g.drawBox(40, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 12);
-                u8g.setColorIndex(0);
-                u8g.print("MENU");
-                u8g.setColorIndex(1);
-
-                u8g.drawFrame(79, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 12);
-                u8g.print("PLAY");
-
-                u8g.drawFrame(1, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(12, 30);
-                u8g.print("<");
-
-                u8g.drawFrame(40, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 30);
-                u8g.print("x");
-
-                u8g.drawFrame(79, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 30);
-                u8g.print(">");
-
-                u8g.drawFrame(1, 45, 126, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(32, 56);
-                u8g.print("EXIT DVR-MODE");
-
-
-
-            }
-            else if(menusel == 2)
-            {
-                u8g.drawFrame(1, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(12, 12);
-                u8g.print("REC");
-
-                u8g.drawFrame(40, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 12);
-                u8g.print("MENU");
-
-                u8g.drawBox(79, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 12);
-                u8g.setColorIndex(0);
-                u8g.print("PLAY");
-                u8g.setColorIndex(1);
-
-                u8g.drawFrame(1, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(12, 30);
-                u8g.print("<");
-
-                u8g.drawFrame(40, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 30);
-                u8g.print("x");
-
-                u8g.drawFrame(79, 20, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 30);
-                u8g.print(">");
-
-                u8g.drawFrame(1, 45, 126, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(32, 56);
-                u8g.print("EXIT DVR-MODE");
-
-
-
-
-            }
-
-            else if(menusel == 3)
-            {
-                u8g.drawFrame(1, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(12, 12);
-                u8g.print("REC");
-
-                u8g.drawFrame(40, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 12);
-                u8g.print("MENU");
-
-                u8g.drawFrame(79, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 12);
-                u8g.print("PLAY");
 
                 u8g.drawBox(1, 20, 30, 16);
                 u8g.setFont(u8g_font_5x7);
@@ -818,22 +676,9 @@ void dvrmenu()
                 u8g.setColorIndex(1);
 
             }
-            else if(menusel == 4)
+            else if(menusel == 1)
             {
-                u8g.drawFrame(1, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(12, 12);
-                u8g.print("REC");
-
-                u8g.drawFrame(40, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 12);
-                u8g.print("MENU");
-
-                u8g.drawFrame(79, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 12);
-                u8g.print("PLAY");
+                
 
                 u8g.drawFrame(1, 20, 30, 16);
                 u8g.setFont(u8g_font_5x7);
@@ -847,7 +692,6 @@ void dvrmenu()
                 u8g.print("x");
                 u8g.setColorIndex(1);
 
-
                 u8g.drawFrame(79, 20, 30, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(89, 30);
@@ -860,22 +704,8 @@ void dvrmenu()
                 u8g.setColorIndex(1);
 
             }
-            else if(menusel == 5)
+            else if(menusel == 2)
             {
-                u8g.drawFrame(1, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(12, 12);
-                u8g.print("REC");
-
-                u8g.drawFrame(40, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 12);
-                u8g.print("MENU");
-
-                u8g.drawFrame(79, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 12);
-                u8g.print("PLAY");
 
                 u8g.drawFrame(1, 20, 30, 16);
                 u8g.setFont(u8g_font_5x7);
@@ -899,25 +729,10 @@ void dvrmenu()
                 u8g.setPrintPos(32, 56);
                 u8g.print("EXIT DVR-MODE");
                 u8g.setColorIndex(1);
-
             }
 
-            else if(menusel == 6)
+            else if(menusel == 3)
             {
-                u8g.drawFrame(1, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(12, 12);
-                u8g.print("REC");
-
-                u8g.drawFrame(40, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(51, 12);
-                u8g.print("MENU");
-
-                u8g.drawFrame(79, 1, 30, 16);
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(89, 12);
-                u8g.print("PLAY");
 
                 u8g.drawFrame(1, 20, 30, 16);
                 u8g.setFont(u8g_font_5x7);
@@ -940,7 +755,6 @@ void dvrmenu()
                 u8g.setColorIndex(0);
                 u8g.print("EXIT DVR-MODE");
                 u8g.setColorIndex(1);
-
             }
         }
         while (u8g.nextPage());
@@ -964,44 +778,48 @@ void dvrmenu()
             if(menusel == 1)
             {
                 digitalWrite(DVR2_PIN, LOW);
-                delay(1500);
+                delay(480);
                 digitalWrite(DVR2_PIN, HIGH);
                 delay(5);
             }
             if(menusel == 2)
             {
                 digitalWrite(DVR3_PIN, LOW);
-                delay(1500);
+                delay(480);
                 digitalWrite(DVR3_PIN, HIGH);
                 delay(5);
             }
+           
             if(menusel == 3)
-            {
-                digitalWrite(DVR1_PIN, LOW);
-                delay(480);
-                digitalWrite(DVR1_PIN, HIGH);
-                delay(5);
-            }
-            if(menusel == 4)
-            {
-                digitalWrite(DVR2_PIN, LOW);
-                delay(480);
-                digitalWrite(DVR2_PIN, HIGH);
-                delay(5);
-            }
-            if(menusel == 5)
-            {
-                digitalWrite(DVR3_PIN, LOW);
-                delay(480);
-                digitalWrite(DVR3_PIN, HIGH);
-                delay(5);
-            }
-            if(menusel == 6)
             {
                 refreshi = 10;
                 exit = 1;
             }
         }
+       
+        else if(pressedbut == 4) // longpress button1
+        {
+            if(menusel > 0) {
+             digitalWrite(DVR1_PIN, LOW);
+             delay(1500);
+             digitalWrite(DVR1_PIN, HIGH);
+             delay(5);
+            }
+            if(menusel > 1) {
+             digitalWrite(DVR2_PIN, LOW);
+             delay(1500);
+             digitalWrite(DVR2_PIN, HIGH);
+             delay(5);
+            }
+             if(menusel > 2) {
+             digitalWrite(DVR3_PIN, LOW);
+             delay(1500);
+             digitalWrite(DVR3_PIN, HIGH);
+             delay(5);
+            }
+        }
+        
+        
         else if(pressedbut == 2)
         {
             if(menusel > 0)
@@ -1011,7 +829,7 @@ void dvrmenu()
         }
         else if(pressedbut == 3)
         {
-            if(menusel < 6)
+            if(menusel < 3)
             {
                 menusel++;
             }
