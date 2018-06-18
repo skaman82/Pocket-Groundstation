@@ -9,9 +9,11 @@ float alarmvalue;
 float cellvoltage;
 int32_t osddata = 0;
 int32_t layoutEEP = 0;
+int32_t oldlayout;
 int32_t blinkosd = 0;
 int32_t DVRstatus = 0;
 int32_t RSSIavail = 0;
+int32_t oldRSSI;
 int32_t RSSI = 0;
 int32_t VoltageByte = 0;
 float Voltage;
@@ -104,12 +106,29 @@ void splash()
     }
   }
 
+void checkChanges()
+  {
+  if (RSSIavail != oldRSSI)
+    {
+    osd.clearScreen();
+    oldRSSI = RSSIavail;
+    }
+   else if (layoutEEP != oldlayout)
+    {
+    osd.clearScreen();
+    oldlayout = layoutEEP;
+    }   
+    
+    else { }
+  }
+
   
 void loop()
 {
   if (Serial.available() > 0)
   {
     OSDreceive();
+    checkChanges();
   }
  double Osvoltage = (VoltageByte / 10.0);
  double OslayoutEEP = layoutEEP;
@@ -122,20 +141,20 @@ void loop()
   
   
   
-  if (OslayoutEEP == 1) // Layout1
+  if (layoutEEP == 1) // Layout1
   { 
   clearscreen();
+  oldlayout = layoutEEP;
 
   if (RSSIavail == 1) 
     {
     // RSSI printout
     osd.printMax7456Char(0x94,24,8);
     osd.print(OsRSSI,25,8, 2, 0);
+    oldRSSI = RSSIavail;
     }
     else { 
-    osd.printMax7456Char(0x00,24,8);
-    osd.printMax7456Char(0x00,25,8);
-    osd.printMax7456Char(0x00,26,8);
+    
     }
 
   // voltage printout
