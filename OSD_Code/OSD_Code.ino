@@ -8,14 +8,14 @@
 float alarmvalue;
 float cellvoltage;
 int32_t osddata = 0;
-byte layoutEEP = 1;
-boolean blinkosd = 0;
-boolean DVRstatus = 0;
-boolean RSSIavail = 0;
-byte RSSI = 0;
-byte VoltageByte = 0;
+int32_t layoutEEP = 1;
+int32_t blinkosd = 0;
+int32_t DVRstatus = 0;
+int32_t RSSIavail = 0;
+int32_t RSSI = 0;
+int32_t VoltageByte = 0;
 float Voltage;
-byte battery_health = 0;
+int32_t battery_health = 0;
 
 int runXTimes = 1;
 
@@ -65,9 +65,8 @@ void OSDreceive()
   osddata += ((int32_t)b3 << 8);
   osddata += b4;
   
-  battery_health = (0xE00000 & osddata) >> 21;
-  layoutEEP = (0x180000 & osddata) >> 19;
-  blinkosd = (0x60000 & osddata) >> 17;
+  battery_health = (0x380000 & osddata) >> 19;
+  layoutEEP = (0x60000 & osddata) >> 17;
   DVRstatus = (0x10000 & osddata) >> 16;
   RSSIavail = (0x8000 & osddata) >> 15;
   RSSI = (0x7F00 & osddata) >> 8;
