@@ -489,6 +489,14 @@ void loop()
         menu();
     }
 
+    if (pressedbut == 4)
+    {
+        digitalWrite(DVR1_PIN, LOW);
+        delay(480);
+        digitalWrite(DVR1_PIN, HIGH);
+        delay(5);
+    }
+
     if (pressedbut == 3)
     {
         if (alarmvalue > 2.70)
