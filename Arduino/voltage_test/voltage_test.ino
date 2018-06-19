@@ -88,11 +88,14 @@ void setup()
     pinMode(DVR3_PIN, OUTPUT); //DVR Key3
     pinMode(DVR_SENS, INPUT); //DVR LED Sensor
 
+    pinMode(STATUS_LED, OUTPUT); //StatusLED
 
     digitalWrite(DVR1_PIN, HIGH);
     digitalWrite(DVR2_PIN, HIGH);
     digitalWrite(DVR3_PIN, HIGH);
 
+    digitalWrite(STATUS_LED, LOW);
+    
     alarmvalueEEP = EEPROM.read(alarmADDR);
     layoutEEP = EEPROM.read(layoutADDR);
     dvrEEP = EEPROM.read(dvrADDR);
@@ -131,8 +134,6 @@ void setup()
     clearOLED();
     showlogo();
     delay(100);
-
-
 
 
 
@@ -260,6 +261,23 @@ byte buttoncheck()
 
 }
 
+
+void ledcheck() 
+{
+ if (DVRstatus == 1) 
+    {
+    digitalWrite(STATUS_LED, HIGH);
+    }
+ else if (battery_health < 0) 
+    {
+    digitalWrite(STATUS_LED, HIGH);
+    }
+else 
+    {
+    digitalWrite(STATUS_LED, LOW);
+    }
+}
+
 void loop()
 {
 
@@ -309,20 +327,20 @@ void loop()
     // Serial.print("health: ");
     // Serial.print(battery_health);
 
-    Serial.print(" state: ");
-    Serial.print(battery_state);
+     Serial.print(" state: ");
+     Serial.print(battery_state);
 
     // Serial.print(" alarmvalueEEP: ");
     // Serial.print(alarmvalueEEP);
 
-    // Serial.print(" layoutEEP: ");
-    // Serial.print(layoutEEP);
+     Serial.print(" layoutEEP: ");
+     Serial.print(layoutEEP);
 
-    Serial.print(" DVRstatus: ");
-    Serial.print(DVRstatus);
+     Serial.print(" DVRstatus: ");
+     Serial.print(DVRstatus);
 
-    Serial.print(" VoltageByte: ");
-    Serial.print(VoltageByte);
+     Serial.print(" VoltageByte: ");
+     Serial.print(VoltageByte);
 
     // Serial.print(" dvrEPP: ");
     // Serial.print(dvrEEP);
@@ -343,7 +361,7 @@ void loop()
         u8g.firstPage();
 
         OSDsend();
-
+        ledcheck();
 
         do {
             // graphic commands to redraw the complete screen should be placed here
@@ -401,6 +419,7 @@ void loop()
                   DVRstatus = 0;
                 }
             }
+
 
 
 
@@ -498,7 +517,6 @@ void loop()
 
 
 
-
 // Beep-Stuff
 
 void beep(unsigned char delayms)
@@ -519,7 +537,7 @@ void beep_warning(unsigned char delayms)
 }
 
 void beep_critical(unsigned char delayms)
-{
+{   
     tone(beeppin, note, 400); // 400ms beep (C4 Tone)
     delay(100);
 
@@ -631,16 +649,16 @@ void menu()
 void dvrmenu()
 {
 
-
+    
     menusel = 0;
     byte exit = 0;
     while(exit == 0)
-    {
+    {   
         clearOLED();
         u8g.firstPage();
         do
         {
-
+                ledcheck();
                 u8g.setPrintPos(1, 6);
                 u8g.print("<PREV");
                 u8g.setPrintPos(6, 14);
