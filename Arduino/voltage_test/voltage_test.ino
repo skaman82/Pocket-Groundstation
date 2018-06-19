@@ -268,10 +268,7 @@ void ledcheck()
     {
     digitalWrite(STATUS_LED, HIGH);
     }
- else if (battery_health < 0) 
-    {
-    digitalWrite(STATUS_LED, HIGH);
-    }
+
 else 
     {
     digitalWrite(STATUS_LED, LOW);
@@ -303,6 +300,8 @@ void loop()
     }
     else {
         battery_health = 0;
+        digitalWrite(STATUS_LED, HIGH);
+
     }
 
 
