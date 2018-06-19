@@ -178,8 +178,8 @@ void showlogo()
 {
     u8g.firstPage();
     do {
-// splashscreen goes here
-        u8g.drawBitmapP(0, 0, 16, 64, splash_bitmap);
+      // splashscreen goes here
+      u8g.drawBitmapP(0, 0, 16, 64, splash_bitmap);
     }
     while (u8g.nextPage());
     delay(1500);
@@ -306,18 +306,17 @@ void loop()
 
 
 
-    Serial.print("health: ");
-    Serial.print(battery_health);
+    // Serial.print("health: ");
+    // Serial.print(battery_health);
 
     Serial.print(" state: ");
     Serial.print(battery_state);
 
-    Serial.print(" alarmvalueEEP: ");
-    Serial.print(alarmvalueEEP);
+    // Serial.print(" alarmvalueEEP: ");
+    // Serial.print(alarmvalueEEP);
 
-    Serial.print(" layoutEEP: ");
-    Serial.print(layoutEEP);
-
+    // Serial.print(" layoutEEP: ");
+    // Serial.print(layoutEEP);
 
     Serial.print(" DVRstatus: ");
     Serial.print(DVRstatus);
@@ -325,15 +324,14 @@ void loop()
     Serial.print(" VoltageByte: ");
     Serial.print(VoltageByte);
 
-    Serial.print(" dvrEPP: ");
-    Serial.print(dvrEEP);
+    // Serial.print(" dvrEPP: ");
+    // Serial.print(dvrEEP);
 
     Serial.println();
 
 
 
     refreshi++;
-    //clearOLED();
     if(refreshi > 5)
     {
         volti++;
@@ -345,7 +343,6 @@ void loop()
         u8g.firstPage();
 
         OSDsend();
-
 
 
         do {
@@ -472,12 +469,10 @@ void loop()
     if (pressedbut == 1)
     {
         menu();
-        Serial.print("Button1 pressed");
     }
 
     if (pressedbut == 3)
     {
-        Serial.print("Button2 pressed");
         if (alarmvalue > 2.70)
         {
             alarmvalue -= 0.10;
@@ -488,7 +483,6 @@ void loop()
 
     if (pressedbut == 2)
     {
-        Serial.print("Button3 pressed");
         if (alarmvalue < 3.90)
         {
             alarmvalue += 0.10;
@@ -496,7 +490,6 @@ void loop()
             EEPROM.write(alarmADDR, alarmvalueEEP);
         }
     }
-
 
 
     delay(DELAY);
@@ -1128,7 +1121,7 @@ void submenu()
                     dvrEEP = 0;
                 }
 
-                Serial.print(dvrEEP);
+              //  Serial.print(dvrEEP);
 
             }
 
@@ -1151,7 +1144,7 @@ void submenu()
                     EEPROM.write(layoutEEP, layoutADDR);
                 }
 
-                Serial.print(layoutEEP);
+                // Serial.print(layoutEEP);
 
             }
 
@@ -1167,7 +1160,7 @@ void submenu()
                     rssiEEP = 0;
                 }
 
-                Serial.print(rssiEEP);
+                // Serial.print(rssiEEP);
 
             }
 
