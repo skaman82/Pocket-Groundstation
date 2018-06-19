@@ -9930,8 +9930,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="254" y1="215.9" x2="119.38" y2="215.9" width="0.1524" layer="91"/>
 <junction x="119.38" y="215.9"/>
 <wire x1="129.54" y1="83.82" x2="129.54" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="PJ-320D" gate="G$1" pin="RING2"/>
-<wire x1="83.82" y1="30.48" x2="129.54" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="IN-" gate="G$1" pin="TP"/>
 <junction x="302.26" y="101.6"/>
 <pinref part="-OUT" gate="G$1" pin="TP"/>
@@ -9940,7 +9938,8 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="121.92" y1="88.9" x2="121.92" y2="71.12" width="0.1524" layer="91"/>
 <junction x="129.54" y="88.9"/>
 <pinref part="M_0446200001" gate="P" pin="4"/>
-<wire x1="121.92" y1="71.12" x2="78.74" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="71.12" x2="114.3" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="71.12" x2="78.74" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="162.56" x2="68.58" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="116.84" x2="86.36" y2="116.84" width="0.1524" layer="91"/>
 <junction x="68.58" y="162.56"/>
@@ -9950,6 +9949,10 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="SG1" gate="1" pin="-"/>
 <wire x1="238.76" y1="73.66" x2="259.08" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="259.08" y1="73.66" x2="259.08" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="PJ-320D" gate="G$1" pin="EARTH"/>
+<wire x1="83.82" y1="40.64" x2="114.3" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="40.64" x2="114.3" y2="71.12" width="0.1524" layer="91"/>
+<junction x="114.3" y="71.12"/>
 </segment>
 </net>
 <net name="+5VFTDI" class="1">
@@ -10189,12 +10192,12 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="119.38" y1="144.78" x2="119.38" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="124.46" x2="91.44" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="91.44" y1="124.46" x2="91.44" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="PJ-320D" gate="G$1" pin="EARTH"/>
-<wire x1="91.44" y1="68.58" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="40.64" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="68.58" x2="91.44" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="M_0446200001" gate="P" pin="3"/>
 <wire x1="91.44" y1="68.58" x2="78.74" y2="68.58" width="0.1524" layer="91"/>
 <junction x="91.44" y="68.58"/>
+<pinref part="PJ-320D" gate="G$1" pin="RING2"/>
+<wire x1="91.44" y1="30.48" x2="83.82" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LED" class="1">
