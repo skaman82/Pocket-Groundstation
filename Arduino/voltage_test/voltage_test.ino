@@ -35,7 +35,7 @@ float cellvoltage;
 int32_t osdON;
 int32_t battery_health = 0;
 int32_t dvr_sensor;
-unsigned long timeOSDblink = 0;
+unsigned long timeDVRblink = 0;
 
 #include "bitmaps.h"
 
@@ -264,15 +264,9 @@ byte buttoncheck()
 
 void ledcheck() 
 {
- if (DVRstatus == 1) 
-    {
-    digitalWrite(STATUS_LED, HIGH);
-    }
 
-else 
-    {
-    digitalWrite(STATUS_LED, LOW);
-    }
+
+
 }
 
 void loop()
@@ -326,8 +320,8 @@ void loop()
     // Serial.print("health: ");
     // Serial.print(battery_health);
 
-     Serial.print(" state: ");
-     Serial.print(battery_state);
+    // Serial.print(" state: ");
+    // Serial.print(battery_state);
 
     // Serial.print(" alarmvalueEEP: ");
     // Serial.print(alarmvalueEEP);
@@ -335,8 +329,8 @@ void loop()
      Serial.print(" layoutEEP: ");
      Serial.print(layoutEEP);
 
-     Serial.print(" DVRstatus: ");
-     Serial.print(DVRstatus);
+     // Serial.print(" DVRstatus: ");
+     // Serial.print(DVRstatus);
 
      Serial.print(" VoltageByte: ");
      Serial.print(VoltageByte);
@@ -398,26 +392,26 @@ void loop()
             u8g.print("PRESS CENTER FOR MENU");
 
 
-
             dvr_sensor = analogRead(DVR_SENS);
+            
             if (dvr_sensor < 300) //if DVR LED is blinking
-            {
+            {   
                 u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
-                DVRstatus = 1;
-                timeOSDblink = 0;
+                DVRstatus = 1;  
+                digitalWrite(STATUS_LED, HIGH); 
+                timeDVRblink = millis();
             }
+            
             else
             {
-                if(timeOSDblink = 0)
+                if(millis() - timeDVRblink > 1500)
                 {
-                  timeOSDblink = millis;
-                }
-                else if((millis - timeOSDblink) > 1500)
-                {
-                  timeOSDblink = 0;
                   DVRstatus = 0;
+                  digitalWrite(STATUS_LED, LOW); 
                 }
+
             }
+             
 
 
 
@@ -685,7 +679,6 @@ void dvrmenu()
                 
              if(menusel == 0) // first menu point
             {
-
                 u8g.drawBox(1, 20, 30, 16);
                 u8g.setColorIndex(0);
                 u8g.setColorIndex(1);
@@ -758,6 +751,8 @@ void dvrmenu()
         while (u8g.nextPage());
 
         pressedbut = buttoncheck();
+
+                  
         while(pressedbut == 0)
         {
             buttoncheck();
