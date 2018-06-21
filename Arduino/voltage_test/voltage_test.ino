@@ -102,7 +102,7 @@ void setup()
     dvrEEP = EEPROM.read(dvrADDR);
     rssiEEP = EEPROM.read(rssiADDR);
 
-
+    
     if (alarmvalueEEP != 0)
     {
         alarmvalue = (alarmvalueEEP / 10.0);
@@ -260,7 +260,7 @@ byte buttoncheck()
         if (i_butt > (longpresstime / 2))
         {
           buttonz += 3;
-          tone(beeppin, note, 100); // 10ms beep (C4 Tone)
+          tone(beeppin, note, 100); // 100ms beep (C4 Tone)
         }
     }
 
@@ -277,7 +277,7 @@ byte buttoncheck()
         if (i_butt > (longpresstime / 2))
         {
           buttonz += 3;
-          tone(beeppin, note, 100); // 10ms beep (C4 Tone)
+          tone(beeppin, note, 100); // 100ms beep (C4 Tone)
         }
 
     }
@@ -294,7 +294,7 @@ byte buttoncheck()
         if (i_butt > (longpresstime / 2))
         {
           buttonz += 3;
-          tone(beeppin, note, 100); // 10ms beep (C4 Tone)
+          tone(beeppin, note, 100); // 100ms beep (C4 Tone)
         }
     }
     //delay(10);
@@ -305,9 +305,11 @@ byte buttoncheck()
 
 void ledcheck() 
 {
+
  if (battery_health > 0) 
  {
-   if  (dvr_sensor < 300) 
+   dvr_sensor = analogRead(DVR_SENS);
+    if  (dvr_sensor < 300) 
   {
   digitalWrite(STATUS_LED, HIGH); 
   }
@@ -378,7 +380,7 @@ void loop()
 
     Serial.println();
 
-
+    ledcheck();
 
     refreshi++;
     if(refreshi > 5)
@@ -392,7 +394,6 @@ void loop()
         u8g.firstPage();
 
         OSDsend();
-        ledcheck();
 
         do {
             // graphic commands to redraw the complete screen should be placed here
@@ -429,7 +430,6 @@ void loop()
 
 
             dvr_sensor = analogRead(DVR_SENS);
-            
             if (dvr_sensor < 300) //if DVR LED is blinking
             {   
                 DVRstatus = 1;  
@@ -512,6 +512,7 @@ void loop()
     }
 
     buttoncheck();
+    
     if (pressedbut == 1)
     {
         menu();
@@ -616,6 +617,7 @@ void menu()
         while(pressedbut == 0)
         {
             buttoncheck();
+            ledcheck(); 
         }
         if(pressedbut == 1)
         {
@@ -666,7 +668,7 @@ void dvrmenu()
     {   
         clearOLED();
         u8g.firstPage();
-        do
+    do
         {
                 u8g.setPrintPos(1, 6);
                 u8g.print("<PREV");
@@ -750,11 +752,12 @@ void dvrmenu()
         while (u8g.nextPage());
 
         pressedbut = buttoncheck();
-        ledcheck();
+        
           
         while(pressedbut == 0)
         {
-            buttoncheck();
+            buttoncheck(); 
+            ledcheck();  
         }
         if(pressedbut == 1) // Press selected Menu Point
         {
@@ -1122,6 +1125,8 @@ void submenu()
         while(pressedbut == 0)
         {
             buttoncheck();
+            ledcheck();
+
         }
         if(pressedbut == 1)
         {
