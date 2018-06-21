@@ -402,7 +402,10 @@ void loop()
                 u8g.print("v");
             }
 
-
+            if (DVRstatus == 1) 
+            {
+             u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
+            }
 
 
             u8g.drawFrame(1, 46 - 2, 124, 18);
@@ -415,10 +418,9 @@ void loop()
             
             if (dvr_sensor < 300) //if DVR LED is blinking
             {   
-                u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
                 DVRstatus = 1;  
                 timeDVRblink = millis();
-            }
+            } 
             
             else
             {
