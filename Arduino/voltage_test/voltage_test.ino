@@ -44,7 +44,6 @@ int LEDState = LOW;
 
 void pause()
 {
-    beep_critical(20);
     while (1);
 }
 
@@ -204,7 +203,7 @@ void voltagetest()
 
     if (cellvoltage < (alarmvalue)) // case if voltage is under the set alarm value
     {
-        beep_critical(1);
+       tone(beeppin, note, 400); // 400ms beep (C4 Tone)
     }
 }
 
@@ -278,6 +277,7 @@ void ledcheck()
     unsigned long currentLEDMillis = millis();
    if (currentLEDMillis - LEDMillis >= 1000)
    LEDMillis = currentLEDMillis;
+
    if (LEDState == LOW) {
       LEDState = HIGH;
     } else {
@@ -541,29 +541,7 @@ void loop()
 
 // Beep-Stuff
 
-void beep(unsigned char delayms)
-{
-    tone(beeppin, note, 10); // 10ms beep (C4 Tone)
-}
 
-void beep_long(unsigned char delayms)
-{
-    tone(beeppin, note, 2000); // 2000ms beep (C4 Tone)
-}
-
-void beep_warning(unsigned char delayms)
-{
-    tone(beeppin, note, 200); // 200ms beep (C4 Tone)
-    delay(400);
-    tone(beeppin, note, 200); // 200ms beep (C4 Tone)
-}
-
-void beep_critical(unsigned char delayms)
-{   
-    tone(beeppin, note, 400); // 400ms beep (C4 Tone)
-    delay(100);
-
-}
 
 void beep_x(byte b)
 {
