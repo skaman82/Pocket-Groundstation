@@ -1,4 +1,6 @@
 
+
+
 /*
 Notes:
 LASEREINHORNBACKFISCH
@@ -8,6 +10,8 @@ LASEREINHORNBACKFISCH
 #include "U8glib.h"
 #include <EEPROM.h>
 #include <SoftwareSerial.h>
+#include <Servo.h>
+#include "bitmaps.h"
 
 // change this depending on display type
 // U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_DEV_0 | U8G_I2C_OPT_FAST);  // Dev 0, Fast I2C / TWI
@@ -39,8 +43,8 @@ unsigned long timeDVRblink = 0;
 unsigned long LEDMillis = 0;
 const long interval = 2000;
 int LEDState = LOW;
+Servo pwmSwitch;  // create servo object to control a servo
 
-#include "bitmaps.h"
 
 void pause()
 {
@@ -91,12 +95,14 @@ void setup()
     pinMode(DVR_SENS, INPUT); //DVR LED Sensor
 
     pinMode(STATUS_LED, OUTPUT); //StatusLED
-
+    
     digitalWrite(DVR1_PIN, HIGH);
     digitalWrite(DVR2_PIN, HIGH);
     digitalWrite(DVR3_PIN, HIGH);
 
-    
+    pwmSwitch.attach(9);  // attaches the servo on pin 9 to the servo object
+
+
     alarmvalueEEP = EEPROM.read(alarmADDR);
     layoutEEP = EEPROM.read(layoutADDR);
     dvrEEP = EEPROM.read(dvrADDR);
@@ -341,6 +347,7 @@ void ledcheck()
 void loop()
 {
 
+    pwmSwitch.write(150);
 
     if (layoutEEP == 1)
     {
@@ -664,6 +671,7 @@ void menu()
 
 void dvrmenu()
 {
+    pwmSwitch.write(35);
     menusel = 0;
     byte exit = 0;
     while(exit == 0)

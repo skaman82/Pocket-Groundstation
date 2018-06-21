@@ -18,7 +18,9 @@
 #define DVR3_PIN                 7  // DVR Button 3
 #define DVR_SENS                A1  // DVR LED Sensor
 #define STATUS_LED              13  // Status LED
-#define beeppin                  9  // Beeper Pin
+#define beeppin                  8  // Beeper Pin (changed from 9)
 
 #define DELAY                    2  // Delay per loop in ms
 #define longpresstime         1000  // in ms
+
+
