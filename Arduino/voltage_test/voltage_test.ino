@@ -262,10 +262,17 @@ byte buttoncheck()
 
 void ledcheck() 
 {
- if (dvr_sensor < 300) {
+ if (battery_health > 0) 
+ {
+   if  (dvr_sensor < 300) 
+  {
   digitalWrite(STATUS_LED, HIGH); 
   }
-
+  else 
+  {
+    digitalWrite(STATUS_LED, LOW); 
+    }
+}
   else if (battery_health == 0)
   {
     unsigned long currentLEDMillis = millis();
@@ -278,13 +285,9 @@ void ledcheck()
     } 
     digitalWrite(STATUS_LED, LEDState); 
   }
-  else 
-  {
-    digitalWrite(STATUS_LED, LOW); 
-    }
   
-  }
-
+  
+}
 
 
 
