@@ -321,19 +321,21 @@ void ledcheck()
   else if (battery_health == 0)
   {
    unsigned long currentLEDMillis = millis();
-   if (currentLEDMillis - LEDMillis >= 1000)
-   LEDMillis = currentLEDMillis;
-
-   if (LEDState == LOW) {
-      LEDState = HIGH;
-    } else {
-      LEDState = LOW;
-    } 
+    if ((currentLEDMillis - LEDMillis >= 300))
+   {
+      LEDMillis = currentLEDMillis;
+ 
+       if (LEDState == LOW) {
+          LEDState = HIGH;
+        } 
+        else {
+          LEDState = LOW;
+        } 
     digitalWrite(STATUS_LED, LEDState); 
   }
   
 }
-
+}
 
 
 void loop()
@@ -675,25 +677,25 @@ void dvrmenu()
                 u8g.setPrintPos(6, 14);
                 u8g.print("REC");
 
-                u8g.setPrintPos(41, 6);
+                u8g.setPrintPos(53, 6);
                 u8g.print("ENTER");
-                u8g.setPrintPos(43, 14);
+                u8g.setPrintPos(55, 14);
                 u8g.print("MENU");
                 
-                u8g.setPrintPos(79, 6);
+                u8g.setPrintPos(102, 6);
                 u8g.print("NEXT>");
-                u8g.setPrintPos(79, 14);
+                u8g.setPrintPos(102, 14);
                 u8g.print("PLAY");
                       
                 
              if(menusel == 0) // first menu point
             {                
-                u8g.drawBox(1, 20, 30, 16);
+                u8g.drawBox(1, 20, 35, 16);
                 u8g.setColorIndex(0);
                 u8g.setColorIndex(1);
 
-                u8g.drawFrame(40, 20, 30, 16);
-                u8g.drawFrame(79, 20, 30, 16);
+                u8g.drawFrame(47, 20, 35, 16);
+                u8g.drawFrame(92, 20, 35, 16);
 
                 u8g.drawFrame(1, 45, 126, 16);
                 u8g.setFont(u8g_font_5x7);
@@ -704,13 +706,13 @@ void dvrmenu()
             
             else if(menusel == 1)
             {
-                u8g.drawFrame(1, 20, 30, 16);
+                u8g.drawFrame(1, 20, 35, 16);
 
-                u8g.drawBox(40, 20, 30, 16);
+                u8g.drawBox(47, 20, 35, 16);
                 u8g.setColorIndex(0);
                 u8g.setColorIndex(1);
 
-                u8g.drawFrame(79, 20, 30, 16);
+                u8g.drawFrame(92, 20, 35, 16);
 
                 u8g.drawFrame(1, 45, 126, 16);
                 u8g.setFont(u8g_font_5x7);
@@ -721,10 +723,10 @@ void dvrmenu()
             
             else if(menusel == 2)
             {
-                u8g.drawFrame(1, 20, 30, 16);
-                u8g.drawFrame(40, 20, 30, 16);
+                u8g.drawFrame(1, 20, 35, 16);
+                u8g.drawFrame(45, 20, 35, 16);
 
-                u8g.drawBox(79, 20, 30, 16);
+                u8g.drawBox(92, 20, 35, 16);
                 u8g.setColorIndex(0);
                 u8g.setColorIndex(1);
 
@@ -737,9 +739,9 @@ void dvrmenu()
 
             else if(menusel == 3)
             {
-                u8g.drawFrame(1, 20, 30, 16);
-                u8g.drawFrame(40, 20, 30, 16);
-                u8g.drawFrame(79, 20, 30, 16);
+                u8g.drawFrame(1, 20, 35, 16);
+                u8g.drawFrame(45, 20, 35, 16);
+                u8g.drawFrame(92, 20, 35, 16);
 
                 u8g.drawBox(1, 45, 126, 16);
                 u8g.setFont(u8g_font_5x7);
