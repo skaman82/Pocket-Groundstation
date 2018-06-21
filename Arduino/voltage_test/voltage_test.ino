@@ -262,22 +262,8 @@ byte buttoncheck()
 
 void ledcheck() 
 {
- if (DVRstatus == 1) 
-  {  
-   unsigned long currentLEDMillis = millis();
-   if (currentLEDMillis - LEDMillis >= interval)
-   LEDMillis = currentLEDMillis;
-   if (LEDState == LOW) {
-      LEDState = HIGH;
-    } else {
-      LEDState = LOW;
-    } 
-    digitalWrite(STATUS_LED, LEDState);
-  }
-
- if (DVRstatus == 0) 
-  {  
-   digitalWrite(STATUS_LED, LOW); 
+ if (dvr_sensor < 300) {
+  digitalWrite(STATUS_LED, HIGH); 
   }
 
   else if (battery_health == 0)
@@ -292,6 +278,10 @@ void ledcheck()
     } 
     digitalWrite(STATUS_LED, LEDState); 
   }
+  else 
+  {
+    digitalWrite(STATUS_LED, LOW); 
+    }
   
   }
 
@@ -324,7 +314,6 @@ void loop()
     }
     else {
         battery_health = 0;
-        digitalWrite(STATUS_LED, HIGH);
 
     }
 
@@ -353,8 +342,8 @@ void loop()
     // Serial.print(" state: ");
     // Serial.print(battery_state);
 
-    // Serial.print(" alarmvalueEEP: ");
-    // Serial.print(alarmvalueEEP);
+    Serial.print(" alarmvalueEEP: ");
+    Serial.print(alarmvalueEEP);
 
      Serial.print(" layoutEEP: ");
      Serial.print(layoutEEP);
@@ -1178,17 +1167,14 @@ void submenu()
                 if(layoutEEP == 0)
                 {
                     layoutEEP = 1;
-                    EEPROM.write(layoutEEP, layoutADDR);
                 }
                 else if(layoutEEP == 1)
                 {
                     layoutEEP = 2;
-                    EEPROM.write(layoutEEP, layoutADDR);
                 }
                 else if(layoutEEP == 2)
                 {
                     layoutEEP = 0;
-                    EEPROM.write(layoutEEP, layoutADDR);
                 }
 
                 // Serial.print(layoutEEP);
@@ -1215,8 +1201,8 @@ void submenu()
             if(menusel == 3)
             {
 
-                EEPROM.write(dvrADDR, dvrEEP);
                 EEPROM.write(layoutADDR, layoutEEP);
+                EEPROM.write(dvrADDR, dvrEEP);
                 EEPROM.write(rssiADDR, rssiEEP);
                 refreshi = 10;
                 exit = 1;
