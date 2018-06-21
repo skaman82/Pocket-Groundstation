@@ -36,6 +36,9 @@ int32_t osdON;
 int32_t battery_health = 0;
 int32_t dvr_sensor;
 unsigned long timeDVRblink = 0;
+unsigned long LEDMillis = 0;
+const long interval = 2000;
+int LEDState = LOW;
 
 #include "bitmaps.h"
 
@@ -94,7 +97,6 @@ void setup()
     digitalWrite(DVR2_PIN, HIGH);
     digitalWrite(DVR3_PIN, HIGH);
 
-    digitalWrite(STATUS_LED, LOW);
     
     alarmvalueEEP = EEPROM.read(alarmADDR);
     layoutEEP = EEPROM.read(layoutADDR);
@@ -200,12 +202,10 @@ void voltagetest()
     cellvoltage = voltage / lipo;
 
 
-
     if (cellvoltage < (alarmvalue)) // case if voltage is under the set alarm value
     {
         beep_critical(1);
     }
-
 }
 
 byte buttoncheck()
@@ -226,12 +226,10 @@ byte buttoncheck()
         }
     }
 
-
     else if (digitalRead(BUTTON2_PIN) != 1)
     {
         while(digitalRead(BUTTON2_PIN) != 1)
         {
-
             delay(2);
             i_butt++;
         }
@@ -264,10 +262,42 @@ byte buttoncheck()
 
 void ledcheck() 
 {
+ if (DVRstatus == 1) 
+  {  
+   unsigned long currentLEDMillis = millis();
+   if (currentLEDMillis - LEDMillis >= interval)
+   LEDMillis = currentLEDMillis;
+   if (LEDState == LOW) {
+      LEDState = HIGH;
+    } else {
+      LEDState = LOW;
+    } 
+    digitalWrite(STATUS_LED, LEDState);
+  }
+
+ if (DVRstatus == 0) 
+  {  
+   digitalWrite(STATUS_LED, LOW); 
+  }
+
+  else if (battery_health == 0)
+  {
+    unsigned long currentLEDMillis = millis();
+   if (currentLEDMillis - LEDMillis >= 1000)
+   LEDMillis = currentLEDMillis;
+   if (LEDState == LOW) {
+      LEDState = HIGH;
+    } else {
+      LEDState = LOW;
+    } 
+    digitalWrite(STATUS_LED, LEDState); 
+  }
+  
+  }
 
 
 
-}
+
 
 void loop()
 {
@@ -299,15 +329,15 @@ void loop()
     }
 
 
-    if (layoutEEP = 1)
+    if (layoutEEP == 1)
     {
         osdON = true;
     }
-    else if (layoutEEP = 2)
+    else if (layoutEEP == 2)
     {
         osdON = true;
     }
-    else if (layoutEEP = 0)
+    else if (layoutEEP == 0)
     {
         osdON = false;
     }
@@ -398,7 +428,6 @@ void loop()
             {   
                 u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
                 DVRstatus = 1;  
-                digitalWrite(STATUS_LED, HIGH); 
                 timeDVRblink = millis();
             }
             
@@ -407,7 +436,6 @@ void loop()
                 if(millis() - timeDVRblink > 1500)
                 {
                   DVRstatus = 0;
-                  digitalWrite(STATUS_LED, LOW); 
                 }
 
             }
@@ -416,8 +444,7 @@ void loop()
 
 
 
-
-            if(osdON = true)
+            if(osdON == true)
             {
                 u8g.setPrintPos(111, 9);
                 u8g.print("OSD");
