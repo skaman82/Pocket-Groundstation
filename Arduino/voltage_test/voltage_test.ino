@@ -22,19 +22,19 @@ int32_t alarmvalueEEP;
 int32_t DVRstatus = 0;
 int32_t layoutEEP = 0;
 int32_t rssiEEP = 0;
-int32_t dvrEEP = 0;
+int dvrEEP = 0;
 int32_t osddata;
 int32_t RSSIavail;
 int32_t RSSI = 69;
 int32_t VoltageByte;
-int32_t refreshi = 0;
-int32_t volti = 0; // Counter for Voltage measure
-int32_t menusel = 0;
-int32_t pressedbut = 0;
+int refreshi = 0;
+int volti = 0; // Counter for Voltage measure
+int menusel = 0;
+int pressedbut = 0;
 float cellvoltage;
-int32_t osdON;
+int osdON;
 int32_t battery_health = 0;
-int32_t dvr_sensor;
+int dvr_sensor;
 unsigned long timeDVRblink = 0;
 unsigned long LEDMillis = 0;
 const long interval = 2000;
@@ -113,33 +113,35 @@ void setup()
     }
 
 
-
     Serial.begin(9600);
     OSDsoft.begin(9600);
 
 
-
-    if ( u8g.getMode() == U8G_MODE_R3G3B2 ) {
+    if ( u8g.getMode() == U8G_MODE_R3G3B2 ) 
+    {
         u8g.setColorIndex(255);     // white
     }
-    else if ( u8g.getMode() == U8G_MODE_GRAY2BIT ) {
+    else if ( u8g.getMode() == U8G_MODE_GRAY2BIT ) 
+    {
         u8g.setColorIndex(3);         // max intensity
     }
-    else if ( u8g.getMode() == U8G_MODE_BW ) {
+    else if ( u8g.getMode() == U8G_MODE_BW ) 
+    {
         u8g.setColorIndex(1);         // pixel on
     }
-    else if ( u8g.getMode() == U8G_MODE_HICOLOR ) {
+    else if ( u8g.getMode() == U8G_MODE_HICOLOR ) 
+    {
         u8g.setHiColorByRGB(255, 255, 255);
     }
+
 
     clearOLED();
     showlogo();
     delay(100);
 
-
-
-
     voltagetest();
+
+    
     if (voltage > (Voltagedetect * 5.0))
     {
         lipo = 5;
@@ -169,19 +171,23 @@ void setup()
 }
 
 
-
-void clearOLED() {
+void clearOLED() 
+{
     u8g.firstPage();
-    do {
-    } while( u8g.nextPage() );
+    do 
+    {
+    } 
+    while( u8g.nextPage() );
 }
+
 
 void showlogo()
 {
     u8g.firstPage();
-    do {
+    do 
+    {
       // splashscreen goes here
-      u8g.drawBitmapP(0, 0, 16, 64, splash_bitmap);
+      u8g.drawBitmapP(15, 10, 12, 46, splash_bitmap);
     }
     while (u8g.nextPage());
     delay(1500);
@@ -200,12 +206,42 @@ void voltagetest()
 
     cellvoltage = voltage / lipo;
 
-
     if (cellvoltage < (alarmvalue)) // case if voltage is under the set alarm value
     {
        tone(beeppin, note, 400); // 400ms beep (C4 Tone)
     }
+
+
+    float cellfull = (max_cellvoltage) - (alarmvalue); //determine 100% of travel scale
+    float cellstate = (max_cellvoltage) - (cellvoltage); //determine the actual cell delta value
+    float battery_state = 100 - (((cellstate)*100) / (cellfull)); //determine cell charge left in percent
+
+    if (battery_state >= 75 && battery_state < 100) 
+    {
+        battery_health = 4;
+    }
+    else if (battery_state >= 50 && battery_state < 75) 
+    {
+        battery_health = 3;
+    }
+    else if (battery_state >= 25 && battery_state < 50) 
+    {
+        battery_health = 2;
+    }
+    else if (battery_state >= 5 && battery_state < 25) 
+    {
+        battery_health = 1;
+    }
+    else if (battery_state >= 0) 
+    {
+        battery_health = 0;
+    }
+    else {
+        battery_health = 0;
+    }
+    
 }
+
 
 byte buttoncheck()
 {
@@ -219,9 +255,12 @@ byte buttoncheck()
             i_butt++;
         }
         buttonz = 1;
+        tone(beeppin, note, 10); // 10ms beep (C4 Tone)
+        
         if (i_butt > (longpresstime / 2))
         {
           buttonz += 3;
+          tone(beeppin, note, 100); // 10ms beep (C4 Tone)
         }
     }
 
@@ -233,9 +272,12 @@ byte buttoncheck()
             i_butt++;
         }
         buttonz = 2;
+        tone(beeppin, note, 10); // 10ms beep (C4 Tone)
+        
         if (i_butt > (longpresstime / 2))
         {
           buttonz += 3;
+          tone(beeppin, note, 100); // 10ms beep (C4 Tone)
         }
 
     }
@@ -247,15 +289,17 @@ byte buttoncheck()
             i_butt++;
         }
         buttonz = 3;
+        tone(beeppin, note, 10); // 10ms beep (C4 Tone)
+        
         if (i_butt > (longpresstime / 2))
         {
           buttonz += 3;
+          tone(beeppin, note, 100); // 10ms beep (C4 Tone)
         }
     }
     //delay(10);
     pressedbut = buttonz;
     return buttonz;
-
 }
 
 
@@ -274,7 +318,7 @@ void ledcheck()
 }
   else if (battery_health == 0)
   {
-    unsigned long currentLEDMillis = millis();
+   unsigned long currentLEDMillis = millis();
    if (currentLEDMillis - LEDMillis >= 1000)
    LEDMillis = currentLEDMillis;
 
@@ -286,39 +330,12 @@ void ledcheck()
     digitalWrite(STATUS_LED, LEDState); 
   }
   
-  
 }
-
 
 
 
 void loop()
 {
-
-
-    float cellfull = (max_cellvoltage) - (alarmvalue); //determine 100% of travel scale
-    float cellstate = (max_cellvoltage) - (cellvoltage); //determine the actual cell delta value
-    float battery_state = 100 - (((cellstate)*100) / (cellfull)); //determine cell charge left in percent
-
-    if (battery_state >= 75 && battery_state < 100) {
-        battery_health = 4;
-    }
-    else if (battery_state >= 50 && battery_state < 75) {
-        battery_health = 3;
-    }
-    else if (battery_state >= 25 && battery_state < 50) {
-        battery_health = 2;
-    }
-    else if (battery_state >= 5 && battery_state < 25) {
-        battery_health = 1;
-    }
-    else if (battery_state >= 0) {
-        battery_health = 0;
-    }
-    else {
-        battery_health = 0;
-
-    }
 
 
     if (layoutEEP == 1)
@@ -336,7 +353,6 @@ void loop()
     else {
         osdON = false;
     }
-
 
 
     // Serial.print("health: ");
@@ -405,11 +421,6 @@ void loop()
                 u8g.print("v");
             }
 
-            if (DVRstatus == 1) 
-            {
-             u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
-            }
-
 
             u8g.drawFrame(1, 46 - 2, 124, 18);
             u8g.setFont(u8g_font_5x7);
@@ -431,11 +442,13 @@ void loop()
                 {
                   DVRstatus = 0;
                 }
-
             }
              
-
-
+           
+            if (DVRstatus == 1) 
+            {
+             u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
+            }
 
 
             if(osdON == true)
@@ -540,7 +553,6 @@ void loop()
 
 
 // Beep-Stuff
-
 
 
 void beep_x(byte b)
