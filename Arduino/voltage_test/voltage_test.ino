@@ -294,7 +294,7 @@ byte buttoncheck()
           tone(beeppin, note, 100); // 100ms beep (C4 Tone)
         }
     }
-    //delay(10);
+
     pressedbut = buttonz;
     return buttonz;
 }
@@ -335,6 +335,20 @@ void ledcheck()
 }
 
 
+void DVRautostart() // PLACEHOLDER FOR NOW
+{
+ if (RSSI > 1)
+  {
+   // code for starting the DVR
+  }
+  else if (RSSI < 1)
+  {
+   // code for stopping the DVR
+  }
+}
+
+
+
 void loop()
 {
 
@@ -356,7 +370,11 @@ void loop()
         osdON = false;
     }
 
-
+    if (dvrEEP == 1) 
+    {
+      DVRautostart();
+    }
+    
     // Serial.print("health: ");
     // Serial.print(battery_health);
 
