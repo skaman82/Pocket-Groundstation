@@ -41,7 +41,6 @@ int32_t battery_health = 0;
 int dvr_sensor;
 unsigned long timeDVRblink = 0;
 unsigned long LEDMillis = 0;
-const long interval = 2000;
 int LEDState = LOW;
 Servo pwmSwitch;  // create servo object to control a servo
 
@@ -67,19 +66,11 @@ void OSDsend()
     byte b4 = (osddata & 0xFF);
 
     OSDsoft.write(b1);
-    //delay(2)
     OSDsoft.write(b2);
-    //delay(2)
     OSDsoft.write(b3);
-    //delay(2)
     OSDsoft.write(b4);
-    //delay(2)
-    //Serial.println(osddata);
-
-    //OSDsoft.print(osddata);
     
     RSSIavail = rssiEEP;
-
 }
 
 
@@ -372,22 +363,22 @@ void loop()
     // Serial.print(" state: ");
     // Serial.print(battery_state);
 
-    Serial.print(" alarmvalueEEP: ");
-    Serial.print(alarmvalueEEP);
+    // Serial.print(" alarmvalueEEP: ");
+    // Serial.print(alarmvalueEEP);
 
-     Serial.print(" layoutEEP: ");
-     Serial.print(layoutEEP);
+    // Serial.print(" layoutEEP: ");
+    // Serial.print(layoutEEP);
 
-     // Serial.print(" DVRstatus: ");
-     // Serial.print(DVRstatus);
+    // Serial.print(" DVRstatus: ");
+    // Serial.print(DVRstatus);
 
-     Serial.print(" VoltageByte: ");
-     Serial.print(VoltageByte);
+    // Serial.print(" VoltageByte: ");
+    // Serial.print(VoltageByte);
 
     // Serial.print(" dvrEPP: ");
     // Serial.print(dvrEEP);
 
-    Serial.println();
+    // Serial.println();
 
     ledcheck();
 
@@ -418,7 +409,6 @@ void loop()
             u8g.setFont(u8g_font_profont22);
             u8g.setPrintPos(0, 32);
             u8g.print(voltage, 1);
-
 
 
             if (voltage > 10.0) {
