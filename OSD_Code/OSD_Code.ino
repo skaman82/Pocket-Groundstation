@@ -14,6 +14,7 @@ int32_t blinkosd = 0;
 int32_t DVRstatus = 0;
 int32_t RSSIavail = 0;
 int32_t oldRSSI;
+int32_t oldDVR;
 int32_t RSSI = 0;
 int32_t VoltageByte = 0;
 float Voltage;
@@ -118,7 +119,11 @@ void checkChanges()
     osd.clearScreen();
     oldlayout = layoutEEP;
     }   
-    
+    else if (DVRstatus != oldDVR)
+    {
+    osd.clearScreen();
+    oldDVR = DVRstatus;
+    }   
     else { }
   }
 
@@ -149,22 +154,66 @@ void loop()
   if (RSSIavail == 1) 
     {
     // RSSI printout
-    osd.printMax7456Char(0x94,24,8);
-    osd.print(OsRSSI,25,8, 2, 0);
+    osd.printMax7456Char(0x94,24,6);
+    osd.print(OsRSSI,25,6, 2, 0);
+    osd.printMax7456Char(0x7F,27,6); //black 
+    osd.printMax7456Char(0x7F,28,6); //black 
+    osd.printMax7456Char(0x7F,29,6); //black 
     oldRSSI = RSSIavail;
     }
-    else { 
+    else {   }
+
+    // voltage printout
+    
+    
+    if (battery_health == 4) 
+    {
+      osd.printMax7456Char(0x90,24,7);
+      osd.printMax7456Char(0x7F,29,7); //black 
+    }
+    else if (battery_health == 3) 
+    {
+      osd.printMax7456Char(0x91,24,7);
+      osd.printMax7456Char(0x7F,29,7); //black 
+    }
+     else if (battery_health == 2) 
+    {
+      osd.printMax7456Char(0x92,24,7);
+      osd.printMax7456Char(0x7F,29,7); //black 
+    }
+     else if (battery_health == 1) 
+    {
+      osd.printMax7456Char(0x93,24,7);
+      osd.printMax7456Char(0x7F,29,7); //black 
+    }
+    else
+    {
+      osd.printMax7456Char(0x93,24,7);
+      osd.printMax7456Char(0x7F,29,7); //black 
+    }    
+
+      
+    if (Osvoltage > 10) {
+    osd.print(Osvoltage, 25, 7, 2, 1); 
     
     }
+    else if (Osvoltage < 10) {
+    osd.print(Osvoltage, 25, 7, 1, 1);
+    osd.printMax7456Char(0x7F,28,7); //black 
+    }
+    
+    
+  // DVR printout
+  if (DVRstatus == 1) 
+  {
+    osd.printMax7456Char(0x99,24,8);
+    osd.print("REC",25,8);
+    osd.printMax7456Char(0x7F,28,8); //black 
+    osd.printMax7456Char(0x7F,29,8); //black 
+  }
+  else {}
 
-  // voltage printout
-  osd.printMax7456Char(0x90,24,6);
-  if (Osvoltage > 10) {
-  osd.print(Osvoltage, 25, 6, 2, 1); 
-  }
-  else if (Osvoltage < 10) {
-   osd.print(Osvoltage, 25, 6, 1, 1); 
-  }
+
   
   
 
@@ -189,18 +238,65 @@ void loop()
   osd.print("HEALTH",1,9);
   osd.print(OsHealth, 9, 9, 1, 0); // test if battery-health is available
   
-  // DVR printout
-  osd.printMax7456Char(0x99,24,7);
-  osd.print("REC",25,7);
   
   }
 
   
   else if (OslayoutEEP == 2) {
+  //clearscreen();
+  //osd.print("POCKET-GROUNDSTATION",5,9);
+  //osd.print("WAITING...",10,11, true);
+
   clearscreen();
-  osd.print("POCKET-GROUNDSTATION",5,9);
-  osd.print("WAITING...",10,11, true);
-  
+  oldlayout = layoutEEP;
+
+  if (RSSIavail == 1) 
+    {
+    // RSSI printout
+    osd.printMax7456Char(0x94,28,6);
+    osd.printMax7456Char(0x7F,29,6); //black 
+    oldRSSI = RSSIavail;
+    }
+    else {   }
+
+    // voltage printout
+    
+    if (battery_health == 4) 
+    {
+      osd.printMax7456Char(0x90,28,7);
+      osd.printMax7456Char(0x7F,29,7); //black 
+    }
+    else if (battery_health == 3) 
+    {
+      osd.printMax7456Char(0x91,28,7);
+      osd.printMax7456Char(0x7F,29,7); //black 
+    }
+     else if (battery_health == 2) 
+    {
+      osd.printMax7456Char(0x92,28,7);
+      osd.printMax7456Char(0x7F,29,7); //black 
+    }
+     else if (battery_health == 1) 
+    {
+      osd.printMax7456Char(0x93,28,7);
+      osd.printMax7456Char(0x7F,29,7); //black 
+    }
+    else
+    {
+      osd.printMax7456Char(0x93,28,7, true);
+      osd.printMax7456Char(0x7F,29,7, true); //black 
+    }    
+    
+    
+  // DVR printout
+  if (DVRstatus == 1) 
+  {
+    osd.printMax7456Char(0x99,28,8);
+    osd.printMax7456Char(0x7F,29,8); //black 
+  }
+  else {}
+
+ 
     }
 
  else  
