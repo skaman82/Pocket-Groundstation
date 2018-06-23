@@ -41,6 +41,7 @@ int32_t battery_health = 0;
 int dvr_sensor;
 unsigned long timeDVRblink = 0;
 unsigned long LEDMillis = 0;
+unsigned long RSSIMillis = 0;
 int LEDState = LOW;
 Servo pwmSwitch;  // create servo object to control a servo
 
