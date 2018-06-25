@@ -4825,7 +4825,7 @@ design rules under a new name.</description>
 <element name="A1" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="30.48" y="31.75" rot="MR90">
 <attribute name="TP_SIGNAL_NAME" value="" x="30.48" y="31.75" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X01" package3d_urn="urn:adsk.eagle:package:38028/1" value="" x="41.91" y="62.23"/>
+<element name="PWM" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X01" package3d_urn="urn:adsk.eagle:package:38028/1" value="" x="41.91" y="62.23"/>
 </elements>
 <signals>
 <signal name="SCL" class="1">
@@ -4942,7 +4942,9 @@ design rules under a new name.</description>
 <wire x1="13.6525" y1="8.255" x2="13.750196875" y2="8.255" width="0.762" layer="1"/>
 <contactref element="PJ-320D" pad="EARTH"/>
 <wire x1="40.9575" y1="57.785" x2="40.855428125" y2="57.859159375" width="0.762" layer="1"/>
-<wire x1="12.42" y1="8.89" x2="15.24" y2="16.51" width="0" layer="19" extent="1-1"/>
+<wire x1="28.2575" y1="63.5" x2="28.2575" y2="63.553803125" width="0.762" layer="1"/>
+<wire x1="28.2575" y1="63.5" x2="27.23" y2="63.63" width="0.762" layer="1"/>
+<wire x1="15.24" y1="16.51" x2="12.42" y2="8.89" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+5VFTDI" class="1">
 <contactref element="MINIMOSD" pad="VCC"/>
@@ -4983,7 +4985,8 @@ design rules under a new name.</description>
 <signal name="BUZZER" class="1">
 <contactref element="SG1" pad="+"/>
 <contactref element="U$1" pad="D8"/>
-<wire x1="41.91" y1="7.62" x2="36.83" y2="20.32" width="0" layer="19" extent="1-1"/>
+<wire x1="36.83" y1="12.7" x2="36.83" y2="20.32" width="0.4" layer="16"/>
+<wire x1="41.91" y1="7.62" x2="36.83" y2="12.7" width="0.4" layer="16"/>
 </signal>
 <signal name="DVRVIDEO-IN" class="2">
 <contactref element="V-IO" pad="2"/>
@@ -5250,8 +5253,24 @@ design rules under a new name.</description>
 </signal>
 <signal name="D9PWM" class="1">
 <contactref element="U$1" pad="D9"/>
-<contactref element="J1" pad="1"/>
-<wire x1="39.37" y1="20.32" x2="41.91" y2="62.23" width="0" layer="19" extent="1-1"/>
+<contactref element="PWM" pad="1"/>
+<wire x1="39.37" y1="17.78" x2="39.37" y2="20.32" width="0.4" layer="16"/>
+<wire x1="40.005" y1="17.145" x2="39.37" y2="17.78" width="0.4" layer="16"/>
+<wire x1="41.275" y1="17.145" x2="40.005" y2="17.145" width="0.4" layer="16"/>
+<wire x1="43.18" y1="19.05" x2="41.275" y2="17.145" width="0.4" layer="16"/>
+<wire x1="43.18" y1="26.3525" x2="43.18" y2="19.05" width="0.4" layer="16"/>
+<wire x1="43.18" y1="32.0675" x2="43.18" y2="26.3525" width="0.4" layer="1"/>
+<wire x1="40.9575" y1="34.29" x2="43.18" y2="32.0675" width="0.4" layer="1"/>
+<wire x1="40.9575" y1="50.8" x2="40.9575" y2="34.29" width="0.4" layer="16"/>
+<wire x1="40.3225" y1="51.435" x2="40.9575" y2="50.8" width="0.4" layer="16"/>
+<wire x1="40.3225" y1="56.515" x2="40.3225" y2="51.435" width="0.4" layer="16"/>
+<wire x1="39.6875" y1="57.15" x2="40.3225" y2="56.515" width="0.4" layer="1"/>
+<wire x1="39.6875" y1="60.325" x2="39.6875" y2="57.15" width="0.4" layer="1"/>
+<wire x1="41.5925" y1="62.23" x2="39.6875" y2="60.325" width="0.4" layer="1"/>
+<wire x1="41.91" y1="62.23" x2="41.5925" y2="62.23" width="0.4" layer="1"/>
+<via x="43.18" y="26.3525" extent="1-16" drill="0.35"/>
+<via x="40.9575" y="34.29" extent="1-16" drill="0.35"/>
+<via x="40.3225" y="56.515" extent="1-16" drill="0.35"/>
 </signal>
 </signals>
 </board>

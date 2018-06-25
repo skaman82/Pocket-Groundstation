@@ -3,7 +3,7 @@
 <eagle version="9.0.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -4944,6 +4944,7 @@ design rules under a new name.</description>
 <wire x1="40.9575" y1="57.785" x2="40.855428125" y2="57.859159375" width="0.762" layer="1"/>
 <wire x1="28.2575" y1="63.5" x2="28.2575" y2="63.553803125" width="0.762" layer="1"/>
 <wire x1="28.2575" y1="63.5" x2="27.23" y2="63.63" width="0.762" layer="1"/>
+<contactref element="MINIMOSD" pad="VGND1"/>
 <wire x1="15.24" y1="16.51" x2="12.42" y2="8.89" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+5VFTDI" class="1">

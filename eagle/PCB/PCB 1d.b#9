@@ -23,17 +23,17 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
@@ -47,9 +47,9 @@
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
@@ -59,7 +59,7 @@
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -4825,6 +4825,7 @@ design rules under a new name.</description>
 <element name="A1" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="30.48" y="31.75" rot="MR90">
 <attribute name="TP_SIGNAL_NAME" value="" x="30.48" y="31.75" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
+<element name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X01" package3d_urn="urn:adsk.eagle:package:38028/1" value="" x="41.91" y="62.23"/>
 </elements>
 <signals>
 <signal name="SCL" class="1">
@@ -4980,10 +4981,9 @@ design rules under a new name.</description>
 <wire x1="30.48" y1="2.54" x2="26.67" y2="6.35" width="0.4" layer="16"/>
 </signal>
 <signal name="BUZZER" class="1">
-<contactref element="U$1" pad="D9"/>
 <contactref element="SG1" pad="+"/>
-<wire x1="39.37" y1="10.16" x2="39.37" y2="20.32" width="0.4" layer="16"/>
-<wire x1="41.91" y1="7.62" x2="39.37" y2="10.16" width="0.4" layer="16"/>
+<contactref element="U$1" pad="D8"/>
+<wire x1="41.91" y1="7.62" x2="36.83" y2="20.32" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DVRVIDEO-IN" class="2">
 <contactref element="V-IO" pad="2"/>
@@ -5247,6 +5247,11 @@ design rules under a new name.</description>
 <wire x1="28.575" y1="33.02" x2="29.21" y2="33.02" width="0.762" layer="16"/>
 <wire x1="26.67" y1="34.925" x2="28.575" y2="33.02" width="0.762" layer="16"/>
 <wire x1="26.67" y1="35.56" x2="26.67" y2="34.925" width="0.762" layer="16"/>
+</signal>
+<signal name="D9PWM" class="1">
+<contactref element="U$1" pad="D9"/>
+<contactref element="J1" pad="1"/>
+<wire x1="39.37" y1="20.32" x2="41.91" y2="62.23" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>

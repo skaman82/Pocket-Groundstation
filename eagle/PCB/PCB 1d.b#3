@@ -4618,7 +4618,7 @@ design rules under a new name.</description>
 </designrules>
 <autorouter>
 <pass name="Default">
-<param name="RoutingGrid" value="25mil"/>
+<param name="RoutingGrid" value="6.25mil"/>
 <param name="AutoGrid" value="1"/>
 <param name="Efforts" value="2"/>
 <param name="TopRouterVariant" value="1"/>
@@ -4939,13 +4939,16 @@ design rules under a new name.</description>
 <vertex x="46.99" y="-2.54"/>
 <vertex x="-2.54" y="-2.54"/>
 </polygon>
-<wire x1="13.6525" y1="8.255" x2="13.750196875" y2="8.255" width="0.762" layer="1"/>
 <contactref element="PJ-320D" pad="EARTH"/>
-<wire x1="40.9575" y1="57.785" x2="40.855428125" y2="57.859159375" width="0.762" layer="1"/>
 <wire x1="28.2575" y1="63.5" x2="28.2575" y2="63.553803125" width="0.762" layer="1"/>
 <wire x1="28.2575" y1="63.5" x2="27.23" y2="63.63" width="0.762" layer="1"/>
 <contactref element="MINIMOSD" pad="VGND1"/>
-<wire x1="15.24" y1="16.51" x2="12.42" y2="8.89" width="0" layer="19" extent="1-1"/>
+<wire x1="17.78" y1="15.5476" x2="17.78" y2="15.24" width="0.1524" layer="1"/>
+<wire x1="16.8176" y1="16.51" x2="16.8176" y2="16.11135625" width="0.1524" layer="1"/>
+<wire x1="16.8176" y1="16.11135625" x2="17.38135625" y2="15.5476" width="0.1524" layer="1"/>
+<wire x1="17.38135625" y1="15.5476" x2="17.78" y2="15.5476" width="0.1524" layer="1"/>
+<via x="15.24" y="16.51" extent="1-16" drill="0.35"/>
+<via x="30.48" y="16.51" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="+5VFTDI" class="1">
 <contactref element="MINIMOSD" pad="VCC"/>
@@ -5274,6 +5277,11 @@ design rules under a new name.</description>
 <via x="40.3225" y="56.515" extent="1-16" drill="0.35"/>
 </signal>
 </signals>
+<errors>
+<approved hash="19,1,02990020e1c6e37f"/>
+<approved hash="19,1,629e6022edc4ef78"/>
+<approved hash="5,1,be2588b107412e20"/>
+</errors>
 </board>
 </drawing>
 <compatibility>
