@@ -118,7 +118,7 @@ void checkChanges()
     {
     refreshtime = 0;
     newlayout = layoutEEP;
-     if (layoutEEP > 0)
+     if (layoutEEP >= 0)
     {
     osd.clearScreen();
     }   
