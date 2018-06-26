@@ -107,26 +107,23 @@ void checkChanges()
   {
     
     unsigned long refreshtime = millis();
-  if ((RSSIavail != oldRSSI) && (refreshtime >= 50))
+  if ((RSSIavail != oldRSSI) && (refreshtime >= 20))
     {
     refreshtime = 0;
     oldRSSI = RSSIavail;
     osd.clearScreen();
     }
     
-    else if ((layoutEEP != oldlayout) && (refreshtime >= 50))
+    else if ((layoutEEP != oldlayout) && (refreshtime >= 20))
     {
     refreshtime = 0;
     newlayout = layoutEEP;
-     if (layoutEEP >= 0)
-    {
     osd.clearScreen();
-    }   
+    
     }
     
-     else if ((DVRstatus != oldDVR) && (refreshtime >= 50))
+      if (DVRstatus != oldDVR) 
     {
-    refreshtime = 0;
     oldDVR = DVRstatus;
     osd.clearScreen();
     
@@ -139,6 +136,7 @@ void checkChanges()
   
 void loop()
 {
+    
 
   unsigned long currentLayouttime = millis();
     if ((currentLayouttime - Layouttime >= 200))
