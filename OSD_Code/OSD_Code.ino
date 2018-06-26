@@ -22,8 +22,6 @@ float Voltage;
 int32_t battery_health = 0;
 unsigned long Protocoltime = 0;
 unsigned long Layouttime = 0;
-int runXTimes = 1;
-unsigned long RefreshMillis = 0;
 
 Max7456 osd;
 byte logo1[]={0xC0,0xC1,0xC2,0xC3,0xC4,0xC5,0xC6,0xC7,0xC8,0xC9,0xCA,0xCB,0xCC };
@@ -105,41 +103,37 @@ void splash()
   }
 
 
- void clearscreen()
-  {
-  if (runXTimes)
-  {
-    osd.clearScreen();
-     runXTimes--;
-     
-    }
-  }
-
 void checkChanges()
   {
     
     unsigned long refreshtime = millis();
-  if ((RSSIavail != oldRSSI) && ((refreshtime - RefreshMillis > 50)))
+  if ((RSSIavail != oldRSSI) && (refreshtime >= 50))
     {
-    RefreshMillis = refreshtime;
+    refreshtime = 0;
     oldRSSI = RSSIavail;
-    osd.clearScreen();  
-    }
-   else if ((layoutEEP != oldlayout) && ((refreshtime - RefreshMillis >= 50)))
-    {
-    RefreshMillis = refreshtime;
-    newlayout = layoutEEP;
     osd.clearScreen();
- 
-    }   
-    else if ((DVRstatus != oldDVR) && ((refreshtime - RefreshMillis > 50)))
+    }
+    
+    else if ((layoutEEP != oldlayout) && (refreshtime >= 50))
     {
-    RefreshMillis = refreshtime;
+    refreshtime = 0;
+    newlayout = layoutEEP;
+     if (layoutEEP > 0)
+    {
+    osd.clearScreen();
+    }   
+    }
+    
+     else if ((DVRstatus != oldDVR) && (refreshtime >= 50))
+    {
+    refreshtime = 0;
     oldDVR = DVRstatus;
     osd.clearScreen();
     
     }   
-    else { }
+    else 
+    { 
+     }
   }
 
   
@@ -166,8 +160,7 @@ void loop()
  
   
 
-    
-
+   
       
    if (newlayout == 1) // Layout1
   { 
@@ -185,9 +178,8 @@ void loop()
     }
     else {   }
 
+    
     // voltage printout
-    
-    
     if (battery_health == 4) 
     {
       osd.printMax7456Char(0x90,24,7);
@@ -264,12 +256,12 @@ void loop()
   }
 
   
-  else if (newlayout == 2) {
+   if (newlayout == 2) {
   //clearscreen();
   //osd.print("POCKET-GROUNDSTATION",5,9);
   //osd.print("WAITING...",10,11, true);
     
-    oldlayout = 2;
+     oldlayout = 2;
 
   if (RSSIavail == 1) 
     {
@@ -322,10 +314,10 @@ void loop()
     
   
  else  
-  {
+  { 
     oldlayout = 0;
-  }
+  } 
+}
 
-     
-    }
-    }
+}
+
