@@ -10,6 +10,7 @@ float cellvoltage;
 int32_t osddata = 0;
 int32_t layoutEEP = 0;
 int32_t oldlayout;
+int32_t newlayout;
 int32_t blinkosd = 0;
 int32_t DVRstatus = 0;
 int32_t RSSIavail = 0;
@@ -22,6 +23,7 @@ int32_t battery_health = 0;
 unsigned long Protocoltime = 0;
 unsigned long Layouttime = 0;
 int runXTimes = 1;
+unsigned long RefreshMillis = 0;
 
 Max7456 osd;
 byte logo1[]={0xC0,0xC1,0xC2,0xC3,0xC4,0xC5,0xC6,0xC7,0xC8,0xC9,0xCA,0xCB,0xCC };
@@ -115,20 +117,27 @@ void splash()
 
 void checkChanges()
   {
-  if (RSSIavail != oldRSSI)
+    
+    unsigned long refreshtime = millis();
+  if ((RSSIavail != oldRSSI) && ((refreshtime - RefreshMillis > 50)))
     {
-    osd.clearScreen();
+    RefreshMillis = refreshtime;
     oldRSSI = RSSIavail;
+    osd.clearScreen();  
     }
-   else if (layoutEEP != oldlayout)
+   else if ((layoutEEP != oldlayout) && ((refreshtime - RefreshMillis >= 50)))
     {
+    RefreshMillis = refreshtime;
+    newlayout = layoutEEP;
     osd.clearScreen();
-    oldlayout = layoutEEP;
+ 
     }   
-    else if (DVRstatus != oldDVR)
+    else if ((DVRstatus != oldDVR) && ((refreshtime - RefreshMillis > 50)))
     {
-    osd.clearScreen();
+    RefreshMillis = refreshtime;
     oldDVR = DVRstatus;
+    osd.clearScreen();
+    
     }   
     else { }
   }
@@ -160,11 +169,10 @@ void loop()
     
 
       
-   if (layoutEEP == 1) // Layout1
+   if (newlayout == 1) // Layout1
   { 
-  clearscreen();
-  oldlayout = layoutEEP;
-
+    oldlayout = 1;
+    
   if (RSSIavail == 1) 
     {
     // RSSI printout
@@ -256,13 +264,12 @@ void loop()
   }
 
   
-  else if (OslayoutEEP == 2) {
+  else if (newlayout == 2) {
   //clearscreen();
   //osd.print("POCKET-GROUNDSTATION",5,9);
   //osd.print("WAITING...",10,11, true);
-
-  clearscreen();
-  oldlayout = layoutEEP;
+    
+    oldlayout = 2;
 
   if (RSSIavail == 1) 
     {
@@ -316,6 +323,7 @@ void loop()
   
  else  
   {
+    oldlayout = 0;
   }
 
      
