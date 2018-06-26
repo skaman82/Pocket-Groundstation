@@ -19,7 +19,8 @@ int32_t RSSI = 0;
 int32_t VoltageByte = 0;
 float Voltage;
 int32_t battery_health = 0;
-
+unsigned long Protocoltime = 0;
+unsigned long Layouttime = 0;
 int runXTimes = 1;
 
 Max7456 osd;
@@ -57,7 +58,11 @@ void setup()
 
 void OSDreceive()
 {
-  delay(2);
+  unsigned long currentProtocoltime = millis();
+    if ((currentProtocoltime - Protocoltime >= 0)) 
+    {
+  Protocoltime = currentProtocoltime;
+  
   byte b1 = Serial.read();
   byte b2 = Serial.read();
   byte b3 = Serial.read();
@@ -84,7 +89,8 @@ void OSDreceive()
   RSSI = osddata >> 8);
   VoltageByte = osddata);
   */
-  
+
+    }
 }
 void splash()
 {
@@ -130,8 +136,14 @@ void checkChanges()
   
 void loop()
 {
+
+  unsigned long currentLayouttime = millis();
+    if ((currentLayouttime - Layouttime >= 200))
+    {
+      Layouttime = currentLayouttime;
+    
   if (Serial.available() > 0)
-  {
+  {    
     OSDreceive();
     checkChanges();
   }
@@ -144,9 +156,11 @@ void loop()
  double OsHealth = battery_health;
  
   
-  
-  
-  if (layoutEEP == 1) // Layout1
+
+    
+
+      
+   if (layoutEEP == 1) // Layout1
   { 
   clearscreen();
   oldlayout = layoutEEP;
@@ -298,10 +312,12 @@ void loop()
 
  
     }
-
+    
+  
  else  
   {
   }
- 
-  delay(100);
-}
+
+     
+    }
+    }
