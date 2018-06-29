@@ -72,12 +72,12 @@ void pause()
 void OSDsend()
 {
     osdData.paylen = OSD_DATA_PAYLOAD_LEN;
-    osdData.battery_health = 1;
-    osdData.layoutEEP = 2;
-    osdData.DVRstatus = 3;
-    osdData.RSSIavail = 4;
-    osdData.RSSI = 5;
-    osdData.VoltageByte = 6;
+    osdData.battery_health = battery_health;
+    osdData.layoutEEP = layoutEEP;
+    osdData.DVRstatus = DVRstatus;
+    osdData.RSSIavail = RSSIavail;
+    osdData.RSSI = RSSI;
+    osdData.VoltageByte = VoltageByte;
   
     uint8_t checksum = 0;
     for (int i = 3; i< OSD_DATA_LENGTH_TOTAL; i++) {
