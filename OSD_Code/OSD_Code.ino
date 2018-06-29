@@ -113,6 +113,12 @@ void OSDreceive()
 
         if (checksum == osdDataBuffer.checksum) {
           memcpy( &osdData, &osdDataBuffer, OSD_DATA_LENGTH_TOTAL);
+          battery_health = osdData.battery_health;
+          layoutEEP = osdData.layoutEEP;
+          DVRstatus = osdData.DVRstatus;
+          RSSIavail = osdData.RSSIavail; 
+          RSSI = osdData.RSSI;
+          VoltageByte = osdData.VoltageByte;
         }
         c_state = IDLE; //done, start over
 
