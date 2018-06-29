@@ -5,6 +5,30 @@
 #define redLed 3
 #define greenLed 4
 
+typedef struct packed 
+{
+  const uint8_t preamble = '$';
+  uint8_t paylen;
+  uint8_t checksum;
+  uint8_t battery_health;
+  uint8_t layoutEEP;
+  uint8_t DVRstatus;
+  uint8_t RSSIavail;
+  uint32_t RSSI;
+  uint32_t VoltageByte;
+} osdData_s;
+
+static enum _serial_state {
+  IDLE,
+  HEADER_START,
+  HEADER_SIZE,
+} c_state = IDLE;
+
+
+#define OSD_DATA_PAYLOAD_LEN (sizeof(osdData_s)-2)
+const uint8_t OSD_DATA_LENGTH_TOTAL = sizeof(osdData_s);
+osdData_s osdData;
+
 float alarmvalue;
 float cellvoltage;
 int32_t osddata = 0;
@@ -61,40 +85,44 @@ void setup()
 
 void OSDreceive()
 {
-  unsigned long currentProtocoltime = millis();
-    if ((currentProtocoltime - Protocoltime >= 0)) 
-    {
-  Protocoltime = currentProtocoltime;
+  uint8_t c;
+  static uint8_t payloadIdx = 2;
+  static osdData_s osdDataBuffer;
   
-  byte b1 = Serial.read();
-  byte b2 = Serial.read();
-  byte b3 = Serial.read();
-  byte b4 = Serial.read();
-  
-  osddata = ((int32_t)b1 << 24);
-  osddata += ((int32_t)b2 << 16);
-  osddata += ((int32_t)b3 << 8);
-  osddata += b4;
-  
-  battery_health = (0x380000 & osddata) >> 19;
-  layoutEEP = (0x60000 & osddata) >> 17;
-  DVRstatus = (0x10000 & osddata) >> 16;
-  RSSIavail = (0x8000 & osddata) >> 15;
-  RSSI = (0x7F00 & osddata) >> 8;
-  VoltageByte = 0xFF & osddata;
-  
-  /*
-  osddata = (battery_health << 21);
-  layoutEEP = osddata >> 19;
-  blinkosd = osddata >> 17;
-  DVRstatus = osddata >> 16;
-  RSSIavail = osddata >> 15;
-  RSSI = osddata >> 8);
-  VoltageByte = osddata);
-  */
+  while (Serial.available()) {
+
+    c = Serial.read();
+
+    if (c_state == IDLE) { // try to read preamble
+      c_state = (c == '$') ? HEADER_START : IDLE;
 
     }
+    else if (c_state == HEADER_START) { // try to read packet length
+      c_state = (c == OSD_DATA_PAYLOAD_LEN) ? HEADER_SIZE : IDLE;
+      osdDataBuffer.paylen = c;
+      payloadIdx = 2;
+
+    }else if (c_state == HEADER_SIZE) { // try to read payload
+
+      if (payloadIdx >= OSD_DATA_LENGTH_TOTAL) { // got all data bytes
+                             // data complete, verify checksum        
+        uint8_t checksum = 0;
+        for (int i = 3; i < OSD_DATA_LENGTH_TOTAL ; i++){
+          checksum ^= ((uint8_t*)&osdDataBuffer)[i];
+        }
+
+        if (checksum == osdDataBuffer.checksum) {
+          memcpy( &osdData, &osdDataBuffer, OSD_DATA_LENGTH_TOTAL);
+        }
+        c_state = IDLE; //done, start over
+
+      } else {
+        ((char*)&osdDataBuffer)[payloadIdx++] = c;
+      }
+    }
+  }
 }
+
 void splash()
 {
   osd.printMax7456Chars(logo1,12,9,5);

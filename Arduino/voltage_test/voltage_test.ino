@@ -17,6 +17,24 @@ LASEREINHORNBACKFISCH
 // U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_DEV_0 | U8G_I2C_OPT_FAST);  // Dev 0, Fast I2C / TWI
 U8GLIB_SH1106_128X64 u8g(U8G_I2C_OPT_DEV_0 | U8G_I2C_OPT_FAST);  // Dev 0, Fast I2C / TWI
 
+typedef struct packed 
+{
+  const uint8_t preamble = '$';
+  uint8_t paylen;
+  uint8_t checksum;
+  uint8_t battery_health;
+  uint8_t layoutEEP;
+  uint8_t DVRstatus;
+  uint8_t RSSIavail;
+  uint32_t RSSI;
+  uint32_t VoltageByte;
+} osdData_s;
+
+
+#define OSD_DATA_PAYLOAD_LEN (sizeof(osdData_s)-2)
+const uint8_t OSD_DATA_LENGTH_TOTAL = sizeof(osdData_s);
+osdData_s osdData;
+
 SoftwareSerial OSDsoft(10, 11); // RX, TX
 
 float voltage;
@@ -53,23 +71,21 @@ void pause()
 
 void OSDsend()
 {
-    osddata = (battery_health << 19);
-    osddata += (layoutEEP << 17);
-    osddata += (DVRstatus << 16);
-    osddata += (RSSIavail << 15);
-    osddata += (RSSI << 8);
-    osddata += VoltageByte;
-    //int32_t dat = 0x80C0E0F0;
+    osdData.paylen = OSD_DATA_PAYLOAD_LEN;
+    osdData.battery_health = 1;
+    osdData.layoutEEP = 2;
+    osdData.DVRstatus = 3;
+    osdData.RSSIavail = 4;
+    osdData.RSSI = 5;
+    osdData.VoltageByte = 6;
+  
+    uint8_t checksum = 0;
+    for (int i = 3; i< OSD_DATA_LENGTH_TOTAL; i++) {
+      checksum ^= ((uint8_t*)&osdData)[i];
+    }
+    osdData.checksum = checksum;
 
-    byte b1 = ((osddata >> 24) & 0xFF);
-    byte b2 = ((osddata >> 16) & 0xFF);
-    byte b3 = ((osddata >> 8) & 0xFF);
-    byte b4 = (osddata & 0xFF);
-
-    OSDsoft.write(b1);
-    OSDsoft.write(b2);
-    OSDsoft.write(b3);
-    OSDsoft.write(b4);
+    OSDsoft.write((uint8_t*)&osdData, sizeof(osdData));
     
     RSSIavail = rssiEEP;
 }
