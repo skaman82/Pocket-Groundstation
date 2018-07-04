@@ -1,8 +1,8 @@
 EAGLE AutoRouter Statistics:
 
-Job           : /Users/albertkravcov/Documents/GitHub/Pocket-Groundstation/eagle/PCB/PCB 1d.brd
+Job           : /Users/albertkravcov/development/Pocket-Groundstation/eagle/PCB/PCB 1d.brd
 
-Start at      : 20:32:32 (23.06.18)
+Start at      : 14:46:54 (04.07.18)
 End at        : 01:00:00 (01.01.70)
 Elapsed time  : 00:00:00
 
