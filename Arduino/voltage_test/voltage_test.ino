@@ -117,16 +117,37 @@ void setup()
     rssiEEP = EEPROM.read(rssiADDR);
 
     
-    if (alarmvalueEEP != 0)
+    if (alarmvalueEEP != 0)  
     {
         alarmvalue = (alarmvalueEEP / 10.0);
     }
-    else
+    else if (alarmvalueEEP > 400)
     {
         alarmvalue = 3.40;
     }
+    else { }
 
+ if (layoutEEP > 2)  
+    {
+        layoutEEP = 1;
+    }
+    else
+    { }
 
+     if (dvrEEP > 1)  
+    {
+        dvrEEP = 0;
+    }
+    else
+    { }
+
+     if (rssiEEP > 1)  
+    {
+        rssiEEP = 0;
+    }
+    else
+    { }
+    
     Serial.begin(9600);
     OSDsoft.begin(9600);
 

@@ -10,9 +10,9 @@
 #define dvrADDR                  3  // DVR Settings Adress
 #define rssiADDR                 4  // DVR Settings Adress
 
-#define BUTTON1_PIN              2  // Button 1
-#define BUTTON2_PIN              3  // Button 2
-#define BUTTON3_PIN              4  // Button 3
+#define BUTTON1_PIN              3  // Button 1
+#define BUTTON2_PIN              4  // Button 2
+#define BUTTON3_PIN              2  // Button 3
 #define DVR1_PIN                 5  // DVR Button 1
 #define DVR2_PIN                 6  // DVR Button 2
 #define DVR3_PIN                 7  // DVR Button 3
