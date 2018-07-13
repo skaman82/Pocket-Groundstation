@@ -1,10 +1,10 @@
 #define Voltagedetect          3.4  // Min. voltage for Detection
 #define max_cellvoltage        4.2  //Max. cell voltage
 
-#define note                   262  // C4
+#define note                   200  // C4
 
 #define R1                   18000  // Resistor 1
-#define R2                    4680  // Resistor 2 (measured)
+#define R2                    4700  // Resistor 2 (measured)
 #define alarmADDR                1  // EEPROM Adress
 #define layoutADDR               2  // OSD Layout Adress
 #define dvrADDR                  3  // DVR Settings Adress

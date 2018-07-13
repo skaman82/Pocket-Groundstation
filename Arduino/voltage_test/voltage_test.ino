@@ -234,17 +234,12 @@ void voltagetest()
 {
 
     int sensorValue = analogRead(A0); // read the input on analog pin 0:
-    voltage = sensorValue * (5.29 / 1023.0) * ((R1 + R2) / R2); // Convert the analog reading (which goes from 0 - 1023) to a voltage, considering the voltage divider:
+    voltage = sensorValue * (5.52 / 1023.0) * ((R1 + R2) / R2); // Convert the analog reading (which goes from 0 - 1023) to a voltage, considering the voltage divider:
     // Serial.println(voltage);   // print out the value you read:
     voltage = round(voltage * 10) / 10.0; //round the result
     VoltageByte = voltage*10;
 
     cellvoltage = voltage / lipo;
-
-    if (cellvoltage < (alarmvalue)) // case if voltage is under the set alarm value
-    {
-       tone(beeppin, note, 400); // 400ms beep (C4 Tone)
-    }
 
 
     float cellfull = (max_cellvoltage) - (alarmvalue); //determine 100% of travel scale
@@ -274,7 +269,10 @@ void voltagetest()
     else {
         battery_health = 0;
     }
+
     
+
+  
 }
 
 
@@ -362,6 +360,7 @@ void ledcheck()
  
        if (LEDState == LOW) {
           LEDState = HIGH;
+          tone(beeppin, note, 300); // 300ms beep (C4 Tone)
         } 
         else {
           LEDState = LOW;
