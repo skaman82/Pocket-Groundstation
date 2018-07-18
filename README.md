@@ -4,7 +4,9 @@ An attempt to create a mini ground station that will accept any Fatshark module.
 
 <img src="http://k-h-h.de/labs/github/GS_concept.jpg"/>
 
-<img src="http://k-h-h.de/labs/github/gs.jpg"/>
+<img src="https://raw.githubusercontent.com/skaman82/Pocket-Groundstation/master/Photos/IMG_20180714_121051_HDR.jpg"/>
+
+<img src="https://raw.githubusercontent.com/skaman82/Pocket-Groundstation/master/Photos/IMG_20180714_202903_HDR.jpg"/>
 
 <img src="http://k-h-h.de/labs/github/rig.jpg"/>
 
