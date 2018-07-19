@@ -224,19 +224,19 @@ void loop()
     
     if (battery_health == 4) 
     {
-      osd.printMax7456Char(0x90,24,7);
+      osd.printMax7456Char(0x8F,24,7);
     }
     else if (battery_health == 3) 
     {
-      osd.printMax7456Char(0x91,24,7);
+      osd.printMax7456Char(0x90,24,7);
     }
      else if (battery_health == 2) 
     {
-      osd.printMax7456Char(0x92,24,7);
+      osd.printMax7456Char(0x91,24,7);
     }
      else if (battery_health == 1) 
     {
-      osd.printMax7456Char(0x93,24,7);
+      osd.printMax7456Char(0x92,24,7);
     }
     
      else if (battery_health == 0) 
