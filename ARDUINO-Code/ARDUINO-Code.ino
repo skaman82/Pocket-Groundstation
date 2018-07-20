@@ -121,7 +121,7 @@ void setup()
     {
         alarmvalue = (alarmvalueEEP / 10.0);
     }
-    else if (alarmvalueEEP > 400)
+    if (alarmvalueEEP > 250)
     {
         alarmvalue = 3.40;
     }

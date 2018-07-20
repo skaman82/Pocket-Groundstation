@@ -342,22 +342,22 @@ void loop()
     
     if (battery_health == 4) 
     {
-      osd.printMax7456Char(0x90,28,7);
+      osd.printMax7456Char(0x8F,28,7);
       osd.printMax7456Char(0x7F,29,7); //black 
     }
     else if (battery_health == 3) 
     {
-      osd.printMax7456Char(0x91,28,7);
+      osd.printMax7456Char(0x90,28,7);
       osd.printMax7456Char(0x7F,29,7); //black 
     }
      else if (battery_health == 2) 
     {
-      osd.printMax7456Char(0x92,28,7);
+      osd.printMax7456Char(0x91,28,7);
       osd.printMax7456Char(0x7F,29,7); //black 
     }
      else if (battery_health == 1) 
     {
-      osd.printMax7456Char(0x93,28,7);
+      osd.printMax7456Char(0x92,28,7);
       osd.printMax7456Char(0x7F,29,7); //black 
     }
       else if (battery_health == 0) 
@@ -411,6 +411,8 @@ void loop()
  else  
   { 
     oldlayout = 0;
+ 
+    
   } 
 }
 
