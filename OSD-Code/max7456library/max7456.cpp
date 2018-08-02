@@ -322,15 +322,15 @@ void Max7456::init(byte iPinCS) {
   digitalWrite(_pinCS, LOW);
   for (int x = 0; x < 16; x++) {
     _regRb[x].whole = 0x00;
-    _regRb[x].bits.characterWhiteLevel = 3;
-    _regRb[x].bits.characterBlackLevel = 0; //Test
+    _regRb[x].bits.characterWhiteLevel = 2;
+    _regRb[x].bits.characterBlackLevel = 0; //test
     SPI.transfer(x + RB0_ADDRESS_WRITE);
     SPI.transfer(_regRb[x].whole);
   }
 
   _regVm0.whole = 0x00;
 
-  _regVm0.bits.verticalSynch = 0; //changed from 1
+  _regVm0.bits.verticalSynch = 1; //changed from 1
 
   SPI.transfer(VM0_ADDRESS_WRITE);
   SPI.transfer(_regVm0.whole);
