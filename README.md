@@ -42,7 +42,7 @@ I will need any help I can get to solve the things involving coding.</br></br>
 • Resistors 1206 (4.7K / 18K / 220 Ohm)</br>
 • Red 3mm LED</br>
 • Tactile buttons (3x) (https://de.aliexpress.com/item/100-st-cke-6-6-7mm-Licht-touch-schalter-DIP4-ON-OFF-Tactile-Push-button-micro/32846526815.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
-• minimosd micro (https://de.aliexpress.com/item/Dragon-model-MICRO-MINIMOSD-Minim-OSD-Mini-OSD-W-KV-TEAM-MOD-For-CC3D-Naze-32/32733995033.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
+• (UPDATE: not usable in this case - trying to build my own osd hardware for this) minimosd micro (https://de.aliexpress.com/item/Dragon-model-MICRO-MINIMOSD-Minim-OSD-Mini-OSD-W-KV-TEAM-MOD-For-CC3D-Naze-32/32733995033.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
 • 5V 2A BEC (Diatone)</br>
 • Multi-purpose PCB board</br>
 • TBS Tango Cable
