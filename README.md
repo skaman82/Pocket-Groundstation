@@ -28,6 +28,7 @@ I will need any help I can get to solve the things involving coding.</br></br>
 
 <b>Parts (work in progress):</b></br>
 • 3D-Printed Parts </br>
+• M3 inserts (https://de.aliexpress.com/item/100-teile-los-messingeinsatz-M2-M2-5-M3-Durch-gewinde-messing-gewindebuchse-r-ndelmuttern-f-r/32840519444.html) </br>
 • Eachine PRO DVR </br>
 • Arduino Pro Mini (https://de.aliexpress.com/item/1PCS-new-version-1pcs-ATMEGA328P-Pro-Mini-328-Mini-ATMEGA328-5V-16MHz-for-arduino/32830465958.html?spm=a2g0s.9042311.0.0.30d64c4d7417Km)</br>
 • 5V Buzzer</br>
