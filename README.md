@@ -28,6 +28,7 @@ I will need any help I can get to solve the things involving coding.</br></br>
 
 <b>Parts (work in progress):</b></br>
 • 3D-Printed Parts </br>
+• PCBs (you can order them with the provided Gerber files in the PCB Folder at http://jlcpcb.com or other vendors) </br>
 • M3 inserts (https://de.aliexpress.com/item/100-teile-los-messingeinsatz-M2-M2-5-M3-Durch-gewinde-messing-gewindebuchse-r-ndelmuttern-f-r/32840519444.html) </br>
 • Eachine PRO DVR </br>
 • Arduino Pro Mini (https://de.aliexpress.com/item/1PCS-new-version-1pcs-ATMEGA328P-Pro-Mini-328-Mini-ATMEGA328-5V-16MHz-for-arduino/32830465958.html?spm=a2g0s.9042311.0.0.30d64c4d7417Km)</br>
@@ -44,10 +45,10 @@ I will need any help I can get to solve the things involving coding.</br></br>
 • Tactile buttons (3x) (https://de.aliexpress.com/item/100-st-cke-6-6-7mm-Licht-touch-schalter-DIP4-ON-OFF-Tactile-Push-button-micro/32846526815.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
 • Power switch (https://de.aliexpress.com/item/10Pcs-AC-125V-12A-250V-10A-SPST-2-Pin-2-Position-Mini-Marine-Boat-Switches-Rocker/32830066263.html?spm=a2g0s.9042311.0.0.27424c4dOGX5bp)</br>
 • 5V 2A BEC (Diatone)</br>
-• Multi-purpose PCB board</br>
-• TBS Tango Cable
+• TBS Tango Cable </br>
+• Optional: 3.5mm AV Cable</br>
+• Optional: Multi-purpose PCB board</br>
+• Optional: Capacitator (470uF 25V)</br>
 
-• Optional Capacitator (470uF 25V)</br>
-• 3.5mm AV Cable</br>
 
 
