@@ -37,17 +37,16 @@ I will need any help I can get to solve the things involving coding.</br></br>
 • 3.5mm PCB socket (PJ-320D)</br>
 • RJ45 PCB socket (RJ45_MOLEX_0446200002/RJ45_MOLEX_0446200001)</br>
 • I2C OLED Display 1.3" (https://de.aliexpress.com/item/1-3-Inch-1-3-White-OLED-LCD-4PIN-Display-Module-IIC-I2C-Interface-128x64-for/32837066822.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
-• 2-way slide PCB switch (https://de.aliexpress.com/item/10PCS-ON-OFF-Micro-Slide-Switch-Interruptor-1P2T-3Pin-Toggle-Switch-Handle-L-3mm/32804510003.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
+• PWM video switch (https://de.aliexpress.com/item/2015-Mini-2-Ways-Video-Switcher-Module-2-Channels-Video-Switch-Unit-for-FPV/32552115472.html?spm=a2g0s.9042311.0.0.27424c4dOGX5bp)</br>
 • Diode (SMD S1A)</br>
 • Resistors 1206 (4.7K / 18K / 220 Ohm)</br>
 • Red 3mm LED</br>
 • Tactile buttons (3x) (https://de.aliexpress.com/item/100-st-cke-6-6-7mm-Licht-touch-schalter-DIP4-ON-OFF-Tactile-Push-button-micro/32846526815.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
-• (UPDATE: not usable in this case - trying to build my own osd hardware for this) minimosd micro (https://de.aliexpress.com/item/Dragon-model-MICRO-MINIMOSD-Minim-OSD-Mini-OSD-W-KV-TEAM-MOD-For-CC3D-Naze-32/32733995033.html?spm=a2g0s.9042311.0.0.758f4c4daLX5db)</br>
+• Power switch (https://de.aliexpress.com/item/10Pcs-AC-125V-12A-250V-10A-SPST-2-Pin-2-Position-Mini-Marine-Boat-Switches-Rocker/32830066263.html?spm=a2g0s.9042311.0.0.27424c4dOGX5bp)</br>
 • 5V 2A BEC (Diatone)</br>
 • Multi-purpose PCB board</br>
 • TBS Tango Cable
 
-• Optional Power switch</br>
 • Optional Capacitator (470uF 25V)</br>
 • 3.5mm AV Cable</br>
 
