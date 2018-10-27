@@ -13,7 +13,7 @@ An attempt to create a mini ground station that will accept any Fatshark module.
 <b>Ideas so far:</b></br>
 • takes 2S to 4S voltage</br>
 • 3,5mm AV output</br>
-• RJ45 output for power+AV (only one wire to goggles) - constant 8V output on any power source (to stay compatible with fan-mod)</br>
+• RJ45 output for power+AV (only one wire to goggles) - constant 8V output on any power source </br>
 • Powerswitch</br>
 • Build-in DVR</br>
 • Switch to toggle between DVR output (to adjust settings or review footage) or direct module output</br>
@@ -23,7 +23,7 @@ An attempt to create a mini ground station that will accept any Fatshark module.
 • (in progress): RSSI-information and DVR-Autostart (only with True-D module with 3.7D firmware)</br>
 </br>
 
-Many problems to solve! If you want to join the project or contribute, you are very welcome to do so!</br>
+If you want to join the project or contribute, you are very welcome to do so!</br>
 I will need any help I can get to solve the things involving coding.</br></br>
 
 <b>Parts (work in progress):</b></br>
