@@ -12,6 +12,7 @@ LASEREINHORNBACKFISCH
 #include <SoftwareSerial.h>
 #include <Servo.h>
 #include "bitmaps.h"
+#include "crc16.h"
 
 // change this depending on display type
 // U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_DEV_0 | U8G_I2C_OPT_FAST);  // Dev 0, Fast I2C / TWI
@@ -30,10 +31,50 @@ typedef struct packed
   uint32_t VoltageByte;
 } osdData_s;
 
-
 #define OSD_DATA_PAYLOAD_LEN (sizeof(osdData_s)-2)
 const uint8_t OSD_DATA_LENGTH_TOTAL = sizeof(osdData_s);
 osdData_s osdData;
+
+typedef __attribute__((__packed__)) struct trueDdata_t
+{
+  const uint8_t preamble1 = 0xFD;
+  const uint8_t preamble2 = 0x07;
+  uint8_t band;
+  uint8_t channel;
+  uint8_t rssi_max;
+  uint8_t rssi1;
+  uint8_t rssi2;
+  const uint8_t  packet_size = 15;
+}trueDdata_s;
+
+typedef __attribute__((__packed__)) struct trueDdata_rx_t
+{
+  const uint8_t preamble1 = 0xFD;
+  const uint8_t preamble2 = 0x07;
+  uint8_t unknown1;
+  uint8_t unknown2;
+  uint8_t unknown3;
+  uint8_t unknown4;
+  uint8_t unknown5;
+  uint8_t band_channel;
+  uint8_t unknown6;
+  uint8_t rssi_max;
+  uint8_t rssi1;
+  uint8_t rssi2;
+  uint8_t unknown7;
+  uint8_t crc_h;
+  uint8_t crc_l;
+}trueDdata_rx_s;
+
+trueDdata_s trueDdata;
+
+enum enum_trueD_packet_states {
+  STATE_START = 0x00,
+  STATE_GOT_PREAMBLE_1,
+  STATE_GOT_PREAMBLE_2
+};
+uint8_t trueD_packet_state = STATE_START;
+
 
 SoftwareSerial OSDsoft(10, 11); // RX, TX
 
@@ -93,6 +134,12 @@ void OSDsend()
 
 void setup()
 {
+    trueDdata.band = 0;
+    trueDdata.channel = 0;
+    trueDdata.rssi_max = 0;
+    trueDdata.rssi1 = 0;
+    trueDdata.rssi2 = 0;
+
     pinMode(BUTTON1_PIN, INPUT_PULLUP);
     pinMode(BUTTON2_PIN, INPUT_PULLUP);
     pinMode(BUTTON3_PIN, INPUT_PULLUP);
@@ -384,10 +431,32 @@ void DVRautostart() // PLACEHOLDER FOR NOW
   }
 }
 
-
-
 void loop()
 {
+
+    if (trueD_packet_state == STATE_START && OSDsoft.available()) {
+      uint8_t rx = OSDsoft.read();
+      trueD_packet_state = (rx == trueDdata.preamble1) ? STATE_GOT_PREAMBLE_1 : trueD_packet_state;
+
+    }
+    else if (trueD_packet_state == STATE_GOT_PREAMBLE_1 && OSDsoft.available()) {
+      uint8_t rx = OSDsoft.read();
+      trueD_packet_state = (rx == trueDdata.preamble2) ? STATE_GOT_PREAMBLE_2 : STATE_START;
+
+    }
+    else if (trueD_packet_state == STATE_GOT_PREAMBLE_2 && OSDsoft.available() >= trueDdata.packet_size - 2) {
+      trueDdata_rx_s trueDdata_rx;
+      OSDsoft.readBytes(&trueDdata_rx.unknown1, trueDdata.packet_size - 2);
+      uint16_t crc_rx = ((uint16_t)trueDdata_rx.crc_h << 8) | trueDdata_rx.crc_l;
+      uint16_t crc_calc = crc16_ccitt(&trueDdata_rx.preamble1, trueDdata.packet_size - 2);
+      if (crc_rx == crc_calc) { //got complete data frame + crc match
+        trueDdata.band = (trueDdata_rx.band_channel >> 3);
+        trueDdata.channel = trueDdata_rx.band_channel & 0x07;
+        trueDdata.rssi_max = trueDdata_rx.rssi_max;
+        trueDdata.rssi1 = trueDdata_rx.rssi1;
+        trueDdata.rssi2 = trueDdata_rx.rssi2;
+      }
+    }
 
     pwmSwitch.write(150);
 
