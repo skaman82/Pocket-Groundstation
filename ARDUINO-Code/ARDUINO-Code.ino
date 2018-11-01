@@ -2,8 +2,7 @@
 
 
 /*
-Notes:
-LASEREINHORNBACKFISCH
+Created by Albert Kravcov
  */
 
 #include "definesGS.h"
@@ -101,6 +100,7 @@ int dvr_sensor;
 unsigned long timeDVRblink = 0;
 unsigned long LEDMillis = 0;
 unsigned long RSSIMillis = 0;
+unsigned long DVRdelay = 0;
 int LEDState = LOW;
 Servo pwmSwitch;  // create servo object to control a servo
 
@@ -227,28 +227,28 @@ void setup()
     if (voltage > (Voltagedetect * 5.0))
     {
         lipo = 5;
-        beep_x(lipo);
+        //beep_x(lipo);
     }
     else if (voltage > (Voltagedetect * 4.0))
     {
         lipo = 4;
-        beep_x(lipo);
+        //beep_x(lipo);
     }
     else if (voltage > (Voltagedetect * 3.0))
     {
         lipo = 3;
-        beep_x(lipo);
+       // beep_x(lipo);
     }
     else if (voltage > (Voltagedetect * 2.0))
     {
         lipo = 2;
-        beep_x(lipo);
+        //beep_x(lipo);
     }
     else
     {
         //pause();
         lipo = 1;
-        beep_x(lipo);
+       // beep_x(lipo);
     }
 }
 
@@ -407,7 +407,7 @@ void ledcheck()
  
        if (LEDState == LOW) {
           LEDState = HIGH;
-          tone(beeppin, note, 300); // 300ms beep (C4 Tone)
+          // tone(beeppin, note, 300); // 300ms beep (C4 Tone)
         } 
         else {
           LEDState = LOW;
@@ -419,16 +419,29 @@ void ledcheck()
 }
 
 
-void DVRautostart() // PLACEHOLDER FOR NOW
+void DVRautostart() // experimental
 {
- if (RSSI > 1)
+  unsigned long currentDVRdelay = millis();
+  Serial.print(DVRdelay);
+ if (trueDdata.rssi_max > 70 & DVRstatus == 0 & (currentDVRdelay - DVRdelay >= 500))
   {
    // code for starting the DVR
+    digitalWrite(DVR1_PIN, LOW);
+    delay(480);
+    digitalWrite(DVR1_PIN, HIGH);
+    delay(5);
+    DVRdelay = currentDVRdelay;
   }
-  else if (RSSI < 1)
+    if (trueDdata.rssi_max < 20 & DVRstatus == 1 & DVRdelay > 500)
   {
    // code for stopping the DVR
+    digitalWrite(DVR1_PIN, LOW);
+    delay(480);
+    digitalWrite(DVR1_PIN, HIGH);
+    delay(5);
+    DVRdelay = currentDVRdelay;
   }
+  else {}
 }
 
 void loop()
@@ -452,9 +465,9 @@ void loop()
       if (crc_rx == crc_calc) { //got complete data frame + crc match
         trueDdata.band = (trueDdata_rx.band_channel >> 3);
         trueDdata.channel = trueDdata_rx.band_channel & 0x07;
-        trueDdata.rssi_max = trueDdata_rx.rssi_max;
-        trueDdata.rssi1 = trueDdata_rx.rssi1;
-        trueDdata.rssi2 = trueDdata_rx.rssi2;
+        trueDdata.rssi_max = trueDdata_rx.rssi_max / 2;
+        trueDdata.rssi1 = trueDdata_rx.rssi1 / 2;
+        trueDdata.rssi2 = trueDdata_rx.rssi2 / 2;
       }
     }
 
@@ -476,10 +489,7 @@ void loop()
         osdON = false;
     }
 
-    if (dvrEEP == 1) 
-    {
-      DVRautostart();
-    }
+    
     
     // Serial.print("health: ");
     // Serial.print(battery_health);
@@ -502,12 +512,21 @@ void loop()
     // Serial.print(" dvrEPP: ");
     // Serial.print(dvrEEP);
 
-    // Serial.println();
+    //Serial.print(" RSSI max: ");
+    //Serial.print(trueDdata.rssi_max);
+
+    //Serial.print(" RSSI 1: ");
+    Serial.print(trueDdata.rssi1);
+
+    //Serial.print(" RSSI 2: ");
+    //Serial.print(trueDdata.rssi2);
+
+    Serial.println();
 
     ledcheck();
 
     refreshi++;
-    if(refreshi > 5)
+    if(refreshi > 1)
     {
         volti++;
         if(volti > 5)
@@ -521,29 +540,114 @@ void loop()
 
         do {
             // graphic commands to redraw the complete screen should be placed here
-            u8g.setFont(u8g_font_5x7);
-            u8g.setPrintPos(33, 9);
-            u8g.print("BATTERY");
+            
             u8g.setFont(u8g_font_5x7);
             u8g.setPrintPos(17, 9);
             u8g.print(lipo);
             u8g.setFont(u8g_font_5x7);
             u8g.setPrintPos(23, 9);
             u8g.print("S");
-            u8g.setFont(u8g_font_profont22);
-            u8g.setPrintPos(0, 32);
-            u8g.print(voltage, 1);
+            
 
 
-            if (voltage > 10.0) {
-                u8g.setPrintPos(52, 32);
+
+           if(rssiEEP == 0) 
+                {
+                    u8g.setFont(u8g_font_5x7);
+                    u8g.setPrintPos(33, 9);
+                    u8g.print("BATTERY");
+                    u8g.setFont(u8g_font_profont22);
+                    u8g.setPrintPos(0, 32);
+                    u8g.print(voltage, 1);
+            
+                    if (voltage > 10.0) {
+                      u8g.setPrintPos(52, 32);
+                      u8g.print("v");
+                    }
+                    else if (voltage < 10.0)
+                    {
+                      u8g.setPrintPos(40, 32);
+                      u8g.print("v");
+                    }
+                    else {}
+                }
+            
+             
+             if(rssiEEP == 1) 
+               { 
+                int barpercent = trueDdata.rssi_max * 0.6;
+                
+                u8g.setFont(u8g_font_5x7);
+                u8g.setPrintPos(33, 9);
+                u8g.print("BAT");
+            
+                u8g.setPrintPos(52, 9);
+                u8g.print(voltage, 1);
                 u8g.print("v");
-            }
-            else if (voltage < 10.0)
-            {
-                u8g.setPrintPos(40, 32);
-                u8g.print("v");
-            }
+
+                    
+                u8g.setFont(u8g_font_5x7);
+                u8g.setPrintPos(0, 21);
+                u8g.print("RSSI ");
+                u8g.print(trueDdata.rssi_max);
+                u8g.print("%   ");
+
+                if (trueDdata.band == 0) {
+                  u8g.print("A");
+                  }
+                else if (trueDdata.band == 1) {
+                  u8g.print("B");
+                  }
+                else if (trueDdata.band == 2) {
+                  u8g.print("E");
+                  }
+                else if (trueDdata.band == 3) {
+                  u8g.print("F");
+                  }
+                else if (trueDdata.band == 4) {
+                  u8g.print("R");
+                  }
+                else if (trueDdata.band == 5) {
+                  u8g.print("L");
+                  }
+                
+                u8g.print(trueDdata.channel +1);
+                u8g.drawBox(3,27,barpercent,8);
+                u8g.drawFrame(1,25,64,12);
+
+
+                
+                
+                if (trueDdata.rssi1 > trueDdata.rssi2) 
+                {
+                u8g.drawBox(68,25,11,12);
+                u8g.drawFrame(78,25,12,12);
+                u8g.setFont(u8g_font_5x7);
+                u8g.setPrintPos(72,34);
+                u8g.setColorIndex(0);
+                u8g.print("A");
+                u8g.setColorIndex(1);  
+                u8g.setPrintPos(82,34);
+                u8g.print("B");
+                }
+
+                 else
+                {
+                u8g.drawFrame(68,25,12,12);
+                u8g.drawBox(79,25,11,12);
+                u8g.setFont(u8g_font_5x7);
+                u8g.setPrintPos(72,34);
+                u8g.print("A");
+                u8g.setPrintPos(82,34);
+                u8g.setColorIndex(0);
+                u8g.print("B");
+                u8g.setColorIndex(1);                 
+                }
+                
+                
+               }
+            
+            
 
 
             u8g.drawFrame(1, 46 - 2, 124, 18);
@@ -571,6 +675,8 @@ void loop()
             if (DVRstatus == 1) 
             {
              u8g.drawBitmapP(96, 2, 1, 8, DVRstatus8_bitmap);
+             u8g.setPrintPos(108, 9);
+             u8g.print("REC");
             }
 
 
@@ -580,12 +686,12 @@ void loop()
                 u8g.print("OSD");
             }
 
-            u8g.drawFrame(96, 16 - 1, 29, 20);
-            u8g.drawBox(96, 16, 29, 6);
-            u8g.setPrintPos(101, 31);
+            u8g.drawFrame(96, 18 - 1, 29, 20);
+            u8g.drawBox(96, 18, 29, 6);
+            u8g.setPrintPos(101, 33);
             u8g.print(alarmvalue);
             u8g.setColorIndex(0);
-            u8g.setPrintPos(101, 21);
+            u8g.setPrintPos(101, 23);
             u8g.setFont(u8g_font_micro);
             u8g.print("ALARM");
             u8g.setColorIndex(1);
@@ -627,6 +733,14 @@ void loop()
                 u8g.drawBox(11, 5, 1, 2);
             }
 
+
+            if (dvrEEP == 1) 
+             {
+                 DVRautostart();
+             }
+
+    
+
         }
         while (u8g.nextPage()
               );
@@ -643,10 +757,15 @@ void loop()
 
     if (pressedbut == 4)
     {
+      if (dvrEEP == 0) 
+      {
         digitalWrite(DVR1_PIN, LOW);
         delay(480);
         digitalWrite(DVR1_PIN, HIGH);
         delay(5);
+       }
+       else {}
+        
     }
 
     if (pressedbut == 3)
