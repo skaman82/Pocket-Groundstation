@@ -117,7 +117,7 @@ void OSDsend()
     osdData.layoutEEP = layoutEEP;
     osdData.DVRstatus = DVRstatus;
     osdData.RSSIavail = RSSIavail;
-    osdData.RSSI = RSSI;
+    osdData.RSSI = trueDdata.rssi_max;
     osdData.VoltageByte = VoltageByte;
   
     uint8_t checksum = 0;
@@ -422,7 +422,7 @@ void ledcheck()
 void DVRautostart() // experimental
 {
   unsigned long currentDVRdelay = millis();
-  Serial.print(DVRdelay);
+ 
  if (trueDdata.rssi_max > 70 & DVRstatus == 0 & (currentDVRdelay - DVRdelay >= 500))
   {
    // code for starting the DVR
@@ -490,6 +490,7 @@ void loop()
     }
 
     
+    // Some debug output:
     
     // Serial.print("health: ");
     // Serial.print(battery_health);
@@ -516,7 +517,7 @@ void loop()
     //Serial.print(trueDdata.rssi_max);
 
     //Serial.print(" RSSI 1: ");
-    Serial.print(trueDdata.rssi1);
+    //Serial.print(trueDdata.rssi1);
 
     //Serial.print(" RSSI 2: ");
     //Serial.print(trueDdata.rssi2);
@@ -570,6 +571,7 @@ void loop()
                       u8g.print("v");
                     }
                     else {}
+
                 }
             
              
@@ -1106,7 +1108,6 @@ void submenu()
 
                 u8g.drawBitmapP(5, 5, 2, 8, DVR_bitmap);
                 u8g.setColorIndex(1);
-
                 u8g.drawFrame(1, 16, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(20, 27);
@@ -1127,14 +1128,11 @@ void submenu()
                 }
 
                 u8g.drawBitmapP(5, 20, 2, 8, OSD_bitmap);
-
-
                 u8g.drawFrame(1, 31, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(20, 42);
                 u8g.print("RSSI");
                 u8g.setPrintPos(105, 42);
-
 
                 if(rssiEEP == 0)
                 {
@@ -1146,8 +1144,6 @@ void submenu()
                 }
 
                 u8g.drawBitmapP(5, 35, 2, 8, RSSI_bitmap);
-
-
                 u8g.drawFrame(1, 46, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(20, 57);
@@ -1173,8 +1169,6 @@ void submenu()
                 }
 
                 u8g.drawBitmapP(5, 5, 2, 8, DVR_bitmap);
-
-
                 u8g.drawBox(1, 16, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setColorIndex(0);
@@ -1197,8 +1191,6 @@ void submenu()
 
                 u8g.drawBitmapP(5, 20, 2, 8, OSD_bitmap);
                 u8g.setColorIndex(1);
-
-
                 u8g.drawFrame(1, 31, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(20, 42);
@@ -1215,7 +1207,6 @@ void submenu()
                 }
 
                 u8g.drawBitmapP(5, 35, 2, 8, RSSI_bitmap);
-
                 u8g.drawFrame(1, 46, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(20, 57);
@@ -1241,8 +1232,6 @@ void submenu()
                 }
 
                 u8g.drawBitmapP(5, 5, 2, 8, DVR_bitmap);
-
-
                 u8g.drawFrame(1, 16, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(20, 27);
@@ -1263,7 +1252,6 @@ void submenu()
                 }
 
                 u8g.drawBitmapP(5, 20, 2, 8, OSD_bitmap);
-
                 u8g.drawBox(1, 31, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setColorIndex(0);
@@ -1282,7 +1270,6 @@ void submenu()
 
                 u8g.drawBitmapP(5, 35, 2, 8, RSSI_bitmap);
                 u8g.setColorIndex(1);
-
                 u8g.drawFrame(1, 46, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(20, 57);
@@ -1308,11 +1295,8 @@ void submenu()
                     u8g.print("ON");
                 }
 
-
                 u8g.setColorIndex(1);
                 u8g.drawBitmapP(5, 5, 2, 8, DVR_bitmap);
-
-
                 u8g.drawFrame(1, 16, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(20, 27);
@@ -1333,7 +1317,6 @@ void submenu()
                 }
 
                 u8g.drawBitmapP(5, 20, 2, 8, OSD_bitmap);
-
                 u8g.drawFrame(1, 31, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(20, 42);
@@ -1350,7 +1333,6 @@ void submenu()
                 }
 
                 u8g.drawBitmapP(5, 35, 2, 8, RSSI_bitmap);
-
                 u8g.drawBox(1, 46, 126, 16);
                 u8g.setColorIndex(0);
                 u8g.setFont(u8g_font_5x7);
@@ -1358,8 +1340,6 @@ void submenu()
                 u8g.print("SAVE&EXIT");
                 u8g.drawBitmapP(5, 49, 2, 8, back_bitmap);
                 u8g.setColorIndex(1);
-
-
             }
         }
         while (u8g.nextPage());

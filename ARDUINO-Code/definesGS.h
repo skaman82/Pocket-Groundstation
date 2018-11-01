@@ -1,3 +1,4 @@
+#define fwversion              1.0  // Pocket Groundstation version
 #define Voltagedetect          3.4  // Min. voltage for Detection
 #define max_cellvoltage        4.2  //Max. cell voltage
 
