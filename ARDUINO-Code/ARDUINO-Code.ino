@@ -407,7 +407,7 @@ void ledcheck()
  
        if (LEDState == LOW) {
           LEDState = HIGH;
-          // tone(beeppin, note, 300); // 300ms beep (C4 Tone)
+          tone(beeppin, note, 300); // 300ms beep (C4 Tone)
         } 
         else {
           LEDState = LOW;
