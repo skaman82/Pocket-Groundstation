@@ -590,9 +590,7 @@ void loop()
                     
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(0, 21);
-                u8g.print("RSSI ");
-                u8g.print(trueDdata.rssi_max);
-                u8g.print("%   ");
+                
 
                 if (trueDdata.band == 0) {
                   u8g.print("A");
@@ -614,6 +612,11 @@ void loop()
                   }
                 
                 u8g.print(trueDdata.channel +1);
+
+                u8g.print("  RSSI ");
+                u8g.print(trueDdata.rssi_max);
+                u8g.print("%");
+                
                 u8g.drawBox(3,27,barpercent,8);
                 u8g.drawFrame(1,25,64,12);
 
