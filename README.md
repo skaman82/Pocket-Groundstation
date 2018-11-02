@@ -1,5 +1,5 @@
 # Pocket-Groundstation
-An attempt to create a mini ground station that will accept any Fatshark module.</br> 
+The Pocket-Groundstation is a mini ground station that will accept any Fatshark module.</br> 
 <strong>Project updates</strong> > https://github.com/skaman82/Pocket-Groundstation/blob/master/updates.md
 
 <img src="https://raw.githubusercontent.com/skaman82/Pocket-Groundstation/master/Concepts/IO_back.jpg"/>
