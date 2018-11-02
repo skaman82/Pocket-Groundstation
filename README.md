@@ -50,5 +50,8 @@ I will need any help I can get to solve the things involving coding.</br></br>
 • Optional: Multi-purpose PCB board</br>
 • Optional: Capacitator (470uF 25V)</br>
 
-
+# The Build
+<img src="https://raw.githubusercontent.com/skaman82/Pocket-Groundstation/master/Photos/GS wiring1.jpg"/>
+<img src="https://raw.githubusercontent.com/skaman82/Pocket-Groundstation/master/Photos/GS wiring2.jpg"/>
+<img src="https://raw.githubusercontent.com/skaman82/Pocket-Groundstation/master/Photos/GS wiring3.jpg"/>
 
