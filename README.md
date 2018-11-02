@@ -3,10 +3,10 @@ An attempt to create a mini ground station that will accept any Fatshark module.
 <strong>Project updates</strong> > https://github.com/skaman82/Pocket-Groundstation/blob/master/updates.md
 
 <img src="https://raw.githubusercontent.com/skaman82/Pocket-Groundstation/master/Concepts/IO_back.jpg"/>
-
+<img src="https://raw.githubusercontent.com/skaman82/Pocket-Groundstation/master/Photos/photo.jpg"/>
 <img src="http://k-h-h.de/labs/github/rig.jpg"/>
 
-<img src="https://raw.githubusercontent.com/skaman82/Pocket-Groundstation/master/Photos/photo.jpg"/>
+
 
 
 <b>Ideas so far:</b></br>
