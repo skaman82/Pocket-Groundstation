@@ -1,15 +1,16 @@
 #define fwversion              1.0  // Pocket Groundstation version
-#define Voltagedetect          3.4  // Min. voltage for Detection
-#define max_cellvoltage        4.2  //Max. cell voltage
+
+#define Voltagedetect          3.30 // Min. voltage for Detection
+#define max_cellvoltage        4.25 // Max. cell voltage
+#define R1                   18000  // Resistor 1
+#define R2                    4700  // Resistor 2 (measured)
 
 #define note                   200  // C4
 
-#define R1                   18000  // Resistor 1
-#define R2                    4700  // Resistor 2 (measured)
 #define alarmADDR                1  // EEPROM Adress
 #define layoutADDR               2  // OSD Layout Adress
 #define dvrADDR                  3  // DVR Settings Adress
-#define rssiADDR                 4  // DVR Settings Adress
+#define rssiADDR                 4  // RSSI Settings Adress
 
 #define BUTTON1_PIN              3  // Button 1
 #define BUTTON2_PIN              4  // Button 2
