@@ -421,25 +421,38 @@ void ledcheck()
 
 void DVRautostart() // experimental
 {
-  unsigned long currentDVRdelay = millis();
+  
  
- if (trueDdata.rssi_max > 70 & DVRstatus == 0 & (currentDVRdelay - DVRdelay >= 500))
-  {
+ if (trueDdata.rssi_max > 70 & DVRstatus == 0)
+  { 
+    unsigned long currentDVRdelay = millis();
+    if (currentDVRdelay - DVRdelay >= 500) {
    // code for starting the DVR
     digitalWrite(DVR1_PIN, LOW);
     delay(480);
     digitalWrite(DVR1_PIN, HIGH);
     delay(5);
     DVRdelay = currentDVRdelay;
+    }
+    else
+    {
+      DVRdelay = currentDVRdelay;
+    }
   }
-    if (trueDdata.rssi_max < 20 & DVRstatus == 1 & DVRdelay > 500)
+    if (trueDdata.rssi_max < 20 & DVRstatus == 1 )
   {
+    unsigned long currentDVRdelay = millis();
+    if (DVRdelay > 500) {
    // code for stopping the DVR
     digitalWrite(DVR1_PIN, LOW);
     delay(480);
     digitalWrite(DVR1_PIN, HIGH);
     delay(5);
     DVRdelay = currentDVRdelay;
+  }
+  else {
+    DVRdelay = currentDVRdelay;
+    }
   }
   else {}
 }
@@ -543,10 +556,10 @@ void loop()
             // graphic commands to redraw the complete screen should be placed here
             
             u8g.setFont(u8g_font_5x7);
-            u8g.setPrintPos(17, 9);
+            u8g.setPrintPos(16, 9);
             u8g.print(lipo);
             u8g.setFont(u8g_font_5x7);
-            u8g.setPrintPos(23, 9);
+            u8g.setPrintPos(22, 9);
             u8g.print("S");
             
 
@@ -555,19 +568,19 @@ void loop()
            if(rssiEEP == 0) 
                 {
                     u8g.setFont(u8g_font_5x7);
-                    u8g.setPrintPos(33, 9);
+                    u8g.setPrintPos(32, 9);
                     u8g.print("BATTERY");
                     u8g.setFont(u8g_font_profont22);
-                    u8g.setPrintPos(0, 32);
+                    u8g.setPrintPos(0, 36);
                     u8g.print(voltage, 1);
             
                     if (voltage > 10.0) {
-                      u8g.setPrintPos(52, 32);
+                      u8g.setPrintPos(52, 36);
                       u8g.print("v");
                     }
                     else if (voltage < 10.0)
                     {
-                      u8g.setPrintPos(40, 32);
+                      u8g.setPrintPos(40, 36);
                       u8g.print("v");
                     }
                     else {}
@@ -580,16 +593,16 @@ void loop()
                 int barpercent = trueDdata.rssi_max * 0.6;
                 
                 u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(33, 9);
-                u8g.print("BAT");
+                u8g.setPrintPos(29, 9);
+                u8g.print("BATTERY");
             
-                u8g.setPrintPos(52, 9);
+                u8g.setPrintPos(67, 9);
                 u8g.print(voltage, 1);
                 u8g.print("v");
 
                     
-                u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(0, 21);
+                u8g.setFont(u8g_font_profont22);
+                u8g.setPrintPos(0, 29);
                 
 
                 if (trueDdata.band == 0) {
@@ -611,39 +624,41 @@ void loop()
                   u8g.print("L");
                   }
                 
+                
                 u8g.print(trueDdata.channel +1);
-
-                u8g.print("  RSSI ");
+                u8g.setPrintPos(25, 28);
+                u8g.setFont(u8g_font_5x7);
+                u8g.print(" > ");
                 u8g.print(trueDdata.rssi_max);
                 u8g.print("%");
                 
-                u8g.drawBox(3,27,barpercent,8);
-                u8g.drawFrame(1,25,64,12);
+                u8g.drawBox(3,35,barpercent,3); // 
+                u8g.drawFrame(1,33,64,7);
 
 
                 
                 
                 if (trueDdata.rssi1 > trueDdata.rssi2) 
                 {
-                u8g.drawBox(68,25,11,12);
-                u8g.drawFrame(78,25,12,12);
+                u8g.drawBox(70,18,11,22);
+                u8g.drawFrame(80,18,12,22);
                 u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(72,34);
+                u8g.setPrintPos(74,32);
                 u8g.setColorIndex(0);
                 u8g.print("A");
                 u8g.setColorIndex(1);  
-                u8g.setPrintPos(82,34);
+                u8g.setPrintPos(84,32);
                 u8g.print("B");
                 }
 
                  else
                 {
-                u8g.drawFrame(68,25,12,12);
-                u8g.drawBox(79,25,11,12);
+                u8g.drawFrame(70,18,12,22);
+                u8g.drawBox(80,18,11,22);
                 u8g.setFont(u8g_font_5x7);
-                u8g.setPrintPos(72,34);
+                u8g.setPrintPos(74,32);
                 u8g.print("A");
-                u8g.setPrintPos(82,34);
+                u8g.setPrintPos(84,32);
                 u8g.setColorIndex(0);
                 u8g.print("B");
                 u8g.setColorIndex(1);                 
@@ -655,9 +670,9 @@ void loop()
             
 
 
-            u8g.drawFrame(1, 46 - 2, 124, 18);
+            u8g.drawFrame(1, 48 - 2, 124, 18);
             u8g.setFont(u8g_font_5x7);
-            u8g.setPrintPos(12, 56);
+            u8g.setPrintPos(12, 58);
             u8g.print("PRESS CENTER FOR MENU");
 
 
@@ -691,9 +706,9 @@ void loop()
                 u8g.print("OSD");
             }
 
-            u8g.drawFrame(96, 18 - 1, 29, 20);
+            u8g.drawFrame(96, 18 - 1, 29, 23);
             u8g.drawBox(96, 18, 29, 6);
-            u8g.setPrintPos(101, 33);
+            u8g.setPrintPos(101, 35);
             u8g.print(alarmvalue);
             u8g.setColorIndex(0);
             u8g.setPrintPos(101, 23);
@@ -1114,7 +1129,7 @@ void submenu()
                 u8g.drawFrame(1, 16, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(20, 27);
-                u8g.print("OSD");
+                u8g.print("OSD (beta)");
                 u8g.setPrintPos(105, 27);
 
                 if(layoutEEP == 0)
@@ -1176,7 +1191,7 @@ void submenu()
                 u8g.setFont(u8g_font_5x7);
                 u8g.setColorIndex(0);
                 u8g.setPrintPos(20, 27);
-                u8g.print("OSD");
+                u8g.print("OSD (beta)");
                 u8g.setPrintPos(105, 27);
 
                 if(layoutEEP == 0)
@@ -1238,7 +1253,7 @@ void submenu()
                 u8g.drawFrame(1, 16, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(20, 27);
-                u8g.print("OSD");
+                u8g.print("OSD (beta)");
                 u8g.setPrintPos(105, 27);
 
                 if(layoutEEP == 0)
@@ -1303,7 +1318,7 @@ void submenu()
                 u8g.drawFrame(1, 16, 126, 16);
                 u8g.setFont(u8g_font_5x7);
                 u8g.setPrintPos(20, 27);
-                u8g.print("OSD");
+                u8g.print("OSD (beta)");
                 u8g.setPrintPos(105, 27);
 
                 if(layoutEEP == 0)
