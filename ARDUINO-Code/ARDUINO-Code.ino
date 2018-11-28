@@ -226,7 +226,7 @@ void setup()
     
     if (voltage > (Voltagedetect * 5.0))
     {
-        lipo = 5;
+        lipo = 4;
         //beep_x(lipo);
     }
     else if (voltage > (Voltagedetect * 4.0))
@@ -423,7 +423,7 @@ void DVRautostart() // experimental
 {
   
  
- if (trueDdata.rssi_max > 70 & DVRstatus == 0)
+ if (trueDdata.rssi_max > 70 && DVRstatus == 0)
   { 
     unsigned long currentDVRdelay = millis();
     if (currentDVRdelay - DVRdelay >= 500) {
@@ -439,7 +439,7 @@ void DVRautostart() // experimental
       DVRdelay = currentDVRdelay;
     }
   }
-    if (trueDdata.rssi_max < 20 & DVRstatus == 1 )
+    if (trueDdata.rssi_max < 20 && DVRstatus == 1 )
   {
     unsigned long currentDVRdelay = millis();
     if (DVRdelay > 500) {
