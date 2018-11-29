@@ -3,7 +3,7 @@
 <eagle version="9.0.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -23,17 +23,17 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
@@ -47,9 +47,9 @@
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
@@ -59,7 +59,7 @@
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -4825,8 +4825,10 @@ design rules under a new name.</description>
 <attribute name="OC_FARNELL" value="unknown" x="38.1" y="7.62" size="1.778" layer="27" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="38.1" y="7.62" size="1.778" layer="27" display="off"/>
 </element>
-<element name="A1" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="10.16" y="40.64" rot="R270">
-<attribute name="TP_SIGNAL_NAME" value="" x="10.16" y="40.64" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="DVR_LED" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1" value="TPTP20SQ" x="10.16" y="40.64" smashed="yes" rot="R270">
+<attribute name="NAME" x="10.38" y="42.18" size="0.762" layer="25" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" value="" x="7.62" y="40.64" size="1" layer="37" rot="R270"/>
+<attribute name="VALUE" x="9.017" y="41.656" size="0.0254" layer="27" rot="R270"/>
 </element>
 <element name="PWM" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X01" package3d_urn="urn:adsk.eagle:package:38028/1" value="" x="41.91" y="62.23"/>
 </elements>
@@ -5247,9 +5249,13 @@ design rules under a new name.</description>
 <wire x1="34.29" y1="39.37" x2="30.48" y2="43.18" width="0.381" layer="1"/>
 </signal>
 <signal name="N$1">
-<contactref element="A1" pad="TP"/>
+<contactref element="DVR_LED" pad="TP"/>
 <contactref element="U$1" pad="A1"/>
-<wire x1="26.67" y1="35.56" x2="10.16" y2="40.64" width="0" layer="19" extent="16-16"/>
+<wire x1="12.7" y1="40.64" x2="10.16" y2="40.64" width="0.762" layer="1"/>
+<wire x1="15.5575" y1="37.7825" x2="12.7" y2="40.64" width="0.762" layer="1"/>
+<wire x1="24.765" y1="37.7825" x2="15.5575" y2="37.7825" width="0.762" layer="1"/>
+<wire x1="26.67" y1="35.8775" x2="24.765" y2="37.7825" width="0.762" layer="1"/>
+<wire x1="26.67" y1="35.56" x2="26.67" y2="35.8775" width="0.762" layer="1"/>
 </signal>
 <signal name="D9PWM" class="1">
 <contactref element="U$1" pad="D9"/>
