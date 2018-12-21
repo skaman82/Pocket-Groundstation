@@ -25,6 +25,12 @@ If you want to join the project or contribute, you are very welcome to do so!</b
 
 <b>Parts:</b></br>
 • 3D-Printed Parts </br>
+or order them here: </br>
+https://www.shapeways.com/product/CZG7FD8B4/pocketgroundstation-module-insert</br>
+https://www.shapeways.com/product/DPKJJELEF/pocketgroundstation-case-side-cover</br>
+https://www.shapeways.com/product/GCXG232QY/pocketgroundstation-case</br>
+</br>
+</br>
 • PCBs (you can order them with the provided Gerber files in the PCB Folder at http://jlcpcb.com or other vendors) </br>
 • M3 inserts (https://de.aliexpress.com/item/100-teile-los-messingeinsatz-M2-M2-5-M3-Durch-gewinde-messing-gewindebuchse-r-ndelmuttern-f-r/32840519444.html) </br>
 • Eachine PRO DVR </br>
