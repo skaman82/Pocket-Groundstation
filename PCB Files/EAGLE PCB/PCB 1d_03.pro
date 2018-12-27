@@ -1,13 +1,13 @@
 EAGLE AutoRouter Statistics:
 
-Job           : /Users/albertkravcov/development/Pocket-Groundstation/eagle/PCB/PCB 1d.brd
+Job           : /Users/albertkravcov/development/Pocket-Groundstation/PCB Files/EAGLE PCB/PCB 1d.brd
 
-Start at      : 20:30:48 (12.07.18)
+Start at      : 13:51:33 (27.12.18)
 End at        : 01:00:00 (01.01.70)
 Elapsed time  : 00:00:00
 
 Signals       :    41   RoutingGrid: 6.25 mil  Layers: 2
-Connections   :    63   predefined:  63 ( 18 Vias )
+Connections   :    65   predefined:  63 ( 18 Vias )
 
 Router memory :   0
 
@@ -20,6 +20,6 @@ max. Total        :         0
 
 Routed            :         0
 Vias              :         0
-Resolution        :   100.0 %
+Resolution        :    96.9 %
 
 Final             : 

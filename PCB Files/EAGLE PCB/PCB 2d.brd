@@ -173,7 +173,7 @@
 <text x="25.4" y="5.08" size="0.889" layer="25" rot="R180">D2</text>
 <text x="27.94" y="5.08" size="0.889" layer="25" rot="R180">D3</text>
 <text x="30.48" y="5.08" size="0.889" layer="25" rot="R180">D4</text>
-<text x="3.81" y="50.8" size="1.27" layer="26" rot="MR270">POCKET-GROUNDSTATION | PCB2 | REV1</text>
+<text x="3.81" y="50.8" size="1.27" layer="26" rot="MR270">POCKET-GROUNDSTATION | PCB2 | REV2</text>
 <text x="6.35" y="63.5" size="0.889" layer="25">G</text>
 <text x="6.35" y="60.96" size="0.889" layer="25">Vdvr</text>
 <text x="6.35" y="58.42" size="0.889" layer="25">Vmain</text>
@@ -4599,9 +4599,9 @@ design rules under a new name.</description>
 <wire x1="13.335" y1="63.5" x2="12.7" y2="62.865" width="0.4" layer="16" locked="yes"/>
 <wire x1="13.97" y1="63.5" x2="13.335" y2="63.5" width="0.4" layer="16" locked="yes"/>
 <contactref element="VSW_O" pad="5"/>
-<wire x1="21.59" y1="56.515" x2="22.86" y2="57.15" width="0.4" layer="16" locked="yes"/>
-<wire x1="19.685" y1="54.61" x2="21.59" y2="56.515" width="0.4" layer="16" locked="yes"/>
-<wire x1="10.16" y1="54.61" x2="19.685" y2="54.61" width="0.4" layer="16" locked="yes"/>
+<wire x1="22.86" y1="56.515" x2="22.86" y2="57.15" width="0.4" layer="16"/>
+<wire x1="20.955" y1="54.61" x2="22.86" y2="56.515" width="0.4" layer="16"/>
+<wire x1="10.16" y1="54.61" x2="20.955" y2="54.61" width="0.4" layer="16"/>
 <wire x1="7.3025" y1="57.4675" x2="10.16" y2="54.61" width="0.4" layer="16" locked="yes"/>
 <wire x1="6.985" y1="57.4675" x2="7.3025" y2="57.4675" width="0.4" layer="16" locked="yes"/>
 </signal>
@@ -4648,13 +4648,12 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$4">
 <contactref element="OLED-IO" pad="1"/>
-<wire x1="39.37" y1="57.785" x2="39.37" y2="56.8325" width="0.762" layer="16" locked="yes"/>
+<wire x1="39.37" y1="57.785" x2="38.1" y2="56.8325" width="0.762" layer="16"/>
 <wire x1="41.275" y1="59.69" x2="39.37" y2="57.785" width="0.762" layer="16" locked="yes"/>
 <wire x1="41.91" y1="59.69" x2="41.275" y2="59.69" width="0.762" layer="16" locked="yes"/>
 <contactref element="VSW" pad="2"/>
 <wire x1="19.05" y1="69.215" x2="19.05" y2="69.85" width="0.762" layer="16" locked="yes"/>
 <wire x1="31.4325" y1="56.8325" x2="19.05" y2="69.215" width="0.762" layer="16" locked="yes"/>
-<wire x1="39.37" y1="56.8325" x2="38.1" y2="56.8325" width="0.762" layer="16" locked="yes"/>
 <contactref element="OLED" pad="1"/>
 <wire x1="38.1" y1="56.8325" x2="31.4325" y2="56.8325" width="0.762" layer="16" locked="yes"/>
 <wire x1="36.83" y1="46.0375" x2="36.83" y2="41.91" width="0.762" layer="16"/>
@@ -4752,17 +4751,12 @@ design rules under a new name.</description>
 <signal name="N$8">
 <contactref element="VSW" pad="1"/>
 <contactref element="D9PWM" pad="1"/>
-<wire x1="41.5925" y1="62.23" x2="32.0675" y2="71.755" width="0.762" layer="1" locked="yes"/>
-<wire x1="32.0675" y1="71.755" x2="31.4325" y2="72.39" width="0.762" layer="1" locked="yes"/>
 <wire x1="41.91" y1="62.23" x2="41.5925" y2="62.23" width="0.762" layer="1" locked="yes"/>
-<wire x1="16.51" y1="70.8025" x2="16.51" y2="69.85" width="0.762" layer="1" locked="yes"/>
-<wire x1="16.8275" y1="71.12" x2="16.51" y2="70.8025" width="0.762" layer="1" locked="yes"/>
-<wire x1="16.8275" y1="71.4375" x2="16.8275" y2="71.12" width="0.762" layer="1" locked="yes"/>
-<wire x1="17.78" y1="72.39" x2="16.8275" y2="71.4375" width="0.762" layer="1" locked="yes"/>
-<wire x1="28.575" y1="72.39" x2="17.78" y2="72.39" width="0.762" layer="1" locked="yes"/>
-<wire x1="30.1625" y1="70.8025" x2="28.575" y2="72.39" width="0.762" layer="1" locked="yes"/>
-<wire x1="31.115" y1="70.8025" x2="30.1625" y2="70.8025" width="0.762" layer="1" locked="yes"/>
-<wire x1="32.0675" y1="71.755" x2="31.115" y2="70.8025" width="0.762" layer="1" locked="yes"/>
+<wire x1="37.1475" y1="62.23" x2="41.91" y2="62.23" width="0.762" layer="16"/>
+<wire x1="27.6225" y1="71.755" x2="37.1475" y2="62.23" width="0.762" layer="16"/>
+<wire x1="18.0975" y1="71.755" x2="27.6225" y2="71.755" width="0.762" layer="16"/>
+<wire x1="16.51" y1="70.1675" x2="18.0975" y2="71.755" width="0.762" layer="16"/>
+<wire x1="16.51" y1="69.85" x2="16.51" y2="70.1675" width="0.762" layer="16"/>
 </signal>
 </signals>
 </board>

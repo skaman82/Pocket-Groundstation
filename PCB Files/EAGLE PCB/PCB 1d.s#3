@@ -8,34 +8,34 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
-<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
-<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
-<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
-<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
-<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
-<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
-<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
-<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
-<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
-<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
-<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
-<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="24" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="yes" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="yes" active="no"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="yes" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="yes" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="yes" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="yes" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="yes" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="yes" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="yes" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="yes" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="yes" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="yes" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="yes" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="yes" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -44,8 +44,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -53,19 +53,19 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
-<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
-<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="yes" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="yes" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -303,8 +303,8 @@ http://www.xganon.com</description>
 <pad name="A7" x="7.62" y="-21.59" drill="0.8" shape="long" rot="R90"/>
 <pad name="A6" x="5.08" y="-21.59" drill="0.8" shape="long" rot="R270"/>
 <pad name="GND4" x="2.54" y="-21.59" drill="0.8" shape="long" rot="R270"/>
-<pad name="A5" x="6.35" y="-2.54" drill="0.8" rot="R270"/>
-<pad name="A4" x="6.35" y="-5.08" drill="0.8" rot="R270"/>
+<pad name="A5" x="7.62" y="-2.54" drill="0.8" rot="R270"/>
+<pad name="A4" x="7.62" y="-5.08" drill="0.8" rot="R270"/>
 </package>
 </packages>
 <symbols>
@@ -9684,7 +9684,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="R2-4.7K" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="4.7 kOhm"/>
 <part name="8V" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
 <part name="GND" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="2,54/1,1" device="" package3d_urn="urn:adsk.eagle:package:30836/1"/>
-<part name="DVR/MODULE-IO" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA07-1" device="" package3d_urn="urn:adsk.eagle:package:8341/1"/>
+<part name="MODULE-IO" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA07-1" device="" package3d_urn="urn:adsk.eagle:package:8341/1"/>
 <part name="V-IO" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA04-1" device="" package3d_urn="urn:adsk.eagle:package:8337/1"/>
 <part name="U$1" library="Arduino-clone" deviceset="ABK-PRO-MINI" device=""/>
 <part name="BT-BRIDGE" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="" package3d_urn="urn:adsk.eagle:package:38085/1"/>
@@ -9702,7 +9702,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="+5V" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
 <part name="-OUT" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
 <part name="SG1" library="buzzer" library_urn="urn:adsk.eagle:library:113" deviceset="F/TMB" device="" package3d_urn="urn:adsk.eagle:package:5260/1"/>
-<part name="A1" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
+<part name="DVR_LED" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
 <part name="PWM" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_01" device="" package3d_urn="urn:adsk.eagle:package:38028/1"/>
 </parts>
 <sheets>
@@ -9738,7 +9738,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="R2-4.7K" gate="G$1" x="317.5" y="76.2" rot="R90"/>
 <instance part="8V" gate="1" x="76.2" y="165.1" rot="R270"/>
 <instance part="GND" gate="1" x="68.58" y="165.1" rot="R270"/>
-<instance part="DVR/MODULE-IO" gate="1" x="119.38" y="111.76" smashed="yes">
+<instance part="MODULE-IO" gate="1" x="119.38" y="111.76" smashed="yes">
 <attribute name="VALUE" x="118.11" y="99.06" size="1.778" layer="96"/>
 </instance>
 <instance part="V-IO" gate="1" x="106.68" y="144.78" smashed="yes">
@@ -9760,7 +9760,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="+5V" gate="G$1" x="292.1" y="83.82"/>
 <instance part="-OUT" gate="G$1" x="302.26" y="83.82"/>
 <instance part="SG1" gate="1" x="233.68" y="76.2"/>
-<instance part="A1" gate="G$1" x="154.94" y="104.14" rot="R90"/>
+<instance part="DVR_LED" gate="G$1" x="154.94" y="104.14" rot="R90"/>
 <instance part="PWM" gate="G$1" x="233.68" y="96.52" rot="R90"/>
 </instances>
 <busses>
@@ -9849,7 +9849,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="251.46" y1="106.68" x2="251.46" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="68.58" x2="198.12" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="198.12" y1="68.58" x2="198.12" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="DVR/MODULE-IO" gate="1" pin="4"/>
+<pinref part="MODULE-IO" gate="1" pin="4"/>
 <wire x1="154.94" y1="68.58" x2="154.94" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="81.28" x2="127" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="D1" gate="D" pin="A"/>
@@ -9883,7 +9883,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="276.86" y1="111.76" x2="261.62" y2="111.76" width="0.1524" layer="91"/>
 <junction x="157.48" y="63.5"/>
 <wire x1="144.78" y1="63.5" x2="157.48" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="DVR/MODULE-IO" gate="1" pin="3"/>
+<pinref part="MODULE-IO" gate="1" pin="3"/>
 <wire x1="144.78" y1="91.44" x2="127" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="63.5" x2="144.78" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="83.82" x2="144.78" y2="91.44" width="0.1524" layer="91"/>
@@ -9981,7 +9981,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="139.7" y1="144.78" x2="142.24" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="147.32" x2="223.52" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="223.52" y1="147.32" x2="241.3" y2="165.1" width="0.1524" layer="91"/>
-<pinref part="DVR/MODULE-IO" gate="1" pin="1"/>
+<pinref part="MODULE-IO" gate="1" pin="1"/>
 <wire x1="139.7" y1="144.78" x2="139.7" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="116.84" x2="127" y2="104.14" width="0.1524" layer="91"/>
 </segment>
@@ -10026,7 +10026,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <segment>
 <pinref part="V-IO" gate="1" pin="2"/>
 <wire x1="134.62" y1="142.24" x2="114.3" y2="142.24" width="0.1524" layer="91"/>
-<pinref part="DVR/MODULE-IO" gate="1" pin="2"/>
+<pinref part="MODULE-IO" gate="1" pin="2"/>
 <wire x1="134.62" y1="142.24" x2="134.62" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="114.3" x2="127" y2="106.68" width="0.1524" layer="91"/>
 </segment>
@@ -10045,7 +10045,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </net>
 <net name="D6" class="1">
 <segment>
-<pinref part="DVR/MODULE-IO" gate="1" pin="6"/>
+<pinref part="MODULE-IO" gate="1" pin="6"/>
 <wire x1="127" y1="116.84" x2="132.08" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="132.08" y1="116.84" x2="132.08" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="132.08" y1="35.56" x2="220.98" y2="35.56" width="0.1524" layer="91"/>
@@ -10056,7 +10056,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </net>
 <net name="D7" class="1">
 <segment>
-<pinref part="DVR/MODULE-IO" gate="1" pin="5"/>
+<pinref part="MODULE-IO" gate="1" pin="5"/>
 <wire x1="127" y1="114.3" x2="137.16" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="114.3" x2="137.16" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="38.1" x2="218.44" y2="38.1" width="0.1524" layer="91"/>
@@ -10087,7 +10087,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </net>
 <net name="D5" class="1">
 <segment>
-<pinref part="DVR/MODULE-IO" gate="1" pin="7"/>
+<pinref part="MODULE-IO" gate="1" pin="7"/>
 <wire x1="127" y1="119.38" x2="142.24" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="119.38" x2="142.24" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="40.64" x2="215.9" y2="40.64" width="0.1524" layer="91"/>
@@ -10248,7 +10248,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="A1" gate="G$1" pin="TP"/>
+<pinref part="DVR_LED" gate="G$1" pin="TP"/>
 <wire x1="157.48" y1="104.14" x2="160.02" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="104.14" x2="160.02" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="A2"/>
