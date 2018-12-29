@@ -33,6 +33,7 @@ https://www.shapeways.com/product/GCXG232QY/pocketgroundstation-case</br>
 </br>
 • PCBs (you can order them with the provided Gerber files in the PCB Folder at http://jlcpcb.com or other vendors) </br>
 • M3 inserts (https://de.aliexpress.com/item/100-teile-los-messingeinsatz-M2-M2-5-M3-Durch-gewinde-messing-gewindebuchse-r-ndelmuttern-f-r/32840519444.html) </br>
+• Tripod 1/4" Insert: (https://de.aliexpress.com/item/20Pcs-M3-M4-M5-M6-M8-Zinc-Plated-Carbon-Steel-Knurled-Nuts-Rivnut-Flat-Head-Threaded/32812028855.html)</br>
 • Eachine PRO DVR </br>
 • Arduino Pro Mini (https://de.aliexpress.com/item/1PCS-new-version-1pcs-ATMEGA328P-Pro-Mini-328-Mini-ATMEGA328-5V-16MHz-for-arduino/32830465958.html?spm=a2g0s.9042311.0.0.30d64c4d7417Km)</br>
 • 5V Buzzer</br>
