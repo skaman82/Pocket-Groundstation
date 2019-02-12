@@ -13411,7 +13411,6 @@ Datasheet (TS53YL502MR10)</description>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="IC1" library="40xx" library_urn="urn:adsk.eagle:library:80" deviceset="4066" device="D" package3d_urn="urn:adsk.eagle:package:823/2"/>
@@ -13436,6 +13435,7 @@ Datasheet (TS53YL502MR10)</description>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R5" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2"/>
+<part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13449,7 +13449,6 @@ Datasheet (TS53YL502MR10)</description>
 <instance part="GND1" gate="1" x="215.9" y="243.84"/>
 <instance part="GND2" gate="1" x="261.62" y="104.14"/>
 <instance part="GND3" gate="1" x="254" y="165.1" rot="R180"/>
-<instance part="GND4" gate="1" x="226.06" y="149.86" rot="R270"/>
 <instance part="GND5" gate="1" x="226.06" y="124.46" rot="R270"/>
 <instance part="GND6" gate="1" x="264.16" y="165.1" rot="R180"/>
 <instance part="IC1" gate="A" x="215.9" y="218.44"/>
@@ -13479,6 +13478,7 @@ Datasheet (TS53YL502MR10)</description>
 <instance part="GND12" gate="1" x="198.12" y="177.8"/>
 <instance part="GND13" gate="1" x="198.12" y="160.02"/>
 <instance part="R5" gate="G$1" x="210.82" y="121.92" rot="R270"/>
+<instance part="GND4" gate="1" x="220.98" y="144.78" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -13597,7 +13597,7 @@ Datasheet (TS53YL502MR10)</description>
 <label x="210.82" y="111.76" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
-<net name="GND" class="3">
+<net name="GND" class="0">
 <segment>
 <pinref part="VCC-GND" gate="G$1" pin="2"/>
 <wire x1="215.9" y1="251.46" x2="215.9" y2="246.38" width="0.1524" layer="91"/>
@@ -13612,11 +13612,6 @@ Datasheet (TS53YL502MR10)</description>
 <pinref part="MINIMOSD" gate="G$1" pin="VOG"/>
 <wire x1="254" y1="157.48" x2="254" y2="162.56" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="MINIMOSD" gate="G$1" pin="CGND"/>
-<wire x1="233.68" y1="149.86" x2="228.6" y2="149.86" width="0.1524" layer="91"/>
-<pinref part="GND4" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="MINIMOSD" gate="G$1" pin="BGND"/>
@@ -13666,6 +13661,11 @@ Datasheet (TS53YL502MR10)</description>
 <wire x1="203.2" y1="167.64" x2="198.12" y2="167.64" width="0.1524" layer="91"/>
 <wire x1="198.12" y1="167.64" x2="198.12" y2="162.56" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="MINIMOSD" gate="G$1" pin="CUR"/>
+<wire x1="233.68" y1="144.78" x2="223.52" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="GND4" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="VIDEO_IN" class="0">
@@ -13722,11 +13722,6 @@ Datasheet (TS53YL502MR10)</description>
 </net>
 <net name="CONTROLL_A" class="0">
 <segment>
-<pinref part="MINIMOSD" gate="G$1" pin="CUR"/>
-<wire x1="233.68" y1="144.78" x2="208.28" y2="144.78" width="0.1524" layer="91"/>
-<label x="208.28" y="144.78" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <pinref part="IC1" gate="A" pin="C"/>
 <wire x1="203.2" y1="215.9" x2="198.12" y2="215.9" width="0.1524" layer="91"/>
 <label x="198.12" y="215.9" size="1.778" layer="95" rot="R180" xref="yes"/>
@@ -13735,6 +13730,11 @@ Datasheet (TS53YL502MR10)</description>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="172.72" y1="93.98" x2="172.72" y2="96.52" width="0.1524" layer="91"/>
 <label x="172.72" y="96.52" size="1.778" layer="95" rot="R90" xref="yes"/>
+</segment>
+<segment>
+<pinref part="MINIMOSD" gate="G$1" pin="CGND"/>
+<wire x1="233.68" y1="149.86" x2="208.28" y2="149.86" width="0.1524" layer="91"/>
+<label x="208.28" y="149.86" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="CONTROLL_B" class="0">
