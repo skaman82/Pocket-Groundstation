@@ -5822,6 +5822,24 @@ design rules under a new name.</description>
 <wire x1="35.2625" y1="68.3375" x2="35.7" y2="68.775" width="0.4" layer="16"/>
 <wire x1="43.05" y1="70" x2="43.18" y2="69.85" width="0.4" layer="16"/>
 <via x="27.3" y="55.825" extent="1-16" drill="0.35"/>
+<contactref element="IC1" pad="14"/>
+<contactref element="MINIMOSD" pad="IVCC"/>
+<wire x1="35" y1="64.75" x2="33.6" y2="64.75" width="0.4" layer="1"/>
+<wire x1="35.525" y1="64.225" x2="35" y2="64.75" width="0.4" layer="1"/>
+<wire x1="35.525" y1="60.55" x2="35.525" y2="64.225" width="0.4" layer="1"/>
+<wire x1="35.525" y1="57.75" x2="35.525" y2="60.55" width="0.4" layer="16"/>
+<wire x1="33.6" y1="55.825" x2="35.525" y2="57.75" width="0.4" layer="16"/>
+<wire x1="32.2" y1="55.825" x2="33.6" y2="55.825" width="0.4" layer="16"/>
+<wire x1="30.625" y1="54.25" x2="32.2" y2="55.825" width="0.4" layer="16"/>
+<wire x1="30.625" y1="53.375" x2="30.625" y2="54.25" width="0.4" layer="16"/>
+<wire x1="33.6" y1="64.75" x2="33.5534" y2="64.77" width="0.4" layer="1"/>
+<wire x1="30.625" y1="53.375" x2="30.48" y2="53.3" width="0.4" layer="16"/>
+<via x="35.525" y="60.55" extent="1-16" drill="0.35"/>
+<via x="34.29" y="65.024" extent="1-16" drill="0.35"/>
+<wire x1="34.29" y1="64.77" x2="34.29" y2="65.024" width="0.4" layer="1"/>
+<wire x1="34.29" y1="64.77" x2="33.5534" y2="64.77" width="0.4" layer="1"/>
+<wire x1="34.29" y1="64.77" x2="34.29" y2="65.024" width="0.4" layer="16"/>
+<wire x1="34.29" y1="65.024" x2="34.29" y2="65.165" width="0.4" layer="16"/>
 </signal>
 <signal name="VIDEO_IN">
 <contactref element="VOUT-VIN-SER" pad="2"/>
@@ -5885,21 +5903,6 @@ design rules under a new name.</description>
 </signal>
 <signal name="VSS">
 <contactref element="IC1" pad="7"/>
-</signal>
-<signal name="VDD">
-<contactref element="IC1" pad="14"/>
-<contactref element="MINIMOSD" pad="IVCC"/>
-<wire x1="35" y1="64.75" x2="33.6" y2="64.75" width="0.4" layer="1"/>
-<wire x1="35.525" y1="64.225" x2="35" y2="64.75" width="0.4" layer="1"/>
-<wire x1="35.525" y1="60.55" x2="35.525" y2="64.225" width="0.4" layer="1"/>
-<wire x1="35.525" y1="57.75" x2="35.525" y2="60.55" width="0.4" layer="16"/>
-<wire x1="33.6" y1="55.825" x2="35.525" y2="57.75" width="0.4" layer="16"/>
-<wire x1="32.2" y1="55.825" x2="33.6" y2="55.825" width="0.4" layer="16"/>
-<wire x1="30.625" y1="54.25" x2="32.2" y2="55.825" width="0.4" layer="16"/>
-<wire x1="30.625" y1="53.375" x2="30.625" y2="54.25" width="0.4" layer="16"/>
-<wire x1="33.6" y1="64.75" x2="33.5534" y2="64.77" width="0.4" layer="1"/>
-<wire x1="30.625" y1="53.375" x2="30.48" y2="53.3" width="0.4" layer="16"/>
-<via x="35.525" y="60.55" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="N$3">
 <contactref element="MINIMOSD" pad="BAT1"/>
@@ -6067,7 +6070,7 @@ design rules under a new name.</description>
 <wire x1="42.35" y1="65.275" x2="42.33" y2="65.15" width="0.4" layer="1"/>
 <wire x1="28" y1="70.525" x2="27.94" y2="70.485" width="0.4" layer="1"/>
 </signal>
-<signal name="N$5">
+<signal name="VIDIN_AMP">
 <contactref element="R7" pad="1"/>
 <contactref element="IC2" pad="3"/>
 <wire x1="26.25" y1="53.2" x2="26.25" y2="52.07" width="0.4" layer="16"/>

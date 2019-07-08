@@ -14213,7 +14213,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="BT-BRIDGE" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="" package3d_urn="urn:adsk.eagle:package:38085/1"/>
 <part name="OLED" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="" package3d_urn="urn:adsk.eagle:package:38085/1"/>
 <part name="D1" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="GF1" device="" package3d_urn="urn:adsk.eagle:package:43452/2"/>
-<part name="J3" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1"/>
+<part name="RX_SWITSCH" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1"/>
 <part name="ARD-SERVICE" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="EM406" device="" package3d_urn="urn:adsk.eagle:package:38023/1"/>
 <part name="SER" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_01" device="" package3d_urn="urn:adsk.eagle:package:38028/1"/>
 <part name="AUD" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_01" device="" package3d_urn="urn:adsk.eagle:package:38028/1"/>
@@ -14276,7 +14276,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="BT-BRIDGE" gate="G$1" x="205.74" y="190.5" rot="R270"/>
 <instance part="OLED" gate="G$1" x="96.52" y="193.04" rot="R270"/>
 <instance part="D1" gate="D" x="165.1" y="63.5" rot="R180"/>
-<instance part="J3" gate="G$1" x="274.32" y="177.8" rot="R270"/>
+<instance part="RX_SWITSCH" gate="G$1" x="274.32" y="177.8" rot="R270"/>
 <instance part="ARD-SERVICE" gate="G$1" x="182.88" y="17.78" rot="MR270"/>
 <instance part="SER" gate="G$1" x="228.6" y="236.22" rot="R270"/>
 <instance part="AUD" gate="G$1" x="104.14" y="50.8" rot="R90"/>
@@ -14340,7 +14340,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U$1" gate="G$1" pin="D11"/>
 <wire x1="154.94" y1="114.3" x2="162.56" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="170.18" x2="274.32" y2="170.18" width="0.1524" layer="91"/>
-<pinref part="J3" gate="G$1" pin="1"/>
+<pinref part="RX_SWITSCH" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -14731,7 +14731,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="RX_SW" class="1">
 <segment>
-<pinref part="J3" gate="G$1" pin="2"/>
+<pinref part="RX_SWITSCH" gate="G$1" pin="2"/>
 <wire x1="276.86" y1="170.18" x2="276.86" y2="165.1" width="0.1524" layer="91"/>
 <label x="276.86" y="165.1" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>

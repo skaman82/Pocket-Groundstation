@@ -14748,11 +14748,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="160.02" y1="116.84" x2="160.02" y2="121.92" width="0.1524" layer="91"/>
 <label x="160.02" y="121.92" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
-<segment>
-<pinref part="SER" gate="G$1" pin="1"/>
-<wire x1="228.6" y1="228.6" x2="228.6" y2="223.52" width="0.1524" layer="91"/>
-<label x="228.6" y="223.52" size="1.778" layer="95" rot="R270" xref="yes"/>
-</segment>
 </net>
 </nets>
 </sheet>

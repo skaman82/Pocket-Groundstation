@@ -13426,7 +13426,7 @@ Datasheet (TS53YL502MR10)</description>
 <part name="R4" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
 <part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603K" package3d_urn="urn:adsk.eagle:package:23680/2"/>
+<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603K" package3d_urn="urn:adsk.eagle:package:23680/2" value="o.1uF"/>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="RAW" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="TP13SQ" package3d_urn="urn:adsk.eagle:package:27974/1"/>
 <part name="AMP" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="TP13SQ" package3d_urn="urn:adsk.eagle:package:27974/1"/>
@@ -13486,7 +13486,7 @@ Datasheet (TS53YL502MR10)</description>
 <instance part="R6" gate="G$1" x="350.52" y="182.88" rot="R90"/>
 <instance part="GND14" gate="1" x="350.52" y="167.64"/>
 <instance part="R7" gate="G$1" x="355.6" y="195.58" rot="R180"/>
-<instance part="R8" gate="G$1" x="396.24" y="185.42" rot="R90"/>
+<instance part="R8" gate="G$1" x="393.7" y="185.42" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -13798,25 +13798,15 @@ Datasheet (TS53YL502MR10)</description>
 <wire x1="355.6" y1="200.66" x2="363.22" y2="200.66" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="VIDEO_AMP" class="0">
+<net name="75" class="0">
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="IC2" gate="G1" pin="OUT"/>
-<wire x1="403.86" y1="198.12" x2="396.24" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="396.24" y1="198.12" x2="378.46" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="396.24" y1="198.12" x2="396.24" y2="190.5" width="0.1524" layer="91"/>
-<junction x="396.24" y="198.12"/>
+<wire x1="403.86" y1="198.12" x2="393.7" y2="198.12" width="0.1524" layer="91"/>
 <pinref part="R8" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="AMP" gate="G$1" pin="TP"/>
-<wire x1="332.74" y1="167.64" x2="332.74" y2="170.18" width="0.1524" layer="91"/>
-<label x="332.74" y="170.18" size="1.778" layer="95" rot="R90" xref="yes"/>
-</segment>
-<segment>
-<pinref part="R8" gate="G$1" pin="1"/>
-<wire x1="396.24" y1="180.34" x2="396.24" y2="175.26" width="0.1524" layer="91"/>
-<label x="396.24" y="175.26" size="1.778" layer="95" rot="R270" xref="yes"/>
+<wire x1="393.7" y1="198.12" x2="378.46" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="393.7" y1="190.5" x2="393.7" y2="198.12" width="0.1524" layer="91"/>
+<junction x="393.7" y="198.12"/>
 </segment>
 </net>
 <net name="OSD" class="0">
@@ -13845,6 +13835,18 @@ Datasheet (TS53YL502MR10)</description>
 <pinref part="R7" gate="G$1" pin="1"/>
 <pinref part="IC2" gate="G1" pin="+IN"/>
 <wire x1="360.68" y1="195.58" x2="363.22" y2="195.58" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="AMP" class="0">
+<segment>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="393.7" y1="180.34" x2="393.7" y2="172.72" width="0.1524" layer="91"/>
+<label x="393.7" y="172.72" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<pinref part="AMP" gate="G$1" pin="TP"/>
+<wire x1="332.74" y1="167.64" x2="332.74" y2="170.18" width="0.1524" layer="91"/>
+<label x="332.74" y="170.18" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 </net>
 </nets>

@@ -2683,10 +2683,10 @@
 <text x="6.35" y="36.83" size="0.762" layer="25">K3</text>
 <text x="6.35" y="52.07" size="0.762" layer="25">VIDin</text>
 <text x="29.21" y="50.8" size="1.27" layer="25" rot="R180">OSD-MODULE</text>
-<wire x1="16.51" y1="60.96" x2="38.1" y2="60.96" width="0.1524" layer="25"/>
+<wire x1="6.35" y1="60.96" x2="38.1" y2="60.96" width="0.1524" layer="25"/>
 <wire x1="38.1" y1="60.96" x2="38.1" y2="38.1" width="0.1524" layer="25"/>
-<wire x1="38.1" y1="38.1" x2="8.89" y2="38.1" width="0.1524" layer="25"/>
-<wire x1="8.89" y1="38.1" x2="8.89" y2="58.42" width="0.1524" layer="25"/>
+<wire x1="38.1" y1="38.1" x2="6.35" y2="38.1" width="0.1524" layer="25"/>
+<wire x1="6.35" y1="38.1" x2="6.35" y2="60.96" width="0.1524" layer="25"/>
 <wire x1="15.24" y1="15.24" x2="15.24" y2="7.62" width="0.1524" layer="25"/>
 <wire x1="30.48" y1="7.62" x2="30.48" y2="15.24" width="0.1524" layer="25"/>
 <wire x1="16.51" y1="16.51" x2="29.21" y2="16.51" width="0.1524" layer="25"/>
@@ -4878,9 +4878,9 @@ design rules under a new name.</description>
 <attribute name="NAME" x="31.75" y="59.817" size="0.6096" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="34.798" y="59.69" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
 </element>
-<element name="OSD_IO1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X03" package3d_urn="urn:adsk.eagle:package:38063/1" value="" x="8.89" y="59.69" smashed="yes">
-<attribute name="NAME" x="16.51" y="59.817" size="0.6096" layer="25" font="vector" ratio="20"/>
-<attribute name="VALUE" x="7.62" y="57.658" size="0.6096" layer="27" font="vector" ratio="20"/>
+<element name="OSD_IO1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X03" package3d_urn="urn:adsk.eagle:package:38063/1" value="" x="8.89" y="58.42" smashed="yes">
+<attribute name="NAME" x="16.51" y="58.547" size="0.6096" layer="25" font="vector" ratio="20"/>
+<attribute name="VALUE" x="7.62" y="56.388" size="0.6096" layer="27" font="vector" ratio="20"/>
 </element>
 </elements>
 <signals>
@@ -4888,8 +4888,8 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="A5"/>
 <contactref element="OLED" pad="2"/>
 <wire x1="21.74875" y1="31.59125" x2="20.32" y2="33.02" width="0.3" layer="1"/>
-<wire x1="28.73375" y1="31.59125" x2="21.74875" y2="31.59125" width="0.3" layer="1"/>
-<wire x1="28.73375" y1="32.0675" x2="28.73375" y2="31.59125" width="0.3" layer="1"/>
+<wire x1="27.46375" y1="31.59125" x2="21.74875" y2="31.59125" width="0.3" layer="1"/>
+<wire x1="28.73375" y1="32.0675" x2="27.46375" y2="31.59125" width="0.3" layer="1"/>
 <wire x1="29.05125" y1="32.385" x2="28.73375" y2="32.0675" width="0.3" layer="1"/>
 <wire x1="31.59125" y1="32.385" x2="29.05125" y2="32.385" width="0.3" layer="16"/>
 <wire x1="37.30625" y1="32.385" x2="31.59125" y2="32.385" width="0.3" layer="1"/>
@@ -5016,14 +5016,14 @@ design rules under a new name.</description>
 <wire x1="5.55625" y1="53.81625" x2="3.81" y2="52.07" width="0.5" layer="16"/>
 <wire x1="5.715" y1="53.81625" x2="5.55625" y2="53.81625" width="0.5" layer="16"/>
 <wire x1="8.89" y1="56.99125" x2="5.715" y2="53.81625" width="0.5" layer="16"/>
-<wire x1="8.89" y1="59.69" x2="8.89" y2="56.99125" width="0.5" layer="1"/>
+<wire x1="8.89" y1="58.42" x2="8.89" y2="56.99125" width="0.5" layer="1"/>
 <via x="8.89" y="56.99125" extent="1-16" drill="0.4"/>
 </signal>
 <signal name="OSDSIGNAL" class="2">
 <contactref element="V-IO" pad="4"/>
 <contactref element="OSD_IO1" pad="2"/>
 <wire x1="3.81" y1="55.88" x2="10.16" y2="55.88" width="0.5" layer="1"/>
-<wire x1="11.43" y1="57.15" x2="11.43" y2="59.69" width="0.5" layer="1"/>
+<wire x1="11.43" y1="57.15" x2="11.43" y2="58.42" width="0.5" layer="1"/>
 <wire x1="10.16" y1="55.88" x2="11.43" y2="57.15" width="0.5" layer="1"/>
 </signal>
 <signal name="BUTTON1" class="1">
@@ -5137,8 +5137,8 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="A0"/>
 <contactref element="C1" pad="1"/>
 <wire x1="25.27" y1="27.94" x2="17.91" y2="27.94" width="0.762" layer="1"/>
-<wire x1="25.4" y1="30.48" x2="30.25" y2="30.48" width="0.762" layer="1"/>
-<wire x1="25.4" y1="28.2575" x2="25.4" y2="30.48" width="0.762" layer="1"/>
+<wire x1="26.67" y1="30.48" x2="30.25" y2="30.48" width="0.762" layer="1"/>
+<wire x1="25.4" y1="28.2575" x2="26.67" y2="30.48" width="0.762" layer="1"/>
 <wire x1="25.4" y1="28.2575" x2="25.27" y2="27.94" width="0.762" layer="1"/>
 <wire x1="30.1625" y1="34.6075" x2="29.21" y2="35.56" width="0.762" layer="1"/>
 <wire x1="30.1625" y1="33.17875" x2="30.1625" y2="34.6075" width="0.762" layer="1"/>
@@ -5353,7 +5353,7 @@ design rules under a new name.</description>
 <signal name="RX_SW" class="1">
 <contactref element="RX_SWITSCH" pad="2"/>
 <contactref element="OSD_IO1" pad="3"/>
-<wire x1="19.3675" y1="54.2925" x2="13.97" y2="59.69" width="0.3" layer="1"/>
+<wire x1="19.3675" y1="54.2925" x2="13.97" y2="58.42" width="0.3" layer="1"/>
 <wire x1="27.46375" y1="54.2925" x2="19.3675" y2="54.2925" width="0.3" layer="1"/>
 <wire x1="36.83" y1="44.92625" x2="27.46375" y2="54.2925" width="0.3" layer="16"/>
 <wire x1="36.83" y1="44.45" x2="36.83" y2="44.92625" width="0.3" layer="16"/>

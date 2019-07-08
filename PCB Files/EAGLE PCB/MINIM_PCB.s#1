@@ -13488,7 +13488,7 @@ Datasheet (TS53YL502MR10)</description>
 <instance part="GND14" gate="1" x="350.52" y="167.64"/>
 <instance part="R7" gate="G$1" x="355.6" y="195.58" rot="R180"/>
 <instance part="R8" gate="G$1" x="393.7" y="185.42" rot="R90"/>
-<instance part="GND15" gate="1" x="304.8" y="106.68"/>
+<instance part="GND15" gate="1" x="320.04" y="104.14"/>
 </instances>
 <busses>
 </busses>
@@ -13827,7 +13827,7 @@ Datasheet (TS53YL502MR10)</description>
 <wire x1="238.76" y1="165.1" x2="248.92" y2="165.1" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="VIDIN_AMP" class="0">
 <segment>
 <pinref part="R7" gate="G$1" pin="1"/>
 <pinref part="IC2" gate="G1" pin="+IN"/>
@@ -13860,9 +13860,9 @@ Datasheet (TS53YL502MR10)</description>
 </net>
 <net name="VSS" class="0">
 <segment>
-<wire x1="304.8" y1="109.22" x2="304.8" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="320.04" y1="106.68" x2="320.04" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="GND15" gate="1" pin="GND"/>
-<label x="304.8" y="124.46" size="1.778" layer="95" rot="R90" xref="yes"/>
+<label x="320.04" y="124.46" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 </net>
 </nets>

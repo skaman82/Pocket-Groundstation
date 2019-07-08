@@ -23,17 +23,17 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
@@ -47,9 +47,9 @@
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
@@ -59,7 +59,7 @@
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -179,10 +179,10 @@
 <text x="1.27" y="52.07" size="0.889" layer="26" rot="MR90">VID</text>
 <text x="1.27" y="46.99" size="0.889" layer="26" rot="MR90">G</text>
 <text x="1.27" y="44.45" size="0.889" layer="26" rot="MR90">5v</text>
-<text x="6.35" y="63.5" size="0.889" layer="25" rot="R270">G</text>
-<text x="6.35" y="60.96" size="0.889" layer="25">Vdvr</text>
-<text x="6.35" y="58.42" size="0.889" layer="25">Vmain</text>
-<text x="6.35" y="55.88" size="0.889" layer="25">Vosd</text>
+<text x="1.27" y="63.5" size="0.889" layer="25" rot="R90">G</text>
+<text x="1.27" y="60.96" size="0.889" layer="25" rot="R90">Vdv</text>
+<text x="1.27" y="58.42" size="0.889" layer="25" rot="R90">Vm</text>
+<text x="1.27" y="55.88" size="0.889" layer="25" rot="R90">Vos</text>
 <rectangle x1="19.0627" y1="15.3543" x2="19.1643" y2="15.3797" layer="26" rot="R180"/>
 <rectangle x1="18.8849" y1="15.3289" x2="19.3421" y2="15.3543" layer="26" rot="R180"/>
 <rectangle x1="18.7833" y1="15.3035" x2="19.4437" y2="15.3289" layer="26" rot="R180"/>
@@ -4878,9 +4878,9 @@ design rules under a new name.</description>
 <attribute name="NAME" x="31.75" y="59.817" size="0.6096" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="34.798" y="59.69" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
 </element>
-<element name="OSD_IO1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X03" package3d_urn="urn:adsk.eagle:package:38063/1" value="" x="10.16" y="59.69" smashed="yes">
-<attribute name="NAME" x="17.78" y="59.817" size="0.6096" layer="25" font="vector" ratio="20"/>
-<attribute name="VALUE" x="8.89" y="57.658" size="0.6096" layer="27" font="vector" ratio="20"/>
+<element name="OSD_IO1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X03" package3d_urn="urn:adsk.eagle:package:38063/1" value="" x="8.89" y="59.69" smashed="yes">
+<attribute name="NAME" x="16.51" y="59.817" size="0.6096" layer="25" font="vector" ratio="20"/>
+<attribute name="VALUE" x="7.62" y="57.658" size="0.6096" layer="27" font="vector" ratio="20"/>
 </element>
 </elements>
 <signals>
@@ -5016,17 +5016,15 @@ design rules under a new name.</description>
 <wire x1="5.55625" y1="53.81625" x2="3.81" y2="52.07" width="0.5" layer="16"/>
 <wire x1="5.715" y1="53.81625" x2="5.55625" y2="53.81625" width="0.5" layer="16"/>
 <wire x1="8.89" y1="56.99125" x2="5.715" y2="53.81625" width="0.5" layer="16"/>
-<wire x1="10.16" y1="58.26125" x2="8.89" y2="56.99125" width="0.5" layer="1"/>
-<wire x1="10.16" y1="59.69" x2="10.16" y2="58.26125" width="0.5" layer="1"/>
+<wire x1="8.89" y1="59.69" x2="8.89" y2="56.99125" width="0.5" layer="1"/>
 <via x="8.89" y="56.99125" extent="1-16" drill="0.4"/>
 </signal>
 <signal name="OSDSIGNAL" class="2">
 <contactref element="V-IO" pad="4"/>
 <contactref element="OSD_IO1" pad="2"/>
 <wire x1="3.81" y1="55.88" x2="10.16" y2="55.88" width="0.5" layer="1"/>
-<wire x1="12.7" y1="57.15" x2="12.7" y2="59.69" width="0.5" layer="1"/>
-<wire x1="10.16" y1="55.88" x2="11.43" y2="55.88" width="0.5" layer="1"/>
-<wire x1="11.43" y1="55.88" x2="12.7" y2="57.15" width="0.5" layer="1"/>
+<wire x1="11.43" y1="57.15" x2="11.43" y2="59.69" width="0.5" layer="1"/>
+<wire x1="10.16" y1="55.88" x2="11.43" y2="57.15" width="0.5" layer="1"/>
 </signal>
 <signal name="BUTTON1" class="1">
 <contactref element="U$1" pad="D2"/>
@@ -5277,8 +5275,8 @@ design rules under a new name.</description>
 <wire x1="33.655" y1="71.59625" x2="33.73" y2="71.73" width="0.5" layer="1"/>
 <wire x1="13.6525" y1="69.5325" x2="13.5636" y2="69.4436" width="0.5" layer="1"/>
 <wire x1="6.35" y1="58.42" x2="3.81" y2="58.42" width="0.5" layer="1"/>
-<wire x1="13.49375" y1="65.24625" x2="9.04875" y2="60.80125" width="0.5" layer="1"/>
-<wire x1="19.20875" y1="65.24625" x2="13.49375" y2="65.24625" width="0.5" layer="1"/>
+<wire x1="9.68375" y1="65.24625" x2="7.77875" y2="60.80125" width="0.5" layer="1"/>
+<wire x1="19.20875" y1="65.24625" x2="9.68375" y2="65.24625" width="0.5" layer="1"/>
 <wire x1="21.11375" y1="67.15125" x2="19.20875" y2="65.24625" width="0.5" layer="16"/>
 <wire x1="20.955" y1="67.31" x2="21.11375" y2="67.15125" width="0.5" layer="1"/>
 <wire x1="20.955" y1="69.05625" x2="20.955" y2="67.31" width="0.5" layer="1"/>
@@ -5286,7 +5284,7 @@ design rules under a new name.</description>
 <via x="21.11375" y="67.15125" extent="1-16" drill="0.4"/>
 <wire x1="15.24" y1="70.96125" x2="13.81125" y2="69.5325" width="0.5" layer="1"/>
 <wire x1="13.81125" y1="69.5325" x2="13.6525" y2="69.5325" width="0.1524" layer="1"/>
-<wire x1="9.04875" y1="60.80125" x2="6.35" y2="58.42" width="0.5" layer="1"/>
+<wire x1="7.77875" y1="60.80125" x2="6.35" y2="58.42" width="0.5" layer="1"/>
 </signal>
 <signal name="LED" class="1">
 <contactref element="U$1" pad="D13"/>
@@ -5355,8 +5353,8 @@ design rules under a new name.</description>
 <signal name="RX_SW" class="1">
 <contactref element="RX_SWITSCH" pad="2"/>
 <contactref element="OSD_IO1" pad="3"/>
-<wire x1="20.6375" y1="54.2925" x2="15.24" y2="59.69" width="0.3" layer="1"/>
-<wire x1="27.46375" y1="54.2925" x2="20.6375" y2="54.2925" width="0.3" layer="1"/>
+<wire x1="19.3675" y1="54.2925" x2="13.97" y2="59.69" width="0.3" layer="1"/>
+<wire x1="27.46375" y1="54.2925" x2="19.3675" y2="54.2925" width="0.3" layer="1"/>
 <wire x1="36.83" y1="44.92625" x2="27.46375" y2="54.2925" width="0.3" layer="16"/>
 <wire x1="36.83" y1="44.45" x2="36.83" y2="44.92625" width="0.3" layer="16"/>
 <via x="27.46375" y="54.2925" extent="1-16" drill="0.35"/>

@@ -13601,6 +13601,16 @@ Datasheet (TS53YL502MR10)</description>
 <wire x1="210.82" y1="116.84" x2="210.82" y2="111.76" width="0.1524" layer="91"/>
 <label x="210.82" y="111.76" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>
+<segment>
+<pinref part="MINIMOSD" gate="G$1" pin="IVCC"/>
+<wire x1="251.46" y1="116.84" x2="251.46" y2="111.76" width="0.1524" layer="91"/>
+<label x="251.46" y="109.22" size="1.778" layer="95" rot="R270" xref="yes"/>
+<wire x1="251.46" y1="111.76" x2="251.46" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="111.76" x2="238.76" y2="111.76" width="0.1524" layer="91"/>
+<junction x="251.46" y="111.76"/>
+<wire x1="238.76" y1="111.76" x2="238.76" y2="106.68" width="0.1524" layer="91"/>
+<label x="238.76" y="106.68" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -13827,7 +13837,7 @@ Datasheet (TS53YL502MR10)</description>
 <wire x1="238.76" y1="165.1" x2="248.92" y2="165.1" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="VIDIN_AMP" class="0">
 <segment>
 <pinref part="R7" gate="G$1" pin="1"/>
 <pinref part="IC2" gate="G1" pin="+IN"/>
@@ -13844,18 +13854,6 @@ Datasheet (TS53YL502MR10)</description>
 <pinref part="AMP" gate="G$1" pin="TP"/>
 <wire x1="332.74" y1="167.64" x2="332.74" y2="170.18" width="0.1524" layer="91"/>
 <label x="332.74" y="170.18" size="1.778" layer="95" rot="R90" xref="yes"/>
-</segment>
-</net>
-<net name="VDD" class="0">
-<segment>
-<pinref part="MINIMOSD" gate="G$1" pin="IVCC"/>
-<wire x1="251.46" y1="116.84" x2="251.46" y2="111.76" width="0.1524" layer="91"/>
-<label x="251.46" y="109.22" size="1.778" layer="95" rot="R270" xref="yes"/>
-<wire x1="251.46" y1="111.76" x2="251.46" y2="109.22" width="0.1524" layer="91"/>
-<wire x1="251.46" y1="111.76" x2="238.76" y2="111.76" width="0.1524" layer="91"/>
-<junction x="251.46" y="111.76"/>
-<wire x1="238.76" y1="111.76" x2="238.76" y2="106.68" width="0.1524" layer="91"/>
-<label x="238.76" y="106.68" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="VSS" class="0">

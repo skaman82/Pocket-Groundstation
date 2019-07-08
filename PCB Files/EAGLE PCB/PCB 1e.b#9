@@ -5063,10 +5063,10 @@ design rules under a new name.</description>
 <signal name="DVRVIDEO-IN" class="2">
 <contactref element="V-IO" pad="2"/>
 <contactref element="MODULE-IO" pad="2"/>
-<wire x1="1.5875" y1="49.53" x2="3.81" y2="49.53" width="0.5" layer="1"/>
-<wire x1="1.5875" y1="58.89625" x2="1.5875" y2="49.53" width="0.5" layer="1"/>
+<wire x1="1.5875" y1="50.8" x2="1.5875" y2="58.89625" width="0.5" layer="1"/>
 <wire x1="3.65125" y1="60.96" x2="1.5875" y2="58.89625" width="0.5" layer="1"/>
 <wire x1="3.81" y1="60.96" x2="3.65125" y2="60.96" width="0.5" layer="1"/>
+<wire x1="3.81" y1="49.53" x2="1.5875" y2="50.8" width="0.5" layer="1"/>
 </signal>
 <signal name="VCC">
 <contactref element="R1-18K" pad="2"/>
@@ -5276,9 +5276,8 @@ design rules under a new name.</description>
 <wire x1="18.25625" y1="70.96125" x2="15.24" y2="70.96125" width="0.5" layer="1"/>
 <wire x1="33.655" y1="71.59625" x2="33.73" y2="71.73" width="0.5" layer="1"/>
 <wire x1="13.6525" y1="69.5325" x2="13.5636" y2="69.4436" width="0.5" layer="1"/>
-<wire x1="8.5725" y1="58.42" x2="3.81" y2="58.42" width="0.5" layer="1"/>
-<wire x1="8.5725" y1="60.325" x2="8.5725" y2="58.42" width="0.5" layer="1"/>
-<wire x1="13.49375" y1="65.24625" x2="8.5725" y2="60.325" width="0.5" layer="1"/>
+<wire x1="6.35" y1="58.42" x2="3.81" y2="58.42" width="0.5" layer="1"/>
+<wire x1="13.49375" y1="65.24625" x2="9.04875" y2="60.80125" width="0.5" layer="1"/>
 <wire x1="19.20875" y1="65.24625" x2="13.49375" y2="65.24625" width="0.5" layer="1"/>
 <wire x1="21.11375" y1="67.15125" x2="19.20875" y2="65.24625" width="0.5" layer="16"/>
 <wire x1="20.955" y1="67.31" x2="21.11375" y2="67.15125" width="0.5" layer="1"/>
@@ -5287,6 +5286,7 @@ design rules under a new name.</description>
 <via x="21.11375" y="67.15125" extent="1-16" drill="0.4"/>
 <wire x1="15.24" y1="70.96125" x2="13.81125" y2="69.5325" width="0.5" layer="1"/>
 <wire x1="13.81125" y1="69.5325" x2="13.6525" y2="69.5325" width="0.1524" layer="1"/>
+<wire x1="9.04875" y1="60.80125" x2="6.35" y2="58.42" width="0.5" layer="1"/>
 </signal>
 <signal name="LED" class="1">
 <contactref element="U$1" pad="D13"/>

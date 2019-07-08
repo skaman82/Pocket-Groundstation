@@ -14600,7 +14600,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="205.74" y1="101.6" x2="200.66" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="BEC-5V" class="0">
+<net name="5VPROTECTED" class="0">
 <segment>
 <wire x1="160.02" y1="63.5" x2="160.02" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="D1" gate="D" pin="C"/>

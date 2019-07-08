@@ -158,9 +158,9 @@
 </layers>
 <board>
 <plain>
-<wire x1="44.9834" y1="50.8" x2="44.9834" y2="74.9808" width="0" layer="20"/>
-<wire x1="44.9834" y1="74.9808" x2="11.43" y2="74.9808" width="0" layer="20"/>
-<wire x1="11.43" y1="74.9808" x2="11.43" y2="50.8" width="0" layer="20"/>
+<wire x1="44.9834" y1="50.8" x2="44.9834" y2="76.2508" width="0" layer="20"/>
+<wire x1="44.9834" y1="76.2508" x2="11.43" y2="76.2508" width="0" layer="20"/>
+<wire x1="11.43" y1="76.2508" x2="11.43" y2="50.8" width="0" layer="20"/>
 <wire x1="11.43" y1="50.8" x2="44.9834" y2="50.8" width="0" layer="20"/>
 <rectangle x1="12.5222" y1="57.2008" x2="12.6238" y2="57.2262" layer="26" rot="R270"/>
 <rectangle x1="12.3698" y1="57.2008" x2="12.827" y2="57.2262" layer="26" rot="R270"/>
@@ -5662,22 +5662,21 @@ design rules under a new name.</description>
 <contactref element="IC1" pad="11"/>
 <contactref element="MINIMOSD" pad="CUR"/>
 <contactref element="R6" pad="1"/>
-<via x="12.7" y="71.12" extent="1-16" drill="0.35"/>
+<via x="20.32" y="67.31" extent="1-16" drill="0.35"/>
 <via x="33.02" y="67.31" extent="1-16" drill="0.35"/>
 <via x="33.02" y="57.15" extent="1-16" drill="0.35"/>
-<via x="31.75" y="59.69" extent="1-16" drill="0.35"/>
-<via x="21.59" y="59.69" extent="1-16" drill="0.35"/>
-<via x="30.734" y="55.626" extent="1-16" drill="0.35"/>
+<via x="31.75" y="60.452" extent="1-16" drill="0.35"/>
+<via x="21.336" y="59.69" extent="1-16" drill="0.35"/>
+<via x="30.7848" y="55.626" extent="1-16" drill="0.35"/>
 <via x="39.37" y="73.66" extent="1-16" drill="0.35"/>
 <via x="21.463" y="54.864" extent="1-16" drill="0.35"/>
 <via x="40.386" y="65.786" extent="1-16" drill="0.35"/>
 <via x="16.51" y="52.07" extent="1-16" drill="0.35"/>
-<via x="34.163" y="72.771" extent="1-16" drill="0.35"/>
+<via x="34.29" y="72.771" extent="1-16" drill="0.35"/>
 <via x="34.29" y="53.34" extent="1-16" drill="0.35"/>
-<via x="36.83" y="57.15" extent="1-16" drill="0.35"/>
+<via x="36.576" y="57.15" extent="1-16" drill="0.35"/>
 <via x="43.434" y="67.564" extent="1-16" drill="0.35"/>
-<via x="20.574" y="67.564" extent="1-16" drill="0.35"/>
-<wire x1="20.574" y1="67.564" x2="30.48" y2="70.485" width="0" layer="19" extent="1-1"/>
+<via x="21.844" y="73.914" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="RX" class="1">
 <contactref element="OSD-SERVICE" pad="4"/>

@@ -14711,7 +14711,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="78.74" y="81.28"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="DVR_LED" class="0">
 <segment>
 <pinref part="DVR_LED" gate="G$1" pin="TP"/>
 <wire x1="157.48" y1="104.14" x2="160.02" y2="104.14" width="0.1524" layer="91"/>
